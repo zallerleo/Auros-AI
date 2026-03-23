@@ -20,6 +20,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 
 from agents.shared.config import PORTFOLIO_DIR, TAVILY_API_KEY, LOGS_DIR
 from agents.shared.llm import generate
+from agents.shared.client_config import load_client_config
 
 
 def _search_tavily(query: str, max_results: int = 5) -> list[dict]:
@@ -99,14 +100,23 @@ Return ONLY valid JSON. Provide 10 content ideas. Be specific to the {industry} 
 
 def run(
     company: str = "",
-    industry: str = "entertainment exhibitions",
+    industry: str = "",
     platforms: str = "instagram,tiktok",
 ) -> dict:
     """Execute the trend analysis pipeline.
 
     When called by the orchestrator, only ``company`` is passed.
-    ``industry`` and ``platforms`` fall back to sensible defaults.
+    ``industry`` and ``platforms`` fall back to client config or sensible defaults.
     """
+    # Resolve industry from client config when not explicitly provided
+    if not industry and company:
+        try:
+            cfg = load_client_config(company)
+            industry = cfg.get("industry", "")
+        except (FileNotFoundError, Exception):
+            pass
+    if not industry:
+        industry = "entertainment exhibitions"
     today = datetime.now().strftime("%Y-%m-%d")
     platform_list = [p.strip() for p in platforms.split(",")]
     platforms_str = ", ".join(platform_list)

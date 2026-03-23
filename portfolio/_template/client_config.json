@@ -1,0 +1,42 @@
+{
+  "_comment": "AUROS AI — Client Configuration Template. Copy this file to portfolio/client_{slug}/client_config.json and fill in the values.",
+
+  "company_name": "",
+  "slug": "",
+  "industry": "",
+  "website": "",
+
+  "social_handles": {
+    "instagram": "",
+    "other": []
+  },
+
+  "email_recipients": [],
+
+  "products": [
+    {
+      "name": "",
+      "slug": "",
+      "tagline": "",
+      "description": "",
+      "audience": "",
+      "emotional_hooks": [],
+      "visual_keywords": [],
+      "instagram": "",
+      "tone": "",
+      "brand_colors": {
+        "primary": "",
+        "secondary": "",
+        "accent": ""
+      }
+    }
+  ],
+
+  "target_platforms": ["instagram"],
+  "default_tone": "",
+
+  "pipeline_config": {
+    "newsletter_recipient": "",
+    "report_recipient": ""
+  }
+}

@@ -13,6 +13,7 @@ from pathlib import Path
 
 from agents.shared.config import PROJECT_ROOT, PORTFOLIO_DIR
 from agents.shared.llm import generate
+from agents.shared.client_config import load_client_config
 
 
 def generate_clip_plan(
@@ -158,12 +159,26 @@ def generate_repurposing_matrix(
     return matrix
 
 
+def _default_exhibition(company: str) -> str:
+    """Return the first product name from client config, or a generic fallback."""
+    try:
+        cfg = load_client_config(company)
+        products = cfg.get("products", [])
+        if products:
+            return products[0].get("name", "Exhibition")
+    except (FileNotFoundError, Exception):
+        pass
+    return "Exhibition"
+
+
 def run(
     company: str = "The Imagine Team",
-    exhibition: str = "Harry Potter: The Exhibition",
+    exhibition: str | None = None,
     video_description: str | None = None,
 ) -> dict:
     """Run the full video repurposing workflow."""
+    if exhibition is None:
+        exhibition = _default_exhibition(company)
     slug = company.lower().replace(" ", "_")
     client_dir = PORTFOLIO_DIR / f"client_{slug}"
     output_dir = client_dir / "content" / "repurposed_clips"
@@ -205,7 +220,7 @@ if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser(description="AUROS Opus Clip Video Repurposer")
     parser.add_argument("--company", default="The Imagine Team")
-    parser.add_argument("--exhibition", default="Harry Potter: The Exhibition")
+    parser.add_argument("--exhibition", default=None)
     parser.add_argument("--video-desc", help="Description of source video")
     args = parser.parse_args()
 

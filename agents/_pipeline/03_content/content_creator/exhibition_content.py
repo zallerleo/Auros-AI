@@ -20,6 +20,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 
 from agents.shared.config import PORTFOLIO_DIR
 from agents.shared.llm import generate
+from agents.shared.client_config import load_client_config
 
 
 def _load_knowledge() -> str:
@@ -31,53 +32,22 @@ def _load_knowledge() -> str:
 
 
 # ─── EXHIBITION DATA ───
+# Loaded dynamically from client_config.json products.
+# Fallback: empty list (the generate function will warn and exit early).
 
-EXHIBITIONS = [
-    {
-        "name": "Harry Potter: The Exhibition",
-        "slug": "harry_potter",
-        "tagline": "Step inside the wizarding world",
-        "description": "The most comprehensive touring exhibition about Harry Potter film-making magic, including Fantastic Beasts and Cursed Child elements. Immersive environments, authentic props, costumes, and magical creatures.",
-        "audience": "Families, millennials, Gen Z, Harry Potter fans, pop culture enthusiasts",
-        "emotional_hooks": ["nostalgia", "childhood magic", "belonging to a world", "wonder", "FOMO"],
-        "visual_keywords": ["golden light through castle windows", "wands and spells", "Hogwarts Great Hall", "magical creatures", "robes and sorting hat", "Diagon Alley"],
-        "instagram": "@harrypotter_exhibition",
-        "tone": "Magical, inviting, wonder-filled, slightly mysterious",
-    },
-    {
-        "name": "Titanic: The Exhibition",
-        "slug": "titanic",
-        "tagline": "Experience history like never before",
-        "description": "Over 300 artifacts from Titanic and her sister ships. Vividly brings to life the dramatic story of the most famous ship ever built — the luxury, the people, the tragedy, the legacy.",
-        "audience": "History enthusiasts, families, educators, tourists, 25-65 age range",
-        "emotional_hooks": ["awe at scale", "human stories", "tragedy and beauty", "time travel", "respect"],
-        "visual_keywords": ["grand staircase", "ship hull at night", "period costumes", "artifacts under glass", "ocean depth", "opulent interiors"],
-        "instagram": "@titanicexhibition",
-        "tone": "Cinematic, reverent, dramatic, emotionally powerful",
-    },
-    {
-        "name": "Imagine Van Gogh",
-        "slug": "van_gogh",
-        "tagline": "Step inside the paintings",
-        "description": "An immersive experience deep inside Van Gogh's iconic paintings from his last years. Over 200 works of art projected in massive scale, surrounded by classical music. Walk through Starry Night.",
-        "audience": "Art lovers, date night couples, Instagram-savvy millennials, culture seekers",
-        "emotional_hooks": ["beauty overload", "Instagrammable moments", "art as experience", "emotional depth", "sensory immersion"],
-        "visual_keywords": ["Starry Night projected on walls", "sunflower fields wrapping around you", "swirling colors at massive scale", "silhouettes in light", "brushstrokes you can walk through"],
-        "instagram": "@imaginevangogh",
-        "tone": "Poetic, breathtaking, intimate yet grand, visually intoxicating",
-    },
-    {
-        "name": "Ice Dinosaurs",
-        "slug": "ice_dinosaurs",
-        "tagline": "Discover the frozen giants",
-        "description": "Newly discovered Arctic-dwelling dinosaurs never-before-seen in an exhibition. Built around groundbreaking paleontological discoveries that expand our understanding of dinosaur physiology and migration.",
-        "audience": "Families with kids 4-14, science enthusiasts, educators, school groups",
-        "emotional_hooks": ["discovery", "wow factor", "kid excitement", "new science", "adventure"],
-        "visual_keywords": ["massive dinosaur in ice cave", "frozen tundra environment", "kid looking up at giant skeleton", "aurora borealis backdrop", "interactive dig site"],
-        "instagram": "@theimagineteam",
-        "tone": "Exciting, adventurous, awe-inspiring, educational but fun",
-    },
-]
+_FALLBACK_EXHIBITIONS: list[dict] = []
+
+
+def _load_exhibitions(company: str) -> list[dict]:
+    """Return exhibition/product list from client config, with safe fallback."""
+    try:
+        cfg = load_client_config(company)
+        products = cfg.get("products", [])
+        if products:
+            return products
+    except FileNotFoundError:
+        pass
+    return _FALLBACK_EXHIBITIONS
 
 
 # ─── VIDEO AD SCRIPTS (EXHIBITION-SPECIFIC) ───
@@ -251,7 +221,12 @@ def generate_exhibition_content(company: str) -> dict:
     knowledge = _load_knowledge()[:3000]
     all_results = {}
 
-    for exhibition in EXHIBITIONS:
+    exhibitions = _load_exhibitions(company)
+    if not exhibitions:
+        print("[AUROS] No products/exhibitions found in client config. Skipping.")
+        return all_results
+
+    for exhibition in exhibitions:
         exhibit_name = exhibition["name"]
         exhibit_slug = exhibition["slug"]
         exhibit_dir = content_dir / exhibit_slug
@@ -345,14 +320,14 @@ def generate_exhibition_content(company: str) -> dict:
 
     # Generate master production brief
     print("\n[AUROS] Building master production brief...")
-    _render_exhibition_brief(company, all_results, content_dir, today)
+    _render_exhibition_brief(company, all_results, content_dir, today, exhibitions)
 
     # Summary
     total_scripts = sum(len(r["scripts"].get("scripts", [])) for r in all_results.values())
     total_posts = sum(len(r["posts"].get("posts", [])) for r in all_results.values())
     total_hooks = sum(len(r["hooks"].get("hooks", [])) for r in all_results.values())
     print(f"\n[AUROS] ═══ CONTENT PRODUCTION COMPLETE ═══")
-    print(f"[AUROS] {len(EXHIBITIONS)} exhibitions")
+    print(f"[AUROS] {len(exhibitions)} exhibitions")
     print(f"[AUROS] {total_scripts} video scripts")
     print(f"[AUROS] {total_posts} social posts")
     print(f"[AUROS] {total_hooks} hooks")
@@ -366,12 +341,14 @@ def _render_exhibition_brief(
     all_results: dict,
     content_dir: Path,
     today: str,
+    exhibitions: list[dict] | None = None,
 ) -> None:
     """Render master production brief as HTML."""
+    exhibitions = exhibitions or []
     sections_html = ""
 
     for slug, data in all_results.items():
-        exhibit_info = next((e for e in EXHIBITIONS if e["slug"] == slug), {})
+        exhibit_info = next((e for e in exhibitions if e.get("slug") == slug), {})
         exhibit_name = exhibit_info.get("name", slug)
 
         # Scripts

@@ -20,6 +20,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 
 from agents.shared.config import PORTFOLIO_DIR
 from agents.shared.llm import generate
+from agents.shared.client_config import load_client_config
 
 
 def _load_latest_json(client_dir: Path, prefix: str) -> dict | None:
@@ -214,16 +215,27 @@ def generate_content(company: str) -> dict:
     brand = _load_latest_json(client_dir, "brand_identity") or {}
     plan = _load_latest_json(client_dir, "marketing_plan") or {}
 
+    # Load client config (with fallbacks for missing config)
+    try:
+        client_cfg = load_client_config(company)
+    except FileNotFoundError:
+        client_cfg = {}
+
+    cfg_industry = client_cfg.get("industry", "experiential design / entertainment exhibitions")
+    cfg_handles = client_cfg.get("social_handles", {})
+    social_list = [cfg_handles.get("instagram", "")] + cfg_handles.get("other", [])
+    social_list = [h for h in social_list if h]  # drop blanks
+
     company_context = json.dumps({
         "company": company,
-        "industry": "experiential design / entertainment exhibitions",
+        "industry": cfg_industry,
         "audit_summary": audit.get("executive_summary", ""),
         "swot": audit.get("swot", {}),
         "brand_colors": brand.get("colors", {}),
         "brand_voice": brand.get("voice", {}),
         "content_pillars": plan.get("content_strategy", {}).get("content_pillars", []),
         "target_audience": plan.get("target_audience", {}),
-        "social_handles": ["@theimagineteam", "@harrypotter_exhibition"],
+        "social_handles": social_list or ["@company"],
     }, indent=2)[:6000]
 
     knowledge = _load_knowledge()[:4000]

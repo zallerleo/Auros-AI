@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AUROS AI — Marketing Proposal for {{COMPANY_NAME}}</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@200;300;400;500;600&family=Space+Mono:wght@400;700&display=swap');
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+:root {
+  --gold: #c9a84c;
+  --gold-light: #e8d48b;
+  --gold-dark: #8a6d2b;
+  --bg: #08080c;
+  --bg-card: #0e0e14;
+  --bg-elevated: #14141c;
+  --text: #f0ece4;
+  --text-secondary: #8a8692;
+  --text-muted: #5a5664;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Outfit', system-ui, sans-serif;
+  --mono: 'Space Mono', monospace;
+  --green: #34d399;
+}
+
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.page { max-width: 900px; margin: 0 auto; padding: 4rem 3rem; }
+
+/* ── Cover ── */
+.cover {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-bottom: 1px solid rgba(201,168,76,0.08);
+  margin-bottom: 4rem;
+  padding-bottom: 4rem;
+}
+
+.cover-logo {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-weight: 300;
+  letter-spacing: 0.4em;
+  color: var(--gold);
+  margin-bottom: 4rem;
+}
+
+.cover-title {
+  font-family: var(--serif);
+  font-size: 4rem;
+  font-weight: 300;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.cover-title .gold { color: var(--gold); }
+
+.cover-sub {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 3rem;
+}
+
+.cover-meta {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.cover-meta span { margin: 0 1rem; }
+
+/* ── Section ── */
+.section {
+  margin-bottom: 4rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid rgba(201,168,76,0.06);
+}
+
+.section:last-child { border-bottom: none; }
+
+.section-label {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.section-label::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--gold-dark);
+}
+
+.section h2 {
+  font-family: var(--serif);
+  font-size: 2.2rem;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+}
+
+.section p {
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 1rem;
+  max-width: 700px;
+}
+
+/* ── Audit Findings ── */
+.findings-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.finding {
+  background: var(--bg-card);
+  border: 1px solid rgba(201,168,76,0.06);
+  padding: 1.5rem;
+}
+
+.finding-label {
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.5rem;
+}
+
+.finding-title {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.finding-text {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.score-bar {
+  margin-top: 0.75rem;
+  height: 4px;
+  background: rgba(201,168,76,0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.score-fill {
+  height: 100%;
+  background: var(--gold);
+  border-radius: 2px;
+  transition: width 0.6s ease;
+}
+
+/* ── Package ── */
+.package {
+  background: var(--bg-card);
+  border: 1px solid rgba(201,168,76,0.1);
+  padding: 3rem;
+  margin-top: 2rem;
+}
+
+.package-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(201,168,76,0.06);
+}
+
+.package-name {
+  font-family: var(--serif);
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+.package-price {
+  text-align: right;
+}
+
+.package-amount {
+  font-family: var(--serif);
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--gold);
+}
+
+.package-period {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+}
+
+.deliverables {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+}
+
+.deliverables li {
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.deliverables li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold-dark);
+  flex-shrink: 0;
+}
+
+/* ── Timeline ── */
+.timeline {
+  margin-top: 2rem;
+}
+
+.timeline-row {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid rgba(201,168,76,0.04);
+}
+
+.timeline-week {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  color: var(--gold-dark);
+  text-transform: uppercase;
+  padding-top: 0.2rem;
+}
+
+.timeline-title {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-bottom: 0.3rem;
+}
+
+.timeline-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ── Terms ── */
+.terms-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.term-item {
+  padding: 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid rgba(201,168,76,0.04);
+}
+
+.term-label {
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.5rem;
+}
+
+.term-value {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+/* ── CTA ── */
+.proposal-cta {
+  text-align: center;
+  padding: 4rem 2rem;
+  margin-top: 2rem;
+  background: var(--bg-card);
+  border: 1px solid rgba(201,168,76,0.1);
+}
+
+.proposal-cta h2 {
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.proposal-cta p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  max-width: 400px;
+  margin: 0 auto 2rem;
+}
+
+.cta-btn {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 1rem 3rem;
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+  color: var(--bg);
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media print {
+  body { background: white; color: #1a1a1a; }
+  .page { padding: 2rem; }
+  .cover { min-height: auto; page-break-after: always; }
+  .section { page-break-inside: avoid; }
+  .package, .finding, .term-item { border-color: #ddd; background: #f9f9f9; }
+  .cover-logo, .section-label, .finding-label, .timeline-week, .term-label { color: #8a6d2b; }
+  .gold, .package-amount { color: #8a6d2b; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- COVER -->
+  <div class="cover">
+    <p class="cover-logo">AUROS AI</p>
+    <h1 class="cover-title">Marketing Proposal for<br><span class="gold">{{COMPANY_NAME}}</span></h1>
+    <p class="cover-sub">AI-powered marketing systems designed to grow your business.</p>
+    <p class="cover-meta">
+      Prepared {{DATE}}
+      <span>|</span>
+      By Leo Zaller, Founder
+      <span>|</span>
+      Confidential
+    </p>
+  </div>
+
+  <!-- EXECUTIVE SUMMARY -->
+  <div class="section">
+    <p class="section-label">Executive Summary</p>
+    <h2>The Opportunity</h2>
+    <p>{{EXECUTIVE_SUMMARY}}</p>
+  </div>
+
+  <!-- AUDIT FINDINGS -->
+  <div class="section">
+    <p class="section-label">Current State</p>
+    <h2>What We Found</h2>
+    <p>We conducted a comprehensive analysis of {{COMPANY_NAME}}'s digital presence, competitive landscape, and market positioning. Here are the key findings:</p>
+    <div class="findings-grid">
+      <div class="finding">
+        <p class="finding-label">Website & SEO</p>
+        <p class="finding-title">{{FINDING_1_TITLE}}</p>
+        <p class="finding-text">{{FINDING_1_TEXT}}</p>
+        <div class="score-bar"><div class="score-fill" style="width: {{FINDING_1_SCORE}}%"></div></div>
+      </div>
+      <div class="finding">
+        <p class="finding-label">Social Presence</p>
+        <p class="finding-title">{{FINDING_2_TITLE}}</p>
+        <p class="finding-text">{{FINDING_2_TEXT}}</p>
+        <div class="score-bar"><div class="score-fill" style="width: {{FINDING_2_SCORE}}%"></div></div>
+      </div>
+      <div class="finding">
+        <p class="finding-label">Content Strategy</p>
+        <p class="finding-title">{{FINDING_3_TITLE}}</p>
+        <p class="finding-text">{{FINDING_3_TEXT}}</p>
+        <div class="score-bar"><div class="score-fill" style="width: {{FINDING_3_SCORE}}%"></div></div>
+      </div>
+      <div class="finding">
+        <p class="finding-label">Lead Generation</p>
+        <p class="finding-title">{{FINDING_4_TITLE}}</p>
+        <p class="finding-text">{{FINDING_4_TEXT}}</p>
+        <div class="score-bar"><div class="score-fill" style="width: {{FINDING_4_SCORE}}%"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RECOMMENDED PACKAGE -->
+  <div class="section">
+    <p class="section-label">Recommendation</p>
+    <h2>Your Custom Package</h2>
+    <p>Based on our audit findings, we recommend the following package to maximize your marketing ROI:</p>
+    <div class="package">
+      <div class="package-header">
+        <div>
+          <p class="package-name">{{PACKAGE_NAME}} Plan</p>
+        </div>
+        <div class="package-price">
+          <p class="package-amount">${{PACKAGE_PRICE}}</p>
+          <p class="package-period">per month</p>
+        </div>
+      </div>
+      <ul class="deliverables">
+        {{DELIVERABLES}}
+      </ul>
+    </div>
+  </div>
+
+  <!-- TIMELINE -->
+  <div class="section">
+    <p class="section-label">Implementation</p>
+    <h2>Getting Started</h2>
+    <p>Here's what the first 90 days look like:</p>
+    <div class="timeline">
+      <div class="timeline-row">
+        <p class="timeline-week">Week 1</p>
+        <div>
+          <p class="timeline-title">Onboarding & Brand Setup</p>
+          <p class="timeline-desc">Brand voice calibration, content pillar definition, platform access setup, and competitor baseline analysis.</p>
+        </div>
+      </div>
+      <div class="timeline-row">
+        <p class="timeline-week">Week 2-3</p>
+        <div>
+          <p class="timeline-title">Strategy & First Content</p>
+          <p class="timeline-desc">90-day marketing plan delivery, content calendar approval, first batch of social posts and blog articles created.</p>
+        </div>
+      </div>
+      <div class="timeline-row">
+        <p class="timeline-week">Week 4</p>
+        <div>
+          <p class="timeline-title">Launch & Optimize</p>
+          <p class="timeline-desc">Full content publishing begins, lead generation pipeline activated, initial performance benchmarks established.</p>
+        </div>
+      </div>
+      <div class="timeline-row">
+        <p class="timeline-week">Month 2-3</p>
+        <div>
+          <p class="timeline-title">Scale & Report</p>
+          <p class="timeline-desc">Performance optimization based on real data, content volume ramp-up, monthly reporting with actionable insights.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TERMS -->
+  <div class="section">
+    <p class="section-label">Terms</p>
+    <h2>Simple Terms</h2>
+    <div class="terms-grid">
+      <div class="term-item">
+        <p class="term-label">Commitment</p>
+        <p class="term-value">Month-to-month</p>
+      </div>
+      <div class="term-item">
+        <p class="term-label">Billing</p>
+        <p class="term-value">Monthly, in advance</p>
+      </div>
+      <div class="term-item">
+        <p class="term-label">Cancellation</p>
+        <p class="term-value">30-day notice</p>
+      </div>
+      <div class="term-item">
+        <p class="term-label">Setup Fee</p>
+        <p class="term-value">{{SETUP_FEE}}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="proposal-cta">
+    <h2>Ready to get started?</h2>
+    <p>Let's put your marketing on autopilot. Book a call to finalize details and kick off onboarding.</p>
+    <a href="https://cal.com/auros-ai/intro" class="cta-btn">Book Onboarding Call</a>
+  </div>
+
+</div>
+</body>
+</html>

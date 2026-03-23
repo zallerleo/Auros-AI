@@ -11,6 +11,7 @@ import subprocess
 from pathlib import Path
 
 from agents.shared.config import PROJECT_ROOT, PORTFOLIO_DIR
+from agents.shared.client_config import load_client_config, get_client_dir
 
 
 PACKAGE_JSON = '{"name":"auros-video-ads","version":"1.0.0","private":true,"scripts":{"studio":"npx remotion studio","render":"npx remotion render"},"dependencies":{"@remotion/cli":"^4.0.0","react":"^18.2.0","react-dom":"^18.2.0","remotion":"^4.0.0"},"devDependencies":{"typescript":"^5.0.0","@types/react":"^18.2.0"}'
@@ -24,7 +25,20 @@ def check_remotion_installed():
         return False
 
 
-def _get_exhibition_colors(exhibition):
+def _get_exhibition_colors(exhibition: str, company: str | None = None) -> dict:
+    """Look up brand colors from client config products, with hardcoded fallbacks."""
+    default_colors = {"brand": "#0B0F1A", "accent": "#C9A84C"}
+    if company:
+        try:
+            cfg = load_client_config(company)
+            for product in cfg.get("products", []):
+                if product.get("name", "").lower() in exhibition.lower() or exhibition.lower() in product.get("name", "").lower():
+                    bc = product.get("brand_colors", {})
+                    if bc.get("brand") or bc.get("accent"):
+                        return {"brand": bc.get("brand", default_colors["brand"]), "accent": bc.get("accent", default_colors["accent"])}
+        except (FileNotFoundError, Exception):
+            pass
+    # Legacy hardcoded fallbacks
     name = exhibition.lower()
     if "harry potter" in name:
         return {"brand": "#5C1A1A", "accent": "#C9A84C"}
@@ -34,7 +48,7 @@ def _get_exhibition_colors(exhibition):
         return {"brand": "#1a2e0a", "accent": "#E8C96A"}
     elif "dinosaur" in name or "ice" in name:
         return {"brand": "#0a1e2e", "accent": "#93c5fd"}
-    return {"brand": "#0B0F1A", "accent": "#C9A84C"}
+    return default_colors
 
 
 def _ad_template_15s(brand, accent):
@@ -192,16 +206,19 @@ export const RemotionRoot:React.FC = () => {
 };'''.replace('BRAND_COLOR', brand).replace('ACCENT_COLOR', accent)
 
 
-def generate_video_project(script_data, exhibition, output_dir=None):
+def generate_video_project(script_data, exhibition, output_dir=None, company=None):
     if output_dir is None:
-        output_dir = str(PORTFOLIO_DIR / "client_the_imagine_team" / "video_projects")
+        if company:
+            output_dir = str(get_client_dir(company) / "video_projects")
+        else:
+            output_dir = str(PORTFOLIO_DIR / "client_the_imagine_team" / "video_projects")
 
     safe_name = exhibition.lower().replace(" ", "_").replace(":", "")
     project_dir = Path(output_dir) / safe_name
     src_dir = project_dir / "src"
     src_dir.mkdir(parents=True, exist_ok=True)
 
-    colors = _get_exhibition_colors(exhibition)
+    colors = _get_exhibition_colors(exhibition, company=company)
     scripts = script_data.get("scripts", [])
     headline = scripts[0].get("title", exhibition) if scripts else exhibition
     cta_raw = scripts[0].get("cta", "Get Tickets Now") if scripts else "Get Tickets Now"

@@ -12,6 +12,7 @@ from datetime import datetime
 from pathlib import Path
 
 from agents.shared.config import PROJECT_ROOT, PORTFOLIO_DIR
+from agents.shared.client_config import list_clients
 
 
 # ---------------------------------------------------------------------------
@@ -129,8 +130,16 @@ def generate_make_blueprint(workflow_id: str) -> dict:
     return blueprint
 
 
-def generate_cron_schedule() -> dict:
-    """Generate crontab entries for all scheduled workflows."""
+def generate_cron_schedule(client: str = "The Imagine Team") -> dict:
+    """Generate crontab entries for all scheduled workflows.
+
+    Parameters
+    ----------
+    client : str
+        Company name to use in per-client cron commands.  Defaults to
+        "The Imagine Team" for backward compatibility, but callers should
+        pass the active client name or iterate over ``list_clients()``.
+    """
     project_root = str(PROJECT_ROOT)
     venv_python = f"{project_root}/venv/bin/python"
 
@@ -147,18 +156,18 @@ def generate_cron_schedule() -> dict:
         },
         "performance_check": {
             "cron": "0 18 * * *",
-            "command": f'cd "{project_root}" && {venv_python} -m agents.performance_tracker.performance_agent --company "The Imagine Team"',
-            "description": "Daily performance check at 6 PM",
+            "command": f'cd "{project_root}" && {venv_python} -m agents.performance_tracker.performance_agent --company "{client}"',
+            "description": f"Daily performance check at 6 PM — {client}",
         },
         "geo_monitor": {
             "cron": "0 10 * * 1",
-            "command": f'cd "{project_root}" && {venv_python} -m agents.geo_monitor.geo_agent --company "The Imagine Team" --city "Barcelona"',
-            "description": "Weekly GEO monitoring Mondays at 10 AM",
+            "command": f'cd "{project_root}" && {venv_python} -m agents.geo_monitor.geo_agent --company "{client}" --city "Barcelona"',
+            "description": f"Weekly GEO monitoring Mondays at 10 AM — {client}",
         },
         "monthly_report": {
             "cron": "0 9 1 * *",
-            "command": f'cd "{project_root}" && {venv_python} -m agents.client_reports.report_agent --company "The Imagine Team"',
-            "description": "Monthly client report on the 1st at 9 AM",
+            "command": f'cd "{project_root}" && {venv_python} -m agents.client_reports.report_agent --company "{client}"',
+            "description": f"Monthly client report on the 1st at 9 AM — {client}",
         },
     }
 

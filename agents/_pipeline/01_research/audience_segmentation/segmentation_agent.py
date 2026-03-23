@@ -20,6 +20,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 
 from agents.shared.config import PORTFOLIO_DIR
 from agents.shared.llm import generate
+from agents.shared.client_config import load_client_config
 
 
 def _load_latest_json(client_dir: Path, prefix: str) -> dict | None:
@@ -97,6 +98,28 @@ EXHIBITION_SEGMENTS_HINT = """Since this is an exhibition / experiential enterta
 Adapt these archetypes to the specific exhibition context provided."""
 
 
+def _build_segments_hint(company: str, exhibition: str | None) -> str:
+    """Build segment hints dynamically from client config industry, with fallback."""
+    try:
+        cfg = load_client_config(company)
+        industry = cfg.get("industry", "")
+    except (FileNotFoundError, Exception):
+        industry = ""
+
+    # If the client is in the exhibition / experiential space, use the curated hint
+    exhibition_keywords = ["exhibition", "experiential", "museum", "immersive", "entertainment"]
+    if exhibition or any(kw in industry.lower() for kw in exhibition_keywords):
+        return EXHIBITION_SEGMENTS_HINT
+
+    # Generic industry-aware hint
+    if industry:
+        return f"""Since this client operates in the {industry} industry, generate segments that are highly relevant to that space.
+Consider the typical buyer personas, decision-makers, and end-users in {industry}.
+Adapt the segment archetypes to the specific context provided."""
+
+    return ""
+
+
 def run(company: str, exhibition: str | None = None) -> dict:
     """Run audience segmentation for a company."""
     today = datetime.now().strftime("%Y-%m-%d")
@@ -129,7 +152,7 @@ def run(company: str, exhibition: str | None = None) -> dict:
     exhibition_hint = ""
     if exhibition:
         exhibition_context = f"EXHIBITION: {exhibition}"
-        exhibition_hint = EXHIBITION_SEGMENTS_HINT
+    exhibition_hint = _build_segments_hint(company, exhibition)
 
     print("[AUROS] Generating audience segments via Claude...")
     prompt = SEGMENTATION_PROMPT.format(
