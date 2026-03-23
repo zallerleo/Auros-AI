@@ -26,6 +26,8 @@ TAVILY_API_KEY = os.getenv("TAVILY_API_KEY", "")
 RESEND_API_KEY = os.getenv("RESEND_API_KEY", "")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
 PERPLEXITY_API_KEY = os.getenv("PERPLEXITY_API_KEY", "")
+FAL_API_KEY = os.getenv("FAL_API_KEY", "")
+BUFFER_ACCESS_TOKEN = os.getenv("BUFFER_ACCESS_TOKEN", "")
 
 # Lead Gen & Website Pipeline
 GOOGLE_PLACES_API_KEY = os.getenv("GOOGLE_PLACES_API_KEY", "")
