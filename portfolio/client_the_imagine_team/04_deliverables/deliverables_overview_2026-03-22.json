@@ -1,0 +1,207 @@
+{
+  "document_type": "Campaign Deliverables Overview",
+  "client": "The Imagine Team",
+  "campaign": "Harry Potter & Titanic Ticket Sales Campaign",
+  "date": "2026-03-22",
+  "prepared_by": "JARVIS (AUROS AI)",
+  "introduction": {
+    "headline": "Turn Spectators into Ticket Buyers",
+    "subheading": "A Complete Content + Conversion Strategy for Your Immersive Exhibitions",
+    "overview": "This campaign reimagines exhibition marketing around one core truth: people don't hesitate on logistics \u2014 they hesitate on emotional commitment. By creating cinematic content that conveys the emotional weight and urgency of these once-in-a-lifetime experiences, we drive immediate ticket purchases.",
+    "methodology": "Every piece of content is tied to a conversion metric. We don't measure success in likes \u2014 we measure it in tickets sold."
+  },
+  "phase_1_30_day_pilot": {
+    "duration": "30 days",
+    "focus": "One exhibition (Harry Potter OR Titanic) \u2014 prove the model works",
+    "investment": 2500,
+    "content_deliverables": {
+      "video_scripts": {
+        "count": 6,
+        "breakdown": "3 exhibitions \u00d7 2 versions (15s + 30s), OR 1 exhibition \u00d7 (15s + 30s + 60s)",
+        "format": "Shot-by-shot breakdown with production notes, text overlays, voiceover direction, music cues",
+        "production_notes": "Ready for videographer or editing with stock footage"
+      },
+      "social_media_posts": {
+        "count": 20,
+        "platforms": "Instagram (carousel + feed), TikTok, Facebook, Stories",
+        "format": "Copy + visual recommendations, hashtag research, posting schedule"
+      },
+      "carousel_ads": {
+        "count": 4,
+        "format": "5-image sequences, each with copy variations",
+        "includes": "Headline variants (6 per carousel for A/B testing), CTA buttons"
+      },
+      "hooks_bank": {
+        "count": 10,
+        "style": "Scroll-stopping, FOMO-driven, psychological triggers"
+      },
+      "production_brief": {
+        "format": "HTML document showing all assets, specs, and production requirements"
+      }
+    },
+    "strategy_deliverables": {
+      "creative_brief": "Emotional direction, visual palette, messaging pillars for chosen exhibition",
+      "platform_strategy": "Which content goes where and why (TikTok vs Facebook vs YouTube)",
+      "audience_targeting": "Demographics, interests, behaviors of high-intent ticket buyers",
+      "ad_copy_testing": "6 variations per ad for multivariate testing",
+      "posting_calendar": "30-day content schedule with optimal posting times"
+    },
+    "management_and_reporting": {
+      "campaign_setup": "Ad account configuration, audience creation, pixel setup",
+      "daily_monitoring": "CTR, CPC, conversion tracking",
+      "weekly_optimization": "Pause underperformers, increase spend on winners",
+      "weekly_reports": "Performance metrics vs targets, recommendations for next week",
+      "iterations": "2 content refreshes based on performance data"
+    },
+    "success_metrics": {
+      "target_cost_per_ticket": "< $40 by end of month",
+      "target_roas": "> 1.5:1",
+      "target_add_to_cart_rate": "> 5%",
+      "target_checkout_completion": "> 55%"
+    }
+  },
+  "phase_2_3_month_growth": {
+    "duration": "90 days",
+    "focus": "Both exhibitions, scaling proven strategy",
+    "investment": 9500,
+    "per_month": 9500,
+    "expansion_from_pilot": [
+      "Add second exhibition (now running Harry Potter + Titanic simultaneously)",
+      "Increase content production (more variations, faster iteration)",
+      "Expand audience reach (lookalike audiences, broader targeting)",
+      "Add paid search (Google Ads targeting exhibition keywords)",
+      "Implement retargeting campaigns (warm audience conversion)"
+    ],
+    "monthly_content_production": {
+      "video_ads": "6 per exhibition (18 total) \u2014 new scripts every 2 weeks",
+      "social_posts": "40 per exhibition (80 total) \u2014 diverse formats and angles",
+      "carousel_ads": "8 per exhibition (16 total) \u2014 continuous A/B testing",
+      "hooks": "30+ variations rotating weekly",
+      "copy_variations": "12+ headline/body/CTA combinations per campaign"
+    },
+    "platform_expansion": {
+      "tiktok_instagram_reels": "Awareness + reach building (40% of budget)",
+      "facebook_instagram_feed": "Targeted conversion (35% of budget)",
+      "google_ads": "High-intent search capture (20% of budget)",
+      "youtube": "Video storytelling + brand building (10% of budget)",
+      "retargeting": "Warm audience conversion (5% of budget)"
+    },
+    "optimization_cycle": {
+      "frequency": "Weekly",
+      "process": "Review data \u2192 identify winners \u2192 increase spend \u2192 test new angles",
+      "iteration": "4 major creative refreshes over 90 days",
+      "scale_strategy": "3x spend on top-performing assets"
+    },
+    "reporting": {
+      "frequency": "Weekly + monthly comprehensive",
+      "includes": "CTR, CPC, conversion rate, tickets sold, revenue, ROAS, trend analysis",
+      "strategy_calls": "Monthly 30-min call reviewing results and planning next month"
+    }
+  },
+  "phase_3_premium_with_custom_video": {
+    "duration": "90 days",
+    "focus": "Both exhibitions + professional video shoot",
+    "investment": 15000,
+    "per_month": 15000,
+    "video_production_addition": {
+      "shoot_day": "1 full day of professional video production at exhibition",
+      "deliverable": "50-100 custom video clips for ad integration",
+      "includes": "Cinematographer, color grading, music, professional editing",
+      "usage": "Custom footage integrated into ads, increasing authenticity + performance"
+    },
+    "dedicated_support": {
+      "account_manager": "Dedicated person for your account",
+      "response_time": "24-hour response to questions/needs",
+      "strategy_calls": "Bi-weekly optimization calls",
+      "quarterly_review": "Deep-dive ROI analysis and planning"
+    }
+  },
+  "how_we_measure_success": {
+    "level_1_engagement": {
+      "metrics": [
+        "Video view rate",
+        "Click-through rate",
+        "Engagement rate"
+      ],
+      "targets": [
+        "50%+ video completion",
+        "2-3% CTR",
+        "3-5% engagement"
+      ]
+    },
+    "level_2_consideration": {
+      "metrics": [
+        "Website traffic",
+        "Time on page",
+        "Add-to-cart rate"
+      ],
+      "targets": [
+        "1K+ clicks/week",
+        "30s+ average session",
+        "8-10% ATC"
+      ]
+    },
+    "level_3_conversion": {
+      "metrics": [
+        "Tickets sold",
+        "Revenue generated",
+        "Cost per ticket"
+      ],
+      "targets": [
+        "150-180/month (Growth)",
+        "Cost/ticket < $35",
+        "3:1 ROAS"
+      ]
+    },
+    "level_4_expansion": {
+      "metrics": [
+        "Referral rate",
+        "Repeat visitors",
+        "Organic mentions"
+      ],
+      "targets": [
+        "15%+ referral rate",
+        "20%+ repeat traffic",
+        "Word-of-mouth lift"
+      ]
+    }
+  },
+  "risk_factors_and_mitigation": {
+    "low_initial_conversion": {
+      "risk": "First 2 weeks may show low ROAS while algorithm learns",
+      "mitigation": "We expect this. Focus on getting 100+ conversions for algorithm to optimize."
+    },
+    "creative_fatigue": {
+      "risk": "Same ad shown too many times = declining performance",
+      "mitigation": "Continuous refresh cycle (new variations weekly)"
+    },
+    "audience_too_small": {
+      "risk": "Exhausting available audience on platform",
+      "mitigation": "Expand to new platforms (Google, YouTube) + lookalike audiences"
+    },
+    "external_factors": {
+      "risk": "Exhibition closed, event postponed, external news",
+      "mitigation": "Flexible pausing/resuming of campaigns, quick messaging pivots"
+    }
+  },
+  "timeline_to_launch": {
+    "day_1": "Strategy kickoff call, exhibition asset collection, audience research",
+    "days_2_5": "Content production (scripts, graphics, ad copy variants)",
+    "days_6_8": "Ad account setup, audience creation, pixel configuration, final review",
+    "day_9": "Campaign launch",
+    "days_10_14": "Initial performance monitoring, first optimizations",
+    "day_15": "First week analysis + recommendations report"
+  },
+  "next_steps": {
+    "step_1": "Confirm exhibition selection (Harry Potter, Titanic, or both)",
+    "step_2": "Provide exhibition assets (photos, video, brand guidelines, pricing structure)",
+    "step_3": "Set up ad accounts access + analytics tracking",
+    "step_4": "Confirm monthly budget ($5K recommended minimum for meaningful scale)",
+    "step_5": "Schedule kickoff call"
+  },
+  "contact_and_questions": {
+    "prepared_by": "JARVIS, AUROS AI",
+    "prepared_for": "The Imagine Team",
+    "date": "2026-03-22"
+  }
+}

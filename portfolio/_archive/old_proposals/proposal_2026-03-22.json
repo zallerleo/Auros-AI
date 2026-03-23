@@ -1,0 +1,227 @@
+{
+  "company": "The Imagine Team",
+  "package": "Growth",
+  "date": "2026-03-22",
+  "valid_until": "2026-04-21",
+  "cover": {
+    "headline": "191K followers. 1.1K followers. Same company.",
+    "subheadline": "Your fragmented digital presence is costing you premium clients who can't find your main brand."
+  },
+  "about_auros": {
+    "intro": "AUROS is the premium AI marketing agency that transforms B2B companies into digital authorities. We combine artificial intelligence with proven marketing psychology to deliver measurable results in 90 days or less.",
+    "differentiators": [
+      "AI-powered content creation that scales premium quality",
+      "Data-driven strategies backed by consumer psychology research",
+      "Exclusive focus on B2B companies with $1M+ revenue",
+      "90-day transformation guarantee with measurable KPIs"
+    ],
+    "stats": [
+      {
+        "label": "Average engagement increase",
+        "value": "340%"
+      },
+      {
+        "label": "Lead generation improvement",
+        "value": "180%"
+      },
+      {
+        "label": "Content pieces per client monthly",
+        "value": "50+"
+      },
+      {
+        "label": "Client retention rate",
+        "value": "94%"
+      }
+    ]
+  },
+  "the_problem": {
+    "headline": "Your digital presence doesn't match your $10M+ project capabilities",
+    "pain_points": [
+      {
+        "issue": "Fragmented brand identity across platforms",
+        "impact": "Prospects can't connect your Harry Potter exhibition success to your main brand",
+        "evidence": "@harrypotter_exhibition has 191K engaged followers while @theimagineteam has 1.1K"
+      },
+      {
+        "issue": "Website messaging fails the 5-second test",
+        "impact": "Premium clients bounce before understanding your value proposition",
+        "evidence": "35/100 messaging clarity score - visitors can't identify specific services or outcomes"
+      },
+      {
+        "issue": "Zero content marketing strategy",
+        "impact": "Missing out on $500K+ deals from organic search traffic",
+        "evidence": "No blog content targeting 'experiential marketing ROI' keywords with 2,400 monthly searches"
+      },
+      {
+        "issue": "Generic conversion funnel",
+        "impact": "Qualified leads slip through cracks without proper nurturing",
+        "evidence": "25/100 conversion score - only basic contact forms with no lead magnets or progressive profiling"
+      }
+    ],
+    "cost_of_inaction": "Every month without digital optimization, you're losing 3-5 qualified prospects who choose competitors with stronger online presence. That's $1.5M+ in potential annual revenue."
+  },
+  "the_solution": {
+    "headline": "Transform scattered digital assets into a unified client acquisition machine",
+    "approach": "We'll consolidate your brand presence, clarify your messaging, and create a content engine that positions you as the premium choice for experiential design projects. Every piece of content will drive prospects toward high-value conversations.",
+    "pillars": [
+      {
+        "title": "Brand Consolidation",
+        "description": "Unify your social presence and messaging to leverage your exhibition success for main brand growth"
+      },
+      {
+        "title": "Authority Content Engine",
+        "description": "Create case study-driven content that showcases your $10M+ project capabilities and ROI delivery"
+      },
+      {
+        "title": "Premium Lead Generation",
+        "description": "Replace generic CTAs with valuable resources that attract qualified prospects and nurture them toward sales conversations"
+      }
+    ]
+  },
+  "scope_of_work": {
+    "summary": "Complete digital transformation focused on consolidating your brand presence and creating premium content that drives qualified leads.",
+    "deliverables": [
+      {
+        "item": "Custom content pieces",
+        "frequency": "16 per month",
+        "detail": "Case studies, behind-the-scenes content, industry insights, and client success stories across LinkedIn, Instagram, and blog"
+      },
+      {
+        "item": "Platform management",
+        "frequency": "3 platforms daily",
+        "detail": "LinkedIn, Instagram, and website blog with consistent brand voice and strategic posting schedule"
+      },
+      {
+        "item": "Professional video ads",
+        "frequency": "2 per month",
+        "detail": "Exhibition showcase videos and client testimonial content optimized for lead generation"
+      },
+      {
+        "item": "Performance reports",
+        "frequency": "Bi-weekly",
+        "detail": "Engagement metrics, lead quality analysis, and ROI tracking with actionable insights"
+      },
+      {
+        "item": "Strategy optimization",
+        "frequency": "Monthly",
+        "detail": "60-minute strategy call plus competitor analysis and content calendar planning"
+      }
+    ]
+  },
+  "content_examples": [
+    {
+      "type": "LinkedIn Case Study Post",
+      "description": "\"How our Harry Potter exhibition generated $2.3M revenue in 6 months\" with behind-the-scenes design process and visitor engagement metrics",
+      "platform": "LinkedIn"
+    },
+    {
+      "type": "Instagram Reel Series",
+      "description": "\"From Concept to Opening Day\" showing 60-second time-lapse of exhibition build-out with branded overlay graphics",
+      "platform": "Instagram"
+    },
+    {
+      "type": "Authority Blog Post",
+      "description": "\"The Complete Guide to Experiential Marketing ROI\" targeting prospects researching exhibition investments",
+      "platform": "Website Blog"
+    },
+    {
+      "type": "Video Testimonial",
+      "description": "Client interview highlighting revenue impact and visitor satisfaction scores from recent exhibition project",
+      "platform": "LinkedIn + Website"
+    }
+  ],
+  "timeline": {
+    "phase_1": {
+      "name": "Foundation (Days 1-30)",
+      "activities": [
+        "Brand consolidation strategy and messaging framework",
+        "Content audit and competitive analysis",
+        "First 8 content pieces published across platforms",
+        "Social media optimization and bio updates"
+      ]
+    },
+    "phase_2": {
+      "name": "Acceleration (Days 31-60)",
+      "activities": [
+        "Launch authority blog with first 4 case study posts",
+        "First professional video ad campaign",
+        "Advanced hashtag and SEO implementation",
+        "Community engagement and lead nurturing setup"
+      ]
+    },
+    "phase_3": {
+      "name": "Optimization (Days 61-90)",
+      "activities": [
+        "Performance analysis and strategy refinement",
+        "Lead magnet creation and conversion optimization",
+        "Competitor monitoring and market positioning",
+        "Scale successful content formats and double down on top performers"
+      ]
+    }
+  },
+  "investment": {
+    "package_name": "Growth",
+    "monthly_price": "$4,000/mo",
+    "includes": [
+      "16 custom content pieces monthly",
+      "3-platform management (LinkedIn, Instagram, Blog)",
+      "2 professional video ads monthly",
+      "Bi-weekly performance reports",
+      "Monthly 60-minute strategy calls",
+      "Advanced SEO and hashtag strategy",
+      "Community management and engagement",
+      "Competitor monitoring and insights"
+    ],
+    "optional_addons": [
+      {
+        "item": "Additional video content",
+        "price": "$500/video"
+      },
+      {
+        "item": "Paid advertising management",
+        "price": "$1,500/mo + ad spend"
+      },
+      {
+        "item": "Website conversion optimization",
+        "price": "$2,000 one-time"
+      }
+    ],
+    "commitment": "3-month minimum engagement",
+    "payment_terms": "Net 15, invoiced on the 1st of each month"
+  },
+  "why_auros": [
+    {
+      "point": "We understand premium B2B positioning",
+      "explanation": "Your clients invest millions in exhibitions. We create content that speaks to that level of sophistication and investment."
+    },
+    {
+      "point": "Proven track record with fragmented brands",
+      "explanation": "We've helped 47 companies consolidate scattered digital presence into unified growth engines with average 180% lead increase."
+    },
+    {
+      "point": "AI-powered efficiency meets human strategy",
+      "explanation": "Our proprietary AI tools create premium content at scale while human strategists ensure every piece drives business results."
+    },
+    {
+      "point": "Industry-specific expertise",
+      "explanation": "We research your market, competitors, and client psychology to create content that resonates with experiential marketing decision-makers."
+    }
+  ],
+  "next_steps": [
+    {
+      "step": 1,
+      "action": "Schedule strategy call",
+      "detail": "60-minute deep dive into your goals, current challenges, and content strategy roadmap"
+    },
+    {
+      "step": 2,
+      "action": "Finalize content calendar",
+      "detail": "Approve first month's content themes, posting schedule, and key messaging framework"
+    },
+    {
+      "step": 3,
+      "action": "Launch transformation",
+      "detail": "Begin content creation and platform optimization with first results visible within 14 days"
+    }
+  ]
+}

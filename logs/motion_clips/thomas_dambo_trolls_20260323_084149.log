@@ -1,0 +1,89 @@
+[
+  {
+    "timestamp": "2026-03-23T08:41:49.333920",
+    "level": "INFO",
+    "message": "Found 5 images (processing up to 5)"
+  },
+  {
+    "timestamp": "2026-03-23T08:41:49.333979",
+    "level": "INFO",
+    "message": "[DRY RUN] Would generate clip from dambo_barefoot_frida.jpg"
+  },
+  {
+    "timestamp": "2026-03-23T08:41:49.333981",
+    "level": "INFO",
+    "message": "  Prompt: Hyper-realistic cinematic scene, lush enchanted forest setting, warm earthy tones, magical whimsical..."
+  },
+  {
+    "timestamp": "2026-03-23T08:41:49.333983",
+    "level": "COST",
+    "message": "  Estimated cost: $0.35"
+  },
+  {
+    "timestamp": "2026-03-23T08:41:49.333987",
+    "level": "INFO",
+    "message": "[DRY RUN] Would generate clip from dambo_explorers_sentosa.jpg"
+  },
+  {
+    "timestamp": "2026-03-23T08:41:49.333988",
+    "level": "INFO",
+    "message": "  Prompt: Hyper-realistic cinematic scene, lush enchanted forest setting, warm earthy tones, magical whimsical..."
+  },
+  {
+    "timestamp": "2026-03-23T08:41:49.333990",
+    "level": "COST",
+    "message": "  Estimated cost: $0.35"
+  },
+  {
+    "timestamp": "2026-03-23T08:41:49.333993",
+    "level": "INFO",
+    "message": "[DRY RUN] Would generate clip from dambo_giants_tour.jpg"
+  },
+  {
+    "timestamp": "2026-03-23T08:41:49.333995",
+    "level": "INFO",
+    "message": "  Prompt: Hyper-realistic cinematic scene, lush enchanted forest setting, warm earthy tones, magical whimsical..."
+  },
+  {
+    "timestamp": "2026-03-23T08:41:49.333996",
+    "level": "COST",
+    "message": "  Estimated cost: $0.35"
+  },
+  {
+    "timestamp": "2026-03-23T08:41:49.333999",
+    "level": "INFO",
+    "message": "[DRY RUN] Would generate clip from dambo_golden_rabbit.jpg"
+  },
+  {
+    "timestamp": "2026-03-23T08:41:49.334001",
+    "level": "INFO",
+    "message": "  Prompt: Hyper-realistic cinematic scene, lush enchanted forest setting, warm earthy tones, magical whimsical..."
+  },
+  {
+    "timestamp": "2026-03-23T08:41:49.334002",
+    "level": "COST",
+    "message": "  Estimated cost: $0.35"
+  },
+  {
+    "timestamp": "2026-03-23T08:41:49.334005",
+    "level": "INFO",
+    "message": "[DRY RUN] Would generate clip from dambo_local_01.jpg"
+  },
+  {
+    "timestamp": "2026-03-23T08:41:49.334006",
+    "level": "INFO",
+    "message": "  Prompt: Hyper-realistic cinematic scene, lush enchanted forest setting, warm earthy tones, magical whimsical..."
+  },
+  {
+    "timestamp": "2026-03-23T08:41:49.334008",
+    "level": "COST",
+    "message": "  Estimated cost: $0.35"
+  },
+  {
+    "timestamp": "2026-03-23T08:41:49.334020",
+    "level": "COST",
+    "message": "Total batch cost: $1.75",
+    "successful": 5,
+    "failed": 0
+  }
+]

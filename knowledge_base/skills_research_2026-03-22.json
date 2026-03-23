@@ -1,0 +1,200 @@
+{
+  "title": "AUROS AI \u2014 Skills & Tools Research Report",
+  "date": "2026-03-22",
+  "source": "Web research across 30+ queries",
+  "install_immediately_free": [
+    {
+      "name": "Anthropic Frontend Design Skill",
+      "type": "skill",
+      "url": "github.com/anthropics/claude-code/plugins/frontend-design",
+      "installs": "277K+",
+      "value": "Premium landing pages, no AI slop aesthetics"
+    },
+    {
+      "name": "Direct Response Copy Skill (free)",
+      "type": "skill",
+      "url": "gist.github.com/boringmarketer/96192770df22ac2a9ff4aed72b4c20f4",
+      "value": "Schwartz, Hopkins, Ogilvy, Halbert frameworks for ticket-selling copy"
+    },
+    {
+      "name": "Corey Haines Marketing Skills",
+      "type": "skill",
+      "url": "github.com/coreyhaines31/marketingskills",
+      "value": "CRO, copywriting, SEO, analytics + product-marketing-context foundation"
+    },
+    {
+      "name": "Email Marketing Bible",
+      "type": "skill",
+      "url": "github.com/CosmoBlk/email-marketing-bible",
+      "value": "65K words, 908 sources, 19 industry playbooks for email campaigns"
+    },
+    {
+      "name": "Remotion Video Skill",
+      "type": "skill",
+      "url": "remotion.dev/docs/ai/skills",
+      "value": "Programmatic video creation from prompts"
+    },
+    {
+      "name": "AI Marketing Claude (Zubair)",
+      "type": "skill",
+      "url": "github.com/zubair-trabzada/ai-marketing-claude",
+      "value": "15 skills with parallel subagents, PDF report generation"
+    },
+    {
+      "name": "Brian Wagner AI Marketing Skills",
+      "type": "skill",
+      "url": "github.com/BrianRWagner/ai-marketing-claude-code-skills",
+      "value": "19 skills, AI search optimization, positioning framework"
+    },
+    {
+      "name": "Kostja94 Marketing Skills",
+      "type": "skill",
+      "url": "github.com/kostja94/marketing-skills",
+      "value": "160+ skills for SEO, content, 40+ page types"
+    },
+    {
+      "name": "Midjourney Prompt Skills",
+      "type": "skill",
+      "url": "mcpmarket.com/tools/skills/midjourney-mastery",
+      "value": "Optimized prompts with 7-Element and F.O.C.A.L frameworks"
+    },
+    {
+      "name": "MCP-Image Skill",
+      "type": "skill",
+      "url": "github.com/shinpr/mcp-image",
+      "value": "AI image generation with Gemini, GPT, Flux, Stable Diffusion"
+    },
+    {
+      "name": "Figma MCP",
+      "type": "mcp",
+      "url": "github.com/figma/mcp-server-guide",
+      "value": "Design-to-code pipeline, pixel-perfect implementation"
+    },
+    {
+      "name": "Canva MCP",
+      "type": "mcp",
+      "url": "canva.com/help/mcp-agent-setup",
+      "value": "Create designs, autofill templates, export as PDF/images"
+    },
+    {
+      "name": "Firecrawl MCP",
+      "type": "mcp",
+      "url": "github.com/firecrawl/firecrawl-mcp-server",
+      "value": "Web scraping, site crawling, SEO audits"
+    },
+    {
+      "name": "Stripe MCP",
+      "type": "mcp",
+      "url": "docs.stripe.com/mcp",
+      "value": "Ticket payment flows"
+    }
+  ],
+  "paid_high_value": [
+    {
+      "name": "Vibe Marketer Skills Pack",
+      "type": "skill",
+      "url": "thevibemarketer.com/skills",
+      "price": "$199 one-time",
+      "value": "10 interconnected skills: positioning, lead-magnet, DR copy, email, keyword, SEO, newsletter, content-atomizer, brand-voice, orchestrator"
+    },
+    {
+      "name": "Klaviyo MCP",
+      "type": "mcp",
+      "value": "Email/SMS automation with revenue tracking"
+    },
+    {
+      "name": "Google Ads MCP",
+      "type": "mcp",
+      "value": "Manage and optimize ticket-sale ad campaigns"
+    },
+    {
+      "name": "Meta Ads MCP",
+      "type": "mcp",
+      "value": "Instagram/Facebook promotion for exhibitions"
+    },
+    {
+      "name": "Ahrefs MCP",
+      "type": "mcp",
+      "value": "Backlink analysis, keyword data for exhibition SEO"
+    }
+  ],
+  "skill_directories": [
+    {
+      "name": "Anthropic Official Skills",
+      "url": "github.com/anthropics/skills",
+      "stars": "37.5K"
+    },
+    {
+      "name": "SkillsMP",
+      "url": "skillsmp.com",
+      "count": "500K+ skills"
+    },
+    {
+      "name": "SkillHub",
+      "url": "skillhub.club",
+      "count": "7K+ skills"
+    },
+    {
+      "name": "MCP Market",
+      "url": "mcpmarket.com"
+    },
+    {
+      "name": "Awesome Claude Skills",
+      "url": "github.com/travisvn/awesome-claude-skills"
+    },
+    {
+      "name": "Marketing Skills Directory",
+      "url": "marketingskills.directory",
+      "count": "109 skills, 20 MCPs"
+    },
+    {
+      "name": "AgentSkill.sh",
+      "url": "agentskill.sh",
+      "count": "69K+ skills"
+    }
+  ],
+  "mcp_servers_full_list": {
+    "design": [
+      "Figma MCP",
+      "Canva MCP",
+      "Magic UI MCP"
+    ],
+    "research": [
+      "Firecrawl MCP",
+      "Playwright MCP",
+      "Perplexity MCP"
+    ],
+    "advertising": [
+      "Google Ads MCP",
+      "Meta/Facebook Ads MCP",
+      "GA4 MCP",
+      "SegmentStream MCP"
+    ],
+    "seo": [
+      "Ahrefs MCP",
+      "Semrush MCP",
+      "DataForSEO MCP",
+      "Google Search Console MCP"
+    ],
+    "email": [
+      "Klaviyo MCP",
+      "Mailchimp MCP",
+      "ActiveCampaign MCP",
+      "Brevo MCP"
+    ],
+    "social": [
+      "Ayrshare MCP",
+      "OpenTweet MCP",
+      "Oktopost MCP"
+    ],
+    "payments": [
+      "Stripe MCP"
+    ],
+    "automation": [
+      "Notion MCP",
+      "Zapier MCP",
+      "n8n MCP",
+      "Google Sheets MCP"
+    ]
+  }
+}

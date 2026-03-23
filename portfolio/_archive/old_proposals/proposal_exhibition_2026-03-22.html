@@ -1,0 +1,1367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AUROS AI — The Imagine Team Campaign Proposal</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --midnight: #0B0F1A;
+  --navy: #111827;
+  --navy-light: #1a2332;
+  --gold: #C9A84C;
+  --gold-light: #E8C96A;
+  --gold-dark: #8B6E2A;
+  --gold-glow: rgba(201, 168, 76, 0.15);
+  --white: #FAFAF8;
+  --off-white: #F0EDE6;
+  --gray: #6B7280;
+  --gray-light: #9CA3AF;
+  --hp-burgundy: #5C1A1A;
+  --hp-green: #1B4D3E;
+  --titanic-blue: #1F3A52;
+  --titanic-silver: #B8B8B8;
+  --titanic-gold: #D4AF37;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--midnight);
+  color: var(--white);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ====== ANIMATIONS ====== */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+@keyframes pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes countUp {
+  from { opacity: 0; transform: scale(0.5); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ====== COVER ====== */
+.cover {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  padding: 60px 40px;
+  background: radial-gradient(ellipse at 50% 30%, rgba(201,168,76,0.08) 0%, transparent 60%),
+              radial-gradient(ellipse at 20% 80%, rgba(92,26,26,0.06) 0%, transparent 50%),
+              radial-gradient(ellipse at 80% 80%, rgba(31,58,82,0.06) 0%, transparent 50%),
+              linear-gradient(180deg, var(--midnight) 0%, #060810 50%, var(--midnight) 100%);
+}
+.cover::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: repeating-linear-gradient(
+    0deg, transparent, transparent 2px, rgba(201,168,76,0.02) 2px, rgba(201,168,76,0.02) 4px
+  );
+  pointer-events: none;
+}
+
+.cover-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  border: 1px solid rgba(201,168,76,0.3);
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 48px;
+  animation: fadeIn 1s ease-out 0.3s both;
+}
+.cover-badge::before {
+  content: '';
+  width: 6px; height: 6px;
+  background: var(--gold);
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.cover h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(42px, 7vw, 96px);
+  font-weight: 900;
+  letter-spacing: -3px;
+  line-height: 1.05;
+  margin-bottom: 24px;
+  animation: fadeInUp 1s ease-out 0.5s both;
+}
+.cover h1 .gold {
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-light), var(--gold));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s ease-in-out infinite;
+}
+
+.cover-subtitle {
+  font-size: clamp(16px, 2.2vw, 22px);
+  font-weight: 300;
+  color: var(--off-white);
+  max-width: 600px;
+  margin-bottom: 48px;
+  animation: fadeInUp 1s ease-out 0.7s both;
+}
+
+.cover-meta {
+  display: flex;
+  gap: 40px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gray-light);
+  animation: fadeIn 1s ease-out 1s both;
+}
+.cover-meta span { display: flex; align-items: center; gap: 8px; }
+.cover-meta .dot { width: 4px; height: 4px; background: var(--gold); border-radius: 50%; }
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gray);
+  animation: fadeIn 1s ease-out 1.5s both;
+}
+.scroll-line {
+  width: 1px; height: 40px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* ====== NAV ====== */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(11,15,26,0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(201,168,76,0.1);
+  padding: 0 40px;
+}
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  height: 56px;
+  gap: 32px;
+  overflow-x: auto;
+}
+.nav a {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gray);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.3s;
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+}
+.nav a:hover, .nav a.active {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+
+/* ====== SECTIONS ====== */
+.section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 40px;
+}
+.section-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 900;
+  letter-spacing: -1px;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+.section-subtitle {
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--gray-light);
+  max-width: 700px;
+  margin-bottom: 48px;
+}
+
+.divider {
+  width: 60px; height: 2px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  margin-bottom: 32px;
+}
+
+/* ====== PROBLEM / OPPORTUNITY ====== */
+.problem-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 48px;
+}
+.problem-card {
+  padding: 40px;
+  border-radius: 16px;
+  border: 1px solid rgba(201,168,76,0.1);
+  position: relative;
+  overflow: hidden;
+}
+.problem-card.problem {
+  background: linear-gradient(135deg, rgba(92,26,26,0.15), var(--navy));
+}
+.problem-card.opportunity {
+  background: linear-gradient(135deg, rgba(201,168,76,0.1), var(--navy));
+}
+.problem-card h3 {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.problem-card.problem h3 { color: #ef4444; }
+.problem-card.opportunity h3 { color: var(--gold); }
+.problem-card p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--off-white);
+}
+
+.core-insight {
+  margin-top: 48px;
+  padding: 48px;
+  background: linear-gradient(135deg, rgba(201,168,76,0.08), transparent);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 16px 16px 0;
+}
+.core-insight blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(20px, 3vw, 28px);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--gold-light);
+}
+
+/* ====== EXHIBITION CARDS ====== */
+.exhibitions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 48px;
+}
+.exhibition-card {
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(201,168,76,0.1);
+  transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s;
+}
+.exhibition-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+.exhibition-header {
+  padding: 48px 40px;
+  position: relative;
+}
+.exhibition-card.hp .exhibition-header {
+  background: linear-gradient(135deg, var(--hp-burgundy), #2a0a0a, var(--hp-green));
+}
+.exhibition-card.titanic .exhibition-header {
+  background: linear-gradient(135deg, var(--titanic-blue), #0a1520, #1a2a3a);
+}
+.exhibition-header h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+.exhibition-header p {
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+  font-weight: 300;
+}
+.exhibition-body {
+  padding: 32px 40px;
+  background: var(--navy);
+}
+.exhibition-body .tag {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+.hp .tag { background: rgba(92,26,26,0.3); color: #f87171; border: 1px solid rgba(248,113,113,0.2); }
+.titanic .tag { background: rgba(31,58,82,0.3); color: #93c5fd; border: 1px solid rgba(147,197,253,0.2); }
+.exhibition-body .message {
+  margin-top: 20px;
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-style: italic;
+  color: var(--gold-light);
+  line-height: 1.5;
+}
+.exhibition-body .fomo {
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--gray-light);
+  font-weight: 500;
+}
+
+/* ====== CONTENT PILLARS ====== */
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+.pillar {
+  padding: 32px 24px;
+  background: var(--navy);
+  border-radius: 16px;
+  border: 1px solid rgba(201,168,76,0.08);
+  transition: all 0.3s;
+  position: relative;
+}
+.pillar:hover {
+  border-color: rgba(201,168,76,0.3);
+  background: var(--navy-light);
+}
+.pillar-icon {
+  width: 48px; height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  background: rgba(201,168,76,0.1);
+}
+.pillar h4 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.pillar p {
+  font-size: 13px;
+  color: var(--gray-light);
+  line-height: 1.6;
+}
+
+/* ====== FUNNEL ====== */
+.funnel {
+  margin-top: 48px;
+  position: relative;
+}
+.funnel-stage {
+  display: grid;
+  grid-template-columns: 80px 1fr 200px;
+  gap: 32px;
+  align-items: start;
+  padding: 40px 0;
+  border-bottom: 1px solid rgba(201,168,76,0.08);
+  position: relative;
+}
+.funnel-stage:last-child { border-bottom: none; }
+
+.funnel-num {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+.funnel-content h4 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.funnel-content .duration {
+  font-size: 12px;
+  color: var(--gold);
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.funnel-content p {
+  font-size: 14px;
+  color: var(--gray-light);
+  line-height: 1.7;
+}
+.funnel-content .channels {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+.funnel-content .channel {
+  padding: 4px 12px;
+  background: rgba(201,168,76,0.1);
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--gold);
+}
+.funnel-metric {
+  text-align: right;
+}
+.funnel-metric .value {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--gold);
+  line-height: 1;
+}
+.funnel-metric .label {
+  font-size: 11px;
+  color: var(--gray);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 4px;
+}
+.funnel-metric .budget {
+  font-size: 12px;
+  color: var(--gray-light);
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+/* ====== PRICING ====== */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+.pricing-card {
+  background: var(--navy);
+  border-radius: 20px;
+  padding: 40px 32px;
+  border: 1px solid rgba(201,168,76,0.1);
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.16,1,0.3,1);
+}
+.pricing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+.pricing-card.featured {
+  border-color: var(--gold);
+  background: linear-gradient(180deg, rgba(201,168,76,0.08), var(--navy));
+}
+.pricing-card.featured::before {
+  content: 'RECOMMENDED';
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 20px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  color: var(--midnight);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  border-radius: 100px;
+}
+.pricing-name {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+.pricing-price {
+  font-size: 48px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  margin-bottom: 4px;
+}
+.pricing-price .currency { font-size: 24px; font-weight: 600; vertical-align: super; }
+.pricing-period {
+  font-size: 13px;
+  color: var(--gray);
+  margin-bottom: 24px;
+}
+.pricing-desc {
+  font-size: 14px;
+  color: var(--gray-light);
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(201,168,76,0.1);
+}
+.pricing-features {
+  list-style: none;
+}
+.pricing-features li {
+  padding: 8px 0;
+  font-size: 13px;
+  color: var(--off-white);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.pricing-features li::before {
+  content: '';
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  background: rgba(201,168,76,0.15);
+  border: 1.5px solid var(--gold);
+  flex-shrink: 0;
+  margin-top: 2px;
+  position: relative;
+}
+.pricing-target {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(201,168,76,0.1);
+}
+.pricing-target .label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-bottom: 4px;
+}
+.pricing-target .value {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+/* ====== DELIVERABLES ====== */
+.deliverables-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 48px;
+}
+.deliverable-item {
+  padding: 28px;
+  background: var(--navy);
+  border-radius: 12px;
+  border: 1px solid rgba(201,168,76,0.08);
+  text-align: center;
+  transition: all 0.3s;
+}
+.deliverable-item:hover {
+  border-color: rgba(201,168,76,0.2);
+  background: var(--navy-light);
+}
+.deliverable-num {
+  font-size: 36px;
+  font-weight: 900;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.deliverable-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--off-white);
+  margin-bottom: 4px;
+}
+.deliverable-desc {
+  font-size: 11px;
+  color: var(--gray);
+}
+
+/* ====== METRICS ====== */
+.metrics-track {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+.metric-card {
+  padding: 32px 24px;
+  background: var(--navy);
+  border-radius: 16px;
+  border: 1px solid rgba(201,168,76,0.08);
+  text-align: center;
+}
+.metric-card .icon {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+.metric-card h4 {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+  color: var(--gold);
+}
+.metric-card .items {
+  list-style: none;
+  text-align: left;
+}
+.metric-card .items li {
+  padding: 6px 0;
+  font-size: 12px;
+  color: var(--gray-light);
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+.metric-card .target {
+  margin-top: 16px;
+  padding: 8px 12px;
+  background: rgba(201,168,76,0.08);
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+/* ====== TIMELINE ====== */
+.timeline {
+  margin-top: 48px;
+  position: relative;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 28px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--gold), rgba(201,168,76,0.1));
+}
+.timeline-item {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 24px;
+  padding: 24px 0;
+  position: relative;
+}
+.timeline-dot {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: var(--navy);
+  border: 2px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--gold);
+  z-index: 1;
+}
+.timeline-content h4 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.timeline-content p {
+  font-size: 14px;
+  color: var(--gray-light);
+  line-height: 1.6;
+}
+
+/* ====== WHY AUROS ====== */
+.why-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 48px;
+}
+.why-card {
+  padding: 40px;
+  background: var(--navy);
+  border-radius: 16px;
+  border: 1px solid rgba(201,168,76,0.1);
+  position: relative;
+  overflow: hidden;
+}
+.why-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+}
+.why-card h4 {
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+.why-card p {
+  font-size: 14px;
+  color: var(--gray-light);
+  line-height: 1.7;
+}
+
+/* ====== CTA ====== */
+.cta-section {
+  text-align: center;
+  padding: 120px 40px;
+  position: relative;
+  background: radial-gradient(ellipse at 50% 50%, rgba(201,168,76,0.06) 0%, transparent 70%);
+}
+.cta-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 900;
+  margin-bottom: 16px;
+}
+.cta-section p {
+  font-size: 18px;
+  color: var(--gray-light);
+  margin-bottom: 48px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.cta-steps {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 48px;
+}
+.cta-step {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.cta-step .num {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: rgba(201,168,76,0.15);
+  border: 1.5px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--gold);
+}
+.cta-step .text {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--off-white);
+}
+
+/* ====== FOOTER ====== */
+.footer {
+  text-align: center;
+  padding: 40px;
+  border-top: 1px solid rgba(201,168,76,0.08);
+}
+.footer-brand {
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 6px;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+.footer-sub {
+  font-size: 12px;
+  color: var(--gray);
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 968px) {
+  .problem-grid, .exhibitions, .why-grid { grid-template-columns: 1fr; }
+  .pillars { grid-template-columns: 1fr 1fr; }
+  .pricing-grid { grid-template-columns: 1fr; max-width: 440px; margin-left: auto; margin-right: auto; }
+  .metrics-track { grid-template-columns: 1fr 1fr; }
+  .deliverables-grid { grid-template-columns: 1fr 1fr; }
+  .funnel-stage { grid-template-columns: 56px 1fr; }
+  .funnel-metric { grid-column: 2; text-align: left; }
+  .cta-steps { flex-direction: column; align-items: center; }
+}
+@media (max-width: 600px) {
+  .section { padding: 60px 24px; }
+  .pillars { grid-template-columns: 1fr; }
+  .cover-meta { flex-direction: column; gap: 12px; }
+  .deliverables-grid { grid-template-columns: 1fr; }
+  .metrics-track { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ====== COVER ====== -->
+<section class="cover">
+  <div class="cover-badge">Campaign Proposal</div>
+  <h1>Sell the <span class="gold">Experience</span></h1>
+  <p class="cover-subtitle">A cinematic content campaign to drive measurable ticket sales for Harry Potter and Titanic exhibitions.</p>
+  <div class="cover-meta">
+    <span><span class="dot"></span> Prepared for The Imagine Team</span>
+    <span><span class="dot"></span> March 2026</span>
+    <span><span class="dot"></span> By AUROS AI</span>
+  </div>
+  <div class="scroll-indicator">
+    <div class="scroll-line"></div>
+    Scroll
+  </div>
+</section>
+
+<!-- ====== NAV ====== -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#problem">Problem</a>
+    <a href="#exhibitions">Exhibitions</a>
+    <a href="#strategy">Strategy</a>
+    <a href="#funnel">Funnel</a>
+    <a href="#deliverables">Deliverables</a>
+    <a href="#pricing">Investment</a>
+    <a href="#metrics">Metrics</a>
+    <a href="#timeline">Timeline</a>
+    <a href="#why">Why AUROS</a>
+  </div>
+</nav>
+
+<!-- ====== PROBLEM / OPPORTUNITY ====== -->
+<section class="section animate-on-scroll" id="problem">
+  <div class="section-label">The Challenge</div>
+  <div class="section-title">Great experiences.<br>Invisible marketing.</div>
+  <div class="divider"></div>
+  <div class="section-subtitle">Your exhibitions are world-class. Your content doesn't show it.</div>
+
+  <div class="problem-grid">
+    <div class="problem-card problem">
+      <h3>The Problem</h3>
+      <p>Current marketing is generic and not driving conversions. Your exhibitions deliver immersive, once-in-a-lifetime experiences, but the content doesn't convey the emotional weight or urgency to buy tickets. People scroll past because nothing stops them.</p>
+    </div>
+    <div class="problem-card opportunity">
+      <h3>The Opportunity</h3>
+      <p>Exhibition campaigns with cinematic, platform-optimized content average 2.5-4x ROAS in the experience industry. Strategic content that captures spectacle and emotional intensity can drive 20-40% ticket sales lifts within 60 days.</p>
+    </div>
+  </div>
+
+  <div class="core-insight">
+    <blockquote>"People don't hesitate on logistics &mdash; they hesitate on emotional commitment. If we can make people FEEL what they'll experience, they'll buy immediately."</blockquote>
+  </div>
+</section>
+
+<!-- ====== EXHIBITIONS ====== -->
+<section class="section animate-on-scroll" id="exhibitions">
+  <div class="section-label">The Exhibitions</div>
+  <div class="section-title">Two worlds. Two emotions.<br>One strategy.</div>
+  <div class="divider"></div>
+
+  <div class="exhibitions">
+    <div class="exhibition-card hp">
+      <div class="exhibition-header">
+        <h3>Harry Potter: The Exhibition</h3>
+        <p>Nostalgia + Awe + Wonder</p>
+      </div>
+      <div class="exhibition-body">
+        <div>
+          <span class="tag">Escapism</span>
+          <span class="tag">Nostalgia</span>
+          <span class="tag">Wonder</span>
+          <span class="tag">Exclusivity</span>
+        </div>
+        <p class="message">"Step into the world. Experience magic like never before."</p>
+        <p class="fomo">Limited time. Every ticket is a portal you won't get twice.</p>
+      </div>
+    </div>
+
+    <div class="exhibition-card titanic">
+      <div class="exhibition-header">
+        <h3>Titanic: The Exhibition</h3>
+        <p>Awe + Cinematic Drama + Immersion</p>
+      </div>
+      <div class="exhibition-body">
+        <div>
+          <span class="tag">Immersion</span>
+          <span class="tag">History</span>
+          <span class="tag">Spectacle</span>
+          <span class="tag">Drama</span>
+        </div>
+        <p class="message">"Walk the decks. Feel the scale. Understand the story."</p>
+        <p class="fomo">Once-in-a-lifetime experience. Step aboard before it sails.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== CONTENT PILLARS ====== -->
+<section class="section animate-on-scroll" id="strategy">
+  <div class="section-label">Content Strategy</div>
+  <div class="section-title">Four pillars. One goal:<br><span style="color: var(--gold);">sell tickets.</span></div>
+  <div class="divider"></div>
+
+  <div class="pillars">
+    <div class="pillar">
+      <div class="pillar-icon">&#127916;</div>
+      <h4>Immersion</h4>
+      <p>Show the environment with cinematic detail. Make viewers feel transported before they even buy a ticket.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-icon">&#128150;</div>
+      <h4>Emotion</h4>
+      <p>Capture reactions, awe, wonder. Create mirror neurons for the experience. Make them feel what visitors feel.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-icon">&#9889;</div>
+      <h4>Experience</h4>
+      <p>Show specific moments they'll live. Interactive elements, photo ops, sensory moments. Paint the full picture.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-icon">&#128293;</div>
+      <h4>Urgency</h4>
+      <p>Limited time, limited capacity, exclusive access. Force the buying decision NOW. No time to think it over.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====== CONVERSION FUNNEL ====== -->
+<section class="section animate-on-scroll" id="funnel">
+  <div class="section-label">Conversion Journey</div>
+  <div class="section-title">From scroll to sold.</div>
+  <div class="divider"></div>
+  <div class="section-subtitle">Every piece of content maps to a stage in the buyer's journey. Nothing is accidental.</div>
+
+  <div class="funnel">
+    <div class="funnel-stage">
+      <div class="funnel-num">1</div>
+      <div class="funnel-content">
+        <h4>Awareness</h4>
+        <div class="duration">Seconds to minutes</div>
+        <p>15-second vertical videos that stop the scroll. Cinematic moments, magic, wonder. The viewer thinks: "Wait, what is this?"</p>
+        <div class="channels">
+          <span class="channel">TikTok</span>
+          <span class="channel">Instagram Reels</span>
+          <span class="channel">YouTube Shorts</span>
+        </div>
+      </div>
+      <div class="funnel-metric">
+        <div class="value">2-3%</div>
+        <div class="label">Click-through</div>
+        <div class="budget">40% of ad spend</div>
+      </div>
+    </div>
+
+    <div class="funnel-stage">
+      <div class="funnel-num">2</div>
+      <div class="funnel-content">
+        <h4>Consideration</h4>
+        <div class="duration">Minutes to hours</div>
+        <p>30-second cinematic walkthroughs and carousel ads. Complete emotional arcs showing the full scope of the experience. Social proof from real visitors.</p>
+        <div class="channels">
+          <span class="channel">Instagram Feed</span>
+          <span class="channel">Facebook</span>
+          <span class="channel">YouTube</span>
+        </div>
+      </div>
+      <div class="funnel-metric">
+        <div class="value">8%+</div>
+        <div class="label">Add-to-cart</div>
+        <div class="budget">35% of ad spend</div>
+      </div>
+    </div>
+
+    <div class="funnel-stage">
+      <div class="funnel-num">3</div>
+      <div class="funnel-content">
+        <h4>Decision</h4>
+        <div class="duration">Minutes to decision</div>
+        <p>60-second full-story videos with urgency messaging. Retargeting carousels showing specific experience highlights, testimonials, and scarcity signals.</p>
+        <div class="channels">
+          <span class="channel">Retargeting</span>
+          <span class="channel">Google Ads</span>
+          <span class="channel">Email</span>
+        </div>
+      </div>
+      <div class="funnel-metric">
+        <div class="value">60%+</div>
+        <div class="label">Checkout rate</div>
+        <div class="budget">20% of ad spend</div>
+      </div>
+    </div>
+
+    <div class="funnel-stage">
+      <div class="funnel-num">4</div>
+      <div class="funnel-content">
+        <h4>Amplification</h4>
+        <div class="duration">Post-purchase</div>
+        <p>Turn buyers into advocates. Countdown emails, behind-the-scenes content, shareable moments. Every ticket buyer becomes a word-of-mouth amplifier.</p>
+        <div class="channels">
+          <span class="channel">Email</span>
+          <span class="channel">Stories</span>
+          <span class="channel">Organic</span>
+        </div>
+      </div>
+      <div class="funnel-metric">
+        <div class="value">15%+</div>
+        <div class="label">Referral rate</div>
+        <div class="budget">5% of spend</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== DELIVERABLES ====== -->
+<section class="section animate-on-scroll" id="deliverables">
+  <div class="section-label">What You Get</div>
+  <div class="section-title">Content that converts.</div>
+  <div class="divider"></div>
+  <div class="section-subtitle">Every asset is designed for one purpose: getting people to buy tickets.</div>
+
+  <div class="deliverables-grid">
+    <div class="deliverable-item">
+      <div class="deliverable-num">6</div>
+      <div class="deliverable-label">Video Ad Scripts</div>
+      <div class="deliverable-desc">15s, 30s, 60s per exhibition</div>
+    </div>
+    <div class="deliverable-item">
+      <div class="deliverable-num">20</div>
+      <div class="deliverable-label">Social Posts</div>
+      <div class="deliverable-desc">Per exhibition, platform-optimized</div>
+    </div>
+    <div class="deliverable-item">
+      <div class="deliverable-num">4</div>
+      <div class="deliverable-label">Carousel Ad Sets</div>
+      <div class="deliverable-desc">5-image sequences with A/B variants</div>
+    </div>
+    <div class="deliverable-item">
+      <div class="deliverable-num">6</div>
+      <div class="deliverable-label">Copy Variants</div>
+      <div class="deliverable-desc">Per ad, for multivariate testing</div>
+    </div>
+    <div class="deliverable-item">
+      <div class="deliverable-num">30</div>
+      <div class="deliverable-label">Scroll-Stop Hooks</div>
+      <div class="deliverable-desc">FOMO-driven, psychology-based</div>
+    </div>
+    <div class="deliverable-item">
+      <div class="deliverable-num">1</div>
+      <div class="deliverable-label">Production Brief</div>
+      <div class="deliverable-desc">Music, VO, color grade specs</div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== PRICING ====== -->
+<section class="section animate-on-scroll" id="pricing">
+  <div class="section-label">Investment</div>
+  <div class="section-title">Choose your scale.</div>
+  <div class="divider"></div>
+  <div class="section-subtitle">Every package is designed around one metric: tickets sold. We succeed when you sell out.</div>
+
+  <div class="pricing-grid">
+    <div class="pricing-card">
+      <div class="pricing-name">Pilot</div>
+      <div class="pricing-price"><span class="currency">$</span>2,500</div>
+      <div class="pricing-period">30 days / 1 exhibition</div>
+      <div class="pricing-desc">Prove the model works before scaling. Low risk, high signal.</div>
+      <ul class="pricing-features">
+        <li>Content strategy & creative brief</li>
+        <li>6 video ads (15s, 30s, 60s)</li>
+        <li>20 social media posts</li>
+        <li>4 carousel ad variations</li>
+        <li>Ad copy testing framework</li>
+        <li>2 weeks campaign management</li>
+        <li>Weekly performance reporting</li>
+      </ul>
+      <div class="pricing-target">
+        <div class="label">Success Target</div>
+        <div class="value">Cost per ticket &lt; $40 | ROAS &gt; 1.5:1</div>
+      </div>
+    </div>
+
+    <div class="pricing-card featured">
+      <div class="pricing-name">Growth</div>
+      <div class="pricing-price"><span class="currency">$</span>9,500</div>
+      <div class="pricing-period">per month / 3 months / both exhibitions</div>
+      <div class="pricing-desc">Scale the proven strategy across Harry Potter and Titanic simultaneously.</div>
+      <ul class="pricing-features">
+        <li>Both exhibitions, full strategies</li>
+        <li>18 video ads total (6 per exhibition)</li>
+        <li>80 social posts/month</li>
+        <li>16 carousel ad variations</li>
+        <li>Ongoing A/B testing & optimization</li>
+        <li>12 weeks campaign management</li>
+        <li>Weekly reports + strategy adjustments</li>
+        <li>Audience research & competitive analysis</li>
+        <li>Monthly strategy sync calls</li>
+      </ul>
+      <div class="pricing-target">
+        <div class="label">Success Target</div>
+        <div class="value">150-180 tickets/mo | ROAS 3:1</div>
+      </div>
+    </div>
+
+    <div class="pricing-card">
+      <div class="pricing-name">Premium</div>
+      <div class="pricing-price"><span class="currency">$</span>15,000</div>
+      <div class="pricing-period">per month / 3 months + video shoot</div>
+      <div class="pricing-desc">Maximum impact with custom video production and dedicated support.</div>
+      <ul class="pricing-features">
+        <li>Everything in Growth, plus:</li>
+        <li>Professional 1-day video shoot</li>
+        <li>50-100 custom video clips</li>
+        <li>Professional color grading & VFX</li>
+        <li>Performance-based creative iteration</li>
+        <li>Dedicated account manager</li>
+        <li>Quarterly ROI deep-dive</li>
+      </ul>
+      <div class="pricing-target">
+        <div class="label">Success Target</div>
+        <div class="value">250+ tickets/mo | ROAS 4:1+</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== METRICS ====== -->
+<section class="section animate-on-scroll" id="metrics">
+  <div class="section-label">How We Measure</div>
+  <div class="section-title">Tickets sold. Not likes.</div>
+  <div class="divider"></div>
+
+  <div class="metrics-track">
+    <div class="metric-card">
+      <div class="icon">&#128064;</div>
+      <h4>Awareness</h4>
+      <ul class="items">
+        <li>Video views</li>
+        <li>Reach & impressions</li>
+        <li>Engagement rate</li>
+      </ul>
+      <div class="target">Target: 100K+ views</div>
+    </div>
+    <div class="metric-card">
+      <div class="icon">&#128269;</div>
+      <h4>Consideration</h4>
+      <ul class="items">
+        <li>Website clicks</li>
+        <li>Time on page</li>
+        <li>Add-to-cart rate</li>
+      </ul>
+      <div class="target">Target: 8%+ ATC</div>
+    </div>
+    <div class="metric-card">
+      <div class="icon">&#127915;</div>
+      <h4>Conversion</h4>
+      <ul class="items">
+        <li>Tickets sold</li>
+        <li>Revenue generated</li>
+        <li>Cost per ticket</li>
+      </ul>
+      <div class="target">Target: 3:1 ROAS</div>
+    </div>
+    <div class="metric-card">
+      <div class="icon">&#128640;</div>
+      <h4>Growth</h4>
+      <ul class="items">
+        <li>Referral rate</li>
+        <li>Organic mentions</li>
+        <li>Repeat visitors</li>
+      </ul>
+      <div class="target">Target: 15%+ referral</div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== TIMELINE ====== -->
+<section class="section animate-on-scroll" id="timeline">
+  <div class="section-label">Timeline</div>
+  <div class="section-title">Live in 9 days.</div>
+  <div class="divider"></div>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-dot">D1</div>
+      <div class="timeline-content">
+        <h4>Strategy Kickoff</h4>
+        <p>Align on exhibition selection, collect assets, define audience targeting, set campaign objectives and KPIs.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot">D2-5</div>
+      <div class="timeline-content">
+        <h4>Content Production</h4>
+        <p>Video scripts, carousel ad design, social post creation, ad copy variants. All content reviewed and refined.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot">D6-8</div>
+      <div class="timeline-content">
+        <h4>Campaign Setup</h4>
+        <p>Ad account configuration, audience creation, pixel tracking setup, platform integration, final creative review.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot">D9</div>
+      <div class="timeline-content">
+        <h4>Launch</h4>
+        <p>Campaigns go live. Daily monitoring begins. First optimizations within 48 hours based on initial data.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot">W3+</div>
+      <div class="timeline-content">
+        <h4>Optimize & Scale</h4>
+        <p>Weekly performance analysis, creative refresh cycles, budget reallocation to top performers, A/B testing new angles.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== WHY AUROS ====== -->
+<section class="section animate-on-scroll" id="why">
+  <div class="section-label">Why AUROS</div>
+  <div class="section-title">We don't do marketing.<br>We sell experiences.</div>
+  <div class="divider"></div>
+
+  <div class="why-grid">
+    <div class="why-card">
+      <h4>Cinema First</h4>
+      <p>Our content isn't about promoting The Imagine Team. It's about selling the EXPERIENCE. Cinematic production, emotional storytelling, FOMO psychology. Every frame serves a purpose.</p>
+    </div>
+    <div class="why-card">
+      <h4>Data Driven</h4>
+      <p>Every piece of content is tied to a conversion metric. We measure impact by tickets sold, not vanity metrics. Weekly optimization based on real performance data.</p>
+    </div>
+    <div class="why-card">
+      <h4>Full Execution</h4>
+      <p>We handle everything: strategy, creative production, platform optimization, reporting. You focus on delivering the experience. We focus on filling the venue.</p>
+    </div>
+    <div class="why-card">
+      <h4>Results Aligned</h4>
+      <p>Our success is measured by your ticket sales data. Every campaign decision is driven by conversion metrics, not creative preference. One number matters: tickets sold.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====== CTA ====== -->
+<section class="cta-section">
+  <div class="section-label">Next Steps</div>
+  <h2>Ready to <span style="color: var(--gold)">sell out?</span></h2>
+  <p>Three steps to launch. We handle the rest.</p>
+  <div class="cta-steps">
+    <div class="cta-step">
+      <div class="num">1</div>
+      <div class="text">Choose your package</div>
+    </div>
+    <div class="cta-step">
+      <div class="num">2</div>
+      <div class="text">Share exhibition assets</div>
+    </div>
+    <div class="cta-step">
+      <div class="num">3</div>
+      <div class="text">Schedule kickoff call</div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer class="footer">
+  <div class="footer-brand">AUROS AI</div>
+  <div class="footer-sub">Prepared March 2026 &mdash; Confidential</div>
+</footer>
+
+<!-- ====== SCROLL ANIMATIONS ====== -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+  // Active nav highlighting
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const top = section.offsetTop - 100;
+      if (pageYOffset >= top) current = section.getAttribute('id');
+    });
+    navLinks.forEach(link => {
+      link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+    });
+  });
+});
+</script>
+
+</body>
+</html>

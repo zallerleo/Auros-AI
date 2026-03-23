@@ -1,0 +1,125 @@
+{
+  "exhibition": "Titanic: The Exhibition",
+  "hooks": [
+    {
+      "id": 1,
+      "type": "pov",
+      "hook_text": "POV: you just walked down the ACTUAL grand staircase from Titanic's sister ship",
+      "visual_opener": "Person's hand trailing down ornate wooden banister, camera following",
+      "psychological_trigger": "Physical connection to history - you're touching what they touched",
+      "best_platform": "tiktok"
+    },
+    {
+      "id": 2,
+      "type": "pov",
+      "hook_text": "POV: you're standing where 1,500 people took their last breath",
+      "visual_opener": "Dark ocean floor recreation, artifacts scattered in dim lighting",
+      "psychological_trigger": "Mortality and reverence - confronting tragedy",
+      "best_platform": "reels"
+    },
+    {
+      "id": 3,
+      "type": "pov",
+      "hook_text": "POV: you just held a 112-year-old love letter that never made it home",
+      "visual_opener": "Hands holding aged letter through glass case, camera zooming on handwriting",
+      "psychological_trigger": "Intimate human connection across time",
+      "best_platform": "both"
+    },
+    {
+      "id": 4,
+      "type": "wait_for_it",
+      "hook_text": "They said this exhibition would make grown adults cry... wait for it",
+      "visual_opener": "Person walking confidently into exhibition entrance",
+      "psychological_trigger": "Challenge to emotional strength - proving skeptics wrong",
+      "best_platform": "tiktok"
+    },
+    {
+      "id": 5,
+      "type": "wait_for_it",
+      "hook_text": "Walking through 300 real Titanic artifacts... wait for the moment I see THAT one",
+      "visual_opener": "Quick montage of various artifacts in cases",
+      "psychological_trigger": "Anticipation and curiosity - what's the special artifact?",
+      "best_platform": "reels"
+    },
+    {
+      "id": 6,
+      "type": "wait_for_it",
+      "hook_text": "The temperature drops to 28\u00b0F in this room for a reason... wait for it",
+      "visual_opener": "Person entering room, breath visible, rubbing arms",
+      "psychological_trigger": "Physical discomfort creating emotional connection",
+      "best_platform": "both"
+    },
+    {
+      "id": 7,
+      "type": "reaction",
+      "hook_text": "Her face when she realized this china plate survived but 1,500 people didn't",
+      "visual_opener": "Close-up of woman's face changing from wonder to somber realization",
+      "psychological_trigger": "Emotional whiplash - beauty and tragedy colliding",
+      "best_platform": "tiktok"
+    },
+    {
+      "id": 8,
+      "type": "reaction",
+      "hook_text": "Dad's reaction when he saw the boarding pass with his daughter's name on it",
+      "visual_opener": "Man pointing at display case, daughter looking shocked beside him",
+      "psychological_trigger": "Personal connection - what if that was me?",
+      "best_platform": "reels"
+    },
+    {
+      "id": 9,
+      "type": "reaction",
+      "hook_text": "Watch this 8-year-old's face when she learns not everyone made it off the ship",
+      "visual_opener": "Child's expression changing from excitement to understanding",
+      "psychological_trigger": "Innocence meeting reality - universal human experience",
+      "best_platform": "both"
+    },
+    {
+      "id": 10,
+      "type": "challenge",
+      "hook_text": "Can you walk through the memorial room without getting goosebumps?",
+      "visual_opener": "Dimly lit memorial space with names on walls",
+      "psychological_trigger": "Personal challenge - testing emotional resilience",
+      "best_platform": "tiktok"
+    },
+    {
+      "id": 11,
+      "type": "challenge",
+      "hook_text": "Can you guess which passenger's story will break you? (It's not who you think)",
+      "visual_opener": "Multiple passenger story displays, camera panning between them",
+      "psychological_trigger": "Curiosity and emotional preparation",
+      "best_platform": "reels"
+    },
+    {
+      "id": 12,
+      "type": "challenge",
+      "hook_text": "Can you make it through without buying something from the gift shop? Impossible.",
+      "visual_opener": "Person confidently walking past gift shop, then cut to them with full bag",
+      "psychological_trigger": "Relatability and humor breaking emotional tension",
+      "best_platform": "both"
+    },
+    {
+      "id": 13,
+      "type": "fomo",
+      "hook_text": "This closes in 3 weeks and you STILL haven't seen the piece of the actual ship",
+      "visual_opener": "Massive ship fragment with dramatic lighting, countdown timer overlay",
+      "psychological_trigger": "Urgency and regret - missing once-in-a-lifetime opportunity",
+      "best_platform": "reels"
+    },
+    {
+      "id": 14,
+      "type": "fomo",
+      "hook_text": "Everyone's posting about this exhibition except you... what are you waiting for?",
+      "visual_opener": "Split screen of social media posts vs empty exhibition ticket booth",
+      "psychological_trigger": "Social proof and exclusion anxiety",
+      "best_platform": "tiktok"
+    },
+    {
+      "id": 15,
+      "type": "fomo",
+      "hook_text": "Your friends will ask if you saw it. Your answer will be embarrassing.",
+      "visual_opener": "Group of friends animatedly discussing, one person looking left out",
+      "psychological_trigger": "Social embarrassment and missing cultural moment",
+      "best_platform": "both"
+    }
+  ]
+}

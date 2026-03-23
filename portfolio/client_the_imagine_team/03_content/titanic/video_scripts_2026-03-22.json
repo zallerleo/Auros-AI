@@ -1,0 +1,245 @@
+{
+  "exhibition": "Titanic: The Exhibition",
+  "scripts": [
+    {
+      "id": "15s_reel",
+      "duration": 15,
+      "title": "You're About to Board the Titanic",
+      "concept": "POV: Walking through Titanic's grand staircase like you're actually there",
+      "platform": "TikTok / Instagram Reels",
+      "shots": [
+        {
+          "shot_number": 1,
+          "timestamp": "0:00 - 0:03",
+          "visual": "Black screen with elegant gold text appearing, then dramatic reveal of the recreated Titanic grand staircase with ornate carved wood, crystal chandelier, red carpet, period lighting",
+          "text_overlay": "POV: You just walked onto the Titanic",
+          "audio": "Dramatic orchestral sting building",
+          "camera": "Slow push forward through darkness into light",
+          "transition": "Fade from black to reveal"
+        },
+        {
+          "shot_number": 2,
+          "timestamp": "0:03 - 0:08",
+          "visual": "Close-up of authentic Titanic artifacts under museum lighting: personal belongings, ship pieces, china, jewelry, letters in display cases",
+          "text_overlay": "300+ REAL artifacts from the ship",
+          "audio": "Music builds with emotional strings",
+          "camera": "Smooth tracking shot across artifacts",
+          "transition": "Quick cut"
+        },
+        {
+          "shot_number": 3,
+          "timestamp": "0:08 - 0:12",
+          "visual": "Wide shot of families and visitors with expressions of complete awe, children pointing excitedly, adults covering their mouths in amazement",
+          "text_overlay": "This is UNREAL",
+          "audio": "Music reaches emotional peak",
+          "camera": "Handheld capturing genuine reactions",
+          "transition": "Match cut"
+        },
+        {
+          "shot_number": 4,
+          "timestamp": "0:12 - 0:15",
+          "visual": "Quick montage: exhibition entrance with crowds, ticket booth, people taking selfies, then logo reveal",
+          "text_overlay": "Tickets selling FAST",
+          "audio": "Music crescendo with urgency",
+          "camera": "Quick whip pans and zooms",
+          "transition": "Rapid cuts to logo"
+        }
+      ],
+      "music": {
+        "style": "Cinematic orchestral with modern beat",
+        "tempo_bpm": 120,
+        "build": "Starts mysterious, builds to emotional peak, ends urgent",
+        "reference_track": "Similar to movie trailer music - Hans Zimmer style"
+      },
+      "caption": "300+ authentic artifacts. Full-scale ship recreations. The story told like never before. Titanic: The Exhibition. Over 3M visitors worldwide. Book now before tickets sell out. #TitanicExhibition #ImmersiveExperience #MustSee",
+      "cta": "Get tickets \u2192 Link in bio"
+    },
+    {
+      "id": "30s_ad",
+      "duration": 30,
+      "title": "The Ship Everyone's Talking About",
+      "concept": "FOMO-driven tour through the most Instagram-worthy historical experience",
+      "platform": "Instagram / YouTube",
+      "shots": [
+        {
+          "shot_number": 1,
+          "timestamp": "0:00 - 0:03",
+          "visual": "Person's hand reaching for ornate door handle, then cut to their face as door opens revealing the grand staircase recreation",
+          "text_overlay": "Everyone's posting about this",
+          "audio": "Trending TikTok audio with dramatic build",
+          "camera": "Close-up to wide reveal",
+          "transition": "Door swing reveal"
+        },
+        {
+          "shot_number": 2,
+          "timestamp": "0:03 - 0:06",
+          "visual": "Recreated first-class dining room with period table settings, elegant lighting, visitors in period costumes posing",
+          "text_overlay": "Step into 1912",
+          "audio": "Audio continues building",
+          "camera": "Smooth orbit around dining table",
+          "transition": "Seamless pan"
+        },
+        {
+          "shot_number": 3,
+          "timestamp": "0:06 - 0:09",
+          "visual": "Wall of authentic artifacts: passenger belongings, ship blueprints, rescue items, each dramatically lit",
+          "text_overlay": "300+ REAL artifacts",
+          "audio": "Beat drop moment",
+          "camera": "Dynamic tracking shot",
+          "transition": "Quick zoom"
+        },
+        {
+          "shot_number": 4,
+          "timestamp": "0:09 - 0:12",
+          "visual": "Recreation of ship's hull exterior at night with stars, visitors walking along deck recreation",
+          "text_overlay": "Feel the ocean breeze",
+          "audio": "Atmospheric ocean sounds layered",
+          "camera": "Cinematic wide shot",
+          "transition": "Dissolve"
+        },
+        {
+          "shot_number": 5,
+          "timestamp": "0:12 - 0:15",
+          "visual": "Interactive timeline showing ship's final hours, visitors touching screens, learning about passengers",
+          "text_overlay": "Their stories. Your experience.",
+          "audio": "Emotional peak",
+          "camera": "Over-shoulder shots of engagement",
+          "transition": "Cross fade"
+        },
+        {
+          "shot_number": 6,
+          "timestamp": "0:15 - 0:21",
+          "visual": "Montage of real visitor reactions: kids gasping, adults tearing up, families taking photos, couples holding hands in awe",
+          "text_overlay": "\"I've never seen anything like this\"",
+          "audio": "Testimonial audio overlay",
+          "camera": "Handheld intimate shots",
+          "transition": "Quick emotional cuts"
+        },
+        {
+          "shot_number": 7,
+          "timestamp": "0:21 - 0:27",
+          "visual": "Exterior shot of exhibition building with crowds entering, ticket booth busy, social media posts showing on screens",
+          "text_overlay": "Breaking attendance records",
+          "audio": "Urgency building",
+          "camera": "Drone establishing shot",
+          "transition": "Pull back reveal"
+        },
+        {
+          "shot_number": 8,
+          "timestamp": "0:27 - 0:30",
+          "visual": "AUROS branding with exhibition logo, website URL, and location details over dramatic Titanic imagery",
+          "text_overlay": "Book now. Limited time.",
+          "audio": "Final crescendo",
+          "camera": "Static brand moment",
+          "transition": "Fade to logo"
+        }
+      ],
+      "music": {
+        "style": "Epic cinematic with emotional strings",
+        "tempo_bpm": 110,
+        "build": "Mysterious opening, emotional middle, urgent finale",
+        "reference_track": "Similar to Interstellar soundtrack meets social media trending audio"
+      },
+      "caption": "Walk the Grand Staircase. Touch real artifacts recovered from 12,500 feet below. Hear the stories of real passengers. Rated 4.8/5 by visitors. Over 3 million people have experienced this worldwide. Don't miss your chance. #TitanicExhibition #History #BookNow",
+      "cta": "Check dates and availability \u2192 Link in bio"
+    },
+    {
+      "id": "60s_cinematic",
+      "duration": 60,
+      "title": "Some Stories Never Die",
+      "concept": "Movie trailer revealing history's greatest tragedy as an unmissable experience",
+      "platform": "YouTube / Facebook",
+      "shots": [
+        {
+          "shot_number": 1,
+          "timestamp": "0:00 - 0:05",
+          "visual": "Complete black screen with elegant typography: 'April 14, 1912' appears, then fades. Slow reveal of dark ocean surface with moonlight",
+          "text_overlay": "April 14, 1912",
+          "audio": "Silence, then single piano note",
+          "camera": "Slow push into darkness",
+          "transition": "Fade from black"
+        },
+        {
+          "shot_number": 2,
+          "timestamp": "0:05 - 0:12",
+          "visual": "Underwater shot rising toward surface, then cut to recreation of Titanic's grand staircase in warm, golden lighting with period details",
+          "text_overlay": "The most famous ship ever built",
+          "audio": "Orchestral strings begin softly",
+          "camera": "Slow ascent then smooth dolly through staircase",
+          "transition": "Surface break to interior"
+        },
+        {
+          "shot_number": 3,
+          "timestamp": "0:12 - 0:18",
+          "visual": "Close-ups of authentic artifacts: passenger letters, jewelry, ship components, china pieces, all under dramatic museum lighting",
+          "text_overlay": "300+ artifacts. Real stories.",
+          "audio": "Music builds with emotional depth",
+          "camera": "Intimate macro shots with shallow focus",
+          "transition": "Seamless focus pulls"
+        },
+        {
+          "shot_number": 4,
+          "timestamp": "0:18 - 0:25",
+          "visual": "Wide shot of first-class cabin recreation with period furniture, then visitors in period costumes experiencing the luxury",
+          "text_overlay": "Step into their world",
+          "audio": "Music swells with period orchestra feel",
+          "camera": "Sweeping camera movement through cabin",
+          "transition": "Match cut to modern visitors"
+        },
+        {
+          "shot_number": 5,
+          "timestamp": "0:25 - 0:32",
+          "visual": "Dramatic recreation of ship's exterior at night, visitors walking the deck, looking up at stars, feeling the scale",
+          "text_overlay": "Feel the ocean. Touch history.",
+          "audio": "Ocean sounds mixed with orchestral peak",
+          "camera": "Epic wide shots and intimate reactions",
+          "transition": "Cross dissolve with ocean sounds"
+        },
+        {
+          "shot_number": 6,
+          "timestamp": "0:32 - 0:40",
+          "visual": "Rapid montage of visitor reactions: children's eyes widening, adults reading passenger stories, families experiencing together, tears of recognition",
+          "text_overlay": "\"I felt like I was there\"",
+          "audio": "Real visitor testimonials over music",
+          "camera": "Handheld emotional captures",
+          "transition": "Quick emotional cuts building intensity"
+        },
+        {
+          "shot_number": 7,
+          "timestamp": "0:40 - 0:48",
+          "visual": "Interactive timeline showing ship's final hours, rescue operations, survivor accounts, visitors engaging deeply with history",
+          "text_overlay": "Their courage. Their sacrifice. Their legacy.",
+          "audio": "Music reaches emotional climax",
+          "camera": "Thoughtful tracking shots of engagement",
+          "transition": "Respectful fades between moments"
+        },
+        {
+          "shot_number": 8,
+          "timestamp": "0:48 - 0:55",
+          "visual": "Exterior establishing shot of exhibition building with crowds, then cut to families exiting with changed expressions, still processing",
+          "text_overlay": "An experience that changes you",
+          "audio": "Music becomes hopeful, transformative",
+          "camera": "Drone shot to intimate family moments",
+          "transition": "Pull back to human scale"
+        },
+        {
+          "shot_number": 9,
+          "timestamp": "0:55 - 0:60",
+          "visual": "Final logo reveal over ocean imagery, exhibition details, booking information with AUROS branding",
+          "text_overlay": "TITANIC: THE EXHIBITION\nNow open. Limited engagement.",
+          "audio": "Final orchestral resolve",
+          "camera": "Static brand presentation",
+          "transition": "Fade to final frame"
+        }
+      ],
+      "music": {
+        "style": "Full orchestral score with period instruments",
+        "tempo_bpm": 95,
+        "build": "Somber opening, builds through wonder, peaks at emotion, resolves with hope",
+        "reference_track": "Similar to James Horner's Titanic score meets modern trailer music"
+      },
+      "caption": "Some stories are too important to forget.\n\nFor the first time, experience the Titanic through the eyes of those who lived it. Walk her decks. Touch her artifacts. Feel her legacy.\n\nOver 300 authentic pieces from the ship and her passengers. Full-scale recreations that transport you to 1912. Stories of courage, love, and human spirit that will stay with you forever.\n\nThis isn't just history. This is humanity.\n\n\ud83d\udea2 TITANIC: THE EXHIBITION\n\ud83d\udccd [Location]\n\ud83c\udfab Now open - Limited engagement\n\u23f0 Book now: [website]\n\nSome experiences change how you see the world. This is one of them.\n\n#TitanicExhibition #NeverForget #HistoryAlive #LimitedTime #BookNow #Experience #Legacy",
+      "cta": "Experience history. Book your tickets now."
+    }
+  ]
+}

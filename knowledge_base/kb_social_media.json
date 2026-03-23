@@ -1,0 +1,166 @@
+{
+  "category": "social_media",
+  "last_updated": "2026-01-20",
+  "frameworks": [
+    {
+      "name": "AUROS Algorithm Optimization Framework",
+      "description": "Data-driven approach to maximize algorithmic reach across platforms using weighted ranking signals",
+      "when_to_use": "When creating content for Instagram, TikTok, or any algorithm-driven platform",
+      "steps": [
+        "Identify platform-specific highest-weighted signals (saves/shares for TikTok, relationship signals for Instagram)",
+        "Create content that triggers top 3 ranking factors within first 24 hours",
+        "Optimize for completion rate using hook-retention-payoff structure",
+        "Build relationship signals through consistent engagement with target audience",
+        "Track performance against platform benchmarks and adjust"
+      ],
+      "example": "TikTok video optimized for saves: Educational content with actionable tip + clear save prompt = 15% save rate vs 2% average"
+    },
+    {
+      "name": "5-Category Shareability Matrix",
+      "description": "Instagram's revealed framework for creating highly shareable content",
+      "when_to_use": "When developing content strategy for maximum organic reach",
+      "steps": [
+        "Choose primary category: Gift, Mirror, Idea, Gossip, or Mood",
+        "Craft content that triggers specific emotional response",
+        "Include clear share trigger in caption or visual",
+        "Test across categories to identify audience preference",
+        "Scale winning category patterns"
+      ],
+      "example": "The Gift: 'This productivity hack is perfect for your entrepreneur friend' - triggers 40% higher share rate"
+    },
+    {
+      "name": "Watch Time Optimization Protocol",
+      "description": "Systematic approach to maximize video completion rates across platforms",
+      "when_to_use": "For all video content on TikTok, Instagram Reels, YouTube Shorts",
+      "steps": [
+        "Hook within first 3 seconds using pattern interrupt or bold claim",
+        "Structure content with retention spikes every 7-10 seconds",
+        "Use visual/audio changes to maintain attention",
+        "End with clear next action to encourage rewatches",
+        "A/B test different hook styles for audience optimization"
+      ],
+      "example": "90-second video with 85% completion rate using 3-second hook + 4 retention spikes + rewatch CTA"
+    }
+  ],
+  "key_principles": [
+    {
+      "principle": "Algorithm Weight Hierarchy",
+      "explanation": "TikTok: User interactions 70%, video info 20%, device settings 10%. Instagram: Relationship signals > engagement > recency > content type",
+      "application": "Prioritize saves/shares over likes. Build genuine relationships through consistent engagement before pushing content"
+    },
+    {
+      "principle": "Quality Over Quantity Engagement",
+      "explanation": "Platforms now prioritize meaningful interactions (saves, shares, quality comments) over vanity metrics (likes, follows)",
+      "application": "Create content that demands action: tutorials that get saved, insights that get shared, questions that generate discussion"
+    },
+    {
+      "principle": "Individual Video Testing",
+      "explanation": "Algorithms test each piece of content with small audiences before broader distribution, regardless of account size",
+      "application": "Focus on making each post exceptional rather than relying on follower count. New accounts can achieve viral reach with quality content"
+    },
+    {
+      "principle": "Platform-Specific Optimization",
+      "explanation": "Each platform has distinct ranking systems - no universal social media strategy works optimally",
+      "application": "Adapt content format, timing, and engagement tactics to each platform's specific algorithm preferences and user behavior patterns"
+    }
+  ],
+  "tactics": [
+    {
+      "tactic": "Save-Optimized Content Creation",
+      "platform": "all",
+      "description": "Create reference-worthy content that users want to return to: tutorials, templates, resource lists, step-by-step guides",
+      "expected_result": "10-15% save rate vs 2-3% platform average, leading to 3x higher reach"
+    },
+    {
+      "tactic": "3-Second Hook Mastery",
+      "platform": "tiktok",
+      "description": "Use pattern interrupts, bold claims, or visual surprises in opening 3 seconds to stop scroll behavior",
+      "expected_result": "80%+ completion rate vs 45% average, triggering algorithm boost"
+    },
+    {
+      "tactic": "Relationship Signal Building",
+      "platform": "instagram",
+      "description": "Consistently engage with target audience's content through meaningful comments and DMs before posting own content",
+      "expected_result": "40% higher reach to engaged accounts, improved feed placement"
+    },
+    {
+      "tactic": "Search-Optimized Captions",
+      "platform": "all",
+      "description": "Include target keywords naturally in first 125 characters, use relevant hashtags strategically (5-10 for Instagram, 3-5 for TikTok)",
+      "expected_result": "25% increase in discovery through search, longer content lifespan"
+    },
+    {
+      "tactic": "Rewatch Triggers",
+      "platform": "tiktok",
+      "description": "End videos with 'Wait, did you catch that?' or include blink-and-miss details that encourage multiple views",
+      "expected_result": "30% rewatch rate, strongest algorithm signal for content quality"
+    }
+  ],
+  "benchmarks": [
+    {
+      "metric": "Instagram Engagement Rate",
+      "industry_average": "1.22%",
+      "top_performer": "3.5%+",
+      "source": "Hootsuite 2026 Social Media Report"
+    },
+    {
+      "metric": "TikTok Completion Rate",
+      "industry_average": "45%",
+      "top_performer": "80%+",
+      "source": "TikTok Creator Analytics 2026"
+    },
+    {
+      "metric": "Instagram Save Rate",
+      "industry_average": "2.3%",
+      "top_performer": "10%+",
+      "source": "Later Social Media Benchmarks 2026"
+    },
+    {
+      "metric": "TikTok Share Rate",
+      "industry_average": "1.8%",
+      "top_performer": "8%+",
+      "source": "Sprout Social Platform Data 2026"
+    }
+  ],
+  "templates": [
+    {
+      "name": "High-Save Educational Post",
+      "template": "[Bold claim/statistic] Here's how to [achieve specific outcome]: 1. [Actionable step] 2. [Actionable step] 3. [Actionable step] Save this for later and follow for more [niche] tips!",
+      "use_case": "Educational content optimized for saves across all platforms"
+    },
+    {
+      "name": "3-Second Hook Formula",
+      "template": "[Pattern interrupt: 'Stop scrolling if...' OR Bold claim: 'This [thing] will [dramatic outcome]' OR Question: 'Why does [surprising fact]?'] [Deliver on promise in next 7 seconds]",
+      "use_case": "Video content hooks for TikTok and Instagram Reels"
+    },
+    {
+      "name": "Share-Trigger Caption",
+      "template": "[Relatable situation/problem] [Your solution/insight] Tag someone who needs to see this! [Relevant hashtags]",
+      "use_case": "Content designed to trigger shares and tags"
+    },
+    {
+      "name": "Algorithm-Friendly Question Post",
+      "template": "[Context/setup] What's your take: [Option A] or [Option B]? Comment below - I read every single one! [Relevant hashtags]",
+      "use_case": "Engagement-driving posts that generate quality comments"
+    }
+  ],
+  "common_mistakes": [
+    "Focusing on follower count over engagement quality - algorithms prioritize interaction rates",
+    "Using identical content across platforms - each algorithm rewards platform-specific optimization",
+    "Posting without engaging first - relationship signals require genuine interaction before content push",
+    "Ignoring completion rates - watch time is the strongest ranking signal for video content",
+    "Over-hashtagging - 5-10 relevant hashtags outperform 20+ generic ones",
+    "Buying engagement - algorithms detect and penalize artificial interactions",
+    "Posting inconsistently - algorithms favor accounts with regular, predictable content schedules"
+  ],
+  "pro_tips": [
+    "Post when your specific audience is most active, not general 'best times' - check your analytics for personalized timing",
+    "Create content series that encourage users to follow for the next part - builds relationship signals",
+    "Use trending audio on TikTok within first 24 hours of trend emergence for maximum algorithm boost",
+    "Reply to every comment within first 2 hours of posting - early engagement velocity triggers algorithm amplification",
+    "Cross-pollinate audiences by collaborating with accounts that share your audience but aren't direct competitors",
+    "Create 'gateway content' - easily consumable posts that introduce your expertise to new audiences",
+    "Track your top-performing content's common elements and systematically replicate those patterns",
+    "Use Instagram Stories to drive traffic to feed posts - Stories engagement improves overall account performance"
+  ]
+}

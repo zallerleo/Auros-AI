@@ -1,0 +1,89 @@
+[
+  {
+    "timestamp": "2026-03-23T08:41:49.333432",
+    "level": "INFO",
+    "message": "Found 5 images (processing up to 5)"
+  },
+  {
+    "timestamp": "2026-03-23T08:41:49.333489",
+    "level": "INFO",
+    "message": "[DRY RUN] Would generate clip from titanic_01.jpg"
+  },
+  {
+    "timestamp": "2026-03-23T08:41:49.333491",
+    "level": "INFO",
+    "message": "  Prompt: Hyper-realistic cinematic scene, grand elegant atmosphere, cool blue and silver tones, majestic scal..."
+  },
+  {
+    "timestamp": "2026-03-23T08:41:49.333494",
+    "level": "COST",
+    "message": "  Estimated cost: $0.35"
+  },
+  {
+    "timestamp": "2026-03-23T08:41:49.333498",
+    "level": "INFO",
+    "message": "[DRY RUN] Would generate clip from titanic_02.jpg"
+  },
+  {
+    "timestamp": "2026-03-23T08:41:49.333500",
+    "level": "INFO",
+    "message": "  Prompt: Hyper-realistic cinematic scene, grand elegant atmosphere, cool blue and silver tones, majestic scal..."
+  },
+  {
+    "timestamp": "2026-03-23T08:41:49.333501",
+    "level": "COST",
+    "message": "  Estimated cost: $0.35"
+  },
+  {
+    "timestamp": "2026-03-23T08:41:49.333504",
+    "level": "INFO",
+    "message": "[DRY RUN] Would generate clip from titanic_03.jpg"
+  },
+  {
+    "timestamp": "2026-03-23T08:41:49.333506",
+    "level": "INFO",
+    "message": "  Prompt: Hyper-realistic cinematic scene, grand elegant atmosphere, cool blue and silver tones, majestic scal..."
+  },
+  {
+    "timestamp": "2026-03-23T08:41:49.333508",
+    "level": "COST",
+    "message": "  Estimated cost: $0.35"
+  },
+  {
+    "timestamp": "2026-03-23T08:41:49.333511",
+    "level": "INFO",
+    "message": "[DRY RUN] Would generate clip from titanic_04.jpg"
+  },
+  {
+    "timestamp": "2026-03-23T08:41:49.333512",
+    "level": "INFO",
+    "message": "  Prompt: Hyper-realistic cinematic scene, grand elegant atmosphere, cool blue and silver tones, majestic scal..."
+  },
+  {
+    "timestamp": "2026-03-23T08:41:49.333514",
+    "level": "COST",
+    "message": "  Estimated cost: $0.35"
+  },
+  {
+    "timestamp": "2026-03-23T08:41:49.333517",
+    "level": "INFO",
+    "message": "[DRY RUN] Would generate clip from titanic_05.jpg"
+  },
+  {
+    "timestamp": "2026-03-23T08:41:49.333518",
+    "level": "INFO",
+    "message": "  Prompt: Hyper-realistic cinematic scene, grand elegant atmosphere, cool blue and silver tones, majestic scal..."
+  },
+  {
+    "timestamp": "2026-03-23T08:41:49.333520",
+    "level": "COST",
+    "message": "  Estimated cost: $0.35"
+  },
+  {
+    "timestamp": "2026-03-23T08:41:49.333532",
+    "level": "COST",
+    "message": "Total batch cost: $1.75",
+    "successful": 5,
+    "failed": 0
+  }
+]

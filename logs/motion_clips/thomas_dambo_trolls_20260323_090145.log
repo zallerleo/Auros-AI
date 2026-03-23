@@ -1,0 +1,94 @@
+[
+  {
+    "timestamp": "2026-03-23T09:01:45.419573",
+    "level": "INFO",
+    "message": "Narrative: Adventure \u2192 Discovery \u2192 Magic \u2192 Joy \u2192 Wonder"
+  },
+  {
+    "timestamp": "2026-03-23T09:01:45.421833",
+    "level": "INFO",
+    "message": "Story: 5 scenes planned"
+  },
+  {
+    "timestamp": "2026-03-23T09:01:45.421850",
+    "level": "INFO",
+    "message": "[DRY RUN] HOOK \u2014 The Call to Adventure: dambo_explorers_sentosa.jpg"
+  },
+  {
+    "timestamp": "2026-03-23T09:01:45.421853",
+    "level": "INFO",
+    "message": "  Prompt: Adventurers discovering a hidden giant troll deep in a tropical forest \u2014 the camera slowly pushing t..."
+  },
+  {
+    "timestamp": "2026-03-23T09:01:45.421857",
+    "level": "COST",
+    "message": "  Estimated cost: $0.35"
+  },
+  {
+    "timestamp": "2026-03-23T09:01:45.421861",
+    "level": "INFO",
+    "message": "[DRY RUN] DISCOVERY \u2014 Meeting the First Troll: dambo_golden_rabbit.jpg"
+  },
+  {
+    "timestamp": "2026-03-23T09:01:45.421863",
+    "level": "INFO",
+    "message": "  Prompt: The Golden Rabbit troll springs to life in the forest \u2014 its giant ears twitching, nose wiggling as i..."
+  },
+  {
+    "timestamp": "2026-03-23T09:01:45.421865",
+    "level": "COST",
+    "message": "  Estimated cost: $0.35"
+  },
+  {
+    "timestamp": "2026-03-23T09:01:45.421868",
+    "level": "INFO",
+    "message": "[DRY RUN] WONDER \u2014 The Forest Awakens: dambo_malins_fountain.jpg"
+  },
+  {
+    "timestamp": "2026-03-23T09:01:45.421869",
+    "level": "INFO",
+    "message": "  Prompt: The giant troll fountain sculpture awakens \u2014 water beginning to flow from its cupped wooden hands, w..."
+  },
+  {
+    "timestamp": "2026-03-23T09:01:45.421871",
+    "level": "COST",
+    "message": "  Estimated cost: $0.35"
+  },
+  {
+    "timestamp": "2026-03-23T09:01:45.421874",
+    "level": "INFO",
+    "message": "[DRY RUN] CONNECTION \u2014 Falling in Love: dambo_barefoot_frida.jpg"
+  },
+  {
+    "timestamp": "2026-03-23T09:01:45.421876",
+    "level": "INFO",
+    "message": "  Prompt: Barefoot Frida the troll sits peacefully as the forest comes alive around her \u2014 mushrooms sprouting ..."
+  },
+  {
+    "timestamp": "2026-03-23T09:01:45.421878",
+    "level": "COST",
+    "message": "  Estimated cost: $0.35"
+  },
+  {
+    "timestamp": "2026-03-23T09:01:45.421881",
+    "level": "INFO",
+    "message": "[DRY RUN] DESIRE \u2014 There Are More to Find: dambo_pia_peacekeeper.jpg"
+  },
+  {
+    "timestamp": "2026-03-23T09:01:45.421883",
+    "level": "INFO",
+    "message": "  Prompt: The towering Pia the Peacekeeper troll slowly turns her wooden head toward camera, eyes beginning to..."
+  },
+  {
+    "timestamp": "2026-03-23T09:01:45.421885",
+    "level": "COST",
+    "message": "  Estimated cost: $0.35"
+  },
+  {
+    "timestamp": "2026-03-23T09:01:45.421898",
+    "level": "COST",
+    "message": "Total batch cost: $1.75",
+    "successful": 5,
+    "failed": 0
+  }
+]

@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AUROS Content Calendar — The Imagine Team — April 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { background:#0B0F1A; color:#FAFAF8; font-family:'Inter',sans-serif; }
+
+    .header {
+        padding:40px; border-bottom:1px solid rgba(201,168,76,0.15);
+        display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px;
+    }
+    .header-left { }
+    .header-label { font-size:10px; letter-spacing:4px; color:#C9A84C; text-transform:uppercase; font-weight:700; }
+    .header-title { font-size:36px; font-weight:900; letter-spacing:-2px; margin-top:8px; }
+    .header-title span { color:#C9A84C; }
+    .header-meta { font-size:14px; color:#6B7280; margin-top:4px; }
+
+    .stats-bar {
+        padding:24px 40px; background:#111827;
+        display:flex; gap:32px; flex-wrap:wrap; align-items:center;
+        border-bottom:1px solid rgba(201,168,76,0.1);
+    }
+    .stat { text-align:center; }
+    .stat-num { display:block; font-size:28px; font-weight:900; color:#C9A84C; }
+    .stat-label { font-size:10px; letter-spacing:2px; color:#6B7280; text-transform:uppercase; }
+    .themes { display:flex; gap:8px; margin-left:auto; flex-wrap:wrap; }
+    .theme-tag { background:rgba(201,168,76,0.1); color:#C9A84C; padding:6px 14px; border-radius:20px; font-size:12px; font-weight:600; }
+
+    .calendar-grid { padding:24px 40px; overflow-x:auto; }
+    .cal-table { width:100%; border-collapse:collapse; table-layout:fixed; min-width:900px; }
+    .cal-table th {
+        padding:12px 8px; font-size:11px; letter-spacing:2px; color:#C9A84C;
+        text-transform:uppercase; text-align:center; border-bottom:1px solid rgba(201,168,76,0.15);
+    }
+    .day {
+        border:1px solid rgba(255,255,255,0.05); vertical-align:top; padding:8px;
+        height:120px; background:#0B0F1A; transition:background 0.2s;
+    }
+    .day.empty { background:transparent; border-color:transparent; }
+    .day.has-content { cursor:pointer; }
+    .day.has-content:hover { background:#111827; }
+    .day-number { font-size:14px; font-weight:700; color:#6B7280; margin-bottom:6px; }
+    .day-platform {
+        display:inline-block; padding:2px 6px; border-radius:3px; font-size:9px;
+        font-weight:700; color:#fff; letter-spacing:1px; margin-bottom:4px;
+    }
+    .day-type { font-size:10px; color:#C9A84C; font-weight:700; letter-spacing:1px; }
+    .day-topic { font-size:11px; color:#9CA3AF; margin-top:4px; line-height:1.4; }
+    .day-time { font-size:10px; color:#6B7280; margin-top:4px; }
+    .day-empty-label { font-size:10px; color:#374151; }
+
+    .modal-overlay {
+        display:none; position:fixed; top:0; left:0; width:100%; height:100%;
+        background:rgba(0,0,0,0.8); z-index:1000; justify-content:center; align-items:center;
+    }
+    .modal-overlay.active { display:flex; }
+    .modal {
+        background:#111827; border-radius:16px; padding:40px; max-width:600px; width:90%;
+        max-height:80vh; overflow-y:auto; border:1px solid rgba(201,168,76,0.2);
+    }
+    .modal-close { float:right; cursor:pointer; color:#6B7280; font-size:24px; }
+    .modal-close:hover { color:#FAFAF8; }
+    .modal-date { font-size:10px; letter-spacing:3px; color:#C9A84C; text-transform:uppercase; font-weight:700; }
+    .modal-topic { font-size:22px; font-weight:700; margin:8px 0 16px; }
+    .modal-label { font-size:10px; letter-spacing:2px; color:#C9A84C; text-transform:uppercase; font-weight:700; margin-top:16px; margin-bottom:4px; }
+    .modal-value { font-size:14px; color:#9CA3AF; line-height:1.7; }
+    .modal-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:4px; }
+    .modal-tag { background:rgba(59,130,246,0.1); color:#3B82F6; padding:3px 8px; border-radius:4px; font-size:11px; }
+
+    .strategy-notes {
+        padding:32px 40px; border-top:1px solid rgba(201,168,76,0.15);
+    }
+    .strategy-notes .section-label { font-size:10px; letter-spacing:4px; color:#C9A84C; text-transform:uppercase; font-weight:700; margin-bottom:8px; }
+    .strategy-notes p { font-size:14px; color:#9CA3AF; line-height:1.7; }
+
+    .footer {
+        padding:40px; text-align:center; border-top:1px solid rgba(201,168,76,0.15);
+    }
+    .footer-brand { font-size:20px; font-weight:900; color:#C9A84C; }
+    .footer-tagline { font-size:10px; color:#6B7280; letter-spacing:2px; margin-top:4px; }
+
+    @media (max-width:768px) {
+        .header, .stats-bar, .calendar-grid, .strategy-notes, .footer { padding-left:16px; padding-right:16px; }
+        .day { height:100px; padding:4px; }
+        .day-topic { display:none; }
+    }
+</style>
+</head>
+<body>
+
+<div class="header">
+    <div class="header-left">
+        <div class="header-label">AUROS Content Calendar</div>
+        <h1 class="header-title"><span>April</span> 2026 &mdash; The Imagine Team</h1>
+        <div class="header-meta">Generated March 22, 2026</div>
+    </div>
+</div>
+
+<div class="stats-bar">
+    <div class="stat"><span class="stat-num">8</span><span class="stat-label">Reels</span></div><div class="stat"><span class="stat-num">6</span><span class="stat-label">Carousels</span></div><div class="stat"><span class="stat-num">10</span><span class="stat-label">Static Posts</span></div><div class="stat"><span class="stat-num">0</span><span class="stat-label">Stories</span></div><div class="stat"><span class="stat-num">0</span><span class="stat-label">Lives</span></div><div class="stat"><span class="stat-num">6</span><span class="stat-label">Videos</span></div>
+    <div class="themes"><span class="theme-tag">Behind-the-scenes transparency</span><span class="theme-tag">Technology innovation showcase</span><span class="theme-tag">Visitor experience focus</span></div>
+</div>
+
+<div class="calendar-grid">
+    <table class="cal-table">
+        <thead>
+            <tr>
+                <th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td class="day empty"></td><td class="day empty"></td>
+                <td class="day has-content" onclick="showDetail('2026-04-01')">
+                    <div class="day-number">1</div>
+                    <div class="day-platform" style="background:#E1306C;">INSTAGRAM</div>
+                    <div class="day-type">REEL</div>
+                    <div class="day-topic">LED wall transformation timelapse</div>
+                    <div class="day-time">10:00 AM EST</div>
+                </td>
+                <td class="day has-content" onclick="showDetail('2026-04-02')">
+                    <div class="day-number">2</div>
+                    <div class="day-platform" style="background:#00F2EA;">TIKTOK</div>
+                    <div class="day-type">VID</div>
+                    <div class="day-topic">Behind-the-scenes installation</div>
+                    <div class="day-time">7:00 PM EST</div>
+                </td>
+                <td class="day has-content" onclick="showDetail('2026-04-03')">
+                    <div class="day-number">3</div>
+                    <div class="day-platform" style="background:#0A66C2;">LINKEDIN</div>
+                    <div class="day-type">POST</div>
+                    <div class="day-topic">Industry insights on experiential ROI</div>
+                    <div class="day-time">9:00 AM EST</div>
+                </td>
+                <td class="day has-content" onclick="showDetail('2026-04-04')">
+                    <div class="day-number">4</div>
+                    <div class="day-platform" style="background:#E1306C;">INSTAGRAM</div>
+                    <div class="day-type">CRSL</div>
+                    <div class="day-topic">Interactive element demo sequence</div>
+                    <div class="day-time">11:00 AM EST</div>
+                </td>
+                <td class="day has-content" onclick="showDetail('2026-04-05')">
+                    <div class="day-number">5</div>
+                    <div class="day-platform" style="background:#00F2EA;">TIKTOK</div>
+                    <div class="day-type">VID</div>
+                    <div class="day-topic">Weekend trend participation with exhibition twist</div>
+                    <div class="day-time">2:00 PM EST</div>
+                </td></tr><tr>
+                <td class="day has-content" onclick="showDetail('2026-04-06')">
+                    <div class="day-number">6</div>
+                    <div class="day-platform" style="background:#E1306C;">INSTAGRAM</div>
+                    <div class="day-type">POST</div>
+                    <div class="day-topic">Sunday inspiration - visitor reactions</div>
+                    <div class="day-time">5:00 PM EST</div>
+                </td>
+                <td class="day has-content" onclick="showDetail('2026-04-07')">
+                    <div class="day-number">7</div>
+                    <div class="day-platform" style="background:#0A66C2;">LINKEDIN</div>
+                    <div class="day-type">POST</div>
+                    <div class="day-topic">Monday motivation - project success metrics</div>
+                    <div class="day-time">8:00 AM EST</div>
+                </td>
+                <td class="day has-content" onclick="showDetail('2026-04-08')">
+                    <div class="day-number">8</div>
+                    <div class="day-platform" style="background:#E1306C;">INSTAGRAM</div>
+                    <div class="day-type">REEL</div>
+                    <div class="day-topic">Tech explanation - projection mapping process</div>
+                    <div class="day-time">10:30 AM EST</div>
+                </td>
+                <td class="day has-content" onclick="showDetail('2026-04-09')">
+                    <div class="day-number">9</div>
+                    <div class="day-platform" style="background:#00F2EA;">TIKTOK</div>
+                    <div class="day-type">VID</div>
+                    <div class="day-topic">Transformation reveal - space metamorphosis</div>
+                    <div class="day-time">8:00 PM EST</div>
+                </td>
+                <td class="day has-content" onclick="showDetail('2026-04-10')">
+                    <div class="day-number">10</div>
+                    <div class="day-platform" style="background:#0A66C2;">LINKEDIN</div>
+                    <div class="day-type">CRSL</div>
+                    <div class="day-topic">Case study breakdown - exhibition success factors</div>
+                    <div class="day-time">9:30 AM EST</div>
+                </td>
+                <td class="day has-content" onclick="showDetail('2026-04-11')">
+                    <div class="day-number">11</div>
+                    <div class="day-platform" style="background:#E1306C;">INSTAGRAM</div>
+                    <div class="day-type">REEL</div>
+                    <div class="day-topic">Friday team spotlight - installation crew</div>
+                    <div class="day-time">12:00 PM EST</div>
+                </td>
+                <td class="day has-content" onclick="showDetail('2026-04-12')">
+                    <div class="day-number">12</div>
+                    <div class="day-platform" style="background:#00F2EA;">TIKTOK</div>
+                    <div class="day-type">VID</div>
+                    <div class="day-topic">Weekend fun - office tour with trending audio</div>
+                    <div class="day-time">3:00 PM EST</div>
+                </td></tr><tr>
+                <td class="day has-content" onclick="showDetail('2026-04-13')">
+                    <div class="day-number">13</div>
+                    <div class="day-platform" style="background:#E1306C;">INSTAGRAM</div>
+                    <div class="day-type">POST</div>
+                    <div class="day-topic">Sunday reflection - visitor impact stories</div>
+                    <div class="day-time">6:00 PM EST</div>
+                </td>
+                <td class="day has-content" onclick="showDetail('2026-04-14')">
+                    <div class="day-number">14</div>
+                    <div class="day-platform" style="background:#0A66C2;">LINKEDIN</div>
+                    <div class="day-type">POST</div>
+                    <div class="day-topic">Industry trend analysis - immersive technology ...</div>
+                    <div class="day-time">8:30 AM EST</div>
+                </td>
+                <td class="day has-content" onclick="showDetail('2026-04-15')">
+                    <div class="day-number">15</div>
+                    <div class="day-platform" style="background:#E1306C;">INSTAGRAM</div>
+                    <div class="day-type">CRSL</div>
+                    <div class="day-topic">Design process reveal - concept to reality</div>
+                    <div class="day-time">11:00 AM EST</div>
+                </td>
+                <td class="day has-content" onclick="showDetail('2026-04-16')">
+                    <div class="day-number">16</div>
+                    <div class="day-platform" style="background:#00F2EA;">TIKTOK</div>
+                    <div class="day-type">VID</div>
+                    <div class="day-topic">Visitor reaction compilation</div>
+                    <div class="day-time">7:30 PM EST</div>
+                </td>
+                <td class="day has-content" onclick="showDetail('2026-04-17')">
+                    <div class="day-number">17</div>
+                    <div class="day-platform" style="background:#0A66C2;">LINKEDIN</div>
+                    <div class="day-type">POST</div>
+                    <div class="day-topic">Partnership spotlight - IP collaboration success</div>
+                    <div class="day-time">9:00 AM EST</div>
+                </td>
+                <td class="day has-content" onclick="showDetail('2026-04-18')">
+                    <div class="day-number">18</div>
+                    <div class="day-platform" style="background:#E1306C;">INSTAGRAM</div>
+                    <div class="day-type">REEL</div>
+                    <div class="day-topic">Friday energy - installation team celebration</div>
+                    <div class="day-time">1:00 PM EST</div>
+                </td>
+                <td class="day has-content" onclick="showDetail('2026-04-19')">
+                    <div class="day-number">19</div>
+                    <div class="day-platform" style="background:#00F2EA;">TIKTOK</div>
+                    <div class="day-type">VID</div>
+                    <div class="day-topic">Weekend behind-the-scenes - maintenance crew</div>
+                    <div class="day-time">4:00 PM EST</div>
+                </td></tr><tr>
+                <td class="day has-content" onclick="showDetail('2026-04-20')">
+                    <div class="day-number">20</div>
+                    <div class="day-platform" style="background:#E1306C;">INSTAGRAM</div>
+                    <div class="day-type">POST</div>
+                    <div class="day-topic">Sunday inspiration - design philosophy</div>
+                    <div class="day-time">5:30 PM EST</div>
+                </td>
+                <td class="day has-content" onclick="showDetail('2026-04-21')">
+                    <div class="day-number">21</div>
+                    <div class="day-platform" style="background:#0A66C2;">LINKEDIN</div>
+                    <div class="day-type">CRSL</div>
+                    <div class="day-topic">Technology integration showcase</div>
+                    <div class="day-time">8:00 AM EST</div>
+                </td>
+                <td class="day has-content" onclick="showDetail('2026-04-22')">
+                    <div class="day-number">22</div>
+                    <div class="day-platform" style="background:#E1306C;">INSTAGRAM</div>
+                    <div class="day-type">REEL</div>
+                    <div class="day-topic">Time-lapse transformation Tuesday</div>
+                    <div class="day-time">10:00 AM EST</div>
+                </td>
+                <td class="day has-content" onclick="showDetail('2026-04-23')">
+                    <div class="day-number">23</div>
+                    <div class="day-platform" style="background:#00F2EA;">TIKTOK</div>
+                    <div class="day-type">VID</div>
+                    <div class="day-topic">Midweek motivation - problem solving</div>
+                    <div class="day-time">6:00 PM EST</div>
+                </td>
+                <td class="day has-content" onclick="showDetail('2026-04-24')">
+                    <div class="day-number">24</div>
+                    <div class="day-platform" style="background:#0A66C2;">LINKEDIN</div>
+                    <div class="day-type">POST</div>
+                    <div class="day-topic">Industry leadership - thought piece on future t...</div>
+                    <div class="day-time">9:30 AM EST</div>
+                </td>
+                <td class="day has-content" onclick="showDetail('2026-04-25')">
+                    <div class="day-number">25</div>
+                    <div class="day-platform" style="background:#E1306C;">INSTAGRAM</div>
+                    <div class="day-type">REEL</div>
+                    <div class="day-topic">Friday finale - week's best moments</div>
+                    <div class="day-time">2:00 PM EST</div>
+                </td>
+                <td class="day has-content" onclick="showDetail('2026-04-26')">
+                    <div class="day-number">26</div>
+                    <div class="day-platform" style="background:#00F2EA;">TIKTOK</div>
+                    <div class="day-type">VID</div>
+                    <div class="day-topic">Saturday chill - team downtime</div>
+                    <div class="day-time">1:00 PM EST</div>
+                </td></tr><tr>
+                <td class="day has-content" onclick="showDetail('2026-04-27')">
+                    <div class="day-number">27</div>
+                    <div class="day-platform" style="background:#E1306C;">INSTAGRAM</div>
+                    <div class="day-type">CRSL</div>
+                    <div class="day-topic">Sunday showcase - visitor journey mapping</div>
+                    <div class="day-time">4:00 PM EST</div>
+                </td>
+                <td class="day has-content" onclick="showDetail('2026-04-28')">
+                    <div class="day-number">28</div>
+                    <div class="day-platform" style="background:#0A66C2;">LINKEDIN</div>
+                    <div class="day-type">POST</div>
+                    <div class="day-topic">Monday metrics - April performance review</div>
+                    <div class="day-time">8:30 AM EST</div>
+                </td>
+                <td class="day has-content" onclick="showDetail('2026-04-29')">
+                    <div class="day-number">29</div>
+                    <div class="day-platform" style="background:#E1306C;">INSTAGRAM</div>
+                    <div class="day-type">REEL</div>
+                    <div class="day-topic">Technology Tuesday - AR integration preview</div>
+                    <div class="day-time">11:30 AM EST</div>
+                </td>
+                <td class="day has-content" onclick="showDetail('2026-04-30')">
+                    <div class="day-number">30</div>
+                    <div class="day-platform" style="background:#00F2EA;">TIKTOK</div>
+                    <div class="day-type">VID</div>
+                    <div class="day-topic">April wrap-up - month's best moments</div>
+                    <div class="day-time">7:00 PM EST</div>
+                </td><td class="day empty"></td><td class="day empty"></td><td class="day empty"></td></tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="strategy-notes">
+    <div class="section-label">Strategy Notes</div>
+    <p>April strategy focuses on building trust through transparency, showcasing technical expertise, and highlighting visitor impact. Content balances professional LinkedIn presence with engaging Instagram/TikTok content. Each post includes specific metrics and clear CTAs to drive engagement and establish AUROS client as industry leader.</p>
+</div>
+
+<div class="modal-overlay" id="modal" onclick="closeModal(event)">
+    <div class="modal" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="document.getElementById('modal').classList.remove('active')">&times;</span>
+        <div id="modal-content"></div>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="footer-brand">AUROS</div>
+    <div class="footer-tagline">Intelligence, Elevated.</div>
+</div>
+
+<script>
+const entries = [
+  {
+    "date": "2026-04-01",
+    "day_of_week": "Tuesday",
+    "platform": "instagram",
+    "content_type": "reel",
+    "topic": "LED wall transformation timelapse",
+    "caption": "30 seconds. 847 LED panels. 1 mind-blowing transformation.\n\nWatch our team configure modular walls from concert backdrop to interactive art installation.\n\nThis Harry Potter exhibition generated $2.3M in 6 months.\n\nWhat exhibition would you design? \ud83d\udc47",
+    "hashtags": [
+      "#experientialdesign",
+      "#ledwalls",
+      "#harrypotter",
+      "#exhibitions",
+      "#transformation",
+      "#theimagineteam",
+      "#immersive",
+      "#eventtech",
+      "#design",
+      "#viral"
+    ],
+    "optimal_time": "10:00 AM EST",
+    "notes": "Film LED wall reconfiguration in real-time, speed up to 30 seconds",
+    "engagement_hook": "What exhibition would you design?",
+    "cta": "Comment your dream exhibition theme"
+  },
+  {
+    "date": "2026-04-02",
+    "day_of_week": "Wednesday",
+    "platform": "tiktok",
+    "content_type": "video",
+    "topic": "Behind-the-scenes installation",
+    "caption": "POV: You're building magic \u2728\n\n6 days. 47 crew members. 1 impossible deadline.\n\nThis is how we install immersive exhibitions that break attendance records.\n\n#experientialdesign #bts #installation",
+    "hashtags": [
+      "#experientialdesign",
+      "#bts",
+      "#installation",
+      "#teamwork",
+      "#construction",
+      "#exhibitions",
+      "#fyp",
+      "#viral",
+      "#magic",
+      "#theimagineteam"
+    ],
+    "optimal_time": "7:00 PM EST",
+    "notes": "Raw footage of team assembling projection dome with trending audio",
+    "engagement_hook": "Tag someone who needs to see this process",
+    "cta": "Follow for more behind-the-scenes content"
+  },
+  {
+    "date": "2026-04-03",
+    "day_of_week": "Thursday",
+    "platform": "linkedin",
+    "content_type": "static_post",
+    "topic": "Industry insights on experiential ROI",
+    "caption": "Experiential marketing generates 70% more brand recall than digital ads.\n\nOur Harry Potter exhibition proof:\n\u2192 847,000 visitors in 18 months\n\u2192 94% visitor satisfaction rate\n\u2192 $2.3M revenue for IP owner\n\u2192 340% social media mention increase\n\nThe data doesn't lie. Physical experiences create lasting connections.\n\nWhat's your experience with experiential marketing ROI?",
+    "hashtags": [
+      "#experientialmarketing",
+      "#roi",
+      "#exhibitions",
+      "#brandactivation",
+      "#marketing",
+      "#eventmarketing",
+      "#immersive",
+      "#customerexperience",
+      "#theimagineteam",
+      "#results"
+    ],
+    "optimal_time": "9:00 AM EST",
+    "notes": "Professional graphic with ROI statistics",
+    "engagement_hook": "What's your experience with experiential marketing ROI?",
+    "cta": "Share your experiential marketing results in comments"
+  },
+  {
+    "date": "2026-04-04",
+    "day_of_week": "Friday",
+    "platform": "instagram",
+    "content_type": "carousel",
+    "topic": "Interactive element demo sequence",
+    "caption": "Swipe to see magic happen \ud83d\udc46\n\nThis kinetic light installation responds to visitor movement.\n\n5 slides = 1 mind-blown visitor\n\nSlide 1: Visitor approaches\nSlide 2: Hand touches surface\nSlide 3: Lights cascade\nSlide 4: Crowd gathers\nSlide 5: Pure joy\n\nInteractive design creates unforgettable moments.\n\nSave this for your next project inspiration \ud83d\udccc",
+    "hashtags": [
+      "#interactive",
+      "#kinetic",
+      "#lightinstallation",
+      "#experientialdesign",
+      "#immersive",
+      "#technology",
+      "#exhibitions",
+      "#theimagineteam",
+      "#innovation",
+      "#inspiration"
+    ],
+    "optimal_time": "11:00 AM EST",
+    "notes": "5-slide sequence showing complete interaction from approach to reaction",
+    "engagement_hook": "Which slide was your favorite?",
+    "cta": "Save for project inspiration"
+  },
+  {
+    "date": "2026-04-05",
+    "day_of_week": "Saturday",
+    "platform": "tiktok",
+    "content_type": "video",
+    "topic": "Weekend trend participation with exhibition twist",
+    "caption": "When your office is literally magical \u2728\n\n#workvibes #officegoals #experientialdesign #magic",
+    "hashtags": [
+      "#workvibes",
+      "#officegoals",
+      "#experientialdesign",
+      "#magic",
+      "#weekend",
+      "#fyp",
+      "#viral",
+      "#theimagineteam",
+      "#work",
+      "#fun"
+    ],
+    "optimal_time": "2:00 PM EST",
+    "notes": "Team member doing popular weekend dance trend in front of kinetic installation",
+    "engagement_hook": "Rate our office vibes 1-10",
+    "cta": "Follow for more behind-the-scenes fun"
+  },
+  {
+    "date": "2026-04-06",
+    "day_of_week": "Sunday",
+    "platform": "instagram",
+    "content_type": "static_post",
+    "topic": "Sunday inspiration - visitor reactions",
+    "caption": "Sunday inspiration: Pure wonder \ud83e\udd29\n\nThis 8-year-old's reaction to our holographic Patronus display.\n\n847,000 visitors. Countless magical moments.\n\nThis is why we design experiences.\n\nWhat made you feel wonder this week?",
+    "hashtags": [
+      "#sundayinspiration",
+      "#wonder",
+      "#harrypotter",
+      "#holographic",
+      "#patronus",
+      "#experientialdesign",
+      "#magic",
+      "#theimagineteam",
+      "#inspiration",
+      "#joy"
+    ],
+    "optimal_time": "5:00 PM EST",
+    "notes": "Heartwarming photo of child's amazed reaction to holographic display",
+    "engagement_hook": "What made you feel wonder this week?",
+    "cta": "Share your wonder moment in comments"
+  },
+  {
+    "date": "2026-04-07",
+    "day_of_week": "Monday",
+    "platform": "linkedin",
+    "content_type": "static_post",
+    "topic": "Monday motivation - project success metrics",
+    "caption": "Monday motivation: Results that matter.\n\nOur latest exhibition metrics:\n\u2713 94% visitor satisfaction\n\u2713 4.8/5 average rating\n\u2713 67% return visitor rate\n\u2713 340% social media boost\n\nGreat design isn't just beautiful. It's measurable.\n\nHow do you measure experience success?",
+    "hashtags": [
+      "#mondaymotivation",
+      "#results",
+      "#metrics",
+      "#experientialdesign",
+      "#success",
+      "#roi",
+      "#exhibitions",
+      "#theimagineteam",
+      "#measurement",
+      "#data"
+    ],
+    "optimal_time": "8:00 AM EST",
+    "notes": "Clean infographic showing key performance metrics",
+    "engagement_hook": "How do you measure experience success?",
+    "cta": "Share your success metrics"
+  },
+  {
+    "date": "2026-04-08",
+    "day_of_week": "Tuesday",
+    "platform": "instagram",
+    "content_type": "reel",
+    "topic": "Tech explanation - projection mapping process",
+    "caption": "How we make walls disappear \u2728\n\n3D mapping + precise calibration = digital magic\n\nStep 1: Scan surface geometry\nStep 2: Create 3D model\nStep 3: Design content\nStep 4: Calibrate projectors\nStep 5: Mind = blown\n\nThis Harry Potter Great Hall took 72 hours to perfect.\n\nWhich step surprised you most? \ud83d\udc47",
+    "hashtags": [
+      "#projectionmapping",
+      "#technology",
+      "#3dmapping",
+      "#digital",
+      "#harrypotter",
+      "#greathall",
+      "#experientialdesign",
+      "#theimagineteam",
+      "#tech",
+      "#innovation"
+    ],
+    "optimal_time": "10:30 AM EST",
+    "notes": "Quick tech breakdown with visual demonstrations of each step",
+    "engagement_hook": "Which step surprised you most?",
+    "cta": "Comment the step that amazed you"
+  },
+  {
+    "date": "2026-04-09",
+    "day_of_week": "Wednesday",
+    "platform": "tiktok",
+    "content_type": "video",
+    "topic": "Transformation reveal - space metamorphosis",
+    "caption": "Empty warehouse \u2192 Magical world in 6 days \ud83e\ude84\n\nThe transformation that broke TikTok.\n\n47 crew members made this happen.\n\n#transformation #warehouse #magic #construction #fyp",
+    "hashtags": [
+      "#transformation",
+      "#warehouse",
+      "#magic",
+      "#construction",
+      "#fyp",
+      "#viral",
+      "#beforeandafter",
+      "#theimagineteam",
+      "#timelapse",
+      "#amazing"
+    ],
+    "optimal_time": "8:00 PM EST",
+    "notes": "Dramatic before/after showing complete space transformation",
+    "engagement_hook": "Rate this transformation 1-10",
+    "cta": "Follow for more transformations"
+  },
+  {
+    "date": "2026-04-10",
+    "day_of_week": "Thursday",
+    "platform": "linkedin",
+    "content_type": "carousel",
+    "topic": "Case study breakdown - exhibition success factors",
+    "caption": "Case Study: How we generated $2.3M for IP owners\n\nSwipe for the complete breakdown \u2192\n\nSlide 1: Challenge overview\nSlide 2: Strategic approach\nSlide 3: Design execution\nSlide 4: Technology integration\nSlide 5: Results achieved\n\nExperiential design isn't magic. It's strategic.\n\nWhat challenges are you facing with brand activation?",
+    "hashtags": [
+      "#casestudy",
+      "#experientialmarketing",
+      "#brandactivation",
+      "#strategy",
+      "#results",
+      "#roi",
+      "#exhibitions",
+      "#theimagineteam",
+      "#success",
+      "#business"
+    ],
+    "optimal_time": "9:30 AM EST",
+    "notes": "Professional 5-slide case study with data and visuals",
+    "engagement_hook": "What challenges are you facing with brand activation?",
+    "cta": "DM us to discuss your project"
+  },
+  {
+    "date": "2026-04-11",
+    "day_of_week": "Friday",
+    "platform": "instagram",
+    "content_type": "reel",
+    "topic": "Friday team spotlight - installation crew",
+    "caption": "Friday spotlight: Meet the magic makers \ud83d\udd25\n\nOur installation crew works 72-hour shifts to create wonder.\n\nBehind every magical moment:\n\u2192 47 skilled professionals\n\u2192 847 LED panels installed\n\u2192 0 safety incidents\n\u2192 1 incredible team\n\nTag someone who deserves recognition \ud83d\udc47\n\n#TeamAppreciation #FridaySpotlight",
+    "hashtags": [
+      "#teamspotlight",
+      "#fridayfeature",
+      "#crew",
+      "#installation",
+      "#teamwork",
+      "#appreciation",
+      "#theimagineteam",
+      "#hardwork",
+      "#professionals",
+      "#recognition"
+    ],
+    "optimal_time": "12:00 PM EST",
+    "notes": "Dynamic shots of crew members at work with upbeat music",
+    "engagement_hook": "Tag someone who deserves recognition",
+    "cta": "Show love for hardworking teams in comments"
+  },
+  {
+    "date": "2026-04-12",
+    "day_of_week": "Saturday",
+    "platform": "tiktok",
+    "content_type": "video",
+    "topic": "Weekend fun - office tour with trending audio",
+    "caption": "POV: Your office is literally Hogwarts \u26a1\n\nWhen work doesn't feel like work.\n\n#officevibes #hogwarts #worklife #weekend",
+    "hashtags": [
+      "#officevibes",
+      "#hogwarts",
+      "#worklife",
+      "#weekend",
+      "#fyp",
+      "#office",
+      "#theimagineteam",
+      "#fun",
+      "#saturday",
+      "#work"
+    ],
+    "optimal_time": "3:00 PM EST",
+    "notes": "Fun office tour with trending weekend audio, casual vibe",
+    "engagement_hook": "Rate our office setup 1-10",
+    "cta": "Follow for more office content"
+  },
+  {
+    "date": "2026-04-13",
+    "day_of_week": "Sunday",
+    "platform": "instagram",
+    "content_type": "static_post",
+    "topic": "Sunday reflection - visitor impact stories",
+    "caption": "Sunday reflection: Impact beyond numbers \ud83d\udcab\n\n\"My daughter with autism rarely speaks to strangers. But she spent 20 minutes explaining the Patronus display to everyone around her. Thank you for creating a space where she felt confident to shine.\" - Sarah M.\n\n847,000 visitors. Countless stories like this.\n\nWhat's your most meaningful visitor feedback?",
+    "hashtags": [
+      "#sundayreflection",
+      "#impact",
+      "#visitor",
+      "#autism",
+      "#confidence",
+      "#meaningful",
+      "#experientialdesign",
+      "#theimagineteam",
+      "#stories",
+      "#community"
+    ],
+    "optimal_time": "6:00 PM EST",
+    "notes": "Heartwarming testimonial with soft, inspiring visual",
+    "engagement_hook": "What's your most meaningful visitor feedback?",
+    "cta": "Share your impact stories below"
+  },
+  {
+    "date": "2026-04-14",
+    "day_of_week": "Monday",
+    "platform": "linkedin",
+    "content_type": "static_post",
+    "topic": "Industry trend analysis - immersive technology adoption",
+    "caption": "Industry insight: Immersive tech adoption accelerating 300% year-over-year.\n\nKey drivers:\n\u2192 70% higher brand recall vs traditional media\n\u2192 85% visitor satisfaction rates\n\u2192 340% social media amplification\n\u2192 $47 average revenue per visitor\n\nThe experiential economy isn't coming. It's here.\n\nHow is your organization adapting to immersive expectations?",
+    "hashtags": [
+      "#industryinsight",
+      "#immersivetech",
+      "#experientialeconomy",
+      "#trends",
+      "#brandrecall",
+      "#adaptation",
+      "#theimagineteam",
+      "#future",
+      "#technology",
+      "#business"
+    ],
+    "optimal_time": "8:30 AM EST",
+    "notes": "Professional trend analysis with supporting statistics",
+    "engagement_hook": "How is your organization adapting to immersive expectations?",
+    "cta": "Share your immersive strategy"
+  },
+  {
+    "date": "2026-04-15",
+    "day_of_week": "Tuesday",
+    "platform": "instagram",
+    "content_type": "carousel",
+    "topic": "Design process reveal - concept to reality",
+    "caption": "Swipe to see dreams become reality \u2728\n\nFrom sketch to spectacular in 90 days.\n\nSlide 1: Initial concept sketch\nSlide 2: 3D visualization\nSlide 3: Technical planning\nSlide 4: Installation begins\nSlide 5: Opening day magic\n\nEvery masterpiece starts with an idea.\n\nWhat's your creative process? Share below \ud83d\udc47",
+    "hashtags": [
+      "#designprocess",
+      "#concepttoreality",
+      "#creative",
+      "#sketch",
+      "#3d",
+      "#visualization",
+      "#planning",
+      "#theimagineteam",
+      "#masterpiece",
+      "#process"
+    ],
+    "optimal_time": "11:00 AM EST",
+    "notes": "5-slide journey from initial sketches to final installation",
+    "engagement_hook": "What's your creative process?",
+    "cta": "Share your process in comments"
+  },
+  {
+    "date": "2026-04-16",
+    "day_of_week": "Wednesday",
+    "platform": "tiktok",
+    "content_type": "video",
+    "topic": "Visitor reaction compilation",
+    "caption": "When visitors see magic for the first time \ud83e\udd29\n\nPure joy never gets old.\n\n847,000 reactions. Still gives us chills.\n\n#visitorreactions #magic #joy #firsttime #chills",
+    "hashtags": [
+      "#visitorreactions",
+      "#magic",
+      "#joy",
+      "#firsttime",
+      "#chills",
+      "#pure",
+      "#wonder",
+      "#theimagineteam",
+      "#reactions",
+      "#fyp"
+    ],
+    "optimal_time": "7:30 PM EST",
+    "notes": "Compilation of authentic visitor amazement moments",
+    "engagement_hook": "Which reaction was your favorite?",
+    "cta": "Tag someone who needs to see this"
+  },
+  {
+    "date": "2026-04-17",
+    "day_of_week": "Thursday",
+    "platform": "linkedin",
+    "content_type": "static_post",
+    "topic": "Partnership spotlight - IP collaboration success",
+    "caption": "Partnership spotlight: Transforming IP into immersive experiences.\n\nOur collaboration with Warner Bros. generated:\n\u2713 $2.3M revenue in 18 months\n\u2713 847,000 visitor engagements\n\u2713 94% satisfaction rating\n\u2713 Global exhibition tour potential\n\nStrong partnerships amplify creative vision.\n\nWhat makes your partnerships successful?",
+    "hashtags": [
+      "#partnership",
+      "#collaboration",
+      "#warnerbros",
+      "#ip",
+      "#immersive",
+      "#success",
+      "#creative",
+      "#vision",
+      "#theimagineteam",
+      "#amplify"
+    ],
+    "optimal_time": "9:00 AM EST",
+    "notes": "Professional partnership highlight with key metrics",
+    "engagement_hook": "What makes your partnerships successful?",
+    "cta": "Share partnership success factors"
+  },
+  {
+    "date": "2026-04-18",
+    "day_of_week": "Friday",
+    "platform": "instagram",
+    "content_type": "reel",
+    "topic": "Friday energy - installation team celebration",
+    "caption": "Friday energy: Installation complete! \ud83c\udf89\n\nAfter 72 hours of non-stop work, our team celebrates another successful build.\n\n847 LED panels \u2713\n15 projection zones \u2713\n1 incredible experience \u2713\nTeam morale through the roof \u2713\n\nThis is how we end the week \ud83d\udcaa\n\nHow do you celebrate project wins?",
+    "hashtags": [
+      "#fridayenergy",
+      "#celebration",
+      "#teamwork",
+      "#success",
+      "#installation",
+      "#complete",
+      "#morale",
+      "#wins",
+      "#theimagineteam",
+      "#friday"
+    ],
+    "optimal_time": "1:00 PM EST",
+    "notes": "High-energy celebration footage with team cheering",
+    "engagement_hook": "How do you celebrate project wins?",
+    "cta": "Share your celebration style"
+  },
+  {
+    "date": "2026-04-19",
+    "day_of_week": "Saturday",
+    "platform": "tiktok",
+    "content_type": "video",
+    "topic": "Weekend behind-the-scenes - maintenance crew",
+    "caption": "Saturday maintenance crew keeping the magic alive \u2699\ufe0f\n\nWhile you're sleeping, we're perfecting.\n\n24/7 excellence never stops.\n\n#maintenance #saturday #magic #perfection #247",
+    "hashtags": [
+      "#maintenance",
+      "#saturday",
+      "#magic",
+      "#perfection",
+      "#247",
+      "#behindthescenes",
+      "#crew",
+      "#theimagineteam",
+      "#weekend",
+      "#work"
+    ],
+    "optimal_time": "4:00 PM EST",
+    "notes": "Maintenance team working on weekend, dedication angle",
+    "engagement_hook": "Respect the weekend warriors",
+    "cta": "Show love for maintenance crews"
+  },
+  {
+    "date": "2026-04-20",
+    "day_of_week": "Sunday",
+    "platform": "instagram",
+    "content_type": "static_post",
+    "topic": "Sunday inspiration - design philosophy",
+    "caption": "Sunday inspiration: Our design philosophy \ud83c\udf1f\n\n\"We don't create exhibitions. We create moments that become memories.\"\n\nEvery LED panel, every projection, every interactive element serves one purpose: Human connection.\n\n847,000 visitors. 847,000 unique memories.\n\nWhat memory will you create this week?",
+    "hashtags": [
+      "#sundayinspiration",
+      "#philosophy",
+      "#memories",
+      "#humanconnection",
+      "#purpose",
+      "#unique",
+      "#create",
+      "#theimagineteam",
+      "#inspiration",
+      "#week"
+    ],
+    "optimal_time": "5:30 PM EST",
+    "notes": "Inspiring quote overlay on beautiful exhibition image",
+    "engagement_hook": "What memory will you create this week?",
+    "cta": "Share your memory-making plans"
+  },
+  {
+    "date": "2026-04-21",
+    "day_of_week": "Monday",
+    "platform": "linkedin",
+    "content_type": "carousel",
+    "topic": "Technology integration showcase",
+    "caption": "Technology showcase: 5 innovations transforming exhibitions\n\nSwipe to explore cutting-edge integration \u2192\n\nSlide 1: Holographic displays\nSlide 2: Kinetic LED systems\nSlide 3: Spatial audio mapping\nSlide 4: Biometric interaction\nSlide 5: AI-powered personalization\n\nTechnology serves experience, not the other way around.\n\nWhich innovation excites you most?",
+    "hashtags": [
+      "#technology",
+      "#innovation",
+      "#holographic",
+      "#kinetic",
+      "#spatial",
+      "#biometric",
+      "#ai",
+      "#personalization",
+      "#theimagineteam",
+      "#future"
+    ],
+    "optimal_time": "8:00 AM EST",
+    "notes": "5-slide tech showcase with detailed explanations",
+    "engagement_hook": "Which innovation excites you most?",
+    "cta": "Comment your favorite tech innovation"
+  },
+  {
+    "date": "2026-04-22",
+    "day_of_week": "Tuesday",
+    "platform": "instagram",
+    "content_type": "reel",
+    "topic": "Time-lapse transformation Tuesday",
+    "caption": "Transformation Tuesday: 6 days in 30 seconds \u26a1\n\nEmpty space \u2192 Immersive wonderland\n\nWatch 47 professionals create magic:\n\u2192 Day 1: Foundation setup\n\u2192 Day 3: LED installation\n\u2192 Day 5: Content calibration\n\u2192 Day 6: First visitor amazement\n\nWhich transformation day impressed you most? \ud83d\udc47",
+    "hashtags": [
+      "#transformationtuesday",
+      "#timelapse",
+      "#6days",
+      "#30seconds",
+      "#professionals",
+      "#magic",
+      "#foundation",
+      "#calibration",
+      "#theimagineteam",
+      "#impressed"
+    ],
+    "optimal_time": "10:00 AM EST",
+    "notes": "Condensed 6-day build into engaging 30-second timelapse",
+    "engagement_hook": "Which transformation day impressed you most?",
+    "cta": "Comment your favorite day"
+  },
+  {
+    "date": "2026-04-23",
+    "day_of_week": "Wednesday",
+    "platform": "tiktok",
+    "content_type": "video",
+    "topic": "Midweek motivation - problem solving",
+    "caption": "POV: When physics says no but creativity says yes \ud83e\udde0\n\nSolving impossible installation challenges.\n\nThis is why we love Wednesdays.\n\n#problemsolving #creativity #physics #impossible #wednesday",
+    "hashtags": [
+      "#problemsolving",
+      "#creativity",
+      "#physics",
+      "#impossible",
+      "#wednesday",
+      "#challenges",
+      "#solutions",
+      "#theimagineteam",
+      "#motivation",
+      "#fyp"
+    ],
+    "optimal_time": "6:00 PM EST",
+    "notes": "Creative problem-solving moment with team brainstorming",
+    "engagement_hook": "Tag someone who solves impossible problems",
+    "cta": "Follow for more creative solutions"
+  },
+  {
+    "date": "2026-04-24",
+    "day_of_week": "Thursday",
+    "platform": "linkedin",
+    "content_type": "static_post",
+    "topic": "Industry leadership - thought piece on future trends",
+    "caption": "Industry perspective: The next evolution of experiential design.\n\n2026 trends we're pioneering:\n\u2192 Biometric-responsive environments\n\u2192 AI-curated personal narratives\n\u2192 Sustainable immersive materials\n\u2192 Cross-reality exhibition formats\n\nThe future isn't coming. We're building it.\n\nWhat trends are you watching in experiential design?",
+    "hashtags": [
+      "#industryleadership",
+      "#futuretrends",
+      "#biometric",
+      "#ai",
+      "#sustainable",
+      "#crossreality",
+      "#pioneering",
+      "#building",
+      "#theimagineteam",
+      "#evolution"
+    ],
+    "optimal_time": "9:30 AM EST",
+    "notes": "Thought leadership piece with forward-looking perspective",
+    "engagement_hook": "What trends are you watching in experiential design?",
+    "cta": "Share trends you're tracking"
+  },
+  {
+    "date": "2026-04-25",
+    "day_of_week": "Friday",
+    "platform": "instagram",
+    "content_type": "reel",
+    "topic": "Friday finale - week's best moments",
+    "caption": "Friday finale: This week's magic moments \u2728\n\n5 days of wonder in 30 seconds:\n\u2192 LED wall transformation\n\u2192 Visitor's first reaction\n\u2192 Team problem-solving\n\u2192 Installation completion\n\u2192 Pure joy captured\n\nEvery week brings new magic.\n\nWhich moment was your favorite? Drop a \ud83d\udd25 below!",
+    "hashtags": [
+      "#fridayfinale",
+      "#weeklyrecap",
+      "#magic",
+      "#moments",
+      "#transformation",
+      "#reaction",
+      "#completion",
+      "#joy",
+      "#theimagineteam",
+      "#favorite"
+    ],
+    "optimal_time": "2:00 PM EST",
+    "notes": "Weekly highlight reel with best moments compilation",
+    "engagement_hook": "Which moment was your favorite?",
+    "cta": "Drop a \ud83d\udd25 for your favorite moment"
+  },
+  {
+    "date": "2026-04-26",
+    "day_of_week": "Saturday",
+    "platform": "tiktok",
+    "content_type": "video",
+    "topic": "Saturday chill - team downtime",
+    "caption": "Saturday vibes: Even magic makers need rest \ud83d\ude34\n\nTeam recharge day before next week's build.\n\nWork hard, rest harder.\n\n#saturdayvibes #rest #recharge #teamtime #workhard",
+    "hashtags": [
+      "#saturdayvibes",
+      "#rest",
+      "#recharge",
+      "#teamtime",
+      "#workhard",
+      "#chill",
+      "#weekend",
+      "#theimagineteam",
+      "#balance",
+      "#saturday"
+    ],
+    "optimal_time": "1:00 PM EST",
+    "notes": "Casual team downtime content, humanizing the brand",
+    "engagement_hook": "How do you recharge on weekends?",
+    "cta": "Share your recharge routine"
+  },
+  {
+    "date": "2026-04-27",
+    "day_of_week": "Sunday",
+    "platform": "instagram",
+    "content_type": "carousel",
+    "topic": "Sunday showcase - visitor journey mapping",
+    "caption": "Sunday showcase: The complete visitor journey \ud83d\uddfa\ufe0f\n\nSwipe through 8 touchpoints that create unforgettable experiences \u2192\n\nSlide 1: Arrival anticipation\nSlide 2: First impression wow\nSlide 3: Interactive discovery\nSlide 4: Educational moments\nSlide 5: Photo opportunities\nSlide 6: Emotional connection\nSlide 7: Social sharing\nSlide 8: Lasting memories\n\nEvery touchpoint is intentionally designed.\n\nWhich touchpoint resonates most with you?",
+    "hashtags": [
+      "#sundayshowcase",
+      "#visitorjourney",
+      "#touchpoints",
+      "#unforgettable",
+      "#intentional",
+      "#design",
+      "#memories",
+      "#experience",
+      "#theimagineteam",
+      "#resonates"
+    ],
+    "optimal_time": "4:00 PM EST",
+    "notes": "8-slide visitor journey with detailed touchpoint analysis",
+    "engagement_hook": "Which touchpoint resonates most with you?",
+    "cta": "Comment your most important touchpoint"
+  },
+  {
+    "date": "2026-04-28",
+    "day_of_week": "Monday",
+    "platform": "linkedin",
+    "content_type": "static_post",
+    "topic": "Monday metrics - April performance review",
+    "caption": "Monday metrics: April performance snapshot.\n\nExhibition impact this month:\n\u2713 127,000 visitors engaged\n\u2713 96% satisfaction rating maintained\n\u2713 450% social media reach increase\n\u2713 $387K revenue generated\n\u2713 3 new partnership inquiries\n\nConsistent excellence drives consistent results.\n\nHow do you track experiential marketing success?",
+    "hashtags": [
+      "#mondaymetrics",
+      "#april",
+      "#performance",
+      "#impact",
+      "#satisfaction",
+      "#revenue",
+      "#partnerships",
+      "#excellence",
+      "#theimagineteam",
+      "#success"
+    ],
+    "optimal_time": "8:30 AM EST",
+    "notes": "Monthly performance summary with key metrics",
+    "engagement_hook": "How do you track experiential marketing success?",
+    "cta": "Share your success tracking methods"
+  },
+  {
+    "date": "2026-04-29",
+    "day_of_week": "Tuesday",
+    "platform": "instagram",
+    "content_type": "reel",
+    "topic": "Technology Tuesday - AR integration preview",
+    "caption": "Technology Tuesday: AR integration sneak peek \ud83d\udc40\n\nNext month's exhibition features:\n\u2192 Augmented reality overlays\n\u2192 Personalized digital companions\n\u2192 Interactive story branches\n\u2192 Real-time content adaptation\n\nThe future of exhibitions is here.\n\nAR or traditional displays? Vote in comments! \ud83d\uddf3\ufe0f",
+    "hashtags": [
+      "#technologytuesday",
+      "#ar",
+      "#augmentedreality",
+      "#personalized",
+      "#interactive",
+      "#adaptation",
+      "#future",
+      "#exhibitions",
+      "#theimagineteam",
+      "#vote"
+    ],
+    "optimal_time": "11:30 AM EST",
+    "notes": "AR technology preview with interactive elements demonstration",
+    "engagement_hook": "AR or traditional displays?",
+    "cta": "Vote in comments for your preference"
+  },
+  {
+    "date": "2026-04-30",
+    "day_of_week": "Wednesday",
+    "platform": "tiktok",
+    "content_type": "video",
+    "topic": "April wrap-up - month's best moments",
+    "caption": "April was UNREAL \ud83e\udd2f\n\nBest moments from 30 days of magic:\n\u2192 127K visitors amazed\n\u2192 847 LED panels installed\n\u2192 96% satisfaction achieved\n\u2192 Countless memories created\n\nMay is about to be even better.\n\n#aprilwrapup #unreal #30days #magic #memories #may",
+    "hashtags": [
+      "#aprilwrapup",
+      "#unreal",
+      "#30days",
+      "#magic",
+      "#memories",
+      "#may",
+      "#visitors",
+      "#satisfaction",
+      "#theimagineteam",
+      "#better"
+    ],
+    "optimal_time": "7:00 PM EST",
+    "notes": "Month-end compilation with April's biggest highlights",
+    "engagement_hook": "What was your favorite April moment?",
+    "cta": "Follow for May's magic"
+  }
+];
+
+const entryMap = {};
+entries.forEach(e => { entryMap[e.date] = e; });
+
+function showDetail(dateStr) {
+    const e = entryMap[dateStr];
+    if (!e) return;
+    const hashtags = (e.hashtags || []).map(h => '<span class="modal-tag">#' + h + '</span>').join('');
+    const caption = (e.caption || '').replace(/\n/g, '<br>');
+    document.getElementById('modal-content').innerHTML = `
+        <div class="modal-date">${e.day_of_week} &mdash; ${e.date}</div>
+        <div class="modal-topic">${e.topic}</div>
+        <div class="modal-label">Platform</div>
+        <div class="modal-value">${e.platform} &mdash; ${e.content_type} &mdash; ${e.optimal_time}</div>
+        <div class="modal-label">Caption</div>
+        <div class="modal-value">${caption}</div>
+        <div class="modal-label">Engagement Hook</div>
+        <div class="modal-value">${e.engagement_hook || ''}</div>
+        <div class="modal-label">CTA</div>
+        <div class="modal-value">${e.cta || ''}</div>
+        <div class="modal-label">Hashtags</div>
+        <div class="modal-tags">${hashtags}</div>
+        <div class="modal-label">Notes</div>
+        <div class="modal-value">${e.notes || ''}</div>
+    `;
+    document.getElementById('modal').classList.add('active');
+}
+
+function closeModal(event) {
+    if (event.target === document.getElementById('modal')) {
+        document.getElementById('modal').classList.remove('active');
+    }
+}
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('modal').classList.remove('active');
+});
+</script>
+
+</body>
+</html>

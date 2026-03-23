@@ -1,0 +1,266 @@
+[
+  {
+    "timestamp": "2026-03-23T09:06:03.427082",
+    "level": "INFO",
+    "message": "Narrative: Mystery \u2192 Discovery \u2192 Secret World \u2192 Desire"
+  },
+  {
+    "timestamp": "2026-03-23T09:06:03.430224",
+    "level": "INFO",
+    "message": "Story: 5 scenes planned"
+  },
+  {
+    "timestamp": "2026-03-23T09:06:05.345294",
+    "level": "INFO",
+    "message": "Uploading cabinet_hero_mid.jpg (144KB)..."
+  },
+  {
+    "timestamp": "2026-03-23T09:06:08.663335",
+    "level": "INFO",
+    "message": "Generating clip (attempt 1/3)...",
+    "model": "fal-ai/kling-video/v2.6/pro/image-to-video",
+    "duration": "5s",
+    "aspect_ratio": "9:16"
+  },
+  {
+    "timestamp": "2026-03-23T09:07:09.363447",
+    "level": "OK",
+    "message": "Clip generated in 60.7s",
+    "video_url": "https://v3b.fal.media/files/b/0a934baa/vasWzcYrGBUDC5EA8KjTa_output.mp4...",
+    "cost": "$0.35"
+  },
+  {
+    "timestamp": "2026-03-23T09:07:09.365292",
+    "level": "INFO",
+    "message": "Downloading clip to 01_hook_cabinet_hero_mid_5s.mp4..."
+  },
+  {
+    "timestamp": "2026-03-23T09:07:29.150438",
+    "level": "OK",
+    "message": "Downloaded 01_hook_cabinet_hero_mid_5s.mp4 (12857KB)"
+  },
+  {
+    "timestamp": "2026-03-23T09:07:29.933766",
+    "level": "OK",
+    "message": "Validated: 5.0s, 1764x1176, 24.0fps"
+  },
+  {
+    "timestamp": "2026-03-23T09:07:31.939666",
+    "level": "INFO",
+    "message": "Uploading cabinet_lock_interior.jpg (67KB)..."
+  },
+  {
+    "timestamp": "2026-03-23T09:07:33.229955",
+    "level": "INFO",
+    "message": "Generating clip (attempt 1/3)...",
+    "model": "fal-ai/kling-video/v2.6/pro/image-to-video",
+    "duration": "5s",
+    "aspect_ratio": "9:16"
+  },
+  {
+    "timestamp": "2026-03-23T09:08:52.980975",
+    "level": "OK",
+    "message": "Clip generated in 79.8s",
+    "video_url": "https://v3b.fal.media/files/b/0a934bb5/Pri-c-Rz3Yu2I38wxm_MJ_output.mp4...",
+    "cost": "$0.35"
+  },
+  {
+    "timestamp": "2026-03-23T09:08:52.986957",
+    "level": "INFO",
+    "message": "Downloading clip to 02_discovery_cabinet_lock_interior_5s.mp4..."
+  },
+  {
+    "timestamp": "2026-03-23T09:09:11.719162",
+    "level": "OK",
+    "message": "Downloaded 02_discovery_cabinet_lock_interior_5s.mp4 (10851KB)"
+  },
+  {
+    "timestamp": "2026-03-23T09:09:12.320592",
+    "level": "OK",
+    "message": "Validated: 5.0s, 1760x1176, 24.0fps"
+  },
+  {
+    "timestamp": "2026-03-23T09:09:14.326485",
+    "level": "INFO",
+    "message": "Uploading cabinet_hero_left.jpg (150KB)..."
+  },
+  {
+    "timestamp": "2026-03-23T09:09:15.561340",
+    "level": "INFO",
+    "message": "Generating clip (attempt 1/3)...",
+    "model": "fal-ai/kling-video/v2.6/pro/image-to-video",
+    "duration": "5s",
+    "aspect_ratio": "9:16"
+  },
+  {
+    "timestamp": "2026-03-23T09:09:19.013540",
+    "level": "WARN",
+    "message": "Attempt 1 failed: User is locked. Reason: Exhausted balance. Top up your balance at fal.ai/dashboard/billing."
+  },
+  {
+    "timestamp": "2026-03-23T09:09:19.013555",
+    "level": "INFO",
+    "message": "Retrying in 10s..."
+  },
+  {
+    "timestamp": "2026-03-23T09:09:29.019024",
+    "level": "INFO",
+    "message": "Generating clip (attempt 2/3)...",
+    "model": "fal-ai/kling-video/v2.6/pro/image-to-video",
+    "duration": "5s",
+    "aspect_ratio": "9:16"
+  },
+  {
+    "timestamp": "2026-03-23T09:09:29.541891",
+    "level": "WARN",
+    "message": "Attempt 2 failed: User is locked. Reason: Exhausted balance. Top up your balance at fal.ai/dashboard/billing."
+  },
+  {
+    "timestamp": "2026-03-23T09:09:29.541907",
+    "level": "INFO",
+    "message": "Retrying in 10s..."
+  },
+  {
+    "timestamp": "2026-03-23T09:09:39.548191",
+    "level": "INFO",
+    "message": "Generating clip (attempt 3/3)...",
+    "model": "fal-ai/kling-video/v2.6/pro/image-to-video",
+    "duration": "5s",
+    "aspect_ratio": "9:16"
+  },
+  {
+    "timestamp": "2026-03-23T09:09:40.195158",
+    "level": "WARN",
+    "message": "Attempt 3 failed: User is locked. Reason: Exhausted balance. Top up your balance at fal.ai/dashboard/billing."
+  },
+  {
+    "timestamp": "2026-03-23T09:09:40.195192",
+    "level": "ERROR",
+    "message": "All attempts exhausted for cabinet_hero_left.jpg"
+  },
+  {
+    "timestamp": "2026-03-23T09:09:42.201198",
+    "level": "INFO",
+    "message": "Uploading cabinet_happy_hour.png (77KB)..."
+  },
+  {
+    "timestamp": "2026-03-23T09:09:43.203886",
+    "level": "INFO",
+    "message": "Generating clip (attempt 1/3)...",
+    "model": "fal-ai/kling-video/v2.6/pro/image-to-video",
+    "duration": "5s",
+    "aspect_ratio": "9:16"
+  },
+  {
+    "timestamp": "2026-03-23T09:09:43.344175",
+    "level": "WARN",
+    "message": "Attempt 1 failed: User is locked. Reason: Exhausted balance. Top up your balance at fal.ai/dashboard/billing."
+  },
+  {
+    "timestamp": "2026-03-23T09:09:43.344200",
+    "level": "INFO",
+    "message": "Retrying in 10s..."
+  },
+  {
+    "timestamp": "2026-03-23T09:09:53.349821",
+    "level": "INFO",
+    "message": "Generating clip (attempt 2/3)...",
+    "model": "fal-ai/kling-video/v2.6/pro/image-to-video",
+    "duration": "5s",
+    "aspect_ratio": "9:16"
+  },
+  {
+    "timestamp": "2026-03-23T09:09:53.923216",
+    "level": "WARN",
+    "message": "Attempt 2 failed: User is locked. Reason: Exhausted balance. Top up your balance at fal.ai/dashboard/billing."
+  },
+  {
+    "timestamp": "2026-03-23T09:09:53.923241",
+    "level": "INFO",
+    "message": "Retrying in 10s..."
+  },
+  {
+    "timestamp": "2026-03-23T09:10:03.924283",
+    "level": "INFO",
+    "message": "Generating clip (attempt 3/3)...",
+    "model": "fal-ai/kling-video/v2.6/pro/image-to-video",
+    "duration": "5s",
+    "aspect_ratio": "9:16"
+  },
+  {
+    "timestamp": "2026-03-23T09:10:04.621664",
+    "level": "WARN",
+    "message": "Attempt 3 failed: User is locked. Reason: Exhausted balance. Top up your balance at fal.ai/dashboard/billing."
+  },
+  {
+    "timestamp": "2026-03-23T09:10:04.621778",
+    "level": "ERROR",
+    "message": "All attempts exhausted for cabinet_happy_hour.png"
+  },
+  {
+    "timestamp": "2026-03-23T09:10:06.627066",
+    "level": "INFO",
+    "message": "Uploading cabinet_promo_2.jpg (102KB)..."
+  },
+  {
+    "timestamp": "2026-03-23T09:10:09.009994",
+    "level": "INFO",
+    "message": "Generating clip (attempt 1/3)...",
+    "model": "fal-ai/kling-video/v2.6/pro/image-to-video",
+    "duration": "5s",
+    "aspect_ratio": "9:16"
+  },
+  {
+    "timestamp": "2026-03-23T09:10:09.164693",
+    "level": "WARN",
+    "message": "Attempt 1 failed: User is locked. Reason: Exhausted balance. Top up your balance at fal.ai/dashboard/billing."
+  },
+  {
+    "timestamp": "2026-03-23T09:10:09.164712",
+    "level": "INFO",
+    "message": "Retrying in 10s..."
+  },
+  {
+    "timestamp": "2026-03-23T09:10:19.170076",
+    "level": "INFO",
+    "message": "Generating clip (attempt 2/3)...",
+    "model": "fal-ai/kling-video/v2.6/pro/image-to-video",
+    "duration": "5s",
+    "aspect_ratio": "9:16"
+  },
+  {
+    "timestamp": "2026-03-23T09:10:19.827213",
+    "level": "WARN",
+    "message": "Attempt 2 failed: User is locked. Reason: Exhausted balance. Top up your balance at fal.ai/dashboard/billing."
+  },
+  {
+    "timestamp": "2026-03-23T09:10:19.827251",
+    "level": "INFO",
+    "message": "Retrying in 10s..."
+  },
+  {
+    "timestamp": "2026-03-23T09:10:29.831030",
+    "level": "INFO",
+    "message": "Generating clip (attempt 3/3)...",
+    "model": "fal-ai/kling-video/v2.6/pro/image-to-video",
+    "duration": "5s",
+    "aspect_ratio": "9:16"
+  },
+  {
+    "timestamp": "2026-03-23T09:10:32.048550",
+    "level": "WARN",
+    "message": "Attempt 3 failed: User is locked. Reason: Exhausted balance. Top up your balance at fal.ai/dashboard/billing."
+  },
+  {
+    "timestamp": "2026-03-23T09:10:32.048659",
+    "level": "ERROR",
+    "message": "All attempts exhausted for cabinet_promo_2.jpg"
+  },
+  {
+    "timestamp": "2026-03-23T09:10:32.048887",
+    "level": "COST",
+    "message": "Total batch cost: $0.70",
+    "successful": 2,
+    "failed": 3
+  }
+]

@@ -1,0 +1,245 @@
+{
+  "exhibition": "Ice Dinosaurs",
+  "scripts": [
+    {
+      "id": "15s_reel",
+      "duration": 15,
+      "title": "Frozen Giants Awaken",
+      "concept": "POV: You just discovered dinosaurs that lived in the Arctic",
+      "platform": "TikTok / Instagram Reels",
+      "shots": [
+        {
+          "shot_number": 1,
+          "timestamp": "0:00 - 0:03",
+          "visual": "Extreme close-up of massive dinosaur eye frozen in ice, camera slowly pulling back to reveal full skull embedded in glacier wall, dramatic lighting with blue-white ice crystals",
+          "text_overlay": "POV: Scientists just found THIS in the Arctic",
+          "audio": "Dramatic orchestral hit, building tension",
+          "camera": "Slow zoom out from macro to wide",
+          "transition": "Quick cut"
+        },
+        {
+          "shot_number": 2,
+          "timestamp": "0:03 - 0:08",
+          "visual": "Massive feathered T-Rex skeleton towering over amazed child, aurora borealis projection dancing across museum ceiling, ice cave environment with prehistoric footprints in snow",
+          "text_overlay": "Dinosaurs lived in SNOW",
+          "audio": "Music builds with wonder",
+          "camera": "Low angle looking up, slow orbit around skeleton",
+          "transition": "Match cut"
+        },
+        {
+          "shot_number": 3,
+          "timestamp": "0:08 - 0:12",
+          "visual": "Kids' faces illuminated by interactive dig site, hands brushing snow off fossil, parents pointing in amazement at 40-foot wingspan pterosaur hanging above",
+          "text_overlay": "Never seen before. Anywhere.",
+          "audio": "Music peaks with awe",
+          "camera": "Handheld, intimate close-ups",
+          "transition": "Fast montage cuts"
+        },
+        {
+          "shot_number": 4,
+          "timestamp": "0:12 - 0:15",
+          "visual": "Exhibition logo materializes from ice crystals against black background, ticket counter with 'SELLING FAST' digital display visible",
+          "text_overlay": "Tickets selling fast",
+          "audio": "Sharp musical sting",
+          "camera": "Static, centered logo reveal",
+          "transition": "Fade to black"
+        }
+      ],
+      "music": {
+        "style": "Cinematic orchestral with electronic elements",
+        "tempo_bpm": 128,
+        "build": "Soft mystery \u2192 building wonder \u2192 explosive awe \u2192 urgent finish",
+        "reference_track": "Similar to Jurassic Park theme meets Arctic documentary score"
+      },
+      "caption": "Scientists found dinosaurs that lived in SNOW \u2744\ufe0f First time ever displayed. Kids lose their minds. Adults too. Link in bio for tickets (they're going fast) \ud83e\udd95 #IceDinosaurs #NewDiscovery #FamilyFun #ScienceIsAwesome #MuseumLife",
+      "cta": "Get tickets \u2192 link in bio"
+    },
+    {
+      "id": "30s_ad",
+      "duration": 30,
+      "title": "Arctic Giants Experience",
+      "concept": "Step into a world where dinosaurs ruled frozen landscapes",
+      "platform": "Instagram / YouTube",
+      "shots": [
+        {
+          "shot_number": 1,
+          "timestamp": "0:00 - 0:03",
+          "visual": "First-person POV walking through museum entrance, doors opening to reveal massive ice cave with aurora lights, breath visible in cold air effect",
+          "text_overlay": "POV: You just walked into the Ice Age",
+          "audio": "Ambient arctic wind, building anticipation",
+          "camera": "Steadicam POV, walking forward",
+          "transition": "Smooth push in"
+        },
+        {
+          "shot_number": 2,
+          "timestamp": "0:03 - 0:06",
+          "visual": "Massive woolly dinosaur skeleton with thick feathers, snow falling around it, dramatic uplighting creating shadows on ice walls",
+          "text_overlay": "Meet the Arctic T-Rex",
+          "audio": "Deep orchestral boom",
+          "camera": "Dramatic low angle, slow tilt up",
+          "transition": "Quick cut"
+        },
+        {
+          "shot_number": 3,
+          "timestamp": "0:06 - 0:09",
+          "visual": "Interactive fossil dig with families, kids using brushes on ice blocks, discovering bones, excitement and discovery on faces",
+          "text_overlay": "Dig up real discoveries",
+          "audio": "Uplifting adventure theme",
+          "camera": "Overhead shot, then close-ups of hands",
+          "transition": "Match cut"
+        },
+        {
+          "shot_number": 4,
+          "timestamp": "0:09 - 0:12",
+          "visual": "Flying pterosaur animatronic with 40-foot wingspan soaring overhead, visitors ducking and pointing, aurora projection creating magical atmosphere",
+          "text_overlay": "Giants that ruled the sky",
+          "audio": "Soaring musical crescendo",
+          "camera": "Sweeping drone shot following pterosaur",
+          "transition": "Whip pan"
+        },
+        {
+          "shot_number": 5,
+          "timestamp": "0:12 - 0:15",
+          "visual": "Immersive ice cave environment with prehistoric plants, snow effects, temperature-controlled exhibit space with visible breath",
+          "text_overlay": "Step into their world",
+          "audio": "Mysterious, immersive soundscape",
+          "camera": "Slow dolly through environment",
+          "transition": "Dissolve"
+        },
+        {
+          "shot_number": 6,
+          "timestamp": "0:15 - 0:21",
+          "visual": "Rapid montage: kid's amazed face, couple taking selfie with massive skull, educator pointing at fossil, family laughing together",
+          "text_overlay": "Memories that last forever",
+          "audio": "Emotional, heartwarming music build",
+          "camera": "Quick cuts, handheld intimacy",
+          "transition": "Fast-paced editing"
+        },
+        {
+          "shot_number": 7,
+          "timestamp": "0:21 - 0:25",
+          "visual": "Real visitor testimonial footage: 'I've never seen anything like this' with exhibition in background, authentic amazement",
+          "text_overlay": "\"I've never seen anything like this\"",
+          "audio": "Natural sound with music underneath",
+          "camera": "Documentary-style handheld",
+          "transition": "Cut to logo"
+        },
+        {
+          "shot_number": 8,
+          "timestamp": "0:25 - 0:30",
+          "visual": "Exhibition logo with location and dates, ticket website URL, 'Limited Time Only' badge, countdown timer showing days remaining",
+          "text_overlay": "Now Open \u2022 Limited Time",
+          "audio": "Urgent musical sting",
+          "camera": "Static, professional presentation",
+          "transition": "Fade out"
+        }
+      ],
+      "music": {
+        "style": "Epic orchestral adventure score",
+        "tempo_bpm": 120,
+        "build": "Mystery \u2192 wonder \u2192 adventure \u2192 emotional peak \u2192 urgent call",
+        "reference_track": "Similar to Planet Earth meets Marvel trailer music"
+      },
+      "caption": "The Arctic held secrets for 100 million years. Now they're here. Ice Dinosaurs features newly discovered species never before displayed anywhere. Book now - limited engagement. \ud83e\udd95\u2744\ufe0f #IceDinosaurs @theimagineteam",
+      "cta": "Book tickets now \u2192 [website]"
+    },
+    {
+      "id": "60s_cinematic",
+      "duration": 60,
+      "title": "Frozen in Time",
+      "concept": "Cinematic journey through prehistoric Arctic world",
+      "platform": "YouTube / Facebook",
+      "shots": [
+        {
+          "shot_number": 1,
+          "timestamp": "0:00 - 0:05",
+          "visual": "Black screen with text 'For 100 million years, they waited...' then dramatic reveal of massive glacier cracking open to reveal dinosaur skeleton",
+          "text_overlay": "For 100 million years, they waited...",
+          "audio": "Silence, then deep ice cracking sound",
+          "camera": "Static text, then dramatic push into glacier",
+          "transition": "Fade to reveal"
+        },
+        {
+          "shot_number": 2,
+          "timestamp": "0:05 - 0:10",
+          "visual": "Sweeping aerial shot of pristine Arctic landscape, camera diving down through ice layers revealing fossilized remains embedded in walls",
+          "text_overlay": "Hidden beneath the ice",
+          "audio": "Ethereal, mysterious orchestral theme begins",
+          "camera": "Drone shot, diving descent",
+          "transition": "Smooth dive transition"
+        },
+        {
+          "shot_number": 3,
+          "timestamp": "0:10 - 0:15",
+          "visual": "Extreme close-up of paleontologist's gloved hands carefully brushing snow from massive dinosaur skull, revealing intricate bone structure and feather impressions",
+          "text_overlay": "Science rewrites history",
+          "audio": "Soft, wonder-filled music with brush sounds",
+          "camera": "Macro lens, intimate detail work",
+          "transition": "Match cut to museum"
+        },
+        {
+          "shot_number": 4,
+          "timestamp": "0:15 - 0:22",
+          "visual": "Museum transformation: walls morph from modern to ice cave, aurora borealis projections activate, massive skeletons rise into position, snow begins falling",
+          "text_overlay": "Now, step into their world",
+          "audio": "Music builds, magical transformation sounds",
+          "camera": "Time-lapse style transformation, multiple angles",
+          "transition": "Morphing transition"
+        },
+        {
+          "shot_number": 5,
+          "timestamp": "0:22 - 0:30",
+          "visual": "Epic reveal of main exhibition hall: 50-foot feathered T-Rex in hunting pose, surrounded by ice formations, aurora dancing overhead, visitors tiny in comparison",
+          "text_overlay": "Meet the Arctic giants",
+          "audio": "Full orchestral crescendo, awe-inspiring",
+          "camera": "Sweeping crane shot, hero reveal",
+          "transition": "Grand reveal cut"
+        },
+        {
+          "shot_number": 6,
+          "timestamp": "0:30 - 0:38",
+          "visual": "Fast-paced montage: pterosaur soaring overhead, kids digging in interactive site, families amazed by massive skulls, educators explaining discoveries",
+          "text_overlay": "Discover. Explore. Wonder.",
+          "audio": "Adventure theme, building excitement",
+          "camera": "Dynamic angles, energetic movement",
+          "transition": "Quick-cut montage"
+        },
+        {
+          "shot_number": 7,
+          "timestamp": "0:38 - 0:45",
+          "visual": "Emotional moments: child's face illuminated by exhibit lighting showing pure wonder, parent and child pointing together, elderly couple holding hands in amazement",
+          "text_overlay": "Some moments change everything",
+          "audio": "Music becomes emotional, heartwarming",
+          "camera": "Intimate, documentary-style close-ups",
+          "transition": "Emotional beat cuts"
+        },
+        {
+          "shot_number": 8,
+          "timestamp": "0:45 - 0:52",
+          "visual": "Real visitor testimonial: diverse family speaking directly to camera 'This changed how we see dinosaurs forever' with exhibition glowing behind them",
+          "text_overlay": "\"This changed how we see dinosaurs forever\"",
+          "audio": "Natural testimonial audio with subtle music",
+          "camera": "Professional interview setup",
+          "transition": "Testimonial to logo"
+        },
+        {
+          "shot_number": 9,
+          "timestamp": "0:52 - 0:60",
+          "visual": "Ice Dinosaurs logo materializes from swirling snow, location details and ticket information appear, countdown timer showing limited engagement",
+          "text_overlay": "ICE DINOSAURS \u2022 Now Open \u2022 Limited Time",
+          "audio": "Triumphant musical finale with urgency",
+          "camera": "Professional logo presentation",
+          "transition": "Final fade"
+        }
+      ],
+      "music": {
+        "style": "Epic cinematic orchestral with arctic ambient elements",
+        "tempo_bpm": 110,
+        "build": "Mysterious opening \u2192 wonder \u2192 epic adventure \u2192 emotional peak \u2192 triumphant finale",
+        "reference_track": "Similar to Interstellar meets Frozen meets Jurassic Park"
+      },
+      "caption": "100 million years ago, giants ruled the Arctic. Revolutionary discoveries reveal dinosaurs like never before seen. Ice Dinosaurs brings these frozen titans to life through groundbreaking science and immersive experience. Now open for limited engagement. Book your journey into prehistoric wonder. \ud83e\udd95\u2744\ufe0f #IceDinosaurs #NewDiscovery #FamilyAdventure @theimagineteam",
+      "cta": "Experience Ice Dinosaurs \u2192 Book now at [website]"
+    }
+  ]
+}

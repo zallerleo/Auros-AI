@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Positioning Angles — The Imagine Team</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Inter',sans-serif; background:#0B0F1A; color:#FAFAF8; padding:60px; }
+  .header { margin-bottom:48px; }
+  .label { font-size:10px; font-weight:700; letter-spacing:4px; color:#C9A84C; text-transform:uppercase; margin-bottom:12px; }
+  h1 { font-size:42px; font-weight:900; letter-spacing:-1px; margin-bottom:8px; }
+  .sub { font-size:16px; color:#9CA3AF; }
+  .angles-grid { display:flex; flex-direction:column; gap:2px; margin-top:32px; }
+  .angle-card { background:#111827; padding:32px; position:relative; }
+  .angle-card.winner { border-left:4px solid #C9A84C; }
+  .angle-rank { position:absolute; top:32px; right:32px; font-size:36px; font-weight:900; color:rgba(201,168,76,0.15); }
+  .angle-name { font-size:22px; font-weight:700; margin-bottom:4px; }
+  .angle-tagline { font-size:14px; color:#C9A84C; font-style:italic; margin-bottom:20px; }
+  .angle-details { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .detail { }
+  .detail-label { display:block; font-size:10px; font-weight:700; letter-spacing:2px; color:#6B7280; text-transform:uppercase; margin-bottom:4px; }
+  .detail-value { font-size:14px; color:#D1D5DB; line-height:1.5; }
+  .score-bar { display:inline-block; width:100px; height:8px; background:#1F2937; border-radius:4px; overflow:hidden; vertical-align:middle; margin-right:8px; }
+  .score-fill { height:100%; background:linear-gradient(90deg,#C9A84C,#E8D48B); border-radius:4px; }
+  .score-num { font-size:14px; font-weight:700; color:#C9A84C; }
+  .recommendation { background:#111827; border:1px solid rgba(201,168,76,0.3); padding:32px; margin-top:32px; }
+  .recommendation h2 { font-size:18px; font-weight:700; color:#C9A84C; margin-bottom:12px; }
+  .recommendation p { font-size:14px; color:#D1D5DB; line-height:1.7; }
+  .footer { margin-top:48px; padding-top:24px; border-top:1px solid rgba(201,168,76,0.2); text-align:center; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="label">AUROS — Positioning Analysis</div>
+  <h1>The Imagine Team</h1>
+  <div class="sub">Generated 2026-03-22 &middot; 5 Strategic Angles</div>
+</div>
+
+<div class="angles-grid">
+        <div class="angle-card winner">
+          <div class="angle-rank">#1</div>
+          <h3 class="angle-name">Revenue Engine</h3>
+          <div class="angle-tagline">"Exhibitions that generate millions, not just memories"</div>
+          <div class="angle-details">
+            <div class="detail">
+              <span class="detail-label">Target Audience</span>
+              <span class="detail-value">IP owners and entertainment executives with $5M+ licensing budgets seeking measurable ROI from experiential activations</span>
+            </div>
+            <div class="detail">
+              <span class="detail-label">Key Differentiator</span>
+              <span class="detail-value">Proven track record generating quantifiable revenue through traveling exhibitions with major IP partnerships (Universal, Warner Bros, MGM)</span>
+            </div>
+            <div class="detail">
+              <span class="detail-label">Emotional Hook</span>
+              <span class="detail-value">Confidence in investment returns and brand value amplification</span>
+            </div>
+            <div class="detail">
+              <span class="detail-label">Risk Level</span>
+              <span class="detail-value" style="color:#10B981;font-weight:700;">LOW</span>
+            </div>
+            <div class="detail">
+              <span class="detail-label">Market Fit</span>
+              <div class="score-bar"><div class="score-fill" style="width:90%;"></div></div>
+              <span class="score-num">9/10</span>
+            </div>
+          </div>
+        </div>
+        <div class="angle-card ">
+          <div class="angle-rank">#2</div>
+          <h3 class="angle-name">End-to-End Authority</h3>
+          <div class="angle-tagline">"From concept sketch to opening day operations"</div>
+          <div class="angle-details">
+            <div class="detail">
+              <span class="detail-label">Target Audience</span>
+              <span class="detail-value">Corporate decision-makers and venue operators who want single-source accountability for complex experiential projects</span>
+            </div>
+            <div class="detail">
+              <span class="detail-label">Key Differentiator</span>
+              <span class="detail-value">Complete service integration eliminating vendor coordination headaches and project management complexity</span>
+            </div>
+            <div class="detail">
+              <span class="detail-label">Emotional Hook</span>
+              <span class="detail-value">Relief from project management stress and confidence in seamless execution</span>
+            </div>
+            <div class="detail">
+              <span class="detail-label">Risk Level</span>
+              <span class="detail-value" style="color:#10B981;font-weight:700;">LOW</span>
+            </div>
+            <div class="detail">
+              <span class="detail-label">Market Fit</span>
+              <div class="score-bar"><div class="score-fill" style="width:80%;"></div></div>
+              <span class="score-num">8/10</span>
+            </div>
+          </div>
+        </div>
+        <div class="angle-card ">
+          <div class="angle-rank">#3</div>
+          <h3 class="angle-name">IP Amplifier</h3>
+          <div class="angle-tagline">"Transform intellectual property into physical goldmines"</div>
+          <div class="angle-details">
+            <div class="detail">
+              <span class="detail-label">Target Audience</span>
+              <span class="detail-value">Entertainment studios and IP licensing executives looking to maximize property value through experiential extensions</span>
+            </div>
+            <div class="detail">
+              <span class="detail-label">Key Differentiator</span>
+              <span class="detail-value">Specialized expertise in translating beloved IP into profitable, touring physical experiences</span>
+            </div>
+            <div class="detail">
+              <span class="detail-label">Emotional Hook</span>
+              <span class="detail-value">Excitement about untapped revenue potential and brand expansion possibilities</span>
+            </div>
+            <div class="detail">
+              <span class="detail-label">Risk Level</span>
+              <span class="detail-value" style="color:#F59E0B;font-weight:700;">MEDIUM</span>
+            </div>
+            <div class="detail">
+              <span class="detail-label">Market Fit</span>
+              <div class="score-bar"><div class="score-fill" style="width:70%;"></div></div>
+              <span class="score-num">7/10</span>
+            </div>
+          </div>
+        </div>
+        <div class="angle-card ">
+          <div class="angle-rank">#4</div>
+          <h3 class="angle-name">Experience Architects</h3>
+          <div class="angle-tagline">"Engineering emotions through immersive design"</div>
+          <div class="angle-details">
+            <div class="detail">
+              <span class="detail-label">Target Audience</span>
+              <span class="detail-value">Museum directors, cultural institutions, and experiential marketing managers seeking transformative visitor engagement</span>
+            </div>
+            <div class="detail">
+              <span class="detail-label">Key Differentiator</span>
+              <span class="detail-value">Storytelling-first design philosophy that creates measurable emotional impact and visitor satisfaction</span>
+            </div>
+            <div class="detail">
+              <span class="detail-label">Emotional Hook</span>
+              <span class="detail-value">Pride in creating meaningful, memorable experiences that resonate with audiences</span>
+            </div>
+            <div class="detail">
+              <span class="detail-label">Risk Level</span>
+              <span class="detail-value" style="color:#F59E0B;font-weight:700;">MEDIUM</span>
+            </div>
+            <div class="detail">
+              <span class="detail-label">Market Fit</span>
+              <div class="score-bar"><div class="score-fill" style="width:60%;"></div></div>
+              <span class="score-num">6/10</span>
+            </div>
+          </div>
+        </div>
+        <div class="angle-card ">
+          <div class="angle-rank">#5</div>
+          <h3 class="angle-name">Touring Specialists</h3>
+          <div class="angle-tagline">"Global exhibitions, local impact, proven logistics"</div>
+          <div class="angle-details">
+            <div class="detail">
+              <span class="detail-label">Target Audience</span>
+              <span class="detail-value">International venue networks and exhibition distributors managing multi-city touring requirements</span>
+            </div>
+            <div class="detail">
+              <span class="detail-label">Key Differentiator</span>
+              <span class="detail-value">Operational expertise in complex touring logistics with established global venue relationships</span>
+            </div>
+            <div class="detail">
+              <span class="detail-label">Emotional Hook</span>
+              <span class="detail-value">Security in knowing complex international logistics are expertly managed</span>
+            </div>
+            <div class="detail">
+              <span class="detail-label">Risk Level</span>
+              <span class="detail-value" style="color:#EF4444;font-weight:700;">HIGH</span>
+            </div>
+            <div class="detail">
+              <span class="detail-label">Market Fit</span>
+              <div class="score-bar"><div class="score-fill" style="width:50%;"></div></div>
+              <span class="score-num">5/10</span>
+            </div>
+          </div>
+        </div></div>
+
+<div class="recommendation">
+  <h2>Recommended Angle: Revenue Engine</h2>
+  <p>The Revenue Engine angle directly addresses the biggest pain point for IP owners: proving ROI on experiential investments. With established partnerships with Universal, Warner Bros, and MGM, The Imagine Team has the credibility to own this positioning. The Harry Potter exhibition's 191K Instagram following demonstrates real audience engagement that translates to revenue. This angle transforms their service from a cost center to a profit driver, making budget conversations easier and creating premium pricing power.</p>
+  <p style="margin-top:12px;color:#9CA3AF;font-size:13px;">Choose 'End-to-End Authority' if competing primarily against fragmented vendor networks rather than other experiential agencies. Choose 'IP Amplifier' if the primary growth strategy focuses on expanding entertainment industry partnerships over diversifying into corporate and cultural clients.</p>
+</div>
+
+<div class="footer">
+  <span style="font-size:20px;font-weight:900;color:#C9A84C;">AUROS</span><br>
+  <span style="font-size:10px;color:#6B7280;letter-spacing:1px;">Intelligence, Elevated.</span>
+</div>
+
+</body>
+</html>

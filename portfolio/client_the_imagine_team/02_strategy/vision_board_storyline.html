@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Imagine Team — Visual Story | AUROS AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --cream: #F8F7F4;
+  --white: #FFFFFF;
+  --text-primary: #1A1A1A;
+  --text-secondary: #555555;
+  --text-light: #888888;
+  --cabinet-accent: #8B4513;
+  --cabinet-bg: #2C1810;
+  --titanic-accent: #1F3A52;
+  --titanic-bg: #0D1B2A;
+  --dambo-accent: #1B4D3E;
+  --dambo-bg: #0A2618;
+  --gold: #C4A265;
+  --border: rgba(0,0,0,0.06);
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--cream);
+  color: var(--text-primary);
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.fade-in-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.fade-in-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scale-in {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.scale-in.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(135deg, #1A1A1A 0%, #2C2C2C 50%, #1A1A1A 100%);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 600px 400px at 20% 30%, rgba(196,162,101,0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 500px 500px at 80% 70%, rgba(31,58,82,0.1) 0%, transparent 70%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 0 2rem;
+}
+
+.hero-eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: fadeUp 1s 0.3s forwards;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  color: var(--white);
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: fadeUp 1s 0.6s forwards;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.hero-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  color: rgba(255,255,255,0.6);
+  font-weight: 300;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  opacity: 0;
+  animation: fadeUp 1s 0.9s forwards;
+}
+
+.hero-line {
+  width: 60px;
+  height: 1px;
+  background: var(--gold);
+  margin: 0 auto 2rem;
+  opacity: 0;
+  animation: fadeUp 1s 1.2s forwards;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  opacity: 0;
+  animation: fadeUp 1s 1.5s forwards;
+}
+
+.scroll-indicator span {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+}
+
+.scroll-arrow {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, rgba(196,162,101,0.5), transparent);
+  animation: scrollPulse 2s infinite;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; transform: scaleY(1); }
+  50% { opacity: 0.8; transform: scaleY(1.3); }
+}
+
+/* ============================================
+   CHAPTER HEADERS
+   ============================================ */
+
+.chapter-intro {
+  position: relative;
+  padding: 10rem 2rem 6rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+.chapter-intro.dark {
+  color: var(--white);
+}
+
+.chapter-intro.dark .chapter-subtitle { color: rgba(255,255,255,0.6); }
+.chapter-intro.dark .chapter-divider { background: rgba(255,255,255,0.2); }
+
+.chapter-number {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.chapter-title {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 400;
+  margin-bottom: 1rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.chapter-storyline {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.chapter-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  font-weight: 300;
+  max-width: 550px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+.chapter-divider {
+  width: 50px;
+  height: 1px;
+  background: var(--text-primary);
+  margin: 2.5rem auto 0;
+}
+
+/* ============================================
+   SCENE SECTIONS
+   ============================================ */
+
+.scene {
+  padding: 5rem 0;
+  position: relative;
+}
+
+.scene-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.scene-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.scene-heading {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 400;
+  margin-bottom: 0.75rem;
+}
+
+.scene-narrative {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
+  max-width: 650px;
+  line-height: 1.8;
+}
+
+.scene.dark { color: var(--white); }
+.scene.dark .scene-narrative { color: rgba(255,255,255,0.6); }
+
+/* ============================================
+   IMAGE LAYOUTS
+   ============================================ */
+
+.img-hero-full {
+  width: 100%;
+  height: 85vh;
+  min-height: 500px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.img-hero-large {
+  width: 100%;
+  height: 70vh;
+  min-height: 400px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.img-hero-medium {
+  width: 100%;
+  height: 55vh;
+  min-height: 350px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.img-duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.img-duo img {
+  width: 100%;
+  height: 55vh;
+  min-height: 350px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.img-trio {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.img-trio img {
+  width: 100%;
+  height: 45vh;
+  min-height: 300px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.img-stagger {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.img-stagger .stagger-left {
+  padding-top: 4rem;
+}
+
+.img-stagger img {
+  width: 100%;
+  height: auto;
+  min-height: 300px;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.img-featured {
+  position: relative;
+}
+
+.img-featured img {
+  width: 100%;
+  height: 75vh;
+  min-height: 450px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.img-featured .overlay-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 4rem 3rem 3rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 100%);
+  color: white;
+  border-radius: 0 0 4px 4px;
+}
+
+.img-featured .overlay-text h4 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.img-featured .overlay-text p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  font-weight: 300;
+}
+
+/* Masonry grid */
+.masonry {
+  columns: 3;
+  column-gap: 1rem;
+}
+
+.masonry img {
+  width: 100%;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  break-inside: avoid;
+  object-fit: cover;
+}
+
+.masonry-4 {
+  columns: 4;
+  column-gap: 0.75rem;
+}
+
+.masonry-4 img {
+  width: 100%;
+  margin-bottom: 0.75rem;
+  border-radius: 4px;
+  break-inside: avoid;
+  object-fit: cover;
+}
+
+/* ============================================
+   CTA BLOCKS
+   ============================================ */
+
+.cta-block {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.cta-btn {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 1rem 2.5rem;
+  border: 1px solid;
+  border-radius: 0;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.cta-btn.light {
+  color: var(--white);
+  border-color: rgba(255,255,255,0.3);
+}
+.cta-btn.light:hover {
+  background: var(--white);
+  color: var(--text-primary);
+}
+
+.cta-btn.dark {
+  color: var(--text-primary);
+  border-color: rgba(0,0,0,0.2);
+}
+.cta-btn.dark:hover {
+  background: var(--text-primary);
+  color: var(--white);
+}
+
+/* ============================================
+   STAT OVERLAYS
+   ============================================ */
+
+.stats-row {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+  padding: 3rem 0;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 400;
+  display: block;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+  opacity: 0.7;
+}
+
+/* ============================================
+   TEXT CARD
+   ============================================ */
+
+.text-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 3rem;
+  border-radius: 4px;
+  max-width: 600px;
+}
+
+.text-card.centered {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.quote-mark {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  line-height: 1;
+  opacity: 0.15;
+  display: block;
+  margin-bottom: -1rem;
+}
+
+/* ============================================
+   SECTION BACKGROUNDS
+   ============================================ */
+
+.bg-cabinet {
+  background: linear-gradient(180deg, var(--cabinet-bg) 0%, #1A0F08 100%);
+  color: var(--white);
+}
+
+.bg-cabinet-light {
+  background: linear-gradient(180deg, #F5EDE4 0%, var(--cream) 100%);
+}
+
+.bg-titanic {
+  background: linear-gradient(180deg, var(--titanic-bg) 0%, #06101A 100%);
+  color: var(--white);
+}
+
+.bg-titanic-light {
+  background: linear-gradient(180deg, #E8EEF3 0%, var(--cream) 100%);
+}
+
+.bg-dambo {
+  background: linear-gradient(180deg, var(--dambo-bg) 0%, #051A0F 100%);
+  color: var(--white);
+}
+
+.bg-dambo-light {
+  background: linear-gradient(180deg, #E4EDE8 0%, var(--cream) 100%);
+}
+
+/* ============================================
+   PARALLAX WRAPPER
+   ============================================ */
+
+.parallax-img {
+  position: relative;
+  overflow: hidden;
+}
+
+.parallax-img img {
+  transition: transform 0.1s linear;
+}
+
+/* ============================================
+   CLOSING SECTION
+   ============================================ */
+
+.closing {
+  padding: 10rem 2rem;
+  text-align: center;
+  background: var(--text-primary);
+  color: var(--white);
+  position: relative;
+}
+
+.closing::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 800px 600px at 50% 50%, rgba(196,162,101,0.06) 0%, transparent 70%);
+}
+
+.closing-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.closing h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+}
+
+.closing p {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.5);
+  font-weight: 300;
+  margin-bottom: 3rem;
+  line-height: 1.8;
+}
+
+.brand-mark {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: 4rem;
+}
+
+/* ============================================
+   TRANSITION SPACER
+   ============================================ */
+
+.spacer {
+  height: 6rem;
+  background: var(--cream);
+}
+
+.spacer-dark {
+  height: 2rem;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 900px) {
+  .img-duo { grid-template-columns: 1fr; }
+  .img-trio { grid-template-columns: 1fr; }
+  .img-stagger { grid-template-columns: 1fr; }
+  .img-stagger .stagger-left { padding-top: 0; }
+  .masonry { columns: 2; }
+  .masonry-4 { columns: 2; }
+  .stats-row { gap: 2rem; }
+  .scene-inner { padding: 0 1.25rem; }
+}
+
+@media (max-width: 600px) {
+  .masonry { columns: 1; }
+  .masonry-4 { columns: 2; }
+  .stats-row { gap: 1.5rem; }
+  .text-card { padding: 2rem; }
+}
+
+/* ============================================
+   PROGRESS BAR
+   ============================================ */
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: var(--gold);
+  z-index: 9999;
+  transition: width 0.1s linear;
+  width: 0%;
+}
+
+/* ============================================
+   NAV DOT INDICATOR
+   ============================================ */
+
+.nav-dots {
+  position: fixed;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.nav-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.15);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  padding: 0;
+}
+
+.nav-dot.active {
+  background: var(--gold);
+  transform: scale(1.4);
+}
+
+.nav-dot:hover {
+  background: var(--gold);
+  opacity: 0.7;
+}
+
+@media (max-width: 900px) {
+  .nav-dots { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- Progress Bar -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- Navigation Dots -->
+<nav class="nav-dots" id="navDots">
+  <button class="nav-dot active" data-target="hero" title="Opening"></button>
+  <button class="nav-dot" data-target="ch1" title="Cabinet of Curiosities"></button>
+  <button class="nav-dot" data-target="ch2" title="Titanic Exhibition"></button>
+  <button class="nav-dot" data-target="ch3" title="Thomas Dambo Trolls"></button>
+  <button class="nav-dot" data-target="closing" title="Closing"></button>
+</nav>
+
+<!-- ============================================
+     HERO
+     ============================================ -->
+
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <span class="hero-eyebrow">A Visual Story by AUROS AI</span>
+    <h1>The <em>Imagine</em> Team</h1>
+    <div class="hero-line"></div>
+    <p class="hero-subtitle">Three experiences. Three worlds. One creative vision.</p>
+  </div>
+  <div class="scroll-indicator">
+    <span>Scroll</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+
+<!-- ============================================
+     CHAPTER 1: THE CABINET OF CURIOSITIES
+     ============================================ -->
+
+<section class="chapter-intro bg-cabinet dark" id="ch1">
+  <div class="fade-in">
+    <span class="chapter-number" style="color: var(--gold);">Chapter One</span>
+    <h2 class="chapter-title">The Cabinet of Curiosities<br>+ The Lock</h2>
+    <p class="chapter-storyline">"The Best-Kept Secret on the Strip"</p>
+    <p class="chapter-subtitle">A hidden world beneath the casino floor. Part museum, part speakeasy, entirely unforgettable.</p>
+    <div class="chapter-divider" style="background: rgba(255,255,255,0.2);"></div>
+  </div>
+</section>
+
+<!-- Scene 1: THE DISCOVERY -->
+<section class="scene bg-cabinet dark">
+  <div class="scene-inner">
+    <div class="fade-in-left">
+      <span class="scene-label" style="color: var(--gold);">Scene 1 — The Discovery</span>
+      <h3 class="scene-heading">You hear whispers about a hidden place<br>beneath the casino floor...</h3>
+      <p class="scene-narrative">A brass door. A knowing look from the host. You step through and the Strip disappears behind you.</p>
+    </div>
+    <div class="spacer-dark"></div>
+    <div class="img-duo scale-in">
+      <img src="cabinet/downloaded/cabinet_001.jpg" alt="The Cabinet entrance" loading="lazy">
+      <img src="cabinet/downloaded/cabinet_002.jpg" alt="Inside the Cabinet" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- Scene 2: THE CURIOSITIES -->
+<section class="scene bg-cabinet-light">
+  <div class="scene-inner">
+    <div class="fade-in-right">
+      <span class="scene-label" style="color: var(--cabinet-accent);">Scene 2 — The Curiosities</span>
+      <h3 class="scene-heading">A room filled with oddities from around the world</h3>
+      <p class="scene-narrative">Every object has a story. Scan them. Learn them. Let the wonder begin.</p>
+    </div>
+    <div style="height: 2rem;"></div>
+    <div class="img-duo scale-in">
+      <img src="cabinet/downloaded/cabinet_003.jpg" alt="Curiosities display" loading="lazy">
+      <img src="cabinet/downloaded/cabinet_004.png" alt="Artifacts and oddities" loading="lazy">
+    </div>
+    <div class="cta-block fade-in">
+      <div class="text-card centered">
+        <span class="quote-mark">"</span>
+        <p style="font-family: 'Playfair Display', serif; font-size: 1.2rem; font-style: italic; color: var(--text-secondary); line-height: 1.8;">Scan. Learn. Wonder.<br>Every artifact unlocks a story.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Scene 3: THE VAULT -->
+<section class="scene bg-cabinet dark">
+  <div class="scene-inner">
+    <div class="fade-in-left">
+      <span class="scene-label" style="color: var(--gold);">Scene 3 — The Vault</span>
+      <h3 class="scene-heading">Solve the riddle. Crack the code.</h3>
+      <p class="scene-narrative">Choose: walk or crawl through the vault door. Only 40 seats await on the other side.</p>
+    </div>
+    <div style="height: 2rem;"></div>
+    <div class="img-duo scale-in">
+      <img src="cabinet/downloaded/cabinet_005.jpg" alt="The vault entrance" loading="lazy">
+      <img src="cabinet/downloaded/cabinet_006.jpg" alt="Inside the vault" loading="lazy">
+    </div>
+    <div class="stats-row fade-in" style="padding-top: 3rem;">
+      <div class="stat-item">
+        <span class="stat-number" style="color: var(--gold);">40</span>
+        <span class="stat-label" style="color: rgba(255,255,255,0.5);">Seats Only</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" style="color: var(--gold);">1</span>
+        <span class="stat-label" style="color: rgba(255,255,255,0.5);">Riddle to Solve</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" style="color: var(--gold);">0</span>
+        <span class="stat-label" style="color: rgba(255,255,255,0.5);">Cocktails That Exist<br>Until You Arrive</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Scene 4: THE EXPERIENCE -->
+<section class="scene bg-cabinet-light" style="padding-bottom: 6rem;">
+  <div class="scene-inner">
+    <div class="fade-in-right">
+      <span class="scene-label" style="color: var(--cabinet-accent);">Scene 4 — The Experience</span>
+      <h3 class="scene-heading">Bespoke cocktails crafted from your mood</h3>
+      <p class="scene-narrative">Best Speakeasy in Las Vegas, 2025. Your drink doesn't exist until you walk through the door.</p>
+    </div>
+    <div style="height: 2rem;"></div>
+    <div class="img-trio scale-in">
+      <img src="cabinet/downloaded/cabinet_007.jpg" alt="Bespoke cocktails" loading="lazy">
+      <img src="cabinet/downloaded/cabinet_008.jpg" alt="The speakeasy atmosphere" loading="lazy">
+      <img src="cabinet/downloaded/cabinet_009.png" alt="The full experience" loading="lazy">
+    </div>
+    <div class="cta-block fade-in">
+      <a class="cta-btn dark" href="#">Book Your Experience</a>
+    </div>
+  </div>
+</section>
+
+
+<div class="spacer"></div>
+
+
+<!-- ============================================
+     CHAPTER 2: TITANIC: THE EXHIBITION
+     ============================================ -->
+
+<section class="chapter-intro bg-titanic dark" id="ch2">
+  <div class="fade-in">
+    <span class="chapter-number" style="color: #6BA3C7;">Chapter Two</span>
+    <h2 class="chapter-title">Titanic: The Exhibition</h2>
+    <p class="chapter-storyline">"Walk the Decks. Feel the Scale."</p>
+    <p class="chapter-subtitle">This isn't a museum. It's a journey 12,500 feet below the surface and 113 years into the past.</p>
+    <div class="chapter-divider" style="background: rgba(255,255,255,0.2);"></div>
+  </div>
+</section>
+
+<!-- Scene 1: THE APPROACH -->
+<section class="scene bg-titanic dark">
+  <div class="scene-inner">
+    <div class="fade-in-left">
+      <span class="scene-label" style="color: #6BA3C7;">Scene 1 — The Approach</span>
+      <h3 class="scene-heading">300+ authentic artifacts. Full-scale recreations.</h3>
+      <p class="scene-narrative">You step aboard. The staircase rises before you. The chandeliers glow. For a moment, it's 1912.</p>
+    </div>
+    <div style="height: 2rem;"></div>
+    <div class="img-duo scale-in">
+      <img src="titanic/downloaded/titanic_001.jpg" alt="Titanic exhibition entrance" loading="lazy">
+      <img src="titanic/downloaded/titanic_002.jpg" alt="Full-scale recreation" loading="lazy">
+    </div>
+    <div class="stats-row fade-in" style="padding-top: 3rem;">
+      <div class="stat-item">
+        <span class="stat-number" style="color: #6BA3C7;">300+</span>
+        <span class="stat-label" style="color: rgba(255,255,255,0.5);">Authentic Artifacts</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" style="color: #6BA3C7;">12,500</span>
+        <span class="stat-label" style="color: rgba(255,255,255,0.5);">Feet Below the Surface</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Scene 2: THE ARTIFACTS -->
+<section class="scene bg-titanic-light">
+  <div class="scene-inner">
+    <div class="fade-in-right">
+      <span class="scene-label" style="color: var(--titanic-accent);">Scene 2 — The Artifacts</span>
+      <h3 class="scene-heading">Objects recovered from the deep</h3>
+      <p class="scene-narrative">History you can touch. Belongings that belonged to someone. Each object a life, a story, a moment frozen in time.</p>
+    </div>
+    <div style="height: 2rem;"></div>
+    <div class="img-trio scale-in">
+      <img src="titanic/downloaded/titanic_003.jpg" alt="Recovered artifacts" loading="lazy">
+      <img src="titanic/downloaded/titanic_004.jpg" alt="Historical objects" loading="lazy">
+      <img src="titanic/downloaded/titanic_005.jpg" alt="Titanic memorabilia" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- Scene 3: THE STORY -->
+<section class="scene bg-titanic dark" style="padding-bottom: 6rem;">
+  <div class="scene-inner">
+    <div class="fade-in-left">
+      <span class="scene-label" style="color: #6BA3C7;">Scene 3 — The Story</span>
+      <h3 class="scene-heading">2,224 passengers. 1,500 souls.</h3>
+      <p class="scene-narrative">The most dramatic story ever told, made tangible. You don't observe it. You feel it.</p>
+    </div>
+    <div style="height: 2rem;"></div>
+    <div class="img-stagger scale-in">
+      <div class="stagger-left">
+        <img src="titanic/downloaded/titanic_006.jpg" alt="The human story" loading="lazy">
+      </div>
+      <div>
+        <img src="titanic/downloaded/titanic_007.jpg" alt="Cinematic exhibition" loading="lazy">
+      </div>
+    </div>
+    <div class="stats-row fade-in" style="padding-top: 4rem;">
+      <div class="stat-item">
+        <span class="stat-number" style="color: #6BA3C7;">2,224</span>
+        <span class="stat-label" style="color: rgba(255,255,255,0.5);">Passengers Aboard</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" style="color: #6BA3C7;">1,500</span>
+        <span class="stat-label" style="color: rgba(255,255,255,0.5);">Lives Lost</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" style="color: #6BA3C7;">113</span>
+        <span class="stat-label" style="color: rgba(255,255,255,0.5);">Years of Legacy</span>
+      </div>
+    </div>
+    <div class="cta-block fade-in">
+      <a class="cta-btn light" href="#">Experience the Exhibition</a>
+    </div>
+  </div>
+</section>
+
+
+<div class="spacer"></div>
+
+
+<!-- ============================================
+     CHAPTER 3: THOMAS DAMBO TROLLS
+     ============================================ -->
+
+<section class="chapter-intro bg-dambo dark" id="ch3">
+  <div class="fade-in">
+    <span class="chapter-number" style="color: #5DB87E;">Chapter Three</span>
+    <h2 class="chapter-title">Thomas Dambo's<br>Giant Trolls</h2>
+    <p class="chapter-storyline">"Giants Are Hiding in the Forest"</p>
+    <p class="chapter-subtitle">Monumental recycled-wood sculptures hidden in nature. A global treasure hunt that has captivated millions.</p>
+    <div class="chapter-divider" style="background: rgba(255,255,255,0.2);"></div>
+  </div>
+</section>
+
+<!-- Scene 1: THE QUEST BEGINS -->
+<section class="scene bg-dambo dark" style="padding-bottom: 2rem;">
+  <div class="scene-inner">
+    <div class="fade-in-left">
+      <span class="scene-label" style="color: #5DB87E;">Scene 1 — The Quest Begins</span>
+      <h3 class="scene-heading">Somewhere in the woods, a 30-foot troll<br>is waiting to be found...</h3>
+      <p class="scene-narrative">You follow the trail. The trees grow taller. And then, through the branches, you see something impossible.</p>
+    </div>
+    <div style="height: 2rem;"></div>
+    <div class="img-featured scale-in">
+      <img src="dambo/downloaded/dambo_001.png" alt="Giant troll in the forest" loading="lazy" class="img-hero-full">
+      <div class="overlay-text">
+        <h4 style="font-family: 'Playfair Display', serif;">The Adventure Starts Here</h4>
+        <p>Every troll has a name. Every sculpture has a story. Every visit becomes a quest.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Scene 2: THE DISCOVERY -->
+<section class="scene bg-dambo-light">
+  <div class="scene-inner">
+    <div class="fade-in-right">
+      <span class="scene-label" style="color: var(--dambo-accent);">Scene 2 — The Discovery</span>
+      <h3 class="scene-heading">Turn the corner. Look up. Your jaw drops.</h3>
+      <p class="scene-narrative">They emerge from the landscape as if they've always been here. Giants made from the forest itself.</p>
+    </div>
+    <div style="height: 2rem;"></div>
+    <div class="img-stagger scale-in">
+      <div>
+        <img src="dambo/downloaded/dambo_015.jpg" alt="Troll discovery" loading="lazy" style="height: 500px;">
+        <div style="height: 1.5rem;"></div>
+        <img src="dambo/downloaded/dambo_005.jpg" alt="Troll in nature" loading="lazy" style="height: 350px;">
+      </div>
+      <div class="stagger-left">
+        <img src="dambo/downloaded/dambo_020.jpg" alt="Looking up at a troll" loading="lazy" style="height: 450px;">
+        <div style="height: 1.5rem;"></div>
+        <img src="dambo/downloaded/dambo_021.jpg" alt="Forest trail troll" loading="lazy" style="height: 400px;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Scene 3: THE SCALE -->
+<section class="scene bg-dambo dark">
+  <div class="scene-inner">
+    <div class="fade-in-left">
+      <span class="scene-label" style="color: #5DB87E;">Scene 3 — The Scale</span>
+      <h3 class="scene-heading">16 to 50 feet tall. Built from 5 tons of recycled wood.</h3>
+      <p class="scene-narrative">Each one has a name. Each one was built with hands, heart, and reclaimed materials. The human standing beside them tells the whole story.</p>
+    </div>
+    <div style="height: 2rem;"></div>
+    <div class="img-duo scale-in">
+      <img src="dambo/downloaded/dambo_035.jpg" alt="Troll scale comparison" loading="lazy">
+      <img src="dambo/downloaded/dambo_036.jpg" alt="Human-to-troll scale" loading="lazy">
+    </div>
+    <div class="stats-row fade-in" style="padding-top: 3rem;">
+      <div class="stat-item">
+        <span class="stat-number" style="color: #5DB87E;">50 ft</span>
+        <span class="stat-label" style="color: rgba(255,255,255,0.5);">Tallest Troll</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" style="color: #5DB87E;">5 tons</span>
+        <span class="stat-label" style="color: rgba(255,255,255,0.5);">Recycled Wood Each</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" style="color: #5DB87E;">100%</span>
+        <span class="stat-label" style="color: rgba(255,255,255,0.5);">Sustainable</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Scene 4: THE WORLD -->
+<section class="scene bg-dambo-light" style="padding-bottom: 3rem;">
+  <div class="scene-inner">
+    <div class="fade-in-right">
+      <span class="scene-label" style="color: var(--dambo-accent);">Scene 4 — The World</span>
+      <h3 class="scene-heading">170+ trolls across 20 countries</h3>
+      <p class="scene-narrative">1.26 million visitors at Morton Arboretum alone. A global phenomenon built from reclaimed wood and wonder.</p>
+    </div>
+    <div style="height: 2rem;"></div>
+    <div class="masonry-4 scale-in">
+      <img src="dambo/downloaded/dambo_002.jpg" alt="Troll world 1" loading="lazy">
+      <img src="dambo/downloaded/dambo_061.jpg" alt="Troll world 2" loading="lazy">
+      <img src="dambo/downloaded/dambo_007.jpg" alt="Troll world 3" loading="lazy">
+      <img src="dambo/downloaded/dambo_069.jpg" alt="Troll world 4" loading="lazy">
+      <img src="dambo/downloaded/dambo_010.jpg" alt="Troll world 5" loading="lazy">
+      <img src="dambo/downloaded/dambo_003.jpg" alt="Troll world 6" loading="lazy">
+      <img src="dambo/downloaded/dambo_012.jpg" alt="Troll world 7" loading="lazy">
+      <img src="dambo/downloaded/dambo_008.jpg" alt="Troll world 8" loading="lazy">
+      <img src="dambo/downloaded/dambo_014.jpg" alt="Troll world 9" loading="lazy">
+      <img src="dambo/downloaded/dambo_009.jpg" alt="Troll world 10" loading="lazy">
+      <img src="dambo/downloaded/dambo_016.jpg" alt="Troll world 11" loading="lazy">
+      <img src="dambo/downloaded/dambo_018.jpg" alt="Troll world 12" loading="lazy">
+    </div>
+    <div class="stats-row fade-in" style="padding-top: 3rem;">
+      <div class="stat-item">
+        <span class="stat-number" style="color: var(--dambo-accent);">170+</span>
+        <span class="stat-label">Trolls Worldwide</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" style="color: var(--dambo-accent);">20</span>
+        <span class="stat-label">Countries</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" style="color: var(--dambo-accent);">1.26M</span>
+        <span class="stat-label">Visitors at Morton<br>Arboretum Alone</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Scene 5: THE MOMENT -->
+<section class="scene bg-dambo dark" style="padding-bottom: 6rem;">
+  <div class="scene-inner">
+    <div class="fade-in-left">
+      <span class="scene-label" style="color: #5DB87E;">Scene 5 — The Moment</span>
+      <h3 class="scene-heading">The best content practically makes itself.</h3>
+      <p class="scene-narrative">Families. Adventure. Sustainability. Wonder. Every single frame is content-ready.</p>
+    </div>
+    <div style="height: 2rem;"></div>
+    <div class="img-featured scale-in">
+      <img src="dambo/downloaded/dambo_004.jpg" alt="Content-ready moment" loading="lazy" class="img-hero-large">
+      <div class="overlay-text">
+        <h4 style="font-family: 'Playfair Display', serif;">Every Frame Tells a Story</h4>
+        <p>Families. Adventure. Sustainability. Wonder.</p>
+      </div>
+    </div>
+    <div style="height: 2rem;"></div>
+    <div class="img-trio scale-in">
+      <img src="dambo/downloaded/dambo_006.jpg" alt="Troll content 1" loading="lazy">
+      <img src="dambo/downloaded/dambo_011.jpg" alt="Troll content 2" loading="lazy">
+      <img src="dambo/downloaded/dambo_019.jpg" alt="Troll content 3" loading="lazy">
+    </div>
+    <div class="cta-block fade-in">
+      <a class="cta-btn light" href="#">Let's Create the Content That Fills These Venues</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================
+     CLOSING
+     ============================================ -->
+
+<section class="closing" id="closing">
+  <div class="closing-content fade-in">
+    <h2>Three worlds.<br>One agency.</h2>
+    <p>Let's tell these stories with the craft, strategy, and visual ambition they deserve.</p>
+    <div class="hero-line" style="margin-bottom: 2.5rem;"></div>
+    <a class="cta-btn light" href="#">Start the Conversation</a>
+    <div class="brand-mark">AUROS AI</div>
+  </div>
+</section>
+
+
+<!-- ============================================
+     SCRIPTS
+     ============================================ -->
+
+<script>
+// ---- Intersection Observer for scroll animations ----
+document.addEventListener('DOMContentLoaded', () => {
+  const animEls = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .scale-in');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.12,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
+  animEls.forEach(el => observer.observe(el));
+
+  // ---- Progress bar ----
+  const progressBar = document.getElementById('progressBar');
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = (scrollTop / docHeight) * 100;
+    progressBar.style.width = progress + '%';
+  }, { passive: true });
+
+  // ---- Nav dots ----
+  const sections = ['hero', 'ch1', 'ch2', 'ch3', 'closing'];
+  const dots = document.querySelectorAll('.nav-dot');
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      const target = dot.getAttribute('data-target');
+      const el = document.getElementById(target);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        dots.forEach(d => d.classList.remove('active'));
+        const activeDot = document.querySelector(`.nav-dot[data-target="${id}"]`);
+        if (activeDot) activeDot.classList.add('active');
+      }
+    });
+  }, { threshold: 0.3 });
+
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) sectionObserver.observe(el);
+  });
+
+  // ---- Subtle parallax on hero images ----
+  const parallaxImages = document.querySelectorAll('.img-hero-full, .img-hero-large');
+  let ticking = false;
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        parallaxImages.forEach(img => {
+          const rect = img.getBoundingClientRect();
+          const viewH = window.innerHeight;
+          if (rect.top < viewH && rect.bottom > 0) {
+            const progress = (viewH - rect.top) / (viewH + rect.height);
+            const translate = (progress - 0.5) * 30;
+            img.style.transform = `translateY(${translate}px) scale(1.03)`;
+          }
+        });
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+});
+</script>
+
+</body>
+</html>

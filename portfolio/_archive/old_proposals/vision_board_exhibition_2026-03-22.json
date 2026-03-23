@@ -1,0 +1,142 @@
+{
+  "campaign": "The Imagine Team \u2014 Harry Potter & Titanic Exhibitions",
+  "objective": "Drive ticket sales for immersive experiences",
+  "emotional_strategy": {
+    "harry_potter": {
+      "primary_emotion": "Nostalgia + Awe",
+      "secondary_emotions": [
+        "Wonder",
+        "Exclusivity",
+        "Escapism"
+      ],
+      "key_message": "Step into the world. Experience magic like never before.",
+      "fomo_angle": "Limited time. Every ticket is a portal you won't get twice.",
+      "audience_feeling": "If I don't go, I'll regret it forever",
+      "visual_direction": "Moody, enchanted, golden hour lighting, intimate magic moments, crowd energy"
+    },
+    "titanic": {
+      "primary_emotion": "Awe + Cinematic Drama",
+      "secondary_emotions": [
+        "Immersion",
+        "Historical significance",
+        "Spectacle"
+      ],
+      "key_message": "Walk the decks. Feel the scale. Understand the story.",
+      "fomo_angle": "Once-in-a-lifetime experience. Step aboard before it sails.",
+      "audience_feeling": "This is the closest I'll ever get to that moment",
+      "visual_direction": "Cinematic scale, atmospheric lighting, ship details, crowd reaction, emotional moments"
+    }
+  },
+  "content_pillars": {
+    "immersion": {
+      "description": "Show the environment, sets, details that make it real",
+      "content_type": "Cinematic walkthroughs, detail shots, POV videos",
+      "goal": "Make viewers feel like they're already there"
+    },
+    "emotion": {
+      "description": "Capture crowd reactions, emotional moments, wonder",
+      "content_type": "User reactions, family moments, awe-struck faces",
+      "goal": "Trigger emotional connection and FOMO"
+    },
+    "experience": {
+      "description": "Show what you DO, interact with, feel",
+      "content_type": "Interactive elements, photo ops, multisensory moments",
+      "goal": "Paint picture of complete experience"
+    },
+    "urgency": {
+      "description": "Limited time, limited capacity, exclusive access",
+      "content_type": "Countdown posts, capacity reminders, early access offers",
+      "goal": "Convert interest to immediate ticket purchase"
+    }
+  },
+  "visual_palette": {
+    "harry_potter": {
+      "primary_colors": [
+        "Deep Burgundy #5C1A1A",
+        "Emerald Green #1B4D3E",
+        "Gold #C9A84C"
+      ],
+      "mood_colors": [
+        "Warm candlelight amber",
+        "Mystical purple haze",
+        "Dark blue evening"
+      ],
+      "typography": "Serif (elegant, timeless) for headlines + Sans (clean) for CTAs",
+      "photography_style": "Moody, intimate, magic hour, warm practical lighting"
+    },
+    "titanic": {
+      "primary_colors": [
+        "Steel Blue #1F3A52",
+        "Silver Gray #B8B8B8",
+        "Warm Gold #D4AF37"
+      ],
+      "mood_colors": [
+        "Deep ocean blue",
+        "White ship elegance",
+        "Sunset amber"
+      ],
+      "typography": "Elegant serif (historic, grand) + modern sans for CTAs",
+      "photography_style": "Cinematic scale, dramatic lighting, architectural majesty, ocean atmosphere"
+    }
+  },
+  "conversion_journey": {
+    "stage_1_awareness": {
+      "content": "15s video ads showing 5-second magic moments",
+      "platforms": [
+        "TikTok",
+        "Instagram Reels",
+        "YouTube Shorts"
+      ],
+      "goal": "Stop scroll, spark interest",
+      "cta": "Swipe to learn more"
+    },
+    "stage_2_consideration": {
+      "content": "30s cinematic walkthroughs, behind-the-scenes, crowd reactions",
+      "platforms": [
+        "Instagram Feed",
+        "Facebook",
+        "YouTube"
+      ],
+      "goal": "Build desire, show full experience scope",
+      "cta": "See full experience"
+    },
+    "stage_3_decision": {
+      "content": "60s full story videos with social proof, specific experience highlights",
+      "platforms": [
+        "YouTube",
+        "Facebook",
+        "Instagram Stories"
+      ],
+      "goal": "Remove objections, create urgency",
+      "cta": "Get tickets now"
+    },
+    "stage_4_conversion": {
+      "content": "Carousel ads with pricing, dates, testimonials, urgency language",
+      "platforms": [
+        "Instagram",
+        "Facebook",
+        "Google Ads"
+      ],
+      "goal": "Make purchase decision easy",
+      "cta": "Book my tickets"
+    }
+  },
+  "metric_framework": {
+    "awareness": {
+      "metric": "Video views, reach, impressions",
+      "target": "100K+ views across platforms"
+    },
+    "engagement": {
+      "metric": "Saves, shares, comments, click-through rate",
+      "target": "3%+ engagement rate"
+    },
+    "consideration": {
+      "metric": "Website clicks, product page views, time on page",
+      "target": "5% of viewers click to ticket page"
+    },
+    "conversion": {
+      "metric": "Tickets sold, revenue, cost per ticket acquisition",
+      "target": "$X revenue from content-driven sales"
+    }
+  }
+}

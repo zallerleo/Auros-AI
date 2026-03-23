@@ -1,0 +1,342 @@
+{
+  "source": {
+    "title": "AI Marketing Masterclass: From Beginner to Expert in 60 Minutes",
+    "creator": "Greg Isenberg",
+    "channel": "The Startup Ideas Podcast Episodes",
+    "guest": "James Dickerson — growth marketer, Claude Code power user, The Boring Marketer",
+    "url": "https://www.youtube.com/watch?v=fVUlrpaWNxg",
+    "views": 71568,
+    "published": "2026-02-09",
+    "duration": "58:41"
+  },
+
+  "agent_1_report": {
+    "title": "Overview of Main Points and Tools",
+
+    "core_thesis": "You can build a complete marketing system — research, positioning, landing page, lead magnet, ad creative, SEO content, and traffic strategy — in roughly one hour from the terminal using Claude Code with stacked skills and MCPs. The key differentiator is spending time on RESEARCH FIRST before any content generation.",
+
+    "tools_mentioned": [
+      {
+        "name": "Perplexity MCP",
+        "category": "Research",
+        "what_it_does": "Deep market research directly from the terminal. Analyzes competitors, finds market gaps, builds rich context documents that feed into all downstream content generation.",
+        "key_insight": "Spending 1 hour on upfront research produces dramatically better outputs than jumping straight into prompting. This context loading step is the foundation everything else builds on.",
+        "pricing": "Free MCP (requires Perplexity API key)"
+      },
+      {
+        "name": "Playwright MCP",
+        "category": "Competitive Intelligence",
+        "what_it_does": "Browser automation for scraping competitor websites. Gathers competitive intelligence — pricing, positioning, messaging, features — for analysis.",
+        "key_insight": "Combined with Perplexity, gives comprehensive competitive landscape without manual browsing.",
+        "pricing": "Free MCP"
+      },
+      {
+        "name": "Firecrawl",
+        "category": "Web Scraping",
+        "what_it_does": "Web scraping and crawling MCP. Extracts structured data from websites for competitive analysis and market research.",
+        "key_insight": "Part of the recommended minimal MCP stack: Perplexity + Firecrawl + Playwright.",
+        "pricing": "Free tier available"
+      },
+      {
+        "name": "Remotion",
+        "category": "Video Ad Creation",
+        "what_it_does": "Programmatic video ad creation from the terminal. Creates ads in multiple formats (vertical, horizontal, square) with custom branding at zero cost. React-based video framework.",
+        "key_insight": "Eliminates need for video editing software for ad creation. Can generate multiple format variations automatically.",
+        "pricing": "Free / open-source"
+      },
+      {
+        "name": "Positioning Angles Skill",
+        "category": "Strategy",
+        "what_it_does": "Claude Code skill that analyzes market research and surfaces 5 distinct positioning angles. Then evaluates each to pick the strongest one.",
+        "key_insight": "In the demo, it found 'Boring Money' — an anti-agency positioning for overlooked trade businesses that resonated deeply.",
+        "pricing": "Free (Claude Code skill)"
+      },
+      {
+        "name": "Direct Response Copywriting Skill",
+        "category": "Copywriting",
+        "what_it_does": "Generates conversion-focused copy based on research context and positioning. Direct response style — focused on action, not brand awareness.",
+        "key_insight": "Copy quality is dramatically better when fed rich research context vs. raw prompting.",
+        "pricing": "Free (Claude Code skill)"
+      },
+      {
+        "name": "Anthropic's Front End Design Skill",
+        "category": "Design/Dev",
+        "what_it_does": "Creates landing pages directly in Claude Code. Full front-end design and development from the terminal.",
+        "key_insight": "Landing page creation integrated into the same workflow as research and copywriting — no context switching.",
+        "pricing": "Free (Claude Code skill)"
+      },
+      {
+        "name": "Orchestrator Skill",
+        "category": "Workflow",
+        "what_it_does": "Guides what to do next in the marketing workflow. Removes the 'I have a landing page, now what?' paralysis by suggesting next steps.",
+        "key_insight": "Acts as a project manager — keeps the funnel build moving forward systematically.",
+        "pricing": "Free (Claude Code skill)"
+      },
+      {
+        "name": "Lead Magnet Skill",
+        "category": "Content",
+        "what_it_does": "Creates lead magnets (PDFs, guides, checklists) as part of the conversion funnel.",
+        "key_insight": "Integrated into the funnel workflow — created after landing page, before traffic strategy.",
+        "pricing": "Free (Claude Code skill)"
+      },
+      {
+        "name": "Keyword Research and Traffic Strategy Skills",
+        "category": "SEO/Ads",
+        "what_it_does": "Identifies underserved local markets, generates SEO content pages, produces paid ad strategy informed by positioning and competitive intelligence.",
+        "key_insight": "Traffic strategy is the last step — only built after positioning, landing page, and lead magnet are solid.",
+        "pricing": "Free (Claude Code skill)"
+      },
+      {
+        "name": "Idea Browser",
+        "category": "Research",
+        "what_it_does": "Tool to find startup ideas and trends. Greg calls it the #1 tool for finding ideas.",
+        "url": "https://www.ideabrowser.com/",
+        "pricing": "Unknown"
+      },
+      {
+        "name": "The Vibe Marketer",
+        "category": "Resources",
+        "what_it_does": "Resources for people into vibe marketing/marketing with AI.",
+        "url": "https://www.thevibemarketer.com/",
+        "pricing": "Free resources"
+      }
+    ],
+
+    "key_strategies": [
+      {
+        "name": "Research-First Foundation",
+        "description": "Spend a full hour on deep market research BEFORE creating any marketing content. Most people jump into prompting immediately — that's where AI slop comes from. Rich context = better output.",
+        "workflow": "Perplexity MCP → competitor analysis → gap identification → context documents → THEN content creation"
+      },
+      {
+        "name": "Skills as Expert Instruction Manuals",
+        "description": "Claude Code skills encode the expert perspective (the last 10-20%) that separates great output from generic AI. They're not just prompts — they're methodology.",
+        "implication": "Building custom skills with domain expertise is the highest-leverage activity."
+      },
+      {
+        "name": "Minimal MCP Stack",
+        "description": "Keep MCPs simple: Perplexity + Firecrawl + Playwright covers 90% of needs. Don't overcomplicate.",
+        "implication": "Focus on mastering 3 MCPs rather than installing 20."
+      },
+      {
+        "name": "Full Funnel in One Session",
+        "description": "Build research → positioning → copy → landing page → lead magnet → ads → SEO → traffic strategy in one continuous Claude Code session. Context carries through.",
+        "implication": "The power is in the accumulated context — each step informs the next."
+      },
+      {
+        "name": "Programmatic Video Ads with Remotion",
+        "description": "Create video ads from code — React components rendered as video. Multiple formats, custom branding, zero cost. Terminal-native.",
+        "implication": "Eliminates the bottleneck of manual video editing for ad creation."
+      },
+      {
+        "name": "Orchestrator Pattern",
+        "description": "Use an orchestrator skill/agent to decide what to do next. Removes decision paralysis and keeps the workflow moving.",
+        "implication": "The orchestrator is the project manager of the agent system."
+      }
+    ],
+
+    "key_data_points": [
+      "Claude Code costs $200/month max subscription",
+      "Full marketing funnel built in ~1 hour from the terminal",
+      "Targeting boring local businesses doing $2-10M revenue",
+      "5 positioning angles surfaced, 1 selected as winner",
+      "71,568 views in ~6 weeks = high interest in this workflow"
+    ],
+
+    "three_main_sections": {
+      "1_research_first": "Deep market research with Perplexity MCP. Analyze competitors, find gaps, build context. This is the foundation.",
+      "2_live_build": "Build AI marketing agency funnel: positioning angles → copywriting → landing page → lead magnet → orchestrator decides next steps.",
+      "3_traffic_strategy": "Keyword research, SEO content pages, paid ad strategy. All informed by the positioning and competitive intelligence from earlier steps."
+    }
+  },
+
+  "agent_2_report": {
+    "title": "AUROS AI Integration Brainstorm",
+
+    "critical_integrations": [
+      {
+        "tool": "Perplexity MCP",
+        "enhances_agents": ["Agent 1 (Marketing Audit)", "Agent 5 (Trend Analyst)", "Agent 12 (Knowledge Scanner)", "Market Analysis Agent"],
+        "implementation": "Replace or augment Tavily with Perplexity MCP for deeper, more contextual research. Perplexity provides synthesized answers, not just links. Use as the FIRST step in every client pipeline — 1 hour of deep research before any content generation.",
+        "specific_changes": [
+          "Add Perplexity API to .env and config.py",
+          "Create agents/shared/perplexity.py wrapper",
+          "Modify audit_agent.py to use Perplexity for competitor analysis (deeper than Tavily)",
+          "Modify trend_agent.py to use Perplexity for trend synthesis",
+          "Add a 'deep research' phase as Step 0 in client pipeline"
+        ],
+        "priority": "MUST-HAVE",
+        "effort": "Medium (2-3 hours)"
+      },
+      {
+        "tool": "Playwright MCP / Firecrawl",
+        "enhances_agents": ["Agent 1 (Marketing Audit)", "Agent 2 (Brand Extractor)"],
+        "implementation": "Replace BeautifulSoup scraping in audit_agent.py with Playwright for JavaScript-rendered pages. Use Firecrawl for bulk competitor website crawling. Currently our audit misses dynamic content.",
+        "specific_changes": [
+          "Install playwright: pip install playwright && playwright install",
+          "Create agents/shared/browser.py for Playwright-based scraping",
+          "Modify audit_agent.py to use Playwright for website analysis",
+          "Modify brand_agent.py to use Playwright for full page rendering (better color/font extraction)",
+          "Add competitor scraping to audit pipeline"
+        ],
+        "priority": "MUST-HAVE",
+        "effort": "Medium (3-4 hours)"
+      },
+      {
+        "tool": "Remotion (Programmatic Video Ads)",
+        "enhances_agents": ["Agent 6 (Video Editor)", "Content Creator (Exhibition Content)"],
+        "implementation": "THIS IS A GAME-CHANGER for AUROS. Currently Agent 6 outputs FFmpeg commands and CapCut specs that a human must execute. Remotion lets us CREATE the actual video ads programmatically. For The Imagine Team, we could generate exhibition ad videos automatically.",
+        "specific_changes": [
+          "Install Remotion: npm init video@latest",
+          "Create agents/video_generator/ with Remotion templates for exhibition ads",
+          "Build React-based video templates: 15s vertical, 30s horizontal, 60s cinematic",
+          "Integrate with exhibition_content.py — auto-generate video files from scripts",
+          "Output: Actual MP4 files ready for upload to TikTok/Instagram/YouTube",
+          "Template variables: exhibition name, key message, CTA, brand colors"
+        ],
+        "priority": "MUST-HAVE",
+        "effort": "Heavy lift (8-12 hours) but highest ROI improvement"
+      },
+      {
+        "tool": "Positioning Angles Skill",
+        "enhances_agents": ["Agent 3 (Plan Builder)", "Agent 11 (Proposal Generator)"],
+        "implementation": "Build a dedicated positioning analysis step that surfaces 5 distinct angles before building any plan or proposal. Currently our plan_agent.py jumps to recommendations without exploring positioning space.",
+        "specific_changes": [
+          "Create agents/positioning/positioning_agent.py",
+          "Input: audit data + brand data + competitive research",
+          "Output: 5 positioning angles with scoring (market fit, differentiation, resonance)",
+          "Integrate as Step 2.5 in pipeline (after brand extraction, before plan building)",
+          "Feed winning position into plan_agent.py and proposal_agent.py"
+        ],
+        "priority": "MUST-HAVE",
+        "effort": "Quick win (2 hours)"
+      },
+      {
+        "tool": "Direct Response Copywriting Skill",
+        "enhances_agents": ["Content Creator", "Agent 7 (Outreach)", "Agent 8 (Content Calendar)"],
+        "implementation": "Add direct response copywriting frameworks to our knowledge base and inject into content generation prompts. Currently our copy is good but not conversion-optimized.",
+        "specific_changes": [
+          "Add DR copy frameworks to knowledge_base/kb_copywriting.json (AIDA already there, add: Problem-Agitate-Solve variants, Eugene Schwartz awareness levels, Gary Halbert techniques)",
+          "Create a 'conversion copy mode' in content generation that prioritizes action over awareness",
+          "Modify exhibition_content.py to generate DR-style ad copy variations",
+          "Add copy scoring: rate each piece on clarity, urgency, specificity, CTA strength"
+        ],
+        "priority": "NICE-TO-HAVE",
+        "effort": "Quick win (1-2 hours)"
+      },
+      {
+        "tool": "Orchestrator Skill Pattern",
+        "enhances_agents": ["Entire pipeline"],
+        "implementation": "Build a master orchestrator that decides what to do next in the client pipeline. Currently we run agents manually in sequence. An orchestrator would automate the flow and handle decision points.",
+        "specific_changes": [
+          "Create agents/orchestrator/orchestrator_agent.py",
+          "Input: current pipeline state (which agents have run, what outputs exist)",
+          "Logic: evaluate completeness, quality scores, suggest next step",
+          "Output: next agent to run + context to feed it",
+          "Eventually: fully autonomous pipeline where orchestrator runs the entire 11-step process"
+        ],
+        "priority": "NICE-TO-HAVE (major upgrade but complex)",
+        "effort": "Heavy lift (6-8 hours)"
+      },
+      {
+        "tool": "Front End Design Skill (Landing Pages)",
+        "enhances_agents": ["Agent 4 (Vision Board)", "Agent 11 (Proposal Generator)"],
+        "implementation": "We already generate HTML deliverables. But we could extend this to generate actual CLIENT landing pages — not just internal documents. For The Imagine Team, generate a ticket-selling landing page.",
+        "specific_changes": [
+          "Create agents/landing_page/landing_page_agent.py",
+          "Input: brand data + positioning + copy + visual direction",
+          "Output: Complete HTML/CSS landing page optimized for ticket sales",
+          "Include: hero section, social proof, experience highlights, pricing, CTA buttons",
+          "Deploy: could host on Vercel/Netlify with one command"
+        ],
+        "priority": "FUTURE CONSIDERATION",
+        "effort": "Medium (4-5 hours)"
+      },
+      {
+        "tool": "Lead Magnet Skill",
+        "enhances_agents": ["Content Creator", "Agent 7 (Outreach)"],
+        "implementation": "Add lead magnet creation to our content pipeline. For exhibitions, lead magnets could be: 'Insider Guide to Harry Potter Exhibition', 'What to Expect at Titanic Exhibition' PDFs that capture emails before ticket purchase.",
+        "specific_changes": [
+          "Create agents/lead_magnet/lead_magnet_agent.py",
+          "Input: exhibition data + audience research",
+          "Output: PDF/HTML lead magnet (guide, checklist, behind-the-scenes content)",
+          "Integration: add to conversion funnel as email capture step before ticket CTA"
+        ],
+        "priority": "NICE-TO-HAVE",
+        "effort": "Quick win (2-3 hours)"
+      },
+      {
+        "tool": "Keyword Research / Traffic Strategy",
+        "enhances_agents": ["Agent 3 (Plan Builder)", "Agent 8 (Content Calendar)", "Agent 9 (Performance Tracker)"],
+        "implementation": "Add keyword research to our plan builder output. Currently we suggest content pillars but don't identify specific keywords or search volume. For exhibitions, target: 'harry potter exhibition [city]', 'titanic experience tickets', etc.",
+        "specific_changes": [
+          "Integrate keyword research API (Google Keyword Planner or free alternatives like Ubersuggest API)",
+          "Add SEO keyword targets to content calendar entries",
+          "Generate SEO-optimized content briefs alongside social content",
+          "Track keyword rankings in performance_agent.py"
+        ],
+        "priority": "NICE-TO-HAVE",
+        "effort": "Medium (3-4 hours)"
+      }
+    ],
+
+    "new_capabilities_to_build": [
+      {
+        "name": "Deep Research Phase (Step 0)",
+        "description": "Add a mandatory 'deep research' step before any client pipeline work. Use Perplexity + Firecrawl + Playwright to build a comprehensive context document that feeds every downstream agent.",
+        "priority": "MUST-HAVE",
+        "rationale": "James's core insight: research-first = dramatically better output. We're currently skipping this."
+      },
+      {
+        "name": "Programmatic Video Generation",
+        "description": "Use Remotion to turn our video scripts into actual video files. Templates for 15s/30s/60s in vertical/horizontal/square formats.",
+        "priority": "MUST-HAVE",
+        "rationale": "Eliminates the biggest bottleneck: we generate great scripts but can't produce the actual videos. This closes the gap."
+      },
+      {
+        "name": "Positioning Analysis Agent",
+        "description": "Dedicated agent that surfaces 5 positioning angles and evaluates each for market fit, differentiation, and resonance.",
+        "priority": "MUST-HAVE",
+        "rationale": "Currently we skip positioning exploration and go straight to planning. This step dramatically improves strategic quality."
+      },
+      {
+        "name": "Pipeline Orchestrator",
+        "description": "Master agent that manages the 11-step pipeline flow, decides next steps, handles branching logic.",
+        "priority": "FUTURE",
+        "rationale": "Would make the system truly autonomous — currently requires manual intervention between agents."
+      }
+    ],
+
+    "workflow_improvements": [
+      "Research-first: Add Perplexity deep research as Step 0 before audit",
+      "Context accumulation: Each agent's output feeds into the next agent's context (already doing this, but could be more systematic)",
+      "Quality gates: Add quality checks between pipeline stages (orchestrator pattern)",
+      "Multi-format output: Generate same content in multiple formats simultaneously (Remotion for video, HTML for web, PDF for email)"
+    ],
+
+    "competitive_advantages": [
+      "Remotion video generation: Most agencies can't auto-generate actual video ads. We could.",
+      "Research depth: Perplexity + Playwright gives us competitive intelligence most agencies do manually",
+      "Full funnel in one system: Research → strategy → content → ads → analytics. No tool switching.",
+      "Speed: What takes agencies weeks, we do in hours"
+    ],
+
+    "sprint_plan": {
+      "sprint_1_this_week": [
+        "Install Perplexity MCP and integrate into audit pipeline",
+        "Build positioning_agent.py (5 angles + scoring)",
+        "Add DR copywriting frameworks to knowledge base"
+      ],
+      "sprint_2_next_week": [
+        "Install Playwright and replace BeautifulSoup in audit/brand agents",
+        "Set up Remotion and build first exhibition video template",
+        "Create lead magnet agent for exhibition guides"
+      ],
+      "sprint_3_week_after": [
+        "Build full Remotion template library (15s/30s/60s × 3 formats)",
+        "Integrate keyword research into plan builder",
+        "Begin orchestrator agent design"
+      ]
+    }
+  }
+}

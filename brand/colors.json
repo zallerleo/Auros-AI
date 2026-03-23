@@ -1,0 +1,44 @@
+{
+  "brand": "AUROS",
+  "tagline": "Intelligence, Elevated.",
+  "colors": {
+    "midnight": "#0B0F1A",
+    "navy": "#111827",
+    "gold": "#C9A84C",
+    "gold_light": "#E8C96A",
+    "gold_dark": "#8B6E2A",
+    "white": "#FAFAF8",
+    "off_white": "#F0EDE6",
+    "gray": "#6B7280",
+    "gray_light": "#9CA3AF",
+    "electric": "#3B82F6"
+  },
+  "typography": {
+    "family": "Inter",
+    "weights": {
+      "display": 900,
+      "heading": 700,
+      "subheading": 600,
+      "body": 400,
+      "label": 700
+    },
+    "letter_spacing": {
+      "display": "-2px",
+      "heading": "-1px",
+      "label": "3px"
+    }
+  },
+  "voice": {
+    "traits": ["direct", "knowledgeable", "energetic but composed"],
+    "rules": [
+      "Short, confident sentences — less is always more",
+      "Lead with numbers and results in all client-facing content",
+      "No buzzwords without data backing",
+      "No income promises or hype language",
+      "AUROS always in ALL CAPS — never 'Auros'",
+      "Gold only as accent — never fill entire pages",
+      "Generous whitespace — let the name breathe",
+      "Pair dark backgrounds with gold for premium moments"
+    ]
+  }
+}

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AUROS Audience Segmentation &mdash; The Imagine Team</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #0B0F1A; color: #FAFAF8; line-height: 1.6; }
+
+  .header {
+    padding: 48px 40px;
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+    background: linear-gradient(135deg, #0B0F1A 0%, #111827 100%);
+  }
+  .header h1 { font-size: 32px; font-weight: 900; color: #C9A84C; letter-spacing: -1px; }
+  .header p { color: #9CA3AF; margin-top: 8px; font-size: 14px; }
+  .header .stats { display: flex; gap: 32px; margin-top: 20px; }
+  .stat-box { text-align: center; }
+  .stat-num { font-size: 28px; font-weight: 900; color: #C9A84C; }
+  .stat-lbl { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #6B7280; margin-top: 4px; }
+
+  .content { padding: 40px; }
+  .section-title { font-size: 11px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: #8B6E2A; margin-bottom: 24px; }
+
+  .segment-card {
+    background: #111827; border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 14px; padding: 28px; margin-bottom: 24px;
+  }
+  .segment-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+  .segment-id {
+    width: 40px; height: 40px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 900; font-size: 18px; color: #0B0F1A; flex-shrink: 0;
+  }
+  .segment-header h3 { font-size: 20px; font-weight: 800; }
+  .segment-size { font-size: 12px; color: #9CA3AF; }
+
+  .segment-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+  @media (max-width: 768px) { .segment-grid { grid-template-columns: 1fr; } }
+
+  .info-block { background: rgba(255,255,255,0.02); border-radius: 10px; padding: 16px; }
+  .info-block h4 { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #C9A84C; margin-bottom: 10px; }
+  .info-block p { font-size: 13px; color: #D1D5DB; margin-bottom: 4px; }
+  .info-block ul { padding-left: 16px; font-size: 13px; color: #D1D5DB; }
+  .info-block li { margin-bottom: 4px; }
+
+  .tags-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+  .tag {
+    display: inline-block; padding: 3px 10px; border-radius: 6px;
+    font-size: 11px; font-weight: 600; background: rgba(201,168,76,0.08); color: #C9A84C;
+  }
+  .tag.platform { background: rgba(59,130,246,0.1); color: #60A5FA; }
+
+  .messaging-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+  @media (max-width: 768px) { .messaging-row { grid-template-columns: 1fr; } }
+  .msg-block { background: rgba(255,255,255,0.02); border-radius: 10px; padding: 14px; }
+  .msg-block h4 { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #8B6E2A; margin-bottom: 8px; }
+  .msg-block p { font-size: 13px; color: #D1D5DB; }
+
+  .insights-section { margin-top: 40px; padding: 28px; background: #111827; border-radius: 14px; border: 1px solid rgba(201,168,76,0.1); }
+  .insights-section ul { padding-left: 20px; }
+  .insights-section li { font-size: 14px; color: #D1D5DB; margin-bottom: 8px; }
+
+  .priority-section { margin-top: 24px; }
+  .priority-item { display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: rgba(255,255,255,0.02); border-radius: 8px; margin-bottom: 8px; font-size: 14px; }
+  .priority-num { width: 28px; height: 28px; background: #C9A84C; color: #0B0F1A; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 14px; flex-shrink: 0; }
+
+  .footer { text-align: center; padding: 40px; color: #6B7280; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; }
+  .footer span { color: #C9A84C; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Audience Segmentation</h1>
+  <p>The Imagine Team &mdash; Harry Potter &mdash; Generated 2026-03-22 by AUROS AI</p>
+  <div class="stats">
+    <div class="stat-box"><div class="stat-num">6</div><div class="stat-lbl">Segments</div></div>
+  </div>
+</div>
+
+<div class="content">
+  <div class="section-title">Audience Segments</div>
+  
+        <div class="segment-card" style="border-top: 4px solid #C9A84C;">
+          <div class="segment-header">
+            <div class="segment-id" style="background: #C9A84C;">1</div>
+            <div>
+              <h3>Nostalgic Millennials</h3>
+              <span class="segment-size">35% of total addressable audience</span>
+            </div>
+          </div>
+
+          <div class="segment-grid">
+            <div class="info-block">
+              <h4>Demographics</h4>
+              <p><strong>Age:</strong> 28-42</p>
+              <p><strong>Gender:</strong> 55% female</p>
+              <p><strong>Income:</strong> $50K-$120K household</p>
+              <p><strong>Location:</strong> suburban and urban areas, major cities</p>
+              <p><strong>Education:</strong> university educated, 70% have degrees</p>
+            </div>
+
+            <div class="info-block">
+              <h4>Psychographics</h4>
+              <p><strong>Lifestyle:</strong> established careers, disposable income for experiences, social media active</p>
+              <div class="tags-row"><strong>Values:</strong> <span class='tag'>authenticity</span><span class='tag'>nostalgia</span><span class='tag'>shared experiences</span><span class='tag'>quality over quantity</span></div>
+              <div class="tags-row"><strong>Interests:</strong> <span class='tag'>Harry Potter fandom</span><span class='tag'>pop culture</span><span class='tag'>immersive entertainment</span><span class='tag'>photography</span><span class='tag'>collecting</span></div>
+            </div>
+
+            <div class="info-block">
+              <h4>Pain Points</h4>
+              <ul><li>fear of disappointing childhood memories</li><li>limited time for experiences</li><li>wanting authentic not commercialized content</li><li>difficulty finding adult-appropriate nostalgic experiences</li></ul>
+            </div>
+
+            <div class="info-block">
+              <h4>Content &amp; Platforms</h4>
+              <div class="tags-row"><span class='tag'>behind-the-scenes videos</span><span class='tag'>detailed prop showcases</span><span class='tag'>comparison to films</span><span class='tag'>visitor testimonials</span><span class='tag'>Instagram carousels with multiple angles</span></div>
+              <div class="tags-row" style="margin-top:8px;"><span class='tag platform'>Instagram</span><span class='tag platform'>Facebook</span><span class='tag platform'>YouTube</span><span class='tag platform'>TikTok</span></div>
+            </div>
+          </div>
+
+          <div class="messaging-row">
+            <div class="msg-block">
+              <h4>Messaging Angle</h4>
+              <p>Step back into the magic you grew up loving — now with adult appreciation for the craft</p>
+            </div>
+            <div class="msg-block">
+              <h4>Hook Style</h4>
+              <p>nostalgic visual reveals and 'remember this moment from the films' content</p>
+            </div>
+            <div class="msg-block">
+              <h4>CTA Style</h4>
+              <p>exclusivity and limited-time access — 'Book your return to Hogwarts'</p>
+            </div>
+          </div>
+        </div>
+        <div class="segment-card" style="border-top: 4px solid #B80021;">
+          <div class="segment-header">
+            <div class="segment-id" style="background: #B80021;">2</div>
+            <div>
+              <h3>Family Experience Makers</h3>
+              <span class="segment-size">28% of total addressable audience</span>
+            </div>
+          </div>
+
+          <div class="segment-grid">
+            <div class="info-block">
+              <h4>Demographics</h4>
+              <p><strong>Age:</strong> 32-48</p>
+              <p><strong>Gender:</strong> 65% female</p>
+              <p><strong>Income:</strong> $60K-$150K household</p>
+              <p><strong>Location:</strong> suburban areas within 2 hours of major cities</p>
+              <p><strong>Education:</strong> mix of college and high school educated</p>
+            </div>
+
+            <div class="info-block">
+              <h4>Psychographics</h4>
+              <p><strong>Lifestyle:</strong> busy parents, plan activities around school schedules, research before purchasing</p>
+              <div class="tags-row"><strong>Values:</strong> <span class='tag'>family bonding</span><span class='tag'>creating memories</span><span class='tag'>educational entertainment</span><span class='tag'>value for money</span></div>
+              <div class="tags-row"><strong>Interests:</strong> <span class='tag'>family activities</span><span class='tag'>children's education</span><span class='tag'>photography</span><span class='tag'>travel planning</span><span class='tag'>budgeting</span></div>
+            </div>
+
+            <div class="info-block">
+              <h4>Pain Points</h4>
+              <ul><li>finding age-appropriate activities for mixed age groups</li><li>justifying experience costs</li><li>limited weekend availability</li><li>managing children's expectations</li></ul>
+            </div>
+
+            <div class="info-block">
+              <h4>Content &amp; Platforms</h4>
+              <div class="tags-row"><span class='tag'>family photos at exhibits</span><span class='tag'>age recommendation guides</span><span class='tag'>what to expect videos</span><span class='tag'>pricing transparency</span><span class='tag'>accessibility information</span></div>
+              <div class="tags-row" style="margin-top:8px;"><span class='tag platform'>Facebook</span><span class='tag platform'>Instagram</span><span class='tag platform'>Pinterest</span><span class='tag platform'>Google Reviews</span></div>
+            </div>
+          </div>
+
+          <div class="messaging-row">
+            <div class="msg-block">
+              <h4>Messaging Angle</h4>
+              <p>Create magical family memories that kids will talk about for years</p>
+            </div>
+            <div class="msg-block">
+              <h4>Hook Style</h4>
+              <p>children's wonder and excitement captured in authentic moments</p>
+            </div>
+            <div class="msg-block">
+              <h4>CTA Style</h4>
+              <p>value-focused with family packages — 'Give your family the gift of magic'</p>
+            </div>
+          </div>
+        </div>
+        <div class="segment-card" style="border-top: 4px solid #3B82F6;">
+          <div class="segment-header">
+            <div class="segment-id" style="background: #3B82F6;">3</div>
+            <div>
+              <h3>Date Night Adventurers</h3>
+              <span class="segment-size">18% of total addressable audience</span>
+            </div>
+          </div>
+
+          <div class="segment-grid">
+            <div class="info-block">
+              <h4>Demographics</h4>
+              <p><strong>Age:</strong> 22-35</p>
+              <p><strong>Gender:</strong> 52% female</p>
+              <p><strong>Income:</strong> $40K-$90K combined</p>
+              <p><strong>Location:</strong> urban areas, city centers</p>
+              <p><strong>Education:</strong> university educated, young professionals</p>
+            </div>
+
+            <div class="info-block">
+              <h4>Psychographics</h4>
+              <p><strong>Lifestyle:</strong> active social lives, frequent date nights, experience over possessions mindset</p>
+              <div class="tags-row"><strong>Values:</strong> <span class='tag'>unique experiences</span><span class='tag'>social sharing</span><span class='tag'>relationship building</span><span class='tag'>adventure</span></div>
+              <div class="tags-row"><strong>Interests:</strong> <span class='tag'>pop culture</span><span class='tag'>photography</span><span class='tag'>social media</span><span class='tag'>trying new activities</span><span class='tag'>entertainment</span></div>
+            </div>
+
+            <div class="info-block">
+              <h4>Pain Points</h4>
+              <ul><li>finding Instagram-worthy date ideas</li><li>avoiding crowded family activities</li><li>limited budget for frequent experiences</li><li>wanting something different from typical dinner dates</li></ul>
+            </div>
+
+            <div class="info-block">
+              <h4>Content &amp; Platforms</h4>
+              <div class="tags-row"><span class='tag'>couple photos in magical settings</span><span class='tag'>romantic lighting showcases</span><span class='tag'>date night outfit inspiration</span><span class='tag'>less crowded time recommendations</span></div>
+              <div class="tags-row" style="margin-top:8px;"><span class='tag platform'>Instagram</span><span class='tag platform'>TikTok</span><span class='tag platform'>Snapchat</span></div>
+            </div>
+          </div>
+
+          <div class="messaging-row">
+            <div class="msg-block">
+              <h4>Messaging Angle</h4>
+              <p>Skip the typical dinner date — create magic together</p>
+            </div>
+            <div class="msg-block">
+              <h4>Hook Style</h4>
+              <p>romantic visuals and couple moments in stunning exhibition settings</p>
+            </div>
+            <div class="msg-block">
+              <h4>CTA Style</h4>
+              <p>romantic urgency — 'Book your magical date night' with evening time slots</p>
+            </div>
+          </div>
+        </div>
+        <div class="segment-card" style="border-top: 4px solid #10B981;">
+          <div class="segment-header">
+            <div class="segment-id" style="background: #10B981;">4</div>
+            <div>
+              <h3>Cultural Experience Collectors</h3>
+              <span class="segment-size">12% of total addressable audience</span>
+            </div>
+          </div>
+
+          <div class="segment-grid">
+            <div class="info-block">
+              <h4>Demographics</h4>
+              <p><strong>Age:</strong> 45-65</p>
+              <p><strong>Gender:</strong> 58% female</p>
+              <p><strong>Income:</strong> $70K-$200K+ household</p>
+              <p><strong>Location:</strong> affluent suburbs, cultural districts</p>
+              <p><strong>Education:</strong> highly educated, graduate degrees common</p>
+            </div>
+
+            <div class="info-block">
+              <h4>Psychographics</h4>
+              <p><strong>Lifestyle:</strong> museum members, theater subscribers, travel frequently, disposable income for culture</p>
+              <div class="tags-row"><strong>Values:</strong> <span class='tag'>cultural enrichment</span><span class='tag'>craftsmanship appreciation</span><span class='tag'>learning</span><span class='tag'>quality experiences</span></div>
+              <div class="tags-row"><strong>Interests:</strong> <span class='tag'>film history</span><span class='tag'>set design</span><span class='tag'>costume design</span><span class='tag'>British culture</span><span class='tag'>storytelling craft</span></div>
+            </div>
+
+            <div class="info-block">
+              <h4>Pain Points</h4>
+              <ul><li>finding exhibitions with educational depth</li><li>avoiding overly commercial experiences</li><li>wanting behind-the-scenes access</li><li>seeking less crowded viewing times</li></ul>
+            </div>
+
+            <div class="info-block">
+              <h4>Content &amp; Platforms</h4>
+              <div class="tags-row"><span class='tag'>detailed craftmanship videos</span><span class='tag'>designer interviews</span><span class='tag'>historical context</span><span class='tag'>technical production details</span><span class='tag'>expert commentary</span></div>
+              <div class="tags-row" style="margin-top:8px;"><span class='tag platform'>Facebook</span><span class='tag platform'>LinkedIn</span><span class='tag platform'>YouTube</span><span class='tag platform'>Email</span></div>
+            </div>
+          </div>
+
+          <div class="messaging-row">
+            <div class="msg-block">
+              <h4>Messaging Angle</h4>
+              <p>Discover the artistry and craftsmanship behind cinematic magic</p>
+            </div>
+            <div class="msg-block">
+              <h4>Hook Style</h4>
+              <p>expert insights and detailed craftsmanship reveals</p>
+            </div>
+            <div class="msg-block">
+              <h4>CTA Style</h4>
+              <p>exclusive access and educational value — 'Reserve your cultural experience'</p>
+            </div>
+          </div>
+        </div>
+        <div class="segment-card" style="border-top: 4px solid #8B5CF6;">
+          <div class="segment-header">
+            <div class="segment-id" style="background: #8B5CF6;">5</div>
+            <div>
+              <h3>Tourist Experience Hunters</h3>
+              <span class="segment-size">15% of total addressable audience</span>
+            </div>
+          </div>
+
+          <div class="segment-grid">
+            <div class="info-block">
+              <h4>Demographics</h4>
+              <p><strong>Age:</strong> 25-55</p>
+              <p><strong>Gender:</strong> balanced</p>
+              <p><strong>Income:</strong> $40K-$120K with travel budgets</p>
+              <p><strong>Location:</strong> visiting from other cities/countries</p>
+              <p><strong>Education:</strong> varied, skews college educated</p>
+            </div>
+
+            <div class="info-block">
+              <h4>Psychographics</h4>
+              <p><strong>Lifestyle:</strong> active travelers, research destinations heavily, experience-focused spending</p>
+              <div class="tags-row"><strong>Values:</strong> <span class='tag'>authentic local experiences</span><span class='tag'>memorable travel moments</span><span class='tag'>cultural immersion</span><span class='tag'>social sharing</span></div>
+              <div class="tags-row"><strong>Interests:</strong> <span class='tag'>travel</span><span class='tag'>photography</span><span class='tag'>local culture</span><span class='tag'>unique attractions</span><span class='tag'>social media documentation</span></div>
+            </div>
+
+            <div class="info-block">
+              <h4>Pain Points</h4>
+              <ul><li>limited time in destination</li><li>finding must-see attractions</li><li>avoiding tourist traps</li><li>maximizing travel budget</li></ul>
+            </div>
+
+            <div class="info-block">
+              <h4>Content &amp; Platforms</h4>
+              <div class="tags-row"><span class='tag'>visitor testimonials</span><span class='tag'>what makes this unique to the location</span><span class='tag'>photo opportunity highlights</span><span class='tag'>time recommendations</span><span class='tag'>nearby attraction combinations</span></div>
+              <div class="tags-row" style="margin-top:8px;"><span class='tag platform'>Instagram</span><span class='tag platform'>Google Reviews</span><span class='tag platform'>TripAdvisor</span><span class='tag platform'>YouTube</span></div>
+            </div>
+          </div>
+
+          <div class="messaging-row">
+            <div class="msg-block">
+              <h4>Messaging Angle</h4>
+              <p>The must-see magical experience you can't find anywhere else</p>
+            </div>
+            <div class="msg-block">
+              <h4>Hook Style</h4>
+              <p>unique location-specific elements and 'only here' experiences</p>
+            </div>
+            <div class="msg-block">
+              <h4>CTA Style</h4>
+              <p>urgency and exclusivity — 'Don't miss this once-in-a-lifetime experience'</p>
+            </div>
+          </div>
+        </div>
+        <div class="segment-card" style="border-top: 4px solid #F59E0B;">
+          <div class="segment-header">
+            <div class="segment-id" style="background: #F59E0B;">6</div>
+            <div>
+              <h3>Educational Group Organizers</h3>
+              <span class="segment-size">8% of total addressable audience</span>
+            </div>
+          </div>
+
+          <div class="segment-grid">
+            <div class="info-block">
+              <h4>Demographics</h4>
+              <p><strong>Age:</strong> 28-55</p>
+              <p><strong>Gender:</strong> 70% female</p>
+              <p><strong>Income:</strong> institutional budgets, $35K-$80K personal income</p>
+              <p><strong>Location:</strong> school districts within 3 hours travel</p>
+              <p><strong>Education:</strong> education degrees, teaching credentials</p>
+            </div>
+
+            <div class="info-block">
+              <h4>Psychographics</h4>
+              <p><strong>Lifestyle:</strong> academic calendar driven, group coordination focused, approval process navigators</p>
+              <div class="tags-row"><strong>Values:</strong> <span class='tag'>student engagement</span><span class='tag'>educational value</span><span class='tag'>safety</span><span class='tag'>budget responsibility</span></div>
+              <div class="tags-row"><strong>Interests:</strong> <span class='tag'>education</span><span class='tag'>student development</span><span class='tag'>curriculum integration</span><span class='tag'>group management</span><span class='tag'>budget optimization</span></div>
+            </div>
+
+            <div class="info-block">
+              <h4>Pain Points</h4>
+              <ul><li>justifying educational value</li><li>managing group logistics</li><li>staying within budget</li><li>ensuring age-appropriate content</li><li>coordinating schedules</li></ul>
+            </div>
+
+            <div class="info-block">
+              <h4>Content &amp; Platforms</h4>
+              <div class="tags-row"><span class='tag'>educational tie-ins</span><span class='tag'>group logistics information</span><span class='tag'>safety protocols</span><span class='tag'>curriculum connections</span><span class='tag'>teacher testimonials</span></div>
+              <div class="tags-row" style="margin-top:8px;"><span class='tag platform'>Email</span><span class='tag platform'>Facebook</span><span class='tag platform'>Educational websites</span><span class='tag platform'>Professional networks</span></div>
+            </div>
+          </div>
+
+          <div class="messaging-row">
+            <div class="msg-block">
+              <h4>Messaging Angle</h4>
+              <p>Bring learning to life with an unforgettable educational adventure</p>
+            </div>
+            <div class="msg-block">
+              <h4>Hook Style</h4>
+              <p>student engagement and educational outcome focused</p>
+            </div>
+            <div class="msg-block">
+              <h4>CTA Style</h4>
+              <p>educational value and group discounts — 'Book your class adventure'</p>
+            </div>
+          </div>
+        </div>
+
+  <div class="insights-section">
+    <div class="section-title">Cross-Segment Insights</div>
+    <ul><li>Instagram dominates across 5 of 6 segments — prioritize visual content strategy</li><li>Behind-the-scenes content appeals to 4 segments — high-value content type</li><li>Authenticity matters more than polish across all segments</li><li>Photography opportunities are universal motivators</li><li>Time-sensitive messaging works across segments but with different urgency drivers</li><li>Educational angle can be adapted for multiple segments beyond just schools</li></ul>
+  </div>
+
+  <div class="priority-section">
+    <div class="section-title">Recommended Priority Order</div>
+    <div class='priority-item'><span class='priority-num'>1</span> Nostalgic Millennials</div><div class='priority-item'><span class='priority-num'>2</span> Family Experience Makers</div><div class='priority-item'><span class='priority-num'>3</span> Date Night Adventurers</div><div class='priority-item'><span class='priority-num'>4</span> Tourist Experience Hunters</div><div class='priority-item'><span class='priority-num'>5</span> Cultural Experience Collectors</div><div class='priority-item'><span class='priority-num'>6</span> Educational Group Organizers</div>
+  </div>
+</div>
+
+<div class="footer"><span>AUROS</span> &middot; Intelligence, Elevated</div>
+
+</body>
+</html>

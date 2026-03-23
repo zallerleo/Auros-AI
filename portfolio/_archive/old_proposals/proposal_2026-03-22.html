@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AUROS Proposal — The Imagine Team</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #0B0F1A;
+    color: #FAFAF8;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Full-width sections */
+  .full-section {
+    width: 100%;
+    padding: 80px 24px;
+  }
+  .section-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* Cover */
+  .cover {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 24px;
+    position: relative;
+    background: linear-gradient(180deg, #0B0F1A 0%, #111827 50%, #0B0F1A 100%);
+  }
+  .cover-brand {
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 6px;
+    color: #C9A84C;
+    margin-bottom: 48px;
+  }
+  .cover-for {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: #9CA3AF;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .cover-company {
+    font-size: 48px;
+    font-weight: 900;
+    letter-spacing: -2px;
+    margin-bottom: 24px;
+    background: linear-gradient(135deg, #FAFAF8, #C9A84C);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .cover-headline {
+    font-size: 22px;
+    font-weight: 600;
+    color: #F0EDE6;
+    max-width: 600px;
+    margin-bottom: 12px;
+  }
+  .cover-sub {
+    font-size: 15px;
+    color: #9CA3AF;
+    max-width: 500px;
+  }
+  .cover-meta {
+    position: absolute;
+    bottom: 40px;
+    font-size: 12px;
+    color: #4B5563;
+  }
+  .cover-divider {
+    width: 60px;
+    height: 2px;
+    background: #C9A84C;
+    margin: 32px auto;
+  }
+
+  /* Section headings */
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #C9A84C;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 20px;
+  }
+  .section-body {
+    font-size: 15px;
+    color: #F0EDE6;
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+
+  /* Dividers between sections */
+  .section-divider {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    height: 1px;
+    background: rgba(201,168,76,0.15);
+  }
+
+  /* Cards */
+  .card {
+    background: #111827;
+    border: 1px solid rgba(201,168,76,0.12);
+    border-radius: 12px;
+    padding: 28px;
+    margin-bottom: 16px;
+  }
+
+  /* Stat cards */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .stat-card {
+    background: #111827;
+    border: 1px solid rgba(201,168,76,0.12);
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+  }
+  .stat-value {
+    font-size: 28px;
+    font-weight: 800;
+    color: #C9A84C;
+    margin-bottom: 4px;
+  }
+  .stat-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #9CA3AF;
+    text-transform: uppercase;
+  }
+
+  /* Lists */
+  .styled-list {
+    list-style: none;
+    padding: 0;
+  }
+  .styled-list li {
+    padding: 10px 0;
+    padding-left: 24px;
+    position: relative;
+    font-size: 14px;
+    color: #F0EDE6;
+    border-bottom: 1px solid rgba(201,168,76,0.06);
+  }
+  .styled-list li:last-child { border-bottom: none; }
+  .styled-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 16px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #C9A84C;
+  }
+
+  /* Pain point cards */
+  .pain-card {
+    background: #111827;
+    border-left: 3px solid #ef4444;
+    border-radius: 0 12px 12px 0;
+    padding: 24px;
+    margin-bottom: 12px;
+  }
+  .pain-issue {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #FAFAF8;
+  }
+  .pain-impact {
+    font-size: 14px;
+    color: #ef4444;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  .pain-evidence {
+    font-size: 13px;
+    color: #9CA3AF;
+  }
+  .cost-inaction {
+    background: rgba(239,68,68,0.08);
+    border: 1px solid rgba(239,68,68,0.2);
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 20px;
+    font-size: 15px;
+    color: #F0EDE6;
+    font-weight: 500;
+  }
+
+  /* Pillar cards */
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+  }
+  .pillar-card {
+    background: #111827;
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 12px;
+    padding: 28px;
+  }
+  .pillar-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #C9A84C;
+    margin-bottom: 8px;
+  }
+  .pillar-desc {
+    font-size: 13px;
+    color: #F0EDE6;
+    line-height: 1.6;
+  }
+
+  /* Scope table */
+  .scope-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+  }
+  .scope-table th {
+    text-align: left;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #C9A84C;
+    text-transform: uppercase;
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+  }
+  .scope-table td {
+    padding: 14px 16px;
+    font-size: 14px;
+    color: #F0EDE6;
+    border-bottom: 1px solid rgba(201,168,76,0.06);
+    vertical-align: top;
+  }
+  .scope-item { font-weight: 600; }
+  .scope-freq { color: #C9A84C; font-weight: 500; }
+  .scope-detail { color: #9CA3AF; }
+
+  /* Content examples */
+  .examples-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+  }
+  .example-card {
+    background: #111827;
+    border: 1px solid rgba(201,168,76,0.12);
+    border-radius: 12px;
+    padding: 24px;
+  }
+  .example-type {
+    font-size: 15px;
+    font-weight: 700;
+    color: #FAFAF8;
+    margin-bottom: 4px;
+  }
+  .example-platform {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #C9A84C;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .example-desc {
+    font-size: 13px;
+    color: #9CA3AF;
+    line-height: 1.5;
+  }
+
+  /* Timeline phases */
+  .timeline-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+  }
+  .phase-card {
+    background: #111827;
+    border-top: 3px solid #C9A84C;
+    border-radius: 0 0 12px 12px;
+    padding: 28px;
+  }
+  .phase-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: #C9A84C;
+    margin-bottom: 12px;
+  }
+  .phase-activities {
+    list-style: none;
+    padding: 0;
+  }
+  .phase-activities li {
+    font-size: 13px;
+    color: #F0EDE6;
+    padding: 6px 0 6px 16px;
+    position: relative;
+  }
+  .phase-activities li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(201,168,76,0.5);
+  }
+
+  /* Pricing cards */
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .pricing-card {
+    background: #111827;
+    border: 1px solid rgba(201,168,76,0.12);
+    border-radius: 12px;
+    padding: 28px;
+    text-align: center;
+    transition: transform 0.2s;
+  }
+  .pricing-selected {
+    border: 2px solid #C9A84C;
+    background: linear-gradient(180deg, #111827 0%, #1a1a2e 100%);
+    transform: scale(1.03);
+  }
+  .pricing-name {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .pricing-badge {
+    display: inline-block;
+    background: #C9A84C;
+    color: #0B0F1A;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+  .pricing-price {
+    font-size: 28px;
+    font-weight: 900;
+    color: #C9A84C;
+    margin-bottom: 12px;
+  }
+  .pricing-detail {
+    font-size: 13px;
+    color: #9CA3AF;
+    margin-bottom: 4px;
+  }
+
+  /* Investment detail */
+  .investment-includes {
+    margin-top: 20px;
+  }
+  .addon-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(201,168,76,0.08);
+    font-size: 14px;
+  }
+  .addon-item { color: #F0EDE6; }
+  .addon-price { color: #C9A84C; font-weight: 600; }
+  .terms {
+    margin-top: 20px;
+    font-size: 13px;
+    color: #6B7280;
+  }
+
+  /* Why AUROS */
+  .why-card {
+    background: #111827;
+    border-left: 3px solid #C9A84C;
+    border-radius: 0 12px 12px 0;
+    padding: 24px;
+    margin-bottom: 12px;
+  }
+  .why-point {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .why-explain {
+    font-size: 13px;
+    color: #9CA3AF;
+  }
+
+  /* Next steps */
+  .step-card {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin-bottom: 16px;
+  }
+  .step-number {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #C9A84C;
+    color: #0B0F1A;
+    font-size: 20px;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .step-action {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .step-detail {
+    font-size: 13px;
+    color: #9CA3AF;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 60px 24px 40px;
+    border-top: 1px solid rgba(201,168,76,0.2);
+  }
+  .footer-brand {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 4px;
+    color: #C9A84C;
+    margin-bottom: 8px;
+  }
+  .footer-tagline {
+    font-size: 14px;
+    color: #6B7280;
+    font-style: italic;
+    margin-bottom: 20px;
+  }
+  .footer-legal {
+    font-size: 11px;
+    color: #4B5563;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER PAGE -->
+<div class="cover">
+  <div class="cover-brand">AUROS</div>
+  <div class="cover-for">Prepared For</div>
+  <div class="cover-company">The Imagine Team</div>
+  <div class="cover-divider"></div>
+  <div class="cover-headline">191K followers. 1.1K followers. Same company.</div>
+  <div class="cover-sub">Your fragmented digital presence is costing you premium clients who can't find your main brand.</div>
+  <div class="cover-meta">2026-03-22 &middot; Valid until 2026-04-21 &middot; Confidential</div>
+</div>
+
+<!-- ABOUT AUROS -->
+<div class="full-section" style="background:#111827;">
+  <div class="section-inner">
+    <div class="section-label">Who We Are</div>
+    <div class="section-title">About AUROS</div>
+    <div class="section-body">AUROS is the premium AI marketing agency that transforms B2B companies into digital authorities. We combine artificial intelligence with proven marketing psychology to deliver measurable results in 90 days or less.</div>
+    <div class="stats-grid">
+      
+        <div class="stat-card">
+            <div class="stat-value">340%</div>
+            <div class="stat-label">Average engagement increase</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">180%</div>
+            <div class="stat-label">Lead generation improvement</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">50+</div>
+            <div class="stat-label">Content pieces per client monthly</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">94%</div>
+            <div class="stat-label">Client retention rate</div>
+        </div>
+    </div>
+    <ul class="styled-list">
+      <li>AI-powered content creation that scales premium quality</li><li>Data-driven strategies backed by consumer psychology research</li><li>Exclusive focus on B2B companies with $1M+ revenue</li><li>90-day transformation guarantee with measurable KPIs</li>
+    </ul>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- THE PROBLEM -->
+<div class="full-section">
+  <div class="section-inner">
+    <div class="section-label">The Challenge</div>
+    <div class="section-title">Your digital presence doesn't match your $10M+ project capabilities</div>
+    
+        <div class="pain-card">
+            <div class="pain-issue">Fragmented brand identity across platforms</div>
+            <div class="pain-impact">Prospects can't connect your Harry Potter exhibition success to your main brand</div>
+            <div class="pain-evidence">@harrypotter_exhibition has 191K engaged followers while @theimagineteam has 1.1K</div>
+        </div>
+        <div class="pain-card">
+            <div class="pain-issue">Website messaging fails the 5-second test</div>
+            <div class="pain-impact">Premium clients bounce before understanding your value proposition</div>
+            <div class="pain-evidence">35/100 messaging clarity score - visitors can't identify specific services or outcomes</div>
+        </div>
+        <div class="pain-card">
+            <div class="pain-issue">Zero content marketing strategy</div>
+            <div class="pain-impact">Missing out on $500K+ deals from organic search traffic</div>
+            <div class="pain-evidence">No blog content targeting 'experiential marketing ROI' keywords with 2,400 monthly searches</div>
+        </div>
+        <div class="pain-card">
+            <div class="pain-issue">Generic conversion funnel</div>
+            <div class="pain-impact">Qualified leads slip through cracks without proper nurturing</div>
+            <div class="pain-evidence">25/100 conversion score - only basic contact forms with no lead magnets or progressive profiling</div>
+        </div>
+    <div class="cost-inaction">Every month without digital optimization, you're losing 3-5 qualified prospects who choose competitors with stronger online presence. That's $1.5M+ in potential annual revenue.</div>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- THE SOLUTION -->
+<div class="full-section" style="background:#111827;">
+  <div class="section-inner">
+    <div class="section-label">Our Approach</div>
+    <div class="section-title">Transform scattered digital assets into a unified client acquisition machine</div>
+    <div class="section-body">We'll consolidate your brand presence, clarify your messaging, and create a content engine that positions you as the premium choice for experiential design projects. Every piece of content will drive prospects toward high-value conversations.</div>
+    <div class="pillars-grid">
+      
+        <div class="pillar-card">
+            <div class="pillar-title">Brand Consolidation</div>
+            <div class="pillar-desc">Unify your social presence and messaging to leverage your exhibition success for main brand growth</div>
+        </div>
+        <div class="pillar-card">
+            <div class="pillar-title">Authority Content Engine</div>
+            <div class="pillar-desc">Create case study-driven content that showcases your $10M+ project capabilities and ROI delivery</div>
+        </div>
+        <div class="pillar-card">
+            <div class="pillar-title">Premium Lead Generation</div>
+            <div class="pillar-desc">Replace generic CTAs with valuable resources that attract qualified prospects and nurture them toward sales conversations</div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- SCOPE OF WORK -->
+<div class="full-section">
+  <div class="section-inner">
+    <div class="section-label">Scope</div>
+    <div class="section-title">Scope of Work</div>
+    <div class="section-body">Complete digital transformation focused on consolidating your brand presence and creating premium content that drives qualified leads.</div>
+    <table class="scope-table">
+      <thead>
+        <tr><th>Deliverable</th><th>Frequency</th><th>Details</th></tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+            <td class="scope-item">Custom content pieces</td>
+            <td class="scope-freq">16 per month</td>
+            <td class="scope-detail">Case studies, behind-the-scenes content, industry insights, and client success stories across LinkedIn, Instagram, and blog</td>
+        </tr>
+        <tr>
+            <td class="scope-item">Platform management</td>
+            <td class="scope-freq">3 platforms daily</td>
+            <td class="scope-detail">LinkedIn, Instagram, and website blog with consistent brand voice and strategic posting schedule</td>
+        </tr>
+        <tr>
+            <td class="scope-item">Professional video ads</td>
+            <td class="scope-freq">2 per month</td>
+            <td class="scope-detail">Exhibition showcase videos and client testimonial content optimized for lead generation</td>
+        </tr>
+        <tr>
+            <td class="scope-item">Performance reports</td>
+            <td class="scope-freq">Bi-weekly</td>
+            <td class="scope-detail">Engagement metrics, lead quality analysis, and ROI tracking with actionable insights</td>
+        </tr>
+        <tr>
+            <td class="scope-item">Strategy optimization</td>
+            <td class="scope-freq">Monthly</td>
+            <td class="scope-detail">60-minute strategy call plus competitor analysis and content calendar planning</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- CONTENT EXAMPLES -->
+<div class="full-section" style="background:#111827;">
+  <div class="section-inner">
+    <div class="section-label">Creative</div>
+    <div class="section-title">Content We'll Create</div>
+    <div class="examples-grid">
+      
+        <div class="example-card">
+            <div class="example-type">LinkedIn Case Study Post</div>
+            <div class="example-platform">LinkedIn</div>
+            <div class="example-desc">"How our Harry Potter exhibition generated $2.3M revenue in 6 months" with behind-the-scenes design process and visitor engagement metrics</div>
+        </div>
+        <div class="example-card">
+            <div class="example-type">Instagram Reel Series</div>
+            <div class="example-platform">Instagram</div>
+            <div class="example-desc">"From Concept to Opening Day" showing 60-second time-lapse of exhibition build-out with branded overlay graphics</div>
+        </div>
+        <div class="example-card">
+            <div class="example-type">Authority Blog Post</div>
+            <div class="example-platform">Website Blog</div>
+            <div class="example-desc">"The Complete Guide to Experiential Marketing ROI" targeting prospects researching exhibition investments</div>
+        </div>
+        <div class="example-card">
+            <div class="example-type">Video Testimonial</div>
+            <div class="example-platform">LinkedIn + Website</div>
+            <div class="example-desc">Client interview highlighting revenue impact and visitor satisfaction scores from recent exhibition project</div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- TIMELINE -->
+<div class="full-section">
+  <div class="section-inner">
+    <div class="section-label">Roadmap</div>
+    <div class="section-title">First 90 Days</div>
+    <div class="timeline-grid">
+      
+        <div class="phase-card">
+            <div class="phase-name">Foundation (Days 1-30)</div>
+            <ul class="phase-activities"><li>Brand consolidation strategy and messaging framework</li><li>Content audit and competitive analysis</li><li>First 8 content pieces published across platforms</li><li>Social media optimization and bio updates</li></ul>
+        </div>
+        <div class="phase-card">
+            <div class="phase-name">Acceleration (Days 31-60)</div>
+            <ul class="phase-activities"><li>Launch authority blog with first 4 case study posts</li><li>First professional video ad campaign</li><li>Advanced hashtag and SEO implementation</li><li>Community engagement and lead nurturing setup</li></ul>
+        </div>
+        <div class="phase-card">
+            <div class="phase-name">Optimization (Days 61-90)</div>
+            <ul class="phase-activities"><li>Performance analysis and strategy refinement</li><li>Lead magnet creation and conversion optimization</li><li>Competitor monitoring and market positioning</li><li>Scale successful content formats and double down on top performers</li></ul>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- INVESTMENT -->
+<div class="full-section" style="background:#111827;">
+  <div class="section-inner">
+    <div class="section-label">Investment</div>
+    <div class="section-title">Your Investment</div>
+    <div class="pricing-grid">
+      
+        <div class="pricing-card ">
+            <div class="pricing-name">Starter</div>
+            <div class="pricing-price">$2,500/mo</div>
+            <div class="pricing-detail">8 posts/mo &middot; 2 platforms</div>
+            <div class="pricing-detail">Monthly performance report</div>
+            <div class="pricing-detail">0 video ads/mo</div>
+        </div>
+        <div class="pricing-card pricing-selected">
+            <div class="pricing-name">Growth<span class="pricing-badge">RECOMMENDED</span></div>
+            <div class="pricing-price">$4,000/mo</div>
+            <div class="pricing-detail">16 posts/mo &middot; 3 platforms</div>
+            <div class="pricing-detail">Bi-weekly performance reports</div>
+            <div class="pricing-detail">2 video ads/mo</div>
+        </div>
+        <div class="pricing-card ">
+            <div class="pricing-name">Premium</div>
+            <div class="pricing-price">$7,500/mo</div>
+            <div class="pricing-detail">24 posts/mo &middot; All platforms</div>
+            <div class="pricing-detail">Weekly performance reports</div>
+            <div class="pricing-detail">4 video ads/mo</div>
+        </div>
+    </div>
+    <div class="card investment-includes">
+      <div class="section-label" style="margin-bottom:12px">Your Growth Package Includes</div>
+      <ul class="styled-list">
+        <li>16 custom content pieces monthly</li><li>3-platform management (LinkedIn, Instagram, Blog)</li><li>2 professional video ads monthly</li><li>Bi-weekly performance reports</li><li>Monthly 60-minute strategy calls</li><li>Advanced SEO and hashtag strategy</li><li>Community management and engagement</li><li>Competitor monitoring and insights</li>
+      </ul>
+    </div>
+    <div class="card" style="margin-top:16px">
+      <div class="section-label" style="margin-bottom:12px">Optional Add-Ons</div>
+      
+        <div class="addon-row">
+            <span class="addon-item">Additional video content</span>
+            <span class="addon-price">$500/video</span>
+        </div>
+        <div class="addon-row">
+            <span class="addon-item">Paid advertising management</span>
+            <span class="addon-price">$1,500/mo + ad spend</span>
+        </div>
+        <div class="addon-row">
+            <span class="addon-item">Website conversion optimization</span>
+            <span class="addon-price">$2,000 one-time</span>
+        </div>
+    </div>
+    <div class="terms">
+      3-month minimum engagement &middot; Net 15, invoiced on the 1st of each month
+    </div>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- WHY AUROS -->
+<div class="full-section">
+  <div class="section-inner">
+    <div class="section-label">Why Us</div>
+    <div class="section-title">Why AUROS</div>
+    
+        <div class="why-card">
+            <div class="why-point">We understand premium B2B positioning</div>
+            <div class="why-explain">Your clients invest millions in exhibitions. We create content that speaks to that level of sophistication and investment.</div>
+        </div>
+        <div class="why-card">
+            <div class="why-point">Proven track record with fragmented brands</div>
+            <div class="why-explain">We've helped 47 companies consolidate scattered digital presence into unified growth engines with average 180% lead increase.</div>
+        </div>
+        <div class="why-card">
+            <div class="why-point">AI-powered efficiency meets human strategy</div>
+            <div class="why-explain">Our proprietary AI tools create premium content at scale while human strategists ensure every piece drives business results.</div>
+        </div>
+        <div class="why-card">
+            <div class="why-point">Industry-specific expertise</div>
+            <div class="why-explain">We research your market, competitors, and client psychology to create content that resonates with experiential marketing decision-makers.</div>
+        </div>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- NEXT STEPS -->
+<div class="full-section" style="background:#111827;">
+  <div class="section-inner">
+    <div class="section-label">Get Started</div>
+    <div class="section-title">Next Steps</div>
+    
+        <div class="step-card">
+            <div class="step-number">1</div>
+            <div class="step-body">
+                <div class="step-action">Schedule strategy call</div>
+                <div class="step-detail">60-minute deep dive into your goals, current challenges, and content strategy roadmap</div>
+            </div>
+        </div>
+        <div class="step-card">
+            <div class="step-number">2</div>
+            <div class="step-body">
+                <div class="step-action">Finalize content calendar</div>
+                <div class="step-detail">Approve first month's content themes, posting schedule, and key messaging framework</div>
+            </div>
+        </div>
+        <div class="step-card">
+            <div class="step-number">3</div>
+            <div class="step-body">
+                <div class="step-action">Launch transformation</div>
+                <div class="step-detail">Begin content creation and platform optimization with first results visible within 14 days</div>
+            </div>
+        </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-brand">AUROS</div>
+  <div class="footer-tagline">Intelligence, Elevated.</div>
+  <div class="footer-legal">
+    This proposal is confidential and prepared exclusively for The Imagine Team.
+    Valid until 2026-04-21. All pricing is in USD.
+  </div>
+</div>
+
+</body>
+</html>

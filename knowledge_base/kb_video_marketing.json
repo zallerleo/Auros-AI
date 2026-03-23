@@ -1,0 +1,161 @@
+{
+  "category": "video_marketing",
+  "last_updated": "2025-01-27",
+  "frameworks": [
+    {
+      "name": "Hook-Value-Close Structure",
+      "description": "Three-part framework for short-form video content that maximizes retention and conversion",
+      "when_to_use": "All short-form video content under 2 minutes across TikTok, Instagram Reels, YouTube Shorts",
+      "steps": [
+        "Hook (0-3 seconds): Open with compelling question, surprising statistic, or dynamic visual",
+        "Value (3-45 seconds): Deliver on hook promise with clear information or emotional payoff",
+        "Close (45-60 seconds): Reinforce main point and introduce simple next step or CTA"
+      ],
+      "example": "Hook: 'Stop letting your houseplants die' \u2192 Value: Show 3 specific watering techniques \u2192 Close: 'Follow for more plant care tips'"
+    },
+    {
+      "name": "Three-Act Video Structure",
+      "description": "Classic storytelling framework adapted for marketing videos to build emotional connection",
+      "when_to_use": "Longer-form content (60+ seconds), brand storytelling, product demonstrations",
+      "steps": [
+        "Act 1 - Setup: Introduce customer character and establish their problem/desire",
+        "Act 2 - Confrontation: Show character attempting solutions but facing obstacles",
+        "Act 3 - Resolution: Your product/service provides the solution and transformation"
+      ],
+      "example": "Nike ad showing athlete's struggle \u2192 training obstacles \u2192 triumph with Nike gear"
+    },
+    {
+      "name": "SUE Framework (Scarcity-Urgency-Exclusivity)",
+      "description": "Psychological triggers framework for driving immediate action in video ads",
+      "when_to_use": "Product launches, limited-time offers, high-consideration purchases",
+      "steps": [
+        "Scarcity: Highlight limited availability or quantities",
+        "Urgency: Create time pressure with deadlines or fast-moving opportunities",
+        "Exclusivity: Make viewers feel privileged to access the offer"
+      ],
+      "example": "Music festival ad showing sold-out venues \u2192 tickets selling fast \u2192 exclusive early access for followers"
+    }
+  ],
+  "key_principles": [
+    {
+      "principle": "First 3 Seconds Rule",
+      "explanation": "Attention is won or lost in the opening 3 seconds. 80% of viewers decide whether to continue watching within this window.",
+      "application": "Open with action, surprising statistics, compelling questions, or pattern interrupts. Never start with logos or slow build-ups."
+    },
+    {
+      "principle": "Silent-First Design",
+      "explanation": "85% of social video is watched without sound. Videos must communicate value visually.",
+      "application": "Use bold, readable text overlays, visual storytelling, and captions. Test videos with sound off to ensure comprehension."
+    },
+    {
+      "principle": "Platform-Native Optimization",
+      "explanation": "Each platform has unique algorithm preferences and user behaviors that affect performance.",
+      "application": "Adapt aspect ratios (9:16 for TikTok/Reels, 16:9 for YouTube), use platform-specific trending audio, and match platform pacing expectations."
+    },
+    {
+      "principle": "Value-First Content",
+      "explanation": "Modern audiences expect immediate value delivery, not delayed gratification.",
+      "application": "Lead with the benefit or solution in the first 5 seconds. Cut all unnecessary setup, pauses, or filler content."
+    }
+  ],
+  "tactics": [
+    {
+      "tactic": "Trending Audio Leverage",
+      "platform": "tiktok/instagram",
+      "description": "Use popular audio tracks to boost algorithmic reach by 40-60%",
+      "expected_result": "Increased discoverability and engagement from users who previously engaged with that audio"
+    },
+    {
+      "tactic": "Pattern Interrupt Hooks",
+      "platform": "all",
+      "description": "Break expected patterns with unexpected visuals, statements, or actions in opening frames",
+      "expected_result": "23% higher retention rates in first 10 seconds compared to standard openings"
+    },
+    {
+      "tactic": "Problem-Agitation-Solution Sequence",
+      "platform": "all",
+      "description": "Identify pain point, amplify the frustration, then present your solution",
+      "expected_result": "Higher conversion rates for problem-aware audiences, particularly effective for B2B"
+    },
+    {
+      "tactic": "User-Generated Content Integration",
+      "platform": "all",
+      "description": "Feature real customer experiences and testimonials within structured video frameworks",
+      "expected_result": "4x higher trust scores and 2.4x higher conversion rates compared to brand-created content"
+    },
+    {
+      "tactic": "Multi-Hook Testing",
+      "platform": "all",
+      "description": "Create 3 different opening hooks for each video concept and A/B test performance",
+      "expected_result": "15-30% improvement in overall video performance by identifying optimal hooks"
+    }
+  ],
+  "benchmarks": [
+    {
+      "metric": "Hook Retention Rate",
+      "industry_average": "65% at 3 seconds",
+      "top_performer": "85% at 3 seconds",
+      "source": "TikTok Creator Fund Analytics 2024"
+    },
+    {
+      "metric": "Average Watch Time",
+      "industry_average": "8.5 seconds for 30-second videos",
+      "top_performer": "18+ seconds for 30-second videos",
+      "source": "Instagram Business Analytics 2024"
+    },
+    {
+      "metric": "Video Ad CTR",
+      "industry_average": "1.84% across platforms",
+      "top_performer": "4.2% for optimized video ads",
+      "source": "Meta Business Intelligence Q4 2024"
+    },
+    {
+      "metric": "Completion Rate",
+      "industry_average": "31% for videos under 60 seconds",
+      "top_performer": "68% for videos under 60 seconds",
+      "source": "YouTube Analytics Benchmark Report 2024"
+    }
+  ],
+  "templates": [
+    {
+      "name": "Problem Hook Template",
+      "template": "Stop [doing frustrating behavior]. Here's why [common solution] isn't working: [3 specific reasons]. Instead, try [your solution] because [unique benefit].",
+      "use_case": "Educational content, product introductions, service-based businesses"
+    },
+    {
+      "name": "Curiosity Gap Template",
+      "template": "I discovered [surprising insight] after [time period/experience]. The [number] things that changed everything: [list items with visual reveals].",
+      "use_case": "Personal brand content, case studies, transformation stories"
+    },
+    {
+      "name": "Social Proof Template",
+      "template": "[Number] people are already [desired outcome] with [product/method]. Here's exactly how [customer name] got [specific result] in [timeframe]: [step-by-step process].",
+      "use_case": "Product launches, testimonials, conversion-focused content"
+    },
+    {
+      "name": "Trend Hijack Template",
+      "template": "Everyone's talking about [trending topic], but here's what they're missing: [your unique angle]. This changes [specific outcome] because [compelling reason].",
+      "use_case": "Thought leadership, trending topic commentary, brand positioning"
+    }
+  ],
+  "common_mistakes": [
+    "Starting with company logos or slow brand introductions",
+    "Saving the best content for the end instead of leading with value",
+    "Creating videos longer than 90 seconds without strong retention hooks",
+    "Using generic stock footage instead of authentic, relevant visuals",
+    "Ignoring platform-specific aspect ratios and formatting requirements",
+    "Overloading videos with multiple messages instead of focusing on one clear point",
+    "Failing to include captions or text overlays for silent viewing",
+    "Using weak CTAs or no clear next step for viewers"
+  ],
+  "pro_tips": [
+    "Test hooks by watching your video with sound off - if the first 3 seconds don't make sense visually, recut",
+    "Use retention curve analytics to identify exact drop-off points and optimize those moments",
+    "Create 'thumb-stop' thumbnails by using high contrast, clear faces, and bold text overlays",
+    "Repurpose one piece of long-form content into 5-7 short-form videos by extracting key moments",
+    "Study your competitors' most-viewed videos and identify their hook patterns for inspiration",
+    "Use dynamic captions that appear word-by-word to increase watch time and engagement",
+    "End videos with a question or cliffhanger to boost comments and algorithmic reach",
+    "Batch film multiple videos in one session using different hooks for the same core message"
+  ]
+}

@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AUROS — Brand Identity System</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+  :root {
+    --midnight: #0B0F1A;
+    --navy:     #111827;
+    --gold:     #C9A84C;
+    --gold-lt:  #E8C96A;
+    --gold-dk:  #8B6E2A;
+    --white:    #FAFAF8;
+    --off:      #F0EDE6;
+    --gray:     #6B7280;
+    --gray-lt:  #9CA3AF;
+    --electric: #3B82F6;
+    --border:   rgba(201,168,76,0.2);
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--midnight);
+    color: var(--white);
+    line-height: 1.6;
+  }
+
+  /* ── COVER ── */
+  .cover {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 80px;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .cover-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 40px;
+  }
+  .cover-logo {
+    font-size: 96px;
+    font-weight: 900;
+    letter-spacing: -4px;
+    line-height: 1;
+    background: linear-gradient(135deg, var(--gold-lt) 0%, var(--gold) 50%, var(--gold-dk) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 16px;
+  }
+  .cover-tagline {
+    font-size: 22px;
+    font-weight: 300;
+    color: var(--gray-lt);
+    letter-spacing: 1px;
+    margin-bottom: 60px;
+  }
+  .cover-tagline span { color: var(--white); font-weight: 500; }
+  .cover-divider {
+    width: 60px;
+    height: 2px;
+    background: var(--gold);
+    margin-bottom: 40px;
+  }
+  .cover-meta {
+    font-size: 13px;
+    color: var(--gray);
+    letter-spacing: 1px;
+  }
+
+  /* ── SECTIONS ── */
+  .section {
+    padding: 80px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .section-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .section-title {
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    letter-spacing: -1px;
+  }
+  .section-sub {
+    font-size: 16px;
+    color: var(--gray-lt);
+    max-width: 560px;
+    margin-bottom: 56px;
+    font-weight: 400;
+  }
+
+  /* ── MEANING ── */
+  .meaning-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    max-width: 800px;
+  }
+  .meaning-card {
+    background: var(--navy);
+    padding: 40px;
+  }
+  .meaning-char {
+    font-size: 64px;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--gold-lt), var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -2px;
+    margin-bottom: 12px;
+  }
+  .meaning-word {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .meaning-def {
+    font-size: 14px;
+    color: var(--gray-lt);
+    line-height: 1.7;
+  }
+  .meaning-leo {
+    grid-column: 1 / -1;
+    background: rgba(201,168,76,0.06);
+    border: 1px solid var(--border);
+    padding: 32px 40px;
+    margin-top: 2px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .meaning-leo-icon { font-size: 32px; }
+  .meaning-leo-text { font-size: 14px; color: var(--gray-lt); }
+  .meaning-leo-text strong { color: var(--white); }
+
+  /* ── LOGO ── */
+  .logo-showcase {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-bottom: 40px;
+  }
+  .logo-panel {
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 200px;
+  }
+  .logo-panel.dark { background: var(--midnight); }
+  .logo-panel.light { background: var(--off); }
+  .logo-panel.gold { background: var(--gold); }
+  .logo-panel.navy { background: #111827; }
+
+  .logo-text {
+    font-size: 48px;
+    font-weight: 900;
+    letter-spacing: -2px;
+    line-height: 1;
+  }
+  .logo-text.on-dark {
+    background: linear-gradient(135deg, var(--gold-lt) 0%, var(--gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .logo-text.on-light { color: var(--midnight); }
+  .logo-text.on-gold { color: var(--midnight); }
+  .logo-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    margin-top: 12px;
+  }
+  .logo-dot.gold-dot { background: var(--gold); }
+  .logo-dot.dark-dot { background: var(--midnight); }
+  .logo-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--gray);
+    text-transform: uppercase;
+    margin-top: 8px;
+  }
+  .logo-label.on-light { color: #999; }
+
+  /* ── COLORS ── */
+  .color-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2px;
+    margin-bottom: 40px;
+  }
+  .color-swatch {
+    aspect-ratio: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 16px;
+    overflow: hidden;
+  }
+  .color-name {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .color-hex {
+    font-size: 10px;
+    font-weight: 400;
+    opacity: 0.7;
+    margin-top: 2px;
+    font-family: 'Courier New', monospace;
+  }
+
+  /* ── TYPOGRAPHY ── */
+  .type-showcase { max-width: 800px; }
+  .type-row {
+    padding: 32px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    display: flex;
+    align-items: baseline;
+    gap: 40px;
+  }
+  .type-meta {
+    width: 120px;
+    flex-shrink: 0;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--gray);
+    text-transform: uppercase;
+  }
+  .type-sample { flex: 1; }
+
+  /* ── TAGLINES ── */
+  .tagline-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+  }
+  .tagline-card {
+    background: var(--navy);
+    padding: 40px;
+    cursor: default;
+    transition: background 0.2s;
+  }
+  .tagline-card:hover { background: #1a2235; }
+  .tagline-card.primary {
+    background: rgba(201,168,76,0.08);
+    border: 1px solid var(--border);
+  }
+  .tagline-card.primary .tagline-badge { color: var(--gold); }
+  .tagline-badge {
+    font-size: 9px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 16px;
+  }
+  .tagline-text {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+  .tagline-note {
+    font-size: 13px;
+    color: var(--gray-lt);
+  }
+
+  /* ── VOICE ── */
+  .voice-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+  .voice-card {
+    background: var(--navy);
+    padding: 36px;
+  }
+  .voice-icon { font-size: 28px; margin-bottom: 16px; }
+  .voice-title {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .voice-desc {
+    font-size: 13px;
+    color: var(--gray-lt);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+  .voice-example {
+    font-size: 12px;
+    font-style: italic;
+    color: var(--gold);
+    border-left: 2px solid var(--gold);
+    padding-left: 12px;
+    line-height: 1.6;
+  }
+
+  /* ── MOCKUPS ── */
+  .mockup-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+  }
+  .mockup-card { background: var(--navy); padding: 0; overflow: hidden; }
+
+  /* Business card */
+  .biz-card {
+    aspect-ratio: 1.75;
+    background: var(--midnight);
+    border: 1px solid var(--border);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 40px;
+  }
+  .biz-logo {
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    background: linear-gradient(135deg, var(--gold-lt), var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .biz-name { font-size: 13px; font-weight: 600; }
+  .biz-title { font-size: 11px; color: var(--gold); margin-top: 2px; }
+  .biz-contact { font-size: 10px; color: var(--gray-lt); margin-top: 4px; }
+
+  /* Email header */
+  .email-header {
+    background: var(--midnight);
+    padding: 24px 32px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .email-logo {
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    background: linear-gradient(135deg, var(--gold-lt), var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .email-body { padding: 40px 32px; }
+  .email-headline { font-size: 24px; font-weight: 700; margin-bottom: 12px; }
+  .email-text { font-size: 13px; color: var(--gray-lt); line-height: 1.8; }
+  .email-cta {
+    display: inline-block;
+    margin-top: 24px;
+    padding: 12px 28px;
+    background: var(--gold);
+    color: var(--midnight);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  /* Website hero mockup */
+  .site-hero {
+    background: var(--midnight);
+    padding: 60px 40px;
+    border-bottom: 1px solid var(--border);
+  }
+  .site-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 80px;
+  }
+  .site-nav-logo {
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    background: linear-gradient(135deg, var(--gold-lt), var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .site-nav-links {
+    display: flex;
+    gap: 32px;
+    font-size: 12px;
+    color: var(--gray-lt);
+    letter-spacing: 1px;
+  }
+  .site-hero-headline {
+    font-size: 52px;
+    font-weight: 900;
+    letter-spacing: -2px;
+    line-height: 1.05;
+    max-width: 520px;
+    margin-bottom: 24px;
+  }
+  .site-hero-headline .gold { color: var(--gold); }
+  .site-hero-sub {
+    font-size: 15px;
+    color: var(--gray-lt);
+    max-width: 400px;
+    margin-bottom: 40px;
+    line-height: 1.7;
+  }
+  .site-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 32px;
+    background: var(--gold);
+    color: var(--midnight);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  /* ── DO/DON'T ── */
+  .dos-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+  }
+  .dos-col { background: var(--navy); padding: 40px; }
+  .dos-header {
+    font-size: 10px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    display: inline-block;
+    margin-bottom: 24px;
+  }
+  .dos-header.do { background: rgba(34,197,94,0.15); color: #4ade80; }
+  .dos-header.dont { background: rgba(239,68,68,0.15); color: #f87171; }
+  .dos-item {
+    font-size: 13px;
+    color: var(--gray-lt);
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    line-height: 1.6;
+  }
+  .dos-icon { flex-shrink: 0; margin-top: 2px; }
+
+  /* ── FOOTER ── */
+  .brand-footer {
+    padding: 60px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border);
+  }
+  .footer-logo {
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    background: linear-gradient(135deg, var(--gold-lt), var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .footer-copy {
+    font-size: 11px;
+    color: var(--gray);
+    letter-spacing: 1px;
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-label">Brand Identity System — v1.0</div>
+  <div class="cover-logo">AUROS</div>
+  <div class="cover-tagline"><span>AI Marketing. AI Consulting. AI Automation.</span><br>Intelligence, elevated.</div>
+  <div class="cover-divider"></div>
+  <div class="cover-meta">CONFIDENTIAL — March 2026 — Barcelona</div>
+</div>
+
+<!-- NAME & MEANING -->
+<div class="section">
+  <div class="section-label">01 — Name & Meaning</div>
+  <div class="section-title">Why AUROS</div>
+  <div class="section-sub">Two roots. One meaning. A name only you would fully understand.</div>
+
+  <div class="meaning-grid">
+    <div class="meaning-card">
+      <div class="meaning-char">AU</div>
+      <div class="meaning-word">Aurum — Gold</div>
+      <div class="meaning-def">The chemical symbol for gold. In astrology, gold is the metal of Leo — the sign of leadership, radiance, and ambition. In chemistry, the most precious, most enduring element.</div>
+    </div>
+    <div class="meaning-card">
+      <div class="meaning-char">ROS</div>
+      <div class="meaning-word">Latin — Dawn</div>
+      <div class="meaning-def">Ros or Aurora in Latin: dawn, the first light. The moment everything changes. A new era for your clients' businesses — illuminated by AI. The dawn of a new way of operating.</div>
+    </div>
+    <div class="meaning-leo">
+      <div class="meaning-leo-icon">♌</div>
+      <div class="meaning-leo-text">
+        <strong>The Leo Connection.</strong> AU = gold (Leo's metal). The sun rules Leo, and dawn is the sun's arrival. AUROS carries your identity without ever showing your name. Only you know what's encoded here.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LOGO -->
+<div class="section">
+  <div class="section-label">02 — Logo System</div>
+  <div class="section-title">The Mark</div>
+  <div class="section-sub">Wordmark only. No icon. The name is the brand — clean, confident, impossible to misread.</div>
+
+  <div class="logo-showcase">
+    <div class="logo-panel dark">
+      <div class="logo-text on-dark">AUROS</div>
+      <div class="logo-dot gold-dot"></div>
+      <div class="logo-label">Primary — Dark Background</div>
+    </div>
+    <div class="logo-panel light">
+      <div class="logo-text on-light">AUROS</div>
+      <div class="logo-dot dark-dot"></div>
+      <div class="logo-label on-light">Primary — Light Background</div>
+    </div>
+    <div class="logo-panel navy">
+      <div class="logo-text on-dark">AUROS</div>
+      <div style="font-size:10px;color:#555;margin-top:8px;letter-spacing:2px;text-transform:uppercase;">AI AGENCY</div>
+      <div class="logo-label">With Descriptor</div>
+    </div>
+    <div class="logo-panel gold">
+      <div class="logo-text on-gold">AUROS</div>
+      <div class="logo-dot dark-dot"></div>
+      <div class="logo-label on-light">Gold Background</div>
+    </div>
+  </div>
+</div>
+
+<!-- COLORS -->
+<div class="section">
+  <div class="section-label">03 — Color System</div>
+  <div class="section-title">The Palette</div>
+  <div class="section-sub">Gold and midnight. Premium, authoritative, impossible to confuse with anyone else in the AI space.</div>
+
+  <div class="color-grid">
+    <div class="color-swatch" style="background:#0B0F1A;">
+      <div class="color-name" style="color:#C9A84C;">Midnight</div>
+      <div class="color-hex" style="color:#6B7280;">#0B0F1A</div>
+    </div>
+    <div class="color-swatch" style="background:#111827;">
+      <div class="color-name" style="color:#C9A84C;">Deep Navy</div>
+      <div class="color-hex" style="color:#6B7280;">#111827</div>
+    </div>
+    <div class="color-swatch" style="background:#C9A84C;">
+      <div class="color-name" style="color:#0B0F1A;">Auros Gold</div>
+      <div class="color-hex" style="color:rgba(11,15,26,0.6);">#C9A84C</div>
+    </div>
+    <div class="color-swatch" style="background:#E8C96A;">
+      <div class="color-name" style="color:#0B0F1A;">Light Gold</div>
+      <div class="color-hex" style="color:rgba(11,15,26,0.6);">#E8C96A</div>
+    </div>
+    <div class="color-swatch" style="background:#F0EDE6;">
+      <div class="color-name" style="color:#0B0F1A;">Dawn White</div>
+      <div class="color-hex" style="color:#999;">#F0EDE6</div>
+    </div>
+  </div>
+</div>
+
+<!-- TYPOGRAPHY -->
+<div class="section">
+  <div class="section-label">04 — Typography</div>
+  <div class="section-title">Type System</div>
+  <div class="section-sub">Inter. One typeface, all weights. Clean, global, built for screens and print.</div>
+
+  <div class="type-showcase">
+    <div class="type-row">
+      <div class="type-meta">Display<br>900 / -2px</div>
+      <div class="type-sample" style="font-size:52px;font-weight:900;letter-spacing:-2px;line-height:1.05;">The Future<br>of Business<br>is Intelligent.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta">Heading<br>700 / -1px</div>
+      <div class="type-sample" style="font-size:32px;font-weight:700;letter-spacing:-1px;">AI Marketing. AI Consulting.<br>AI Automation Integration.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta">Subheading<br>600 / 0px</div>
+      <div class="type-sample" style="font-size:20px;font-weight:600;color:#E8C96A;">We don't sell AI. We sell better results from the assets you already have.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta">Body<br>400 / 0px</div>
+      <div class="type-sample" style="font-size:15px;font-weight:400;color:#9CA3AF;line-height:1.8;">AUROS builds and deploys AI systems that generate more leads, close more business, and eliminate the operational drag that costs companies millions every year. We work with businesses that are serious about what's next.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta">Label<br>700 / +3px</div>
+      <div class="type-sample" style="font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#C9A84C;">AI AUTOMATION AGENCY — BARCELONA — GLOBAL</div>
+    </div>
+  </div>
+</div>
+
+<!-- TAGLINES -->
+<div class="section">
+  <div class="section-label">05 — Brand Voice & Taglines</div>
+  <div class="section-title">How AUROS Speaks</div>
+  <div class="section-sub">Choose one primary tagline and use it everywhere. The others are variations for specific contexts.</div>
+
+  <div class="tagline-grid">
+    <div class="tagline-card primary">
+      <div class="tagline-badge">★ Primary Recommendation</div>
+      <div class="tagline-text">Intelligence,<br>Elevated.</div>
+      <div class="tagline-note">Sharp, two words, says everything. Works on a billboard, a business card, a cold email subject line. Positions the agency as the premium option in any room.</div>
+    </div>
+    <div class="tagline-card">
+      <div class="tagline-badge">Alternative — Consultative</div>
+      <div class="tagline-text">AI, Applied.</div>
+      <div class="tagline-note">Direct and no-BS. Speaks to clients tired of theory. You don't talk about AI — you implement it. Great for industries like real estate where trust matters more than cleverness.</div>
+    </div>
+    <div class="tagline-card">
+      <div class="tagline-badge">Alternative — Forward-Looking</div>
+      <div class="tagline-text">Built for<br>What's Next.</div>
+      <div class="tagline-note">Positions clients as forward-thinking by association. Works well in pitch decks and proposal covers — implies your clients are ahead of their competitors.</div>
+    </div>
+    <div class="tagline-card">
+      <div class="tagline-badge">Alternative — Results-Focused</div>
+      <div class="tagline-text">More Results.<br>Less Noise.</div>
+      <div class="tagline-note">The Hormozi angle — cut straight to ROI. Perfect for sales pages, outreach, and conversations where the prospect is tired of being sold to.</div>
+    </div>
+  </div>
+</div>
+
+<!-- BRAND VOICE -->
+<div class="section">
+  <div class="section-label">06 — Brand Voice</div>
+  <div class="section-title">How AUROS Sounds</div>
+  <div class="section-sub">Sharp, confident, no filler. The agency that already knows the answer before the meeting starts.</div>
+
+  <div class="voice-grid">
+    <div class="voice-card">
+      <div class="voice-icon">🎯</div>
+      <div class="voice-title">Direct</div>
+      <div class="voice-desc">No hedging. No "potentially" or "might help." AUROS states what it does and lets the results speak. Every sentence earns its place.</div>
+      <div class="voice-example">"We reduce lead response time from 15 hours to 30 seconds. That's the ROI conversation."</div>
+    </div>
+    <div class="voice-card">
+      <div class="voice-icon">🧠</div>
+      <div class="voice-title">Knowledgeable</div>
+      <div class="voice-desc">You've done the work. You know the market, the tools, the mistakes. AUROS leads with proof, not promises.</div>
+      <div class="voice-example">"The average real estate team loses 65% of its paid leads to slow follow-up. We fix that in 72 hours."</div>
+    </div>
+    <div class="voice-card">
+      <div class="voice-icon">⚡</div>
+      <div class="voice-title">Energetic but Composed</div>
+      <div class="voice-desc">Ambitious without being loud. Confident without being arrogant. The energy of someone who knows exactly what they're doing.</div>
+      <div class="voice-example">"This isn't a pitch. It's a system that pays for itself in 30 days or we restructure until it does."</div>
+    </div>
+  </div>
+</div>
+
+<!-- MOCKUPS -->
+<div class="section">
+  <div class="section-label">07 — Brand in Use</div>
+  <div class="section-title">Real-World Application</div>
+  <div class="section-sub">How AUROS looks in practice.</div>
+
+  <div class="mockup-grid">
+    <div class="mockup-card">
+      <div style="padding:40px;">
+        <div style="font-size:11px;letter-spacing:2px;color:#6B7280;text-transform:uppercase;margin-bottom:20px;">Business Card</div>
+        <div class="biz-card">
+          <div class="biz-logo">AUROS</div>
+          <div>
+            <div class="biz-name">Leo Zaller</div>
+            <div class="biz-title">Founder & CEO — AI Strategy</div>
+            <div class="biz-contact" style="margin-top:8px;">leo@auros.ai</div>
+            <div class="biz-contact">auros.ai — Barcelona</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mockup-card">
+      <div class="email-header">
+        <div class="email-logo">AUROS</div>
+        <div style="font-size:10px;color:#6B7280;letter-spacing:2px;">INTELLIGENCE, ELEVATED.</div>
+      </div>
+      <div class="email-body">
+        <div class="email-headline">Your leads aren't the problem.<br>Your follow-up speed is.</div>
+        <div class="email-text">The average agent takes 917 minutes to respond to a new lead. Our AI system responds in under 30 seconds, 24/7. We can have this running in your business in 72 hours.</div>
+        <div class="email-cta">See How It Works →</div>
+      </div>
+    </div>
+    <div class="mockup-card" style="grid-column: 1 / -1;">
+      <div class="site-hero">
+        <div class="site-nav">
+          <div class="site-nav-logo">AUROS</div>
+          <div class="site-nav-links">
+            <span>Services</span>
+            <span>Case Studies</span>
+            <span>About</span>
+            <span style="color:#C9A84C;">Get Started →</span>
+          </div>
+        </div>
+        <div class="site-hero-headline">AI that actually<br>moves the <span class="gold">needle.</span></div>
+        <div class="site-hero-sub">AUROS builds AI marketing, consulting, and automation systems for businesses that are serious about growth. No theory. No fluff. Just results.</div>
+        <div class="site-cta">Book a Strategy Call →</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DO & DON'T -->
+<div class="section">
+  <div class="section-label">08 — Brand Rules</div>
+  <div class="section-title">Do & Don't</div>
+  <div class="section-sub">What protects the brand and what destroys it.</div>
+
+  <div class="dos-grid">
+    <div class="dos-col">
+      <div class="dos-header do">✓ Do</div>
+      <div class="dos-item"><span class="dos-icon" style="color:#4ade80;">✓</span>Use gold only as an accent — never fill entire pages with it</div>
+      <div class="dos-item"><span class="dos-icon" style="color:#4ade80;">✓</span>Write in short, confident sentences — less is always more</div>
+      <div class="dos-item"><span class="dos-icon" style="color:#4ade80;">✓</span>Lead with numbers and results in all client-facing content</div>
+      <div class="dos-item"><span class="dos-icon" style="color:#4ade80;">✓</span>Use AUROS in all caps — always</div>
+      <div class="dos-item"><span class="dos-icon" style="color:#4ade80;">✓</span>Keep whitespace generous — let the name breathe</div>
+      <div class="dos-item"><span class="dos-icon" style="color:#4ade80;">✓</span>Pair dark backgrounds with gold for premium moments</div>
+    </div>
+    <div class="dos-col">
+      <div class="dos-header dont">✗ Don't</div>
+      <div class="dos-item"><span class="dos-icon" style="color:#f87171;">✗</span>Never write "Auros" — it's always AUROS, all caps</div>
+      <div class="dos-item"><span class="dos-icon" style="color:#f87171;">✗</span>Never use bright colours outside the defined palette</div>
+      <div class="dos-item"><span class="dos-icon" style="color:#f87171;">✗</span>Never use buzzwords without data — "cutting-edge," "revolutionary," "game-changing"</div>
+      <div class="dos-item"><span class="dos-icon" style="color:#f87171;">✗</span>Never make income promises or use hype language</div>
+      <div class="dos-item"><span class="dos-icon" style="color:#f87171;">✗</span>Never stretch or skew the wordmark</div>
+      <div class="dos-item"><span class="dos-icon" style="color:#f87171;">✗</span>Never place the logo on cluttered or low-contrast backgrounds</div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="brand-footer">
+  <div class="footer-logo">AUROS</div>
+  <div class="footer-copy">BRAND IDENTITY SYSTEM v1.0 — MARCH 2026 — CONFIDENTIAL</div>
+</div>
+
+</body>
+</html>

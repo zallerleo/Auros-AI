@@ -1,0 +1,272 @@
+{
+  "category": "copywriting",
+  "last_updated": "2026-03-22",
+  "frameworks": [
+    {
+      "name": "AIDA",
+      "description": "Attention-Interest-Desire-Action. The foundational framework for guiding prospects through complete decision-making process.",
+      "when_to_use": "Landing pages, sales letters, email campaigns, and ads where you can develop all four stages in single piece of content",
+      "steps": [
+        "Attention: Hook with compelling headline or opening that stops scroll",
+        "Interest: Build relevance with specific benefits or intriguing information",
+        "Desire: Create emotional connection through transformation or fear of missing out",
+        "Action: Clear, specific call-to-action with urgency or incentive"
+      ],
+      "example": "Attention: 'Your SaaS website is stopping you from doubling your MRR' \u2192 Interest: 'Here's why 73% of B2B buyers leave within 8 seconds' \u2192 Desire: 'Imagine closing 40% more deals with the same traffic' \u2192 Action: 'Get your free conversion audit in 24 hours'"
+    },
+    {
+      "name": "PAS",
+      "description": "Problem-Agitate-Solution. Most reliable approach for selling by starting with customer pain points.",
+      "when_to_use": "Short-form content: social media ads, email subject lines, blog post openings, cold outreach",
+      "steps": [
+        "Problem: Identify specific, relatable pain point your audience faces",
+        "Agitate: Amplify the consequences and emotional cost of inaction",
+        "Solution: Present your offer as the logical resolution"
+      ],
+      "example": "Problem: 'Managing sales pipeline with spreadsheets costs you 2 hours daily' \u2192 Agitate: 'While competitors close deals, you're updating cells and losing prospects to slow follow-up' \u2192 Solution: 'Switch to our AI-powered CRM and automate your workflow in 3 clicks'"
+    },
+    {
+      "name": "BAB",
+      "description": "Before-After-Bridge. Transformation-focused framework showing clear journey from current state to desired outcome.",
+      "when_to_use": "Email marketing, nurture sequences, transformational products, coaching services",
+      "steps": [
+        "Before: Paint current frustrating situation with specific details",
+        "After: Describe vivid picture of improved life or business state",
+        "Bridge: Position your solution as the path between before and after"
+      ],
+      "example": "Before: 'You're spending 15 hours weekly on manual reporting' \u2192 After: 'Imagine having all metrics auto-generated in real-time dashboards' \u2192 Bridge: 'Our analytics platform becomes your bridge to data-driven decisions in 48 hours'"
+    },
+    {
+      "name": "PPPP",
+      "description": "Problem-Promise-Proof-Proposal. Evidence-heavy framework for skeptical audiences requiring credibility.",
+      "when_to_use": "B2B sales pages, high-ticket offers, industries with trust issues, competitive markets",
+      "steps": [
+        "Problem: Define specific business challenge with quantified impact",
+        "Promise: Make clear, measurable commitment to results",
+        "Proof: Provide concrete evidence through case studies, testimonials, data",
+        "Proposal: Present clear next step with risk reversal"
+      ],
+      "example": "Problem: 'B2B companies lose $62K annually to poor lead qualification' \u2192 Promise: 'We'll increase your qualified leads by 150% in 90 days' \u2192 Proof: 'TechCorp saw 240% increase in 60 days (see case study)' \u2192 Proposal: 'Start your 30-day pilot with money-back guarantee'"
+    },
+    {
+      "name": "FAB",
+      "description": "Features-Advantages-Benefits. Product-focused framework translating specifications into customer value.",
+      "when_to_use": "Product descriptions, Google Ads, technical audiences, comparison content",
+      "steps": [
+        "Features: List specific product capabilities or specifications",
+        "Advantages: Explain how features work better than alternatives",
+        "Benefits: Connect advantages to emotional or business outcomes"
+      ],
+      "example": "Feature: 'AI-powered lead scoring algorithm' \u2192 Advantage: 'Processes 10,000 leads in 2 minutes vs 40 hours manually' \u2192 Benefit: 'Your sales team focuses on deals worth $50K+ instead of cold prospects'"
+    },
+    {
+      "name": "Eugene Schwartz Awareness Levels",
+      "description": "Five stages of customer awareness from Eugene Schwartz's 'Breakthrough Advertising'. Match your copy intensity and approach to where the prospect sits on the awareness spectrum.",
+      "when_to_use": "Full-funnel campaigns, email sequences, retargeting ads, and any campaign where you serve multiple audience temperatures simultaneously",
+      "best_for": "Email nurture sequences, segmented ad campaigns, landing page variants, long-form sales pages targeting mixed-awareness traffic",
+      "steps": [
+        "Unaware: Prospect doesn't know they have a problem. Lead with story, entertainment, or pattern interrupt. Never mention the product. Open with relatable scenario or shocking statistic that surfaces latent pain.",
+        "Problem-Aware: Prospect feels the pain but doesn't know solutions exist. Agitate the problem with specifics. Quantify the cost of inaction. Build urgency around the pain without pitching yet.",
+        "Solution-Aware: Prospect knows solutions exist but doesn't know your product. Educate on solution categories. Position your approach as the superior method. Differentiate mechanism (how it works) not just outcomes.",
+        "Product-Aware: Prospect knows your product but hasn't bought. Overcome objections. Stack proof (testimonials, case studies, guarantees). Compare directly to alternatives. Address the specific reason they haven't converted yet.",
+        "Most-Aware: Prospect knows your product and wants it. Lead with the offer — discount, bonus, deadline. Minimal copy needed. Focus on CTA, pricing, urgency, and reducing friction to purchase."
+      ],
+      "example": "Unaware: 'The average family spends 47 weekends a year doing nothing memorable' \u2192 Problem-Aware: 'You keep saying you'll do something special this weekend — but Saturday arrives and you're back on the couch' \u2192 Solution-Aware: 'Immersive exhibitions are the fastest-growing family entertainment category for a reason' \u2192 Product-Aware: 'The Harry Potter Exhibition has sold 2M+ tickets across 12 cities — here's what 4,800 five-star reviews say' \u2192 Most-Aware: 'Last 3 weeks in Barcelona. Book before Friday and save 20%.'"
+    },
+    {
+      "name": "AICPBSAWN (Gary Halbert)",
+      "description": "Gary Halbert's 9-step direct response sequence. The most thorough persuasion chain for long-form sales copy, covering every psychological trigger from first glance to final close.",
+      "when_to_use": "Long-form sales letters, high-ticket landing pages, webinar follow-up sequences, comprehensive email campaigns",
+      "best_for": "High-ticket offers, product launches, direct mail campaigns, VSL (video sales letter) scripts, and any offer requiring full persuasion arc",
+      "steps": [
+        "Attention: Interrupt pattern with bold headline, shocking stat, or provocative question. You have 3 seconds.",
+        "Interest: Expand on the hook with a story, relevant data, or 'what if' scenario that pulls reader deeper.",
+        "Credibility: Establish why you (or the brand) have authority. Credentials, media mentions, years in business, relevant expertise.",
+        "Prove: Back every claim with evidence — testimonials, case studies, screenshots, data, before/after results.",
+        "Benefits: Stack benefits using the 'which means' technique. Feature \u2192 advantage \u2192 emotional benefit. List at least 7-10.",
+        "Scarcity: Create genuine urgency — limited quantity, deadline, exclusive access, rising prices, seasonal relevance.",
+        "Action: Make the CTA crystal clear. Tell them exactly what to do, what happens next, and how quickly they get results.",
+        "Warn: Describe what happens if they don't act. Paint the cost of inaction in vivid, specific terms.",
+        "Now: Final push with immediacy. Restate the best benefit + scarcity. Make 'right now' feel like the only logical choice."
+      ],
+      "example": "Attention: 'This exhibition sells out 3 weeks before closing — every single city' \u2192 Interest: 'Over 2 million people have already walked through these doors' \u2192 Credibility: 'Created by the team behind the world's most visited touring exhibitions' \u2192 Prove: '4,800 five-star reviews. 94% say it exceeded expectations.' \u2192 Benefits: 'Interactive wand experience, exclusive photo moments, behind-the-scenes access' \u2192 Scarcity: 'Barcelona dates: March 15 - April 30 only. No extensions.' \u2192 Action: 'Select your date and book now at theimagineteam.com' \u2192 Warn: 'Last 3 cities sold out 2 weeks early. Late bookers paid 40% more on resale sites.' \u2192 Now: 'Tickets are live. Early-bird pricing ends this Friday.'"
+    },
+    {
+      "name": "Star-Story-Solution",
+      "description": "Narrative-driven framework that uses a relatable protagonist and story arc to deliver the solution. The 'star' creates identification, the 'story' builds emotional investment, and the 'solution' converts.",
+      "when_to_use": "Brand storytelling, case study content, video ads, testimonial-based campaigns, social media narrative posts",
+      "best_for": "Experience-based products, lifestyle brands, customer success stories, video content, influencer collaborations, exhibition marketing",
+      "steps": [
+        "Star: Introduce the protagonist — a customer, founder, or relatable character the audience sees themselves in. Make them specific and vivid (name, situation, desire).",
+        "Story: Tell the journey — the problem they faced, the frustration, the turning point when they discovered the solution. Use sensory details and emotional beats. Build tension before the resolution.",
+        "Solution: Reveal how the product/experience transformed the star's situation. Show specific results. Connect back to the audience: 'You can have this too.' End with clear CTA."
+      ],
+      "example": "Star: 'Meet Sofia, 34, a Barcelona mom of two who hasn't had a magical family day in months' \u2192 Story: 'Every weekend was the same — park, screen time, repeat. She wanted her kids to feel wonder, not just be entertained. Then a friend sent her one photo from inside the exhibition...' \u2192 Solution: 'Three hours later, her 7-year-old was casting spells, her 4-year-old was sorting houses, and Sofia had 47 new photos on her phone. Book your family's magical day now.'"
+    },
+    {
+      "name": "4 U's Formula",
+      "description": "Four-filter headline and hook optimization framework. Every piece of copy must pass through all four filters: Useful, Urgent, Unique, and Ultra-specific. Originally from Michael Masterson for email subject lines, now applied to all hooks.",
+      "when_to_use": "Headlines, email subject lines, ad copy hooks, social media opening lines, push notifications, banner ads",
+      "best_for": "Short-form copy optimization, A/B test headline creation, email marketing, paid ad headlines, any copy where the first line determines success",
+      "steps": [
+        "Useful: Does this offer clear value? What will the reader gain, learn, or avoid? If there's no tangible takeaway, rewrite.",
+        "Urgent: Is there a reason to act now? Add time pressure, consequence of delay, or 'breaking' relevance. Without urgency, even great copy gets bookmarked and forgotten.",
+        "Unique: Has the audience seen this angle before? Differentiate through unexpected framing, contrarian take, or proprietary data. Avoid cliches at all costs.",
+        "Ultra-specific: Replace every vague word with a precise one. Numbers, names, timeframes, percentages. Specificity is the currency of believability."
+      ],
+      "example": "Weak: 'Great exhibition coming to town soon' \u2192 4 U's applied: 'The Harry Potter Exhibition has 47 days left in Barcelona — 73% of weekend slots already sold. Book your specific date before your preferred time disappears.' (Useful: tells them what + where. Urgent: 47 days + 73% sold. Unique: specific exhibition detail. Ultra-specific: numbers throughout.)"
+    },
+    {
+      "name": "Before-During-After (BDA)",
+      "description": "Transformation journey framework that adds the critical 'During' phase missing from BAB. Shows the full arc: where you are, what the experience is like, and who you become after. Especially powerful for experiential products.",
+      "when_to_use": "Experience marketing, event promotion, course/program sales, travel and hospitality, exhibition and entertainment advertising",
+      "best_for": "Exhibitions, immersive experiences, events, retreats, destination marketing, any product where the experience IS the value proposition",
+      "steps": [
+        "Before: Establish the current emotional state and situation. What does the audience's ordinary world look like? What are they missing or craving? Use relatable, specific details.",
+        "During: This is the differentiator — describe the experience itself in vivid, sensory detail. What do they see, feel, hear? Create FOMO by making the 'during' so compelling that not participating feels like a loss. Use present tense for immersion.",
+        "After: Show the lasting transformation. How do they feel after? What do they take away (memories, photos, stories, status)? This is the emotional payoff that justifies the purchase decision."
+      ],
+      "example": "Before: 'Another weekend scrolling through everyone else's adventures on Instagram while you plan nothing' \u2192 During: 'You're walking through Hogwarts corridors, wand in hand. Your kids are screaming with joy at the Quidditch zone. You're taking photos you'll actually frame.' \u2192 After: 'Monday morning, your coworkers ask about your weekend. This time, you have a story worth telling — and 50 photos to prove it.'"
+    },
+    {
+      "name": "Ticket-Selling Formula",
+      "description": "AUROS proprietary framework designed specifically for exhibition, event, and experience ticket sales. Optimized for the unique psychology of experiential purchase decisions where FOMO and visual impact drive conversion.",
+      "when_to_use": "Exhibition landing pages, event ticket campaigns, experience-based product launches, entertainment venue marketing, touring show promotions",
+      "best_for": "Exhibition ticket sales, concert/show promotion, museum campaigns, immersive experience marketing, themed event advertising, festival ticket drives",
+      "steps": [
+        "Hook (Visual Wow): Lead with the most visually stunning or emotionally striking moment from the experience. Use hero imagery or video that creates instant desire. The visual must make someone stop and say 'I want to be there.'",
+        "Experience Preview: Give a curated walkthrough of 3-5 highlight moments they'll experience. Use sensory language — what they'll see, touch, hear, feel. Create a mental movie of attendance. Structure as a journey, not a feature list.",
+        "Social Proof (Numbers): Stack hard evidence — total visitors across cities, star ratings, review counts, media coverage, celebrity endorsements, sold-out history. Numbers create safety: 'If 2 million people loved it, I will too.'",
+        "Scarcity (Limited Dates): Emphasize the temporary nature of the experience. Specific closing date, percentage of tickets remaining, sold-out history from previous cities. Touring exhibitions have natural scarcity — use it aggressively.",
+        "CTA (Book Now): Direct, friction-free call to action. Include price anchoring if possible (value vs. cost comparison). Make the next step obvious — select date, choose tickets, checkout. Add urgency reinforcement in the button copy itself."
+      ],
+      "example": "Hook: [Hero image of illuminated Hogwarts Great Hall] 'Step inside the world you've only imagined' \u2192 Experience Preview: 'Walk the corridors of Hogwarts. Cast real spells with interactive wands. Meet Buckbeak up close. Brew potions in Snape's dungeon. Explore 5,000+ authentic props and costumes.' \u2192 Social Proof: '2.1M visitors. 4.8-star rating across 4,800 reviews. Sold out in London, New York, and Tokyo.' \u2192 Scarcity: 'Barcelona: March 15 - April 30 ONLY. Weekend slots are 73% sold. No extensions confirmed.' \u2192 CTA: 'Choose Your Date & Book Now — from 24.95. Early-bird family packs save 30%.'"
+    }
+  ],
+  "key_principles": [
+    {
+      "principle": "Lead with specificity over generalities",
+      "explanation": "Specific numbers, timeframes, and outcomes create believability. '73% of users' beats 'most users'.",
+      "application": "Replace vague claims with precise metrics. Instead of 'increase sales,' write 'boost revenue by 34% in 90 days based on client average.'"
+    },
+    {
+      "principle": "Address objections before they arise",
+      "explanation": "Anticipate and neutralize resistance points within your copy flow to maintain momentum.",
+      "application": "Include phrases like 'Even if you've tried other solutions' or 'No technical skills required' to preempt common concerns."
+    },
+    {
+      "principle": "Use pattern interrupts strategically",
+      "explanation": "Break expected patterns to recapture attention and create memorable moments.",
+      "application": "Start with contrarian statements: 'Most marketing advice is wrong. Here's what actually works...' or use unexpected formatting breaks."
+    },
+    {
+      "principle": "Create urgency through scarcity or consequence",
+      "explanation": "Humans act faster when facing loss or limited availability than when pursuing gain.",
+      "application": "Use deadline-driven urgency ('Offer expires Friday') or consequence-based urgency ('Every day you wait costs $500 in lost revenue')."
+    },
+    {
+      "principle": "Match copy complexity to audience sophistication",
+      "explanation": "Aware audiences need different messaging than unaware prospects. Adjust depth accordingly.",
+      "application": "For aware audiences: focus on differentiation. For unaware: focus on problem education. For most aware: focus on offer details."
+    }
+  ],
+  "tactics": [
+    {
+      "tactic": "Power word integration",
+      "platform": "all",
+      "description": "Use psychologically-proven words that trigger emotional response and action",
+      "expected_result": "15-25% increase in engagement rates when used strategically"
+    },
+    {
+      "tactic": "Social proof stacking",
+      "platform": "all",
+      "description": "Layer multiple types of social proof (numbers, testimonials, logos) within single piece",
+      "expected_result": "Up to 34% improvement in conversion rates"
+    },
+    {
+      "tactic": "Benefit laddering",
+      "platform": "all",
+      "description": "Connect features to advantages to emotional benefits in logical sequence",
+      "expected_result": "Higher perceived value and purchase intent"
+    },
+    {
+      "tactic": "Curiosity gaps",
+      "platform": "email/social",
+      "description": "Create information gaps that compel audience to take action for resolution",
+      "expected_result": "20-40% higher click-through rates on subject lines and headlines"
+    },
+    {
+      "tactic": "Risk reversal",
+      "platform": "sales pages",
+      "description": "Transfer purchase risk from buyer to seller through guarantees and trials",
+      "expected_result": "25-60% increase in conversion rates for high-ticket offers"
+    }
+  ],
+  "benchmarks": [
+    {
+      "metric": "Email subject line open rate",
+      "industry_average": "21.33%",
+      "top_performer": "35%+",
+      "source": "Mailchimp 2024 Email Marketing Benchmarks"
+    },
+    {
+      "metric": "Landing page conversion rate",
+      "industry_average": "2.35%",
+      "top_performer": "11.45%+",
+      "source": "Unbounce Conversion Benchmark Report 2024"
+    },
+    {
+      "metric": "Sales email response rate",
+      "industry_average": "8.5%",
+      "top_performer": "15%+",
+      "source": "HubSpot Sales Statistics 2024"
+    },
+    {
+      "metric": "Social media ad CTR",
+      "industry_average": "0.9%",
+      "top_performer": "2.5%+",
+      "source": "Facebook Ads Benchmarks 2024"
+    }
+  ],
+  "templates": [
+    {
+      "name": "PAS Email Template",
+      "template": "Subject: [SPECIFIC PROBLEM] is costing you [QUANTIFIED LOSS]\n\nHi [NAME],\n\nI noticed [SPECIFIC OBSERVATION ABOUT THEIR BUSINESS].\n\nHere's the problem: [CLEAR PROBLEM STATEMENT]\n\nThis means [CONSEQUENCE 1], [CONSEQUENCE 2], and worst of all, [BIGGEST CONSEQUENCE].\n\nThe solution? [YOUR OFFER IN ONE SENTENCE]\n\n[SOCIAL PROOF OR RESULT]\n\nReady to [DESIRED OUTCOME]?\n\n[CLEAR CTA]\n\n[SIGNATURE]",
+      "use_case": "Cold outreach, product launch emails, problem-aware audiences"
+    },
+    {
+      "name": "BAB Social Media Ad",
+      "template": "BEFORE: You're [CURRENT FRUSTRATING SITUATION]\n\nAFTER: Imagine [SPECIFIC DESIRED OUTCOME WITH NUMBERS]\n\nThe bridge? [YOUR SOLUTION]\n\n\u2705 [BENEFIT 1]\n\u2705 [BENEFIT 2] \n\u2705 [BENEFIT 3]\n\n[SOCIAL PROOF]\n\n\ud83d\udc47 [CTA] (Link in comments)",
+      "use_case": "Facebook/Instagram ads, LinkedIn posts, transformation-focused content"
+    },
+    {
+      "name": "AIDA Landing Page Header",
+      "template": "HEADLINE: [ATTENTION-GRABBING CLAIM WITH NUMBER]\n\nSUBHEAD: [INTEREST-BUILDING EXPLANATION]\n\nImagine [DESIRE-CREATING SCENARIO]\n\n[CTA BUTTON: ACTION-ORIENTED TEXT]\n\n[TRUST INDICATOR/SOCIAL PROOF]",
+      "use_case": "Landing pages, sales pages, lead magnets"
+    }
+  ],
+  "common_mistakes": [
+    "Leading with features instead of benefits",
+    "Using industry jargon that confuses prospects",
+    "Creating weak calls-to-action without urgency",
+    "Ignoring audience awareness level",
+    "Overcomplicating simple messages",
+    "Failing to address obvious objections",
+    "Using generic social proof instead of specific results",
+    "Writing for everyone instead of ideal customer",
+    "Burying the main benefit in body copy",
+    "Neglecting mobile readability and scanning patterns"
+  ],
+  "pro_tips": [
+    "Test emotional vs logical appeals for your specific audience - B2B often responds better to logical frameworks with emotional undertones",
+    "Use 'you' 3x more than 'we' or 'I' to maintain customer focus throughout copy",
+    "Place strongest benefit in first 8 words of headlines for maximum impact",
+    "Create curiosity gaps in subject lines but deliver on promises in body copy",
+    "Use power words strategically: 'secret,' 'proven,' 'guaranteed,' 'exclusive' increase engagement by 20%+",
+    "Structure paragraphs in 1-2-1 pattern: short opener, longer explanation, short closer for optimal readability",
+    "Include specific timeframes in promises ('in 30 days' vs 'quickly') to increase credibility",
+    "Use transitional phrases to maintain flow: 'Here's why,' 'But here's the thing,' 'The result?'",
+    "End sections with forward momentum: questions, cliffhangers, or benefit previews",
+    "A/B test framework choice - PAS often outperforms AIDA for problem-aware audiences by 15-30%"
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "title": "AUROS AI \u2014 Visual & Video Tools Research",
+  "date": "2026-03-22",
+  "recommended_stack": {
+    "image_generation": [
+      {
+        "name": "Flux 2 Pro",
+        "provider": "fal.ai",
+        "cost": "$0.03/image",
+        "python": "fal_client.subscribe()",
+        "why": "Cheapest photorealistic images"
+      },
+      {
+        "name": "Ideogram v3",
+        "cost": "$0.04/image",
+        "python": "REST API",
+        "why": "Only tool that renders text in images reliably"
+      },
+      {
+        "name": "Leonardo AI",
+        "cost": "$0.002/gen (enterprise), 150 free/day",
+        "python": "REST API",
+        "why": "Owned by Canva, good for variations"
+      }
+    ],
+    "video_generation": [
+      {
+        "name": "Sora 2 (OpenAI)",
+        "cost": "$0.10-0.50/sec",
+        "python": "openai.videos.create()",
+        "why": "Best quality, full Python SDK"
+      },
+      {
+        "name": "Kling 3.0",
+        "provider": "fal.ai",
+        "cost": "$0.03/sec",
+        "python": "fal_client",
+        "why": "4K at lowest cost"
+      },
+      {
+        "name": "Runway Gen-4",
+        "cost": "$0.05-0.15/sec",
+        "python": "REST API",
+        "why": "Professional quality, Characters API"
+      }
+    ],
+    "template_engines": [
+      {
+        "name": "Creatomate",
+        "cost": "$54/mo",
+        "python": "REST API",
+        "why": "Best for scaling ad variants from templates"
+      },
+      {
+        "name": "Bannerbear",
+        "cost": "$49/mo",
+        "python": "REST API",
+        "why": "Bulk social media image generation"
+      },
+      {
+        "name": "Remotion",
+        "cost": "Free (open source)",
+        "python": "subprocess/HTTP",
+        "why": "React-based, infinite customization"
+      }
+    ],
+    "ad_creative": [
+      {
+        "name": "AdCreative.ai",
+        "cost": "$25/mo",
+        "why": "Performance prediction trained on 450M+ ads"
+      }
+    ]
+  },
+  "total_monthly_fixed": "$128 (Creatomate $54 + Bannerbear $49 + AdCreative $25)",
+  "plus_per_use": "Image: $0.03-0.04/each | Video: $0.03-0.50/sec"
+}

@@ -1,0 +1,49 @@
+[
+  {
+    "timestamp": "2026-03-23T08:41:59.487431",
+    "level": "INFO",
+    "message": "Found 1 images (processing up to 1)"
+  },
+  {
+    "timestamp": "2026-03-23T08:41:59.531622",
+    "level": "INFO",
+    "message": "Uploading cabinet_directions.jpg (52KB)..."
+  },
+  {
+    "timestamp": "2026-03-23T08:42:01.281724",
+    "level": "INFO",
+    "message": "Generating clip (attempt 1/3)...",
+    "model": "fal-ai/kling-video/v2.5-turbo/pro/image-to-video",
+    "duration": "5s",
+    "aspect_ratio": "9:16"
+  },
+  {
+    "timestamp": "2026-03-23T08:43:36.181228",
+    "level": "OK",
+    "message": "Clip generated in 94.9s",
+    "video_url": "https://v3b.fal.media/files/b/0a934b1d/lHSUU9vY_ZRVR8LBeauXX_output.mp4...",
+    "cost": "$0.35"
+  },
+  {
+    "timestamp": "2026-03-23T08:43:36.184097",
+    "level": "INFO",
+    "message": "Downloading clip to cabinet_directions_motion_5s.mp4..."
+  },
+  {
+    "timestamp": "2026-03-23T08:45:26.856547",
+    "level": "OK",
+    "message": "Downloaded cabinet_directions_motion_5s.mp4 (17422KB)"
+  },
+  {
+    "timestamp": "2026-03-23T08:45:35.894475",
+    "level": "OK",
+    "message": "Validated: 5.0s, 1080x1920, 24.0fps"
+  },
+  {
+    "timestamp": "2026-03-23T08:45:35.894902",
+    "level": "COST",
+    "message": "Total batch cost: $0.35",
+    "successful": 1,
+    "failed": 0
+  }
+]

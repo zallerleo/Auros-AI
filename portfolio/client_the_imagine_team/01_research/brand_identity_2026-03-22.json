@@ -1,0 +1,122 @@
+{
+  "company": "The Imagine Team",
+  "extraction_date": "2026-03-22",
+  "colors": {
+    "primary": [
+      {
+        "hex": "#B80021",
+        "name": "Deep Red",
+        "usage": "Brand accent and call-to-action elements"
+      },
+      {
+        "hex": "#000000",
+        "name": "Black",
+        "usage": "Primary text and strong contrast elements"
+      }
+    ],
+    "secondary": [
+      {
+        "hex": "#116DFF",
+        "name": "Bright Blue",
+        "usage": "Interactive elements and secondary accents"
+      }
+    ],
+    "accent": [
+      {
+        "hex": "#DF3131",
+        "name": "Bright Red",
+        "usage": "Hover states and emphasis"
+      }
+    ],
+    "neutrals": [
+      {
+        "hex": "#D5D4D4",
+        "name": "Light Gray",
+        "usage": "Dominant background color"
+      },
+      {
+        "hex": "#E3E3E3",
+        "name": "Off White Gray",
+        "usage": "Secondary backgrounds"
+      },
+      {
+        "hex": "#FFFFFF",
+        "name": "White",
+        "usage": "Clean backgrounds and contrast"
+      },
+      {
+        "hex": "#8D8D8D",
+        "name": "Medium Gray",
+        "usage": "Secondary text and subtle elements"
+      },
+      {
+        "hex": "#757575",
+        "name": "Dark Gray",
+        "usage": "Tertiary text elements"
+      }
+    ]
+  },
+  "typography": {
+    "primary_font": "Poppins",
+    "secondary_font": "Helvetica Neue",
+    "heading_style": "Made For Display Bold for impact headlines",
+    "body_style": "Clean, readable sans-serif hierarchy",
+    "observations": "Heavy reliance on modern sans-serif fonts with multiple weight variations. Strong emphasis on readability with Poppins leading brand typography."
+  },
+  "logo": {
+    "type": "wordmark",
+    "description": "Clean wordmark 'Imagine' in white on transparent background, minimal and modern",
+    "primary_color": "White/Transparent",
+    "usage_notes": "Appears in multiple sizes, maintains readability at small scales"
+  },
+  "visual_style": {
+    "photography_style": "Professional corporate imagery with clean backgrounds",
+    "illustration_style": "Minimal graphic elements, logo-focused design",
+    "layout_tendency": "Clean, structured layouts with generous whitespace",
+    "whitespace_usage": "Abundant whitespace creating premium, uncluttered feel",
+    "overall_aesthetic": "Modern corporate with experiential design focus"
+  },
+  "tone_of_voice": {
+    "formality": "semi-formal",
+    "personality_traits": [
+      "Creative",
+      "Professional",
+      "Inspiring",
+      "Experiential",
+      "Storytelling-focused"
+    ],
+    "sample_phrases": [
+      "we create engaging visitor experiences that entertain, educate, and inspire",
+      "stories that resonate, moments that captivate, and experiences that fascinate",
+      "transformative journeys"
+    ],
+    "messaging_themes": [
+      "Immersive experiences",
+      "Storytelling",
+      "Entertainment",
+      "Education",
+      "Transformation"
+    ]
+  },
+  "brand_positioning": {
+    "market_segment": "premium",
+    "target_audience": "Entertainment venues, museums, corporate clients seeking immersive experiences",
+    "value_proposition": "Full-service experiential design from concept to operation",
+    "differentiators": [
+      "End-to-end service delivery",
+      "Focus on storytelling and interactivity",
+      "High-profile client portfolio (Universal, Warner Bros, MGM)",
+      "Comprehensive expertise across planning, design, production, and operations"
+    ]
+  },
+  "consistency_score": 7,
+  "consistency_notes": "Strong color consistency with clear hierarchy. Typography shows some fragmentation with multiple font families. Visual style maintains professional standard but could benefit from more distinctive brand elements beyond the wordmark.",
+  "recommendations_for_content_creation": [
+    "Leverage the storytelling messaging theme - every piece should tell a story",
+    "Use the red accent (#B80021) sparingly for maximum impact on CTAs",
+    "Maintain generous whitespace to reflect premium positioning",
+    "Lead with client results and portfolio pieces given impressive client roster",
+    "Emphasize the 'concept to completion' service model in all communications",
+    "Use experiential language that mirrors their immersive design philosophy"
+  ]
+}

@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AUROS AI — The Imagine Team: Three Campaigns Vision Board</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --midnight: #0B0F1A;
+  --navy: #111827;
+  --navy-light: #1a2332;
+  --gold: #C9A84C;
+  --gold-light: #E8C96A;
+  --gold-dark: #8B6E2A;
+  --white: #FAFAF8;
+  --off-white: #F0EDE6;
+  --gray: #6B7280;
+  --gray-light: #9CA3AF;
+
+  /* Campaign accents */
+  --cabinet-amber: #8B4513;
+  --cabinet-gold: #C9A84C;
+  --cabinet-accent: #D4A054;
+  --cabinet-light: #E8C078;
+
+  --titanic-blue: #1F3A52;
+  --titanic-deep: #0a1a2e;
+  --titanic-silver: #B8B8B8;
+  --titanic-accent: #93c5fd;
+
+  --trolls-green: #1B4D3E;
+  --trolls-brown: #5C4033;
+  --trolls-gold: #E8C96A;
+  --trolls-sky: #87CEEB;
+  --trolls-accent: #6BCB77;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--midnight);
+  color: var(--white);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+@keyframes fadeInUp { from { opacity:0; transform:translateY(40px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes pulse { 0%,100% { opacity:0.4; } 50% { opacity:1; } }
+@keyframes shimmer { 0% { background-position:-200% center; } 100% { background-position:200% center; } }
+@keyframes float { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-8px); } }
+@keyframes glow { 0%,100% { box-shadow: 0 0 20px rgba(201,168,76,0.1); } 50% { box-shadow: 0 0 40px rgba(201,168,76,0.2); } }
+@keyframes slideIn { from { opacity:0; transform:translateX(30px); } to { opacity:1; transform:translateX(0); } }
+@keyframes colorShift { 0% { filter: hue-rotate(0deg); } 100% { filter: hue-rotate(360deg); } }
+
+.anim { opacity:0; transform:translateY(30px); transition: all 0.8s cubic-bezier(0.16,1,0.3,1); }
+.anim.visible { opacity:1; transform:translateY(0); }
+.anim-delay-1 { transition-delay: 0.1s; }
+.anim-delay-2 { transition-delay: 0.2s; }
+.anim-delay-3 { transition-delay: 0.3s; }
+.anim-delay-4 { transition-delay: 0.4s; }
+
+/* ====== HERO ====== */
+.hero {
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 80px 40px;
+  position: relative;
+  background:
+    radial-gradient(ellipse at 20% 40%, rgba(139,69,19,0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 60%, rgba(31,58,82,0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 40%, rgba(27,77,62,0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 20%, rgba(201,168,76,0.06) 0%, transparent 40%),
+    var(--midnight);
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 200px;
+  background: linear-gradient(to top, var(--midnight), transparent);
+  pointer-events: none;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 20px;
+  border: 1px solid rgba(201,168,76,0.3);
+  border-radius: 100px;
+  font-size: 11px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 40px;
+  animation: fadeIn 1s ease-out 0.3s both;
+}
+.hero-badge::before { content:''; width:6px; height:6px; background:var(--gold); border-radius:50%; animation:pulse 2s infinite; }
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 6vw, 80px);
+  font-weight: 900;
+  letter-spacing: -2px;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  animation: fadeInUp 1s ease-out 0.5s both;
+}
+.hero h1 .gold {
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-light), var(--gold));
+  background-size: 200% auto;
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s infinite;
+}
+.hero-sub {
+  font-size: clamp(15px, 2vw, 20px);
+  font-weight: 300;
+  color: var(--off-white);
+  max-width: 600px;
+  animation: fadeInUp 1s ease-out 0.7s both;
+}
+.hero-campaigns {
+  display: flex;
+  gap: 32px;
+  margin-top: 48px;
+  animation: fadeInUp 1s ease-out 0.9s both;
+}
+.hero-campaign-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border: 1px solid rgba(255,255,255,0.08);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.hero-campaign-pill:hover { transform: translateY(-2px); }
+.hero-campaign-pill .dot { width: 8px; height: 8px; border-radius: 50%; }
+.hero-campaign-pill.cabinet .dot { background: var(--cabinet-accent); }
+.hero-campaign-pill.cabinet { color: var(--cabinet-light); border-color: rgba(212,160,84,0.2); }
+.hero-campaign-pill.titanic .dot { background: var(--titanic-accent); }
+.hero-campaign-pill.titanic { color: var(--titanic-accent); border-color: rgba(147,197,253,0.2); }
+.hero-campaign-pill.trolls .dot { background: var(--trolls-accent); }
+.hero-campaign-pill.trolls { color: var(--trolls-accent); border-color: rgba(107,203,119,0.2); }
+
+/* ====== TABS ====== */
+.tab-nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(11,15,26,0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(201,168,76,0.1);
+  display: flex; justify-content: center; gap: 0;
+  transition: background 0.5s;
+}
+.tab-btn {
+  padding: 20px 36px;
+  font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--gray);
+  cursor: pointer;
+  border: none; background: none;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s;
+  position: relative;
+}
+.tab-btn:hover { color: var(--off-white); }
+.tab-btn.active.cabinet { color: var(--cabinet-light); border-bottom-color: var(--cabinet-accent); }
+.tab-btn.active.titanic { color: var(--titanic-accent); border-bottom-color: var(--titanic-accent); }
+.tab-btn.active.trolls { color: var(--trolls-accent); border-bottom-color: var(--trolls-accent); }
+.tab-btn.active.shared { color: var(--gold); border-bottom-color: var(--gold); }
+
+.tab-panel {
+  display: none;
+  animation: fadeIn 0.5s ease-out;
+}
+.tab-panel.active { display: block; }
+
+/* ====== VISION HERO PANELS ====== */
+.vision-hero {
+  padding: 100px 40px 60px;
+  text-align: center;
+  position: relative;
+}
+.vision-hero.cabinet {
+  background: linear-gradient(180deg,
+    rgba(139,69,19,0.15) 0%,
+    rgba(201,168,76,0.05) 50%,
+    var(--midnight) 100%
+  );
+}
+.vision-hero.titanic {
+  background: linear-gradient(180deg,
+    rgba(31,58,82,0.25) 0%,
+    rgba(10,26,46,0.1) 50%,
+    var(--midnight) 100%
+  );
+}
+.vision-hero.trolls {
+  background: linear-gradient(180deg,
+    rgba(27,77,62,0.2) 0%,
+    rgba(107,203,119,0.03) 50%,
+    var(--midnight) 100%
+  );
+}
+.vision-hero h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 5vw, 64px);
+  font-weight: 900;
+  letter-spacing: -2px;
+  margin-bottom: 12px;
+}
+.vision-hero .tagline {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(16px, 2.5vw, 24px);
+  font-style: italic;
+  font-weight: 400;
+  margin-bottom: 32px;
+}
+.cabinet .tagline { color: var(--cabinet-light); }
+.titanic .tagline { color: var(--titanic-accent); }
+.trolls .tagline { color: var(--trolls-accent); }
+
+/* ====== SECTIONS ====== */
+.section { max-width: 1200px; margin: 0 auto; padding: 80px 40px; }
+.section-label {
+  font-size: 11px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.cabinet .section-label { color: var(--cabinet-light); }
+.titanic .section-label { color: var(--titanic-accent); }
+.trolls .section-label { color: var(--trolls-accent); }
+.shared .section-label { color: var(--gold); }
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(24px, 3.5vw, 42px);
+  font-weight: 900; letter-spacing: -1px; line-height: 1.15;
+  margin-bottom: 40px;
+}
+.divider { width: 60px; height: 2px; margin-bottom: 32px; }
+.cabinet .divider { background: linear-gradient(90deg, var(--cabinet-accent), transparent); }
+.titanic .divider { background: linear-gradient(90deg, var(--titanic-accent), transparent); }
+.trolls .divider { background: linear-gradient(90deg, var(--trolls-accent), transparent); }
+.shared .divider { background: linear-gradient(90deg, var(--gold), transparent); }
+
+/* ====== EMOTIONAL DNA ====== */
+.emotion-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+}
+.emotion-card {
+  padding: 32px 24px;
+  border-radius: 16px;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: all 0.4s cubic-bezier(0.16,1,0.3,1);
+  position: relative;
+  overflow: hidden;
+}
+.emotion-card:hover { transform: translateY(-4px); }
+.emotion-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+}
+/* Cabinet cards */
+.cabinet .emotion-card { background: rgba(139,69,19,0.1); }
+.cabinet .emotion-card::before { background: linear-gradient(90deg, #8B4513, #C9A84C); }
+.cabinet .emotion-card:hover { border-color: rgba(212,160,84,0.3); box-shadow: 0 12px 40px rgba(139,69,19,0.2); }
+.cabinet .emotion-card h4 { color: var(--cabinet-light); }
+/* Titanic cards */
+.titanic .emotion-card { background: rgba(31,58,82,0.2); }
+.titanic .emotion-card::before { background: linear-gradient(90deg, #3b82f6, #93c5fd); }
+.titanic .emotion-card:hover { border-color: rgba(147,197,253,0.3); box-shadow: 0 12px 40px rgba(31,58,82,0.3); }
+.titanic .emotion-card h4 { color: var(--titanic-accent); }
+/* Trolls cards */
+.trolls .emotion-card { background: rgba(27,77,62,0.15); }
+.trolls .emotion-card::before { background: linear-gradient(90deg, #1B4D3E, #6BCB77); }
+.trolls .emotion-card:hover { border-color: rgba(107,203,119,0.3); box-shadow: 0 12px 40px rgba(27,77,62,0.3); }
+.trolls .emotion-card h4 { color: var(--trolls-accent); }
+
+.emotion-card .icon { font-size: 36px; margin-bottom: 16px; }
+.emotion-card h4 {
+  font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+.emotion-card p { font-size: 13px; color: var(--gray-light); line-height: 1.5; }
+
+/* ====== KEY MESSAGE ====== */
+.key-message {
+  text-align: center;
+  padding: 80px 40px;
+  position: relative;
+}
+.key-message blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(24px, 4vw, 48px);
+  font-weight: 900;
+  font-style: italic;
+  line-height: 1.3;
+  max-width: 800px;
+  margin: 0 auto 24px;
+}
+.cabinet .key-message blockquote { color: var(--cabinet-light); }
+.titanic .key-message blockquote { color: var(--titanic-accent); }
+.trolls .key-message blockquote { color: var(--trolls-accent); }
+.key-message .fomo {
+  font-size: 16px;
+  color: var(--gray-light);
+  font-weight: 400;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.key-message .feeling {
+  margin-top: 40px;
+  padding: 24px 32px;
+  display: inline-block;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.cabinet .feeling { background: rgba(139,69,19,0.15); border: 1px solid rgba(212,160,84,0.2); color: var(--cabinet-light); }
+.titanic .feeling { background: rgba(31,58,82,0.2); border: 1px solid rgba(147,197,253,0.2); color: #bfdbfe; }
+.trolls .feeling { background: rgba(27,77,62,0.15); border: 1px solid rgba(107,203,119,0.2); color: var(--trolls-accent); }
+
+/* ====== COLOR PALETTE ====== */
+.palette-section { padding: 80px 40px; max-width: 1200px; margin: 0 auto; }
+.palette-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 32px;
+}
+.color-swatch {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: transform 0.3s;
+}
+.color-swatch:hover { transform: scale(1.03); }
+.swatch-preview {
+  height: 100px;
+  display: flex;
+  align-items: flex-end;
+  padding: 12px;
+}
+.swatch-preview span {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(8px);
+}
+.swatch-body {
+  padding: 14px;
+  background: var(--navy);
+}
+.swatch-body .name { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+.swatch-body .hex { font-size: 11px; color: var(--gray); font-family: monospace; }
+
+.mood-colors {
+  display: flex;
+  gap: 12px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+.mood-tag {
+  padding: 8px 20px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.cabinet .mood-tag { background: rgba(139,69,19,0.15); border: 1px solid rgba(212,160,84,0.15); color: var(--cabinet-light); }
+.titanic .mood-tag { background: rgba(31,58,82,0.2); border: 1px solid rgba(147,197,253,0.15); color: #bfdbfe; }
+.trolls .mood-tag { background: rgba(27,77,62,0.15); border: 1px solid rgba(107,203,119,0.15); color: var(--trolls-accent); }
+
+/* ====== VISUAL DIRECTION ====== */
+.direction-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 40px;
+}
+.direction-card {
+  padding: 40px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.06);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+.direction-card:hover { transform: translateY(-2px); }
+.cabinet .direction-card { background: linear-gradient(135deg, rgba(139,69,19,0.1), var(--navy)); }
+.cabinet .direction-card:hover { border-color: rgba(212,160,84,0.2); }
+.titanic .direction-card { background: linear-gradient(135deg, rgba(31,58,82,0.15), var(--navy)); }
+.titanic .direction-card:hover { border-color: rgba(147,197,253,0.2); }
+.trolls .direction-card { background: linear-gradient(135deg, rgba(27,77,62,0.12), var(--navy)); }
+.trolls .direction-card:hover { border-color: rgba(107,203,119,0.2); }
+.direction-card h4 {
+  font-size: 13px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.cabinet .direction-card h4 { color: var(--cabinet-light); }
+.titanic .direction-card h4 { color: var(--titanic-accent); }
+.trolls .direction-card h4 { color: var(--trolls-accent); }
+.direction-card p { font-size: 14px; color: var(--gray-light); line-height: 1.7; }
+
+/* ====== SHARED STRATEGY ====== */
+.pillars-vision {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 40px;
+}
+.pillar-v {
+  padding: 28px 20px;
+  border-radius: 16px;
+  text-align: center;
+  background: var(--navy);
+  border: 1px solid rgba(201,168,76,0.08);
+  transition: all 0.3s;
+}
+.pillar-v:hover { border-color: rgba(201,168,76,0.25); transform: translateY(-3px); }
+.pillar-v .icon { font-size: 32px; margin-bottom: 12px; }
+.pillar-v h4 { font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--gold); margin-bottom: 8px; }
+.pillar-v p { font-size: 12px; color: var(--gray-light); line-height: 1.5; }
+.pillar-v .goal {
+  margin-top: 12px;
+  padding: 6px 12px;
+  background: rgba(201,168,76,0.08);
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+/* Cross-campaign applications */
+.campaign-apps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 16px;
+}
+.campaign-app {
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 500;
+  text-align: center;
+}
+.campaign-app.cabinet-app { background: rgba(139,69,19,0.1); color: var(--cabinet-light); border: 1px solid rgba(212,160,84,0.1); }
+.campaign-app.titanic-app { background: rgba(31,58,82,0.15); color: var(--titanic-accent); border: 1px solid rgba(147,197,253,0.1); }
+.campaign-app.trolls-app { background: rgba(27,77,62,0.1); color: var(--trolls-accent); border: 1px solid rgba(107,203,119,0.1); }
+
+/* ====== CONVERSION PATH ====== */
+.conversion-path {
+  display: flex;
+  gap: 0;
+  margin-top: 48px;
+  position: relative;
+}
+.conversion-path::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), rgba(201,168,76,0.1));
+  z-index: 0;
+}
+.conv-step {
+  flex: 1;
+  text-align: center;
+  padding: 24px 16px;
+  position: relative;
+  z-index: 1;
+}
+.conv-step .dot {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--navy);
+  border: 2px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--gold);
+  margin: 0 auto 12px;
+  transition: all 0.3s;
+}
+.conv-step:hover .dot { background: rgba(201,168,76,0.1); transform: scale(1.1); }
+.conv-step h5 { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--gold); margin-bottom: 4px; }
+.conv-step p { font-size: 11px; color: var(--gray-light); }
+.conv-step .cta-text { font-size: 11px; font-weight: 600; color: var(--gold-light); margin-top: 8px; font-style: italic; }
+
+/* ====== METRICS ====== */
+.metrics-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 40px;
+}
+.metric-v {
+  padding: 24px;
+  background: var(--navy);
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid rgba(201,168,76,0.08);
+  transition: all 0.3s;
+}
+.metric-v:hover { border-color: rgba(201,168,76,0.2); transform: translateY(-2px); }
+.metric-v .value { font-size: 28px; font-weight: 900; color: var(--gold); margin-bottom: 4px; }
+.metric-v .label { font-size: 11px; color: var(--gray); text-transform: uppercase; letter-spacing: 1px; }
+
+/* Animated progress bar for metrics */
+.progress-wrap {
+  margin-top: 12px;
+  height: 4px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.progress-bar {
+  height: 100%;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--gold-dark), var(--gold));
+  width: 0;
+  transition: width 1.5s cubic-bezier(0.16,1,0.3,1);
+}
+.visible .progress-bar { width: var(--target-width); }
+
+/* ====== FOOTER ====== */
+.footer {
+  text-align: center;
+  padding: 60px 40px;
+  border-top: 1px solid rgba(201,168,76,0.08);
+}
+.footer-brand { font-size: 14px; font-weight: 800; letter-spacing: 6px; color: var(--gold); margin-bottom: 8px; }
+.footer-sub { font-size: 12px; color: var(--gray); }
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 968px) {
+  .emotion-grid, .pillars-vision, .metrics-bar { grid-template-columns: 1fr 1fr; }
+  .direction-cards { grid-template-columns: 1fr; }
+  .palette-grid { grid-template-columns: 1fr 1fr; }
+  .conversion-path { flex-direction: column; }
+  .conversion-path::before { display: none; }
+  .campaign-apps { grid-template-columns: 1fr; }
+  .hero-campaigns { flex-direction: column; gap: 12px; align-items: center; }
+}
+@media (max-width: 600px) {
+  .emotion-grid, .pillars-vision, .metrics-bar { grid-template-columns: 1fr; }
+  .section, .palette-section { padding: 60px 24px; }
+  .tab-btn { padding: 16px 14px; font-size: 9px; letter-spacing: 1.5px; }
+  .palette-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ====== HERO ====== -->
+<section class="hero">
+  <div class="hero-badge">Vision Board</div>
+  <h1>Three Worlds. <span class="gold">One Vision.</span></h1>
+  <p class="hero-sub">Creative direction for The Imagine Team's signature experiences.</p>
+  <div class="hero-campaigns">
+    <div class="hero-campaign-pill cabinet" onclick="switchTab('cabinet')"><span class="dot"></span>The Cabinet + The Lock</div>
+    <div class="hero-campaign-pill titanic" onclick="switchTab('titanic')"><span class="dot"></span>Titanic</div>
+    <div class="hero-campaign-pill trolls" onclick="switchTab('trolls')"><span class="dot"></span>Thomas Dambo Trolls</div>
+  </div>
+</section>
+
+<!-- ====== TABS ====== -->
+<div class="tab-nav" id="tabNav">
+  <button class="tab-btn cabinet active" onclick="switchTab('cabinet')">The Cabinet + The Lock</button>
+  <button class="tab-btn titanic" onclick="switchTab('titanic')">Titanic</button>
+  <button class="tab-btn trolls" onclick="switchTab('trolls')">Thomas Dambo Trolls</button>
+  <button class="tab-btn shared" onclick="switchTab('shared')">Shared Strategy</button>
+</div>
+
+<!-- ============================================================ -->
+<!-- TAB 1: THE CABINET OF CURIOSITIES + THE LOCK                 -->
+<!-- ============================================================ -->
+<div class="tab-panel cabinet active" id="tab-cabinet">
+
+  <div class="vision-hero cabinet">
+    <h2>The Cabinet of Curiosities<br>&amp; The Lock</h2>
+    <p class="tagline">"The best-kept secret on the Strip. Solve the riddle. Enter the vault."</p>
+  </div>
+
+  <!-- Emotional DNA -->
+  <div class="section anim">
+    <div class="section-label">Emotional DNA</div>
+    <div class="section-title">The feelings that sell every seat.</div>
+    <div class="divider"></div>
+    <div class="emotion-grid">
+      <div class="emotion-card anim anim-delay-1">
+        <div class="icon">&#128373;</div>
+        <h4>Mystery</h4>
+        <p>The speakeasy you have to find. A password whispered. A door that doesn't look like a door.</p>
+      </div>
+      <div class="emotion-card anim anim-delay-2">
+        <div class="icon">&#127863;</div>
+        <h4>Sophistication</h4>
+        <p>World-class cocktail craft in a setting that feels like stepping into another century.</p>
+      </div>
+      <div class="emotion-card anim anim-delay-3">
+        <div class="icon">&#128270;</div>
+        <h4>Discovery</h4>
+        <p>Every visit reveals something new. Hidden rooms. Secret menus. Stories behind the artifacts.</p>
+      </div>
+      <div class="emotion-card anim anim-delay-4">
+        <div class="icon">&#128081;</div>
+        <h4>Exclusivity</h4>
+        <p>Only 40 seats. No walk-ins. You're not a customer, you're one of the chosen few.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Key Message -->
+  <div class="key-message cabinet">
+    <blockquote>"The best-kept secret on the Strip.<br>Solve the riddle. Enter the vault."</blockquote>
+    <p class="fomo">Only 40 seats. Voted #1 Speakeasy. Your cocktail doesn't exist until you arrive.</p>
+    <div class="feeling">Target feeling: "I need to experience this before the secret gets out."</div>
+  </div>
+
+  <!-- Visual Palette -->
+  <div class="palette-section cabinet anim">
+    <div class="section-label">Visual Palette</div>
+    <div class="section-title">Warm. Mysterious. Golden.</div>
+    <div class="divider"></div>
+    <div class="palette-grid">
+      <div class="color-swatch">
+        <div class="swatch-preview" style="background: linear-gradient(135deg, #8B4513, #5a2d0d);"><span>Primary</span></div>
+        <div class="swatch-body"><div class="name">Deep Amber</div><div class="hex">#8B4513</div></div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-preview" style="background: linear-gradient(135deg, #C9A84C, #8B6E2A);"><span>Secondary</span></div>
+        <div class="swatch-body"><div class="name">Antique Gold</div><div class="hex">#C9A84C</div></div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-preview" style="background: linear-gradient(135deg, #0B0F1A, #1a1a1a);"><span>Base</span></div>
+        <div class="swatch-body"><div class="name">Midnight Black</div><div class="hex">#0B0F1A</div></div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-preview" style="background: linear-gradient(135deg, #D4A054, #B87A30);"><span>Accent</span></div>
+        <div class="swatch-body"><div class="name">Warm Candlelight</div><div class="hex">#D4A054</div></div>
+      </div>
+    </div>
+    <div class="mood-colors">
+      <span class="mood-tag">Victorian gothic</span>
+      <span class="mood-tag">Dim candlelight</span>
+      <span class="mood-tag">Mysterious shadows</span>
+      <span class="mood-tag">Vintage brass</span>
+    </div>
+  </div>
+
+  <!-- Visual Direction -->
+  <div class="section cabinet anim">
+    <div class="section-label">Visual Direction</div>
+    <div class="section-title">How every frame should feel.</div>
+    <div class="divider"></div>
+    <div class="direction-cards">
+      <div class="direction-card">
+        <h4>Photography Style</h4>
+        <p>Moody, intimate, warm practical lighting. Close-ups on cocktail crafting, the vault door moment, hands on vintage artifacts. Shallow depth of field. Every image should feel like a secret being shared.</p>
+      </div>
+      <div class="direction-card">
+        <h4>Video Direction</h4>
+        <p>Slow reveals. ASMR cocktail sounds. Whispered riddles. The moment the vault opens. Camera moves through shadows into golden light. Every cut should feel like uncovering a secret.</p>
+      </div>
+      <div class="direction-card">
+        <h4>Typography</h4>
+        <p>Elegant serif for headlines that feel like invitations to a private club. Gold foil textures on dark backgrounds. Clean sans-serif for practical information. Everything whispers luxury.</p>
+      </div>
+      <div class="direction-card">
+        <h4>Tone of Voice</h4>
+        <p>Mysterious, inviting, exclusive. "You've found it. Most people never do." Speak in second person, like confiding a secret. Never shout. Never explain too much. Let curiosity do the work.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- TAB 2: TITANIC                                                -->
+<!-- ============================================================ -->
+<div class="tab-panel titanic" id="tab-titanic">
+
+  <div class="vision-hero titanic">
+    <h2>Titanic: The Exhibition</h2>
+    <p class="tagline">"Walk the decks. Feel the scale. Understand the story."</p>
+  </div>
+
+  <!-- Emotional DNA -->
+  <div class="section anim">
+    <div class="section-label">Emotional DNA</div>
+    <div class="section-title">The feelings that sell tickets.</div>
+    <div class="divider"></div>
+    <div class="emotion-grid">
+      <div class="emotion-card anim anim-delay-1">
+        <div class="icon">&#128562;</div>
+        <h4>Awe</h4>
+        <p>The sheer scale of full recreations that make you feel you're standing aboard the ship itself.</p>
+      </div>
+      <div class="emotion-card anim anim-delay-2">
+        <div class="icon">&#127916;</div>
+        <h4>Cinematic Drama</h4>
+        <p>The most dramatic story in history, made tangible. Feel the weight of what happened that night.</p>
+      </div>
+      <div class="emotion-card anim anim-delay-3">
+        <div class="icon">&#127754;</div>
+        <h4>Immersion</h4>
+        <p>Full-scale recreations, real artifacts, real stories. This isn't a museum. This is time travel.</p>
+      </div>
+      <div class="emotion-card anim anim-delay-4">
+        <div class="icon">&#128214;</div>
+        <h4>Historical Significance</h4>
+        <p>Real artifacts, real people, real stories. History you can see, feel, and understand.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Key Message -->
+  <div class="key-message titanic">
+    <blockquote>"Walk the decks.<br>Feel the scale.<br>Understand the story."</blockquote>
+    <p class="fomo">Once-in-a-lifetime experience. Step aboard before it sails.</p>
+    <div class="feeling">Target feeling: "This is the closest I'll ever get to that moment."</div>
+  </div>
+
+  <!-- Visual Palette -->
+  <div class="palette-section titanic anim">
+    <div class="section-label">Visual Palette</div>
+    <div class="section-title">Cinematic. Grand. Oceanic.</div>
+    <div class="divider"></div>
+    <div class="palette-grid">
+      <div class="color-swatch">
+        <div class="swatch-preview" style="background: linear-gradient(135deg, #1F3A52, #0a1a2e);"><span>Primary</span></div>
+        <div class="swatch-body"><div class="name">Steel Blue</div><div class="hex">#1F3A52</div></div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-preview" style="background: linear-gradient(135deg, #B8B8B8, #888);"><span>Secondary</span></div>
+        <div class="swatch-body"><div class="name">Silver Gray</div><div class="hex">#B8B8B8</div></div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-preview" style="background: linear-gradient(135deg, #D4AF37, #8B7A2B);"><span>Accent</span></div>
+        <div class="swatch-body"><div class="name">Warm Gold</div><div class="hex">#D4AF37</div></div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-preview" style="background: linear-gradient(135deg, #0a1a2e, #152238);"><span>Deep</span></div>
+        <div class="swatch-body"><div class="name">Ocean Deep</div><div class="hex">#0A1A2E</div></div>
+      </div>
+    </div>
+    <div class="mood-colors">
+      <span class="mood-tag">Deep ocean blue</span>
+      <span class="mood-tag">White ship elegance</span>
+      <span class="mood-tag">Sunset amber</span>
+    </div>
+  </div>
+
+  <!-- Visual Direction -->
+  <div class="section titanic anim">
+    <div class="section-label">Visual Direction</div>
+    <div class="section-title">How every frame should feel.</div>
+    <div class="divider"></div>
+    <div class="direction-cards">
+      <div class="direction-card">
+        <h4>Photography Style</h4>
+        <p>Cinematic scale, dramatic lighting, architectural majesty. Low angles emphasize grandeur. Warm tones for luxury, cool tones for ocean and drama. Visitors shot as explorers discovering history.</p>
+      </div>
+      <div class="direction-card">
+        <h4>Video Direction</h4>
+        <p>Sweeping crane-style movements. Slow dolly through grand spaces. Orchestral score builds with visuals. Cross-dissolves between historical imagery and exhibition recreations.</p>
+      </div>
+      <div class="direction-card">
+        <h4>Typography</h4>
+        <p>Elegant serif for headlines that evoke the era. Modern sans-serif for CTAs. White and gold on deep blue for the premium, maritime feel. Every word should feel monumental.</p>
+      </div>
+      <div class="direction-card">
+        <h4>Tone of Voice</h4>
+        <p>Reverent but compelling. Cinematic narration style. Facts that stagger: numbers, dimensions, stories. Make history feel urgent: "Before this chance disappears..."</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- TAB 3: THOMAS DAMBO TROLLS                                    -->
+<!-- ============================================================ -->
+<div class="tab-panel trolls" id="tab-trolls">
+
+  <div class="vision-hero trolls">
+    <h2>Thomas Dambo Trolls</h2>
+    <p class="tagline">"Giant trolls are hiding in the forest. Can you find them all?"</p>
+  </div>
+
+  <!-- Emotional DNA -->
+  <div class="section anim">
+    <div class="section-label">Emotional DNA</div>
+    <div class="section-title">The feelings that drive discovery.</div>
+    <div class="divider"></div>
+    <div class="emotion-grid">
+      <div class="emotion-card anim anim-delay-1">
+        <div class="icon">&#129321;</div>
+        <h4>Wonder</h4>
+        <p>Turn a corner in the forest and suddenly you're face-to-face with a 20-foot wooden giant. Pure, unfiltered awe.</p>
+      </div>
+      <div class="emotion-card anim anim-delay-2">
+        <div class="icon">&#127794;</div>
+        <h4>Discovery</h4>
+        <p>A treasure hunt through nature. Each troll is hidden, waiting to be found. The journey is the experience.</p>
+      </div>
+      <div class="emotion-card anim anim-delay-3">
+        <div class="icon">&#127939;</div>
+        <h4>Adventure</h4>
+        <p>Families exploring trails together. Kids leading the way. Every path could reveal the next giant.</p>
+      </div>
+      <div class="emotion-card anim anim-delay-4">
+        <div class="icon">&#127807;</div>
+        <h4>Sustainability</h4>
+        <p>Built entirely from recycled wood. Art that gives back to nature. A message as beautiful as the sculptures.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Key Message -->
+  <div class="key-message trolls">
+    <blockquote>"Giant trolls are hiding in the forest.<br>Can you find them all?"</blockquote>
+    <p class="fomo">They won't be here forever. This is your window to discover them.</p>
+    <div class="feeling">Target feeling: "You won't believe what's hiding in these woods."</div>
+  </div>
+
+  <!-- Visual Palette -->
+  <div class="palette-section trolls anim">
+    <div class="section-label">Visual Palette</div>
+    <div class="section-title">Natural. Enchanted. Alive.</div>
+    <div class="divider"></div>
+    <div class="palette-grid">
+      <div class="color-swatch">
+        <div class="swatch-preview" style="background: linear-gradient(135deg, #1B4D3E, #0f2d24);"><span>Primary</span></div>
+        <div class="swatch-body"><div class="name">Forest Green</div><div class="hex">#1B4D3E</div></div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-preview" style="background: linear-gradient(135deg, #5C4033, #3a2820);"><span>Secondary</span></div>
+        <div class="swatch-body"><div class="name">Earth Brown</div><div class="hex">#5C4033</div></div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-preview" style="background: linear-gradient(135deg, #E8C96A, #C9A84C);"><span>Accent</span></div>
+        <div class="swatch-body"><div class="name">Sunlight Gold</div><div class="hex">#E8C96A</div></div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-preview" style="background: linear-gradient(135deg, #87CEEB, #5BA3C9);"><span>Highlight</span></div>
+        <div class="swatch-body"><div class="name">Sky Blue</div><div class="hex">#87CEEB</div></div>
+      </div>
+    </div>
+    <div class="mood-colors">
+      <span class="mood-tag">Dappled forest light</span>
+      <span class="mood-tag">Autumn leaves</span>
+      <span class="mood-tag">Morning mist</span>
+      <span class="mood-tag">Golden hour through trees</span>
+    </div>
+  </div>
+
+  <!-- Visual Direction -->
+  <div class="section trolls anim">
+    <div class="section-label">Visual Direction</div>
+    <div class="section-title">How every frame should feel.</div>
+    <div class="divider"></div>
+    <div class="direction-cards">
+      <div class="direction-card">
+        <h4>Photography Style</h4>
+        <p>Wide establishing shots of trolls in nature. Child's POV looking up at giant sculptures. Family adventure moments, kids running toward trolls. Detail shots of recycled materials showing craft and sustainability.</p>
+      </div>
+      <div class="direction-card">
+        <h4>Video Direction</h4>
+        <p>Discovery reveals: turn corner, GIANT TROLL. Drone shots showing scale against the forest canopy. Kids running toward trolls with joy. Seasonal changes: same troll in snow, spring blossoms, summer green, autumn gold.</p>
+      </div>
+      <div class="direction-card">
+        <h4>Typography</h4>
+        <p>Playful serif for headlines that feel like storybook titles. Organic, hand-drawn elements mixed with clean modern type. Earthy tones with pops of bright green and gold. Every word should feel like an invitation to explore.</p>
+      </div>
+      <div class="direction-card">
+        <h4>Tone of Voice</h4>
+        <p>Adventurous, playful, awe-struck. "You won't believe what's hiding in these woods." Speak to families and adventurers. Create a sense of quest. Make every visitor feel like an explorer.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- TAB 4: SHARED STRATEGY                                        -->
+<!-- ============================================================ -->
+<div class="tab-panel shared" id="tab-shared">
+
+  <div class="vision-hero" style="background: radial-gradient(ellipse at 30% 30%, rgba(139,69,19,0.06) 0%, transparent 40%), radial-gradient(ellipse at 50% 50%, rgba(201,168,76,0.08) 0%, transparent 40%), radial-gradient(ellipse at 70% 30%, rgba(27,77,62,0.06) 0%, transparent 40%), var(--midnight);">
+    <h2>Shared <span style="color:var(--gold)">Strategy</span></h2>
+    <p class="tagline" style="color:var(--gold-light)">The framework that unites all three campaigns.</p>
+  </div>
+
+  <!-- Content Pillars -->
+  <div class="section shared anim">
+    <div class="section-label">Content Pillars</div>
+    <div class="section-title">Four pillars. Three campaigns. One vision.</div>
+    <div class="divider"></div>
+    <div class="pillars-vision">
+      <div class="pillar-v anim anim-delay-1">
+        <div class="icon">&#127916;</div>
+        <h4>Immersion</h4>
+        <p>Cinematic walkthroughs, detail shots, POV videos that transport viewers</p>
+        <div class="goal">Make them feel they're already there</div>
+        <div class="campaign-apps">
+          <div class="campaign-app cabinet-app">Vault reveal</div>
+          <div class="campaign-app titanic-app">Deck walkthrough</div>
+          <div class="campaign-app trolls-app">Forest trail POV</div>
+        </div>
+      </div>
+      <div class="pillar-v anim anim-delay-2">
+        <div class="icon">&#128150;</div>
+        <h4>Emotion</h4>
+        <p>User reactions, family moments, awe-struck faces, genuine responses</p>
+        <div class="goal">Trigger emotional FOMO</div>
+        <div class="campaign-apps">
+          <div class="campaign-app cabinet-app">First sip reaction</div>
+          <div class="campaign-app titanic-app">Jaw-drop moments</div>
+          <div class="campaign-app trolls-app">Kids seeing trolls</div>
+        </div>
+      </div>
+      <div class="pillar-v anim anim-delay-3">
+        <div class="icon">&#9889;</div>
+        <h4>Experience</h4>
+        <p>Interactive elements, photo ops, sensory moments, shareable instants</p>
+        <div class="goal">Paint the complete picture</div>
+        <div class="campaign-apps">
+          <div class="campaign-app cabinet-app">Cocktail crafting</div>
+          <div class="campaign-app titanic-app">Artifact interaction</div>
+          <div class="campaign-app trolls-app">Troll scavenger hunt</div>
+        </div>
+      </div>
+      <div class="pillar-v anim anim-delay-4">
+        <div class="icon">&#128293;</div>
+        <h4>Urgency</h4>
+        <p>Countdown posts, capacity reminders, early access, limited windows</p>
+        <div class="goal">Convert interest to purchase NOW</div>
+        <div class="campaign-apps">
+          <div class="campaign-app cabinet-app">40 seats only</div>
+          <div class="campaign-app titanic-app">Limited engagement</div>
+          <div class="campaign-app trolls-app">Seasonal window</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Conversion Funnel -->
+  <div class="section shared anim">
+    <div class="section-label">Conversion Path</div>
+    <div class="section-title">From scroll to ticket purchase.</div>
+    <div class="divider"></div>
+    <div class="conversion-path">
+      <div class="conv-step">
+        <div class="dot">1</div>
+        <h5>Awareness</h5>
+        <p>15s video ads &amp; reels</p>
+        <p class="cta-text">"Swipe to discover"</p>
+      </div>
+      <div class="conv-step">
+        <div class="dot">2</div>
+        <h5>Consideration</h5>
+        <p>30s walkthroughs + carousels</p>
+        <p class="cta-text">"See the full experience"</p>
+      </div>
+      <div class="conv-step">
+        <div class="dot">3</div>
+        <h5>Decision</h5>
+        <p>60s story videos + retargeting</p>
+        <p class="cta-text">"Don't miss this"</p>
+      </div>
+      <div class="conv-step">
+        <div class="dot">4</div>
+        <h5>Conversion</h5>
+        <p>Carousel ads + pricing + UGC</p>
+        <p class="cta-text">"Book now"</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Success Metrics -->
+  <div class="section shared anim">
+    <div class="section-label">Success Metrics</div>
+    <div class="section-title">What we're tracking across all campaigns.</div>
+    <div class="divider"></div>
+    <div class="metrics-bar">
+      <div class="metric-v">
+        <div class="value">100K+</div>
+        <div class="label">Video views / campaign</div>
+        <div class="progress-wrap"><div class="progress-bar" style="--target-width: 85%;"></div></div>
+      </div>
+      <div class="metric-v">
+        <div class="value">3%+</div>
+        <div class="label">Engagement rate</div>
+        <div class="progress-wrap"><div class="progress-bar" style="--target-width: 70%;"></div></div>
+      </div>
+      <div class="metric-v">
+        <div class="value">5%</div>
+        <div class="label">Click to tickets</div>
+        <div class="progress-wrap"><div class="progress-bar" style="--target-width: 60%;"></div></div>
+      </div>
+      <div class="metric-v">
+        <div class="value">3:1</div>
+        <div class="label">Target ROAS</div>
+        <div class="progress-wrap"><div class="progress-bar" style="--target-width: 75%;"></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====== FOOTER ====== -->
+<footer class="footer">
+  <div class="footer-brand">AUROS AI</div>
+  <div class="footer-sub">The Imagine Team &mdash; Three Campaigns Vision Board &mdash; March 2026 &mdash; Confidential</div>
+</footer>
+
+<script>
+function switchTab(tab) {
+  // Remove all active states
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+
+  // Activate selected tab
+  const tabEl = document.getElementById('tab-' + tab);
+  if (tabEl) tabEl.classList.add('active');
+
+  const btn = document.querySelector('.tab-btn.' + tab);
+  if (btn) btn.classList.add('active');
+
+  // Scroll to tab nav
+  document.getElementById('tabNav').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+  // Re-trigger scroll animations for newly visible content
+  setTimeout(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.tab-panel.active .anim:not(.visible)').forEach(el => observer.observe(el));
+  }, 100);
+}
+
+// Initial scroll animations
+document.addEventListener('DOMContentLoaded', () => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('.anim').forEach(el => observer.observe(el));
+});
+</script>
+
+</body>
+</html>

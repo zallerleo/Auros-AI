@@ -1,0 +1,59 @@
+{
+  "company": "The Imagine Team",
+  "analysis_date": "2026-03-22",
+  "angles": [
+    {
+      "rank": 1,
+      "name": "Revenue Engine",
+      "tagline": "Exhibitions that generate millions, not just memories",
+      "target_audience": "IP owners and entertainment executives with $5M+ licensing budgets seeking measurable ROI from experiential activations",
+      "key_differentiator": "Proven track record generating quantifiable revenue through traveling exhibitions with major IP partnerships (Universal, Warner Bros, MGM)",
+      "emotional_hook": "Confidence in investment returns and brand value amplification",
+      "risk_level": "low",
+      "market_fit_score": 9
+    },
+    {
+      "rank": 2,
+      "name": "End-to-End Authority",
+      "tagline": "From concept sketch to opening day operations",
+      "target_audience": "Corporate decision-makers and venue operators who want single-source accountability for complex experiential projects",
+      "key_differentiator": "Complete service integration eliminating vendor coordination headaches and project management complexity",
+      "emotional_hook": "Relief from project management stress and confidence in seamless execution",
+      "risk_level": "low",
+      "market_fit_score": 8
+    },
+    {
+      "rank": 3,
+      "name": "IP Amplifier",
+      "tagline": "Transform intellectual property into physical goldmines",
+      "target_audience": "Entertainment studios and IP licensing executives looking to maximize property value through experiential extensions",
+      "key_differentiator": "Specialized expertise in translating beloved IP into profitable, touring physical experiences",
+      "emotional_hook": "Excitement about untapped revenue potential and brand expansion possibilities",
+      "risk_level": "medium",
+      "market_fit_score": 7
+    },
+    {
+      "rank": 4,
+      "name": "Experience Architects",
+      "tagline": "Engineering emotions through immersive design",
+      "target_audience": "Museum directors, cultural institutions, and experiential marketing managers seeking transformative visitor engagement",
+      "key_differentiator": "Storytelling-first design philosophy that creates measurable emotional impact and visitor satisfaction",
+      "emotional_hook": "Pride in creating meaningful, memorable experiences that resonate with audiences",
+      "risk_level": "medium",
+      "market_fit_score": 6
+    },
+    {
+      "rank": 5,
+      "name": "Touring Specialists",
+      "tagline": "Global exhibitions, local impact, proven logistics",
+      "target_audience": "International venue networks and exhibition distributors managing multi-city touring requirements",
+      "key_differentiator": "Operational expertise in complex touring logistics with established global venue relationships",
+      "emotional_hook": "Security in knowing complex international logistics are expertly managed",
+      "risk_level": "high",
+      "market_fit_score": 5
+    }
+  ],
+  "recommended_angle": "Revenue Engine",
+  "recommendation_reasoning": "The Revenue Engine angle directly addresses the biggest pain point for IP owners: proving ROI on experiential investments. With established partnerships with Universal, Warner Bros, and MGM, The Imagine Team has the credibility to own this positioning. The Harry Potter exhibition's 191K Instagram following demonstrates real audience engagement that translates to revenue. This angle transforms their service from a cost center to a profit driver, making budget conversations easier and creating premium pricing power.",
+  "alternative_conditions": "Choose 'End-to-End Authority' if competing primarily against fragmented vendor networks rather than other experiential agencies. Choose 'IP Amplifier' if the primary growth strategy focuses on expanding entertainment industry partnerships over diversifying into corporate and cultural clients."
+}

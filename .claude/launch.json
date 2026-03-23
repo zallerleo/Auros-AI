@@ -1,0 +1,24 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "portfolio-preview",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "8080", "--directory", "/tmp/auros_preview"],
+      "port": 8080
+    },
+    {
+      "name": "dashboard-preview",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "8081"],
+      "port": 8081
+    },
+    {
+      "name": "auros-dashboard",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--", "--host"],
+      "port": 3200,
+      "cwd": "/Users/leozaller/Desktop/Work /Leo's Gameplan/AUROS AI/system/dashboard"
+    }
+  ]
+}

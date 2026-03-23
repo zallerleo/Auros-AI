@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-auros-midnight text-auros-text;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(201, 168, 76, 0.08), transparent),
+      radial-gradient(ellipse 60% 40% at 80% 100%, rgba(59, 130, 246, 0.04), transparent);
+    min-height: 100vh;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #111118;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #2A2A3A;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3A3A4A;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-auros-card/80 backdrop-blur-xl border border-auros-border/50 rounded-2xl;
+    background-image: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 100%);
+  }
+
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300;
+  }
+  .glass-card-hover:hover {
+    @apply border-auros-border-light bg-auros-card-hover/90;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(201, 168, 76, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .gold-glow {
+    box-shadow: 0 0 15px rgba(201, 168, 76, 0.15), 0 0 45px rgba(201, 168, 76, 0.05);
+  }
+
+  .status-pulse {
+    @apply relative;
+  }
+  .status-pulse::before {
+    content: '';
+    @apply absolute inset-0 rounded-full animate-ping;
+    animation-duration: 2s;
+  }
+
+  .kpi-value {
+    @apply text-4xl font-bold tracking-tight;
+    background: linear-gradient(135deg, #E8E8F0 0%, #C9A84C 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .nav-link {
+    @apply px-4 py-2 text-sm font-medium text-auros-text-muted transition-all duration-200 relative;
+  }
+  .nav-link:hover {
+    @apply text-auros-text;
+  }
+  .nav-link.active {
+    @apply text-auros-gold;
+  }
+  .nav-link.active::after {
+    content: '';
+    @apply absolute bottom-0 left-2 right-2 h-0.5 bg-auros-gold rounded-full;
+  }
+}
+
+/* Recharts overrides */
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: #2A2A3A;
+}
+.recharts-text {
+  fill: #8888A0;
+  font-size: 12px;
+}

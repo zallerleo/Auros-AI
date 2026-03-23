@@ -1,0 +1,399 @@
+{
+  "company": "The Imagine Team",
+  "segmentation_date": "2026-03-22",
+  "total_segments": 6,
+  "segments": [
+    {
+      "id": 1,
+      "name": "Nostalgic Millennials",
+      "demographics": {
+        "age_range": "28-42",
+        "gender_skew": "55% female",
+        "income_bracket": "$50K-$120K household",
+        "location": "suburban and urban areas, major cities",
+        "education": "university educated, 70% have degrees"
+      },
+      "psychographics": {
+        "values": [
+          "authenticity",
+          "nostalgia",
+          "shared experiences",
+          "quality over quantity"
+        ],
+        "lifestyle": "established careers, disposable income for experiences, social media active",
+        "interests": [
+          "Harry Potter fandom",
+          "pop culture",
+          "immersive entertainment",
+          "photography",
+          "collecting"
+        ],
+        "media_consumption": [
+          "Instagram",
+          "Facebook",
+          "YouTube",
+          "streaming services",
+          "podcasts"
+        ],
+        "personality_traits": [
+          "nostalgic",
+          "detail-oriented",
+          "community-focused",
+          "experience-driven"
+        ]
+      },
+      "pain_points": [
+        "fear of disappointing childhood memories",
+        "limited time for experiences",
+        "wanting authentic not commercialized content",
+        "difficulty finding adult-appropriate nostalgic experiences"
+      ],
+      "content_preferences": [
+        "behind-the-scenes videos",
+        "detailed prop showcases",
+        "comparison to films",
+        "visitor testimonials",
+        "Instagram carousels with multiple angles"
+      ],
+      "preferred_platforms": [
+        "Instagram",
+        "Facebook",
+        "YouTube",
+        "TikTok"
+      ],
+      "messaging_angle": "Step back into the magic you grew up loving \u2014 now with adult appreciation for the craft",
+      "hook_style": "nostalgic visual reveals and 'remember this moment from the films' content",
+      "cta_style": "exclusivity and limited-time access \u2014 'Book your return to Hogwarts'",
+      "estimated_segment_size": "35% of total addressable audience"
+    },
+    {
+      "id": 2,
+      "name": "Family Experience Makers",
+      "demographics": {
+        "age_range": "32-48",
+        "gender_skew": "65% female",
+        "income_bracket": "$60K-$150K household",
+        "location": "suburban areas within 2 hours of major cities",
+        "education": "mix of college and high school educated"
+      },
+      "psychographics": {
+        "values": [
+          "family bonding",
+          "creating memories",
+          "educational entertainment",
+          "value for money"
+        ],
+        "lifestyle": "busy parents, plan activities around school schedules, research before purchasing",
+        "interests": [
+          "family activities",
+          "children's education",
+          "photography",
+          "travel planning",
+          "budgeting"
+        ],
+        "media_consumption": [
+          "Facebook groups",
+          "Instagram",
+          "Pinterest",
+          "parenting blogs",
+          "YouTube reviews"
+        ],
+        "personality_traits": [
+          "planners",
+          "budget-conscious",
+          "safety-focused",
+          "memory-makers"
+        ]
+      },
+      "pain_points": [
+        "finding age-appropriate activities for mixed age groups",
+        "justifying experience costs",
+        "limited weekend availability",
+        "managing children's expectations"
+      ],
+      "content_preferences": [
+        "family photos at exhibits",
+        "age recommendation guides",
+        "what to expect videos",
+        "pricing transparency",
+        "accessibility information"
+      ],
+      "preferred_platforms": [
+        "Facebook",
+        "Instagram",
+        "Pinterest",
+        "Google Reviews"
+      ],
+      "messaging_angle": "Create magical family memories that kids will talk about for years",
+      "hook_style": "children's wonder and excitement captured in authentic moments",
+      "cta_style": "value-focused with family packages \u2014 'Give your family the gift of magic'",
+      "estimated_segment_size": "28% of total addressable audience"
+    },
+    {
+      "id": 3,
+      "name": "Date Night Adventurers",
+      "demographics": {
+        "age_range": "22-35",
+        "gender_skew": "52% female",
+        "income_bracket": "$40K-$90K combined",
+        "location": "urban areas, city centers",
+        "education": "university educated, young professionals"
+      },
+      "psychographics": {
+        "values": [
+          "unique experiences",
+          "social sharing",
+          "relationship building",
+          "adventure"
+        ],
+        "lifestyle": "active social lives, frequent date nights, experience over possessions mindset",
+        "interests": [
+          "pop culture",
+          "photography",
+          "social media",
+          "trying new activities",
+          "entertainment"
+        ],
+        "media_consumption": [
+          "Instagram",
+          "TikTok",
+          "Snapchat",
+          "dating apps",
+          "streaming platforms"
+        ],
+        "personality_traits": [
+          "spontaneous",
+          "social",
+          "image-conscious",
+          "experience-seekers"
+        ]
+      },
+      "pain_points": [
+        "finding Instagram-worthy date ideas",
+        "avoiding crowded family activities",
+        "limited budget for frequent experiences",
+        "wanting something different from typical dinner dates"
+      ],
+      "content_preferences": [
+        "couple photos in magical settings",
+        "romantic lighting showcases",
+        "date night outfit inspiration",
+        "less crowded time recommendations"
+      ],
+      "preferred_platforms": [
+        "Instagram",
+        "TikTok",
+        "Snapchat"
+      ],
+      "messaging_angle": "Skip the typical dinner date \u2014 create magic together",
+      "hook_style": "romantic visuals and couple moments in stunning exhibition settings",
+      "cta_style": "romantic urgency \u2014 'Book your magical date night' with evening time slots",
+      "estimated_segment_size": "18% of total addressable audience"
+    },
+    {
+      "id": 4,
+      "name": "Cultural Experience Collectors",
+      "demographics": {
+        "age_range": "45-65",
+        "gender_skew": "58% female",
+        "income_bracket": "$70K-$200K+ household",
+        "location": "affluent suburbs, cultural districts",
+        "education": "highly educated, graduate degrees common"
+      },
+      "psychographics": {
+        "values": [
+          "cultural enrichment",
+          "craftsmanship appreciation",
+          "learning",
+          "quality experiences"
+        ],
+        "lifestyle": "museum members, theater subscribers, travel frequently, disposable income for culture",
+        "interests": [
+          "film history",
+          "set design",
+          "costume design",
+          "British culture",
+          "storytelling craft"
+        ],
+        "media_consumption": [
+          "cultural magazines",
+          "PBS",
+          "documentary channels",
+          "LinkedIn",
+          "email newsletters"
+        ],
+        "personality_traits": [
+          "intellectually curious",
+          "quality-focused",
+          "detail-oriented",
+          "culturally sophisticated"
+        ]
+      },
+      "pain_points": [
+        "finding exhibitions with educational depth",
+        "avoiding overly commercial experiences",
+        "wanting behind-the-scenes access",
+        "seeking less crowded viewing times"
+      ],
+      "content_preferences": [
+        "detailed craftmanship videos",
+        "designer interviews",
+        "historical context",
+        "technical production details",
+        "expert commentary"
+      ],
+      "preferred_platforms": [
+        "Facebook",
+        "LinkedIn",
+        "YouTube",
+        "Email"
+      ],
+      "messaging_angle": "Discover the artistry and craftsmanship behind cinematic magic",
+      "hook_style": "expert insights and detailed craftsmanship reveals",
+      "cta_style": "exclusive access and educational value \u2014 'Reserve your cultural experience'",
+      "estimated_segment_size": "12% of total addressable audience"
+    },
+    {
+      "id": 5,
+      "name": "Tourist Experience Hunters",
+      "demographics": {
+        "age_range": "25-55",
+        "gender_skew": "balanced",
+        "income_bracket": "$40K-$120K with travel budgets",
+        "location": "visiting from other cities/countries",
+        "education": "varied, skews college educated"
+      },
+      "psychographics": {
+        "values": [
+          "authentic local experiences",
+          "memorable travel moments",
+          "cultural immersion",
+          "social sharing"
+        ],
+        "lifestyle": "active travelers, research destinations heavily, experience-focused spending",
+        "interests": [
+          "travel",
+          "photography",
+          "local culture",
+          "unique attractions",
+          "social media documentation"
+        ],
+        "media_consumption": [
+          "travel blogs",
+          "Instagram",
+          "TripAdvisor",
+          "Google Maps",
+          "travel vlogs"
+        ],
+        "personality_traits": [
+          "adventurous",
+          "research-oriented",
+          "budget-conscious",
+          "socially active"
+        ]
+      },
+      "pain_points": [
+        "limited time in destination",
+        "finding must-see attractions",
+        "avoiding tourist traps",
+        "maximizing travel budget"
+      ],
+      "content_preferences": [
+        "visitor testimonials",
+        "what makes this unique to the location",
+        "photo opportunity highlights",
+        "time recommendations",
+        "nearby attraction combinations"
+      ],
+      "preferred_platforms": [
+        "Instagram",
+        "Google Reviews",
+        "TripAdvisor",
+        "YouTube"
+      ],
+      "messaging_angle": "The must-see magical experience you can't find anywhere else",
+      "hook_style": "unique location-specific elements and 'only here' experiences",
+      "cta_style": "urgency and exclusivity \u2014 'Don't miss this once-in-a-lifetime experience'",
+      "estimated_segment_size": "15% of total addressable audience"
+    },
+    {
+      "id": 6,
+      "name": "Educational Group Organizers",
+      "demographics": {
+        "age_range": "28-55",
+        "gender_skew": "70% female",
+        "income_bracket": "institutional budgets, $35K-$80K personal income",
+        "location": "school districts within 3 hours travel",
+        "education": "education degrees, teaching credentials"
+      },
+      "psychographics": {
+        "values": [
+          "student engagement",
+          "educational value",
+          "safety",
+          "budget responsibility"
+        ],
+        "lifestyle": "academic calendar driven, group coordination focused, approval process navigators",
+        "interests": [
+          "education",
+          "student development",
+          "curriculum integration",
+          "group management",
+          "budget optimization"
+        ],
+        "media_consumption": [
+          "educational newsletters",
+          "Facebook teacher groups",
+          "Pinterest",
+          "professional development platforms"
+        ],
+        "personality_traits": [
+          "organized",
+          "safety-conscious",
+          "budget-minded",
+          "student-focused"
+        ]
+      },
+      "pain_points": [
+        "justifying educational value",
+        "managing group logistics",
+        "staying within budget",
+        "ensuring age-appropriate content",
+        "coordinating schedules"
+      ],
+      "content_preferences": [
+        "educational tie-ins",
+        "group logistics information",
+        "safety protocols",
+        "curriculum connections",
+        "teacher testimonials"
+      ],
+      "preferred_platforms": [
+        "Email",
+        "Facebook",
+        "Educational websites",
+        "Professional networks"
+      ],
+      "messaging_angle": "Bring learning to life with an unforgettable educational adventure",
+      "hook_style": "student engagement and educational outcome focused",
+      "cta_style": "educational value and group discounts \u2014 'Book your class adventure'",
+      "estimated_segment_size": "8% of total addressable audience"
+    }
+  ],
+  "cross_segment_insights": [
+    "Instagram dominates across 5 of 6 segments \u2014 prioritize visual content strategy",
+    "Behind-the-scenes content appeals to 4 segments \u2014 high-value content type",
+    "Authenticity matters more than polish across all segments",
+    "Photography opportunities are universal motivators",
+    "Time-sensitive messaging works across segments but with different urgency drivers",
+    "Educational angle can be adapted for multiple segments beyond just schools"
+  ],
+  "recommended_priority_order": [
+    "Nostalgic Millennials",
+    "Family Experience Makers",
+    "Date Night Adventurers",
+    "Tourist Experience Hunters",
+    "Cultural Experience Collectors",
+    "Educational Group Organizers"
+  ]
+}
