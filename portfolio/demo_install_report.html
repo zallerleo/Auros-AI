@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Install Cost Analysis — Immersive Worlds: The Exhibition | AUROS AI</title>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+        background: #08080c;
+        color: #f0ece4;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        line-height: 1.6;
+        padding: 40px 20px;
+    }
+    .container { max-width: 1100px; margin: 0 auto; }
+
+    /* Header */
+    .report-header {
+        border-bottom: 2px solid #c9a84c;
+        padding-bottom: 30px;
+        margin-bottom: 40px;
+    }
+    .brand { color: #c9a84c; font-size: 14px; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 8px; }
+    h1 { font-size: 32px; font-weight: 700; margin-bottom: 4px; }
+    .meta { color: #8a8780; font-size: 15px; }
+    .meta span { margin-right: 24px; }
+
+    /* Summary Cards */
+    .summary-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+        margin-bottom: 50px;
+    }
+    .card {
+        background: #111118;
+        border: 1px solid #222230;
+        border-radius: 12px;
+        padding: 24px;
+    }
+    .card-label { color: #8a8780; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; }
+    .card-value { font-size: 28px; font-weight: 700; margin-top: 6px; }
+    .card-sub { font-size: 13px; color: #8a8780; margin-top: 2px; }
+    .card-value.gold { color: #c9a84c; }
+    .card-value.red { color: #e85454; }
+    .card-value.green { color: #4caf50; }
+
+    /* Sections */
+    .report-section {
+        margin-bottom: 50px;
+    }
+    .report-section h2 {
+        font-size: 20px;
+        color: #c9a84c;
+        border-bottom: 1px solid #222230;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+    }
+
+    /* Tables */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px;
+    }
+    th {
+        text-align: left;
+        padding: 12px 16px;
+        background: #111118;
+        color: #c9a84c;
+        font-weight: 600;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    th.num, td.num { text-align: right; }
+    td {
+        padding: 12px 16px;
+        border-bottom: 1px solid #1a1a24;
+    }
+    tr:hover td { background: #0d0d14; }
+    .waste-high { color: #e85454; font-weight: 600; }
+    .waste-med { color: #c9a84c; }
+    .waste-low { color: #4caf50; }
+
+    /* Top Waste Items */
+    .waste-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 16px 0;
+        border-bottom: 1px solid #1a1a24;
+    }
+    .waste-rank {
+        background: #e85454;
+        color: #fff;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 14px;
+        flex-shrink: 0;
+    }
+    .waste-detail { flex: 1; }
+    .waste-detail strong { font-size: 15px; }
+    .waste-amount { float: right; color: #e85454; font-weight: 700; font-size: 16px; }
+    .waste-note { color: #8a8780; font-size: 13px; margin-top: 4px; }
+
+    /* Recommendations */
+    .rec {
+        display: flex;
+        gap: 16px;
+        padding: 18px 20px;
+        background: #111118;
+        border: 1px solid #222230;
+        border-radius: 10px;
+        margin-bottom: 12px;
+        border-left: 3px solid #c9a84c;
+    }
+    .rec-num {
+        color: #c9a84c;
+        font-weight: 700;
+        font-size: 18px;
+        flex-shrink: 0;
+        width: 24px;
+    }
+    .rec-text { font-size: 14px; line-height: 1.7; }
+
+    /* Waste Drivers */
+    .driver-group {
+        margin-bottom: 20px;
+    }
+    .driver-group h4 {
+        font-size: 15px;
+        margin-bottom: 8px;
+    }
+    .driver-total {
+        color: #e85454;
+        font-weight: 400;
+        font-size: 13px;
+        margin-left: 8px;
+    }
+    .driver-group ul {
+        list-style: none;
+        padding-left: 0;
+    }
+    .driver-group li {
+        padding: 6px 0 6px 20px;
+        border-left: 2px solid #222230;
+        font-size: 13px;
+        color: #aaa8a0;
+        margin-bottom: 4px;
+    }
+
+    /* AI Analysis */
+    .ai-analysis {
+        background: #111118;
+        border: 1px solid #c9a84c33;
+        border-radius: 10px;
+        padding: 24px;
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    /* Footer */
+    .report-footer {
+        border-top: 1px solid #222230;
+        padding-top: 20px;
+        color: #555;
+        font-size: 12px;
+        text-align: center;
+    }
+    .report-footer .brand-mark { color: #c9a84c; }
+
+    @media print {
+        body { background: #fff; color: #111; padding: 20px; }
+        .card { border: 1px solid #ddd; background: #f9f9f9; }
+        .waste-high { color: #c0392b; }
+        .waste-med { color: #e67e22; }
+        .card-value.gold, .brand, h2, .rec-num { color: #b8941f; }
+    }
+</style>
+</head>
+<body>
+<div class="container">
+
+    <header class="report-header">
+        <div class="brand">AUROS AI &mdash; Install Cost Analysis</div>
+        <h1>Immersive Worlds: The Exhibition</h1>
+        <div class="meta">
+            <span>McCormick Place, Chicago — Halls F1-F3</span>
+            <span>Install: 2026-03-15</span>
+            <span>2 moves/year</span>
+        </div>
+    </header>
+
+    <div class="summary-grid">
+        <div class="card">
+            <div class="card-label">Total Install Cost</div>
+            <div class="card-value">$708,340</div>
+        </div>
+        <div class="card">
+            <div class="card-label">Optimal Benchmark</div>
+            <div class="card-value green">$544,942</div>
+        </div>
+        <div class="card">
+            <div class="card-label">Identified Waste</div>
+            <div class="card-value red">$163,398</div>
+            <div class="card-sub">23.1% of total spend</div>
+        </div>
+        <div class="card">
+            <div class="card-label">Projected Annual Savings</div>
+            <div class="card-value gold">$326,796</div>
+            <div class="card-sub">across 2 moves/year</div>
+        </div>
+    </div>
+
+    <section class="report-section">
+        <h2>Cost Breakdown by Category</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th class="num">Actual Spend</th>
+                    <th class="num">Optimal</th>
+                    <th class="num">Waste</th>
+                    <th class="num">Waste %</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Labor (Install Crew)</td>
+                <td class="num">$218,964</td>
+                <td class="num">$176,361</td>
+                <td class="num waste-high">$42,603</td>
+                <td class="num waste-high">19.5%</td>
+            </tr>
+            <tr>
+                <td>Transportation</td>
+                <td class="num">$152,300</td>
+                <td class="num">$114,414</td>
+                <td class="num waste-high">$37,886</td>
+                <td class="num waste-high">24.9%</td>
+            </tr>
+            <tr>
+                <td>Rush Orders</td>
+                <td class="num">$32,160</td>
+                <td class="num">$10,084</td>
+                <td class="num waste-high">$22,076</td>
+                <td class="num waste-high">68.6%</td>
+            </tr>
+            <tr>
+                <td>Consumables</td>
+                <td class="num">$61,046</td>
+                <td class="num">$40,269</td>
+                <td class="num waste-high">$20,777</td>
+                <td class="num waste-high">34.0%</td>
+            </tr>
+            <tr>
+                <td>Venue-Specific Costs</td>
+                <td class="num">$75,200</td>
+                <td class="num">$59,444</td>
+                <td class="num waste-high">$15,756</td>
+                <td class="num waste-high">21.0%</td>
+            </tr>
+            <tr>
+                <td>Equipment Rentals</td>
+                <td class="num">$53,670</td>
+                <td class="num">$40,870</td>
+                <td class="num waste-high">$12,800</td>
+                <td class="num waste-high">23.8%</td>
+            </tr>
+            <tr>
+                <td>Vendor / Contractor</td>
+                <td class="num">$115,000</td>
+                <td class="num">$103,500</td>
+                <td class="num waste-med">$11,500</td>
+                <td class="num waste-med">10.0%</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section class="report-section">
+        <h2>Top 5 Waste Areas</h2>
+        
+            <div class="waste-item">
+                <div class="waste-rank">1</div>
+                <div class="waste-detail">
+                    <strong>53' trailers — full show move (32 trucks)</strong>
+                    <span class="waste-amount">$18,656</span>
+                    <p class="waste-note">Avg 82% capacity — 6 trucks under 60%</p>
+                </div>
+            </div>
+            <div class="waste-item">
+                <div class="waste-rank">2</div>
+                <div class="waste-detail">
+                    <strong>Install technicians — overtime (32 crew x avg 3hr OT x 5 days)</strong>
+                    <span class="waste-amount">$9,120</span>
+                    <p class="waste-note">$9,120 in OT premium — schedule overrun from late truck arrivals</p>
+                </div>
+            </div>
+            <div class="waste-item">
+                <div class="waste-rank">3</div>
+                <div class="waste-detail">
+                    <strong>Deadhead return — empty trucks to depot</strong>
+                    <span class="waste-amount">$8,800</span>
+                    <p class="waste-note">8 trucks returned empty — could backhaul or consolidate</p>
+                </div>
+            </div>
+            <div class="waste-item">
+                <div class="waste-rank">4</div>
+                <div class="waste-detail">
+                    <strong>Crew idle time — waiting on deliveries/access</strong>
+                    <span class="waste-amount">$8,500</span>
+                    <p class="waste-note">Estimated 220 crew-hours lost to waiting; 100% avoidable</p>
+                </div>
+            </div>
+            <div class="waste-item">
+                <div class="waste-rank">5</div>
+                <div class="waste-detail">
+                    <strong>Install technicians — straight time (32 crew x 10hr x 5 days)</strong>
+                    <span class="waste-amount">$7,296</span>
+                    <p class="waste-note">Base install crew — standard rate</p>
+                </div>
+            </div>
+    </section>
+
+    <section class="report-section">
+        <h2>Waste Drivers</h2>
+        
+            <div class="driver-group">
+                <h4>Labor (Install Crew) <span class="driver-total">$42,603 waste</span></h4>
+                <ul><li>Install technicians — overtime (32 crew x avg 3hr OT x 5 days): $9,120 waste — $9,120 in OT premium — schedule overrun from late truck arrivals</li><li>Crew idle time — waiting on deliveries/access: $8,500 waste — Estimated 220 crew-hours lost to waiting; 100% avoidable</li><li>Install technicians — straight time (32 crew x 10hr x 5 days): $7,296 waste — Base install crew — standard rate</li></ul>
+            </div>
+            <div class="driver-group">
+                <h4>Transportation <span class="driver-total">$37,886 waste</span></h4>
+                <ul><li>53' trailers — full show move (32 trucks): $18,656 waste — Avg 82% capacity — 6 trucks under 60%</li><li>Deadhead return — empty trucks to depot: $8,800 waste — 8 trucks returned empty — could backhaul or consolidate</li><li>53' trailers — overflow/late add (5 trucks): $3,410 waste — Booked 10 days late, premium rate. 3 trucks at <50% capacity</li></ul>
+            </div>
+            <div class="driver-group">
+                <h4>Rush Orders <span class="driver-total">$22,076 waste</span></h4>
+                <ul><li>Rush/overnight shipping charges (all emergency orders): $6,800 waste — 100% avoidable with proper advance ordering</li><li>Same-day hardware store run (x4 trips): $4,680 waste — Missing fasteners, brackets; retail markup + crew time for pickup</li><li>Emergency electrical supplies (breakers, wire, connectors): $2,400 waste — Venue power config different from advance; emergency purchases</li></ul>
+            </div>
+            <div class="driver-group">
+                <h4>Consumables <span class="driver-total">$20,777 waste</span></h4>
+                <ul><li>Heavy-duty utility carts: $2,835 waste — Purchased new each move; should be company-owned rolling stock</li><li>Duvetyne (bolt, 54" wide, 50yd): $2,520 waste — Flame-retardant fabric bought retail; wholesale is $195/bolt</li><li>Polyethylene foam sheets (4'x8'x2"): $2,430 waste — Rush order from local plastics supplier at 47% markup</li></ul>
+            </div>
+            <div class="driver-group">
+                <h4>Venue-Specific Costs <span class="driver-total">$15,756 waste</span></h4>
+                <ul><li>Venue rigging — motor points (48 points): $3,600 waste — McCormick premium rate; advance booking saves 18%</li><li>Dedicated internet (1Gbps, 7 days): $3,000 waste — Venue exclusive provider; no outside ISP allowed</li><li>Venue power — 1200A 3-phase service: $2,500 waste — Rush power order; standard advance rate is $14K</li></ul>
+            </div>
+            <div class="driver-group">
+                <h4>Equipment Rentals <span class="driver-total">$12,800 waste</span></h4>
+                <ul><li>Scaffolding package: $3,500 waste — Venue-exclusive vendor; no competitive bid</li><li>Scissor lifts (6 units x 7 days): $3,150 waste — Daily rate; weekly rate would save 26%</li><li>Boom lifts (4 units x 5 days): $1,700 waste — No volume discount negotiated</li></ul>
+            </div>
+            <div class="driver-group">
+                <h4>Vendor / Contractor <span class="driver-total">$11,500 waste</span></h4>
+                <ul><li>Scenic installation contractor: $4,000 waste — Single-source; no competitive bid in 2 years</li><li>AV systems integration: $3,000 waste — Scope creep added $3K during install</li><li>Large-format graphics installation: $2,500 waste — Re-prints on-site due to damage in transit: $2,500</li></ul>
+            </div>
+    </section>
+
+    <section class="report-section">
+        <h2>Recommendations</h2>
+        
+            <div class="rec">
+                <div class="rec-num">1</div>
+                <div class="rec-text">LABOR: Save $42,603 by optimizing crew scheduling. Stagger call times by department, reduce overtime through better advance planning, and cross-train crew to reduce idle time.</div>
+            </div>
+            <div class="rec">
+                <div class="rec-num">2</div>
+                <div class="rec-text">TRANSPORTATION: Optimize truck loading to save $37,886. Use load planning software to maximize cubic utilization. Consolidate partial loads and eliminate deadhead runs.</div>
+            </div>
+            <div class="rec">
+                <div class="rec-num">3</div>
+                <div class="rec-text">RUSH ORDERS: Eliminate $22,076 in markup by pre-ordering consumables 3-4 weeks before each move. Maintain a rolling inventory of high-turnover items (tape, cable, foam, hardware).</div>
+            </div>
+            <div class="rec">
+                <div class="rec-num">4</div>
+                <div class="rec-text">CONSUMABLES: Reduce waste by $20,777 through standardized kitting, per-department allocation tracking, and bulk purchasing agreements with 2-3 preferred vendors.</div>
+            </div>
+            <div class="rec">
+                <div class="rec-num">5</div>
+                <div class="rec-text">VENUE COSTS: Save $15,756 by negotiating venue packages upfront, sharing rigging/power infrastructure across departments, and advance-permitting to avoid rush fees.</div>
+            </div>
+            <div class="rec">
+                <div class="rec-num">6</div>
+                <div class="rec-text">EQUIPMENT RENTALS: Save $12,800 by negotiating annual rental agreements, purchasing frequently-rented items, and coordinating rental periods to avoid overlap charges.</div>
+            </div>
+            <div class="rec">
+                <div class="rec-num">7</div>
+                <div class="rec-text">VENDORS: Save $11,500 by rebidding contracts annually, bundling services, and establishing preferred vendor programs with volume commitments.</div>
+            </div>
+    </section>
+
+    
+
+    <footer class="report-footer">
+        <span class="brand-mark">AUROS AI</span> &mdash; Install Cost Analysis Report &mdash; Generated March 24, 2026 at 17:50
+    </footer>
+
+</div>
+</body>
+</html>

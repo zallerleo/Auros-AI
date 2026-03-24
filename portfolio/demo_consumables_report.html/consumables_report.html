@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AUROS AI — Consumables Order Report</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #08080c;
+            color: #f0ece4;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            padding: 40px;
+            line-height: 1.6;
+        }
+        .header {
+            border-bottom: 2px solid #c9a84c;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            color: #c9a84c;
+            font-size: 28px;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+        .header .timestamp {
+            color: #888;
+            font-size: 13px;
+            margin-top: 4px;
+        }
+        h2 {
+            color: #c9a84c;
+            font-size: 20px;
+            font-weight: 400;
+            margin: 30px 0 15px 0;
+            letter-spacing: 1px;
+        }
+        h2 .subtitle {
+            color: #888;
+            font-size: 14px;
+            font-weight: 300;
+        }
+        h3 {
+            color: #c9a84c;
+            font-size: 16px;
+            font-weight: 400;
+            margin: 20px 0 10px 0;
+        }
+        .venue-params {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+        .param-card {
+            background: #111118;
+            border: 1px solid #222;
+            border-radius: 6px;
+            padding: 14px 18px;
+        }
+        .param-card .param-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #888;
+        }
+        .param-card .param-value {
+            font-size: 22px;
+            color: #c9a84c;
+            font-weight: 300;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th {
+            background: #111118;
+            color: #c9a84c;
+            font-weight: 400;
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 1px;
+            padding: 12px 10px;
+            text-align: left;
+            border-bottom: 1px solid #333;
+        }
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #1a1a22;
+            font-size: 14px;
+        }
+        tr:hover td {
+            background: #111118;
+        }
+        td.warn, td[class="warn"] {
+            color: #e6a817;
+            font-weight: 600;
+        }
+        td.danger, td[class="danger"] {
+            color: #e04040;
+            font-weight: 600;
+        }
+        .rush-total {
+            background: #1a1018;
+            border: 1px solid #e04040;
+            border-radius: 6px;
+            padding: 14px 20px;
+            font-size: 16px;
+            color: #e04040;
+            margin: 10px 0 20px 0;
+        }
+        .patterns {
+            list-style: none;
+            padding: 0;
+        }
+        .patterns li {
+            background: #111118;
+            border-left: 3px solid #c9a84c;
+            padding: 10px 16px;
+            margin-bottom: 8px;
+            border-radius: 0 4px 4px 0;
+            font-size: 14px;
+        }
+        .savings-box {
+            background: #0a1a0a;
+            border: 1px solid #2a6a2a;
+            border-radius: 8px;
+            padding: 24px;
+            margin: 20px 0;
+        }
+        .savings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+        .savings-item {
+            text-align: center;
+        }
+        .savings-item .savings-label {
+            display: block;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #888;
+            margin-bottom: 4px;
+        }
+        .savings-item .savings-value {
+            font-size: 28px;
+            font-weight: 300;
+            color: #f0ece4;
+        }
+        .savings-item.highlight .savings-value {
+            color: #4CAF50;
+            font-weight: 400;
+        }
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+            font-size: 12px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>AUROS AI &mdash; Consumables Order Report</h1>
+        <div class="timestamp">Generated 2026-03-24T17:51:13.481417</div>
+    </div>
+
+    <h2>Venue Parameters</h2>
+    <div class="venue-params">
+        <div class="param-card">
+            <div class="param-label">Square Footage</div>
+            <div class="param-value">40,000</div>
+        </div>
+        <div class="param-card">
+            <div class="param-label">Rooms / Zones</div>
+            <div class="param-value">15</div>
+        </div>
+        <div class="param-card">
+            <div class="param-label">Exhibit Pieces</div>
+            <div class="param-value">200</div>
+        </div>
+        <div class="param-card">
+            <div class="param-label">Venue Type</div>
+            <div class="param-value" style="font-size:16px">Convention Center</div>
+        </div>
+        <div class="param-card">
+            <div class="param-label">Layout Complexity</div>
+            <div class="param-value" style="font-size:16px">Moderate</div>
+        </div>
+        <div class="param-card">
+            <div class="param-label">Venue Condition</div>
+            <div class="param-value" style="font-size:16px">Good</div>
+        </div>
+        <div class="param-card">
+            <div class="param-label">Dock Distance</div>
+            <div class="param-value">350 ft</div>
+        </div>
+    </div>
+
+    <h2>Order Recommendation</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Qty</th>
+                <th>Unit</th>
+                <th>Buffer</th>
+                <th>Unit Cost</th>
+                <th>Line Total</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Gaffer Tape</td>
+            <td style="text-align:center">36</td>
+            <td style="text-align:center">rolls</td>
+            <td style="text-align:center">10%</td>
+            <td style="text-align:right">$14.50</td>
+            <td style="text-align:right">$522.00</td>
+        </tr>
+        <tr>
+            <td>Spike Tape</td>
+            <td style="text-align:center">50</td>
+            <td style="text-align:center">rolls</td>
+            <td style="text-align:center">10%</td>
+            <td style="text-align:right">$6.75</td>
+            <td style="text-align:right">$337.50</td>
+        </tr>
+        <tr>
+            <td>Double-Sided Tape</td>
+            <td style="text-align:center">33</td>
+            <td style="text-align:center">rolls</td>
+            <td style="text-align:center">10%</td>
+            <td style="text-align:right">$8.25</td>
+            <td style="text-align:right">$272.25</td>
+        </tr>
+        <tr>
+            <td>Masking Tape</td>
+            <td style="text-align:center">16</td>
+            <td style="text-align:center">rolls</td>
+            <td style="text-align:center">10%</td>
+            <td style="text-align:right">$5.50</td>
+            <td style="text-align:right">$88.00</td>
+        </tr>
+        <tr>
+            <td>Drywall Screws</td>
+            <td style="text-align:center">50</td>
+            <td style="text-align:center">boxes (100ct)</td>
+            <td style="text-align:center">10%</td>
+            <td style="text-align:right">$9.80</td>
+            <td style="text-align:right">$490.00</td>
+        </tr>
+        <tr>
+            <td>Wood Screws (assorted)</td>
+            <td style="text-align:center">25</td>
+            <td style="text-align:center">boxes (100ct)</td>
+            <td style="text-align:center">10%</td>
+            <td style="text-align:right">$11.50</td>
+            <td style="text-align:right">$287.50</td>
+        </tr>
+        <tr>
+            <td>Machine Screws / Bolts</td>
+            <td style="text-align:center">14</td>
+            <td style="text-align:center">boxes (50ct)</td>
+            <td style="text-align:center">15%</td>
+            <td style="text-align:right">$13.25</td>
+            <td style="text-align:right">$185.50</td>
+        </tr>
+        <tr>
+            <td>Protective Foam Wrap</td>
+            <td style="text-align:center">132</td>
+            <td style="text-align:center">sheets (4x8 ft)</td>
+            <td style="text-align:center">10%</td>
+            <td style="text-align:right">$7.40</td>
+            <td style="text-align:right">$976.80</td>
+        </tr>
+        <tr>
+            <td>Display Padding / Cushion</td>
+            <td style="text-align:center">66</td>
+            <td style="text-align:center">sheets (4x8 ft)</td>
+            <td style="text-align:center">10%</td>
+            <td style="text-align:right">$9.20</td>
+            <td style="text-align:right">$607.20</td>
+        </tr>
+        <tr>
+            <td>Utility Carts</td>
+            <td style="text-align:center">6</td>
+            <td style="text-align:center">units</td>
+            <td style="text-align:center">15%</td>
+            <td style="text-align:right">$185.00</td>
+            <td style="text-align:right">$1,110.00</td>
+        </tr>
+        <tr>
+            <td>Shipping Crates</td>
+            <td style="text-align:center">53</td>
+            <td style="text-align:center">units</td>
+            <td style="text-align:center">5%</td>
+            <td style="text-align:right">$65.00</td>
+            <td style="text-align:right">$3,445.00</td>
+        </tr>
+        <tr>
+            <td>Cat-6 Cable</td>
+            <td style="text-align:center">1380</td>
+            <td style="text-align:center">feet</td>
+            <td style="text-align:center">15%</td>
+            <td style="text-align:right">$0.18</td>
+            <td style="text-align:right">$248.40</td>
+        </tr>
+        <tr>
+            <td>Paint / Touch-up</td>
+            <td style="text-align:center">4</td>
+            <td style="text-align:center">gallons</td>
+            <td style="text-align:center">10%</td>
+            <td style="text-align:right">$38.00</td>
+            <td style="text-align:right">$152.00</td>
+        </tr>
+        <tr>
+            <td>Zip Ties</td>
+            <td style="text-align:center">25</td>
+            <td style="text-align:center">packs (100ct)</td>
+            <td style="text-align:center">10%</td>
+            <td style="text-align:right">$4.50</td>
+            <td style="text-align:right">$112.50</td>
+        </tr>
+        <tr>
+            <td>Velcro Strips</td>
+            <td style="text-align:center">44</td>
+            <td style="text-align:center">packs (25ct)</td>
+            <td style="text-align:center">10%</td>
+            <td style="text-align:right">$8.90</td>
+            <td style="text-align:right">$391.60</td>
+        </tr>
+        <tr>
+            <td>Cable Management (raceways, clips)</td>
+            <td style="text-align:center">40</td>
+            <td style="text-align:center">kits</td>
+            <td style="text-align:center">10%</td>
+            <td style="text-align:right">$22.00</td>
+            <td style="text-align:right">$880.00</td>
+        </tr>
+        <tr>
+            <td>Batteries — AA</td>
+            <td style="text-align:center">19</td>
+            <td style="text-align:center">packs (24ct)</td>
+            <td style="text-align:center">15%</td>
+            <td style="text-align:right">$14.00</td>
+            <td style="text-align:right">$266.00</td>
+        </tr>
+        <tr>
+            <td>Batteries — 9V</td>
+            <td style="text-align:center">10</td>
+            <td style="text-align:center">packs (8ct)</td>
+            <td style="text-align:center">15%</td>
+            <td style="text-align:right">$16.50</td>
+            <td style="text-align:right">$165.00</td>
+        </tr>
+        <tr>
+            <td>Cleaning Supplies (general)</td>
+            <td style="text-align:center">7</td>
+            <td style="text-align:center">kits</td>
+            <td style="text-align:center">10%</td>
+            <td style="text-align:right">$28.00</td>
+            <td style="text-align:right">$196.00</td>
+        </tr>
+        <tr>
+            <td>Glass / Screen Cleaner</td>
+            <td style="text-align:center">11</td>
+            <td style="text-align:center">bottles</td>
+            <td style="text-align:center">10%</td>
+            <td style="text-align:right">$6.50</td>
+            <td style="text-align:right">$71.50</td>
+        </tr>
+        </tbody>
+    </table>
+    <div style="text-align:right; font-size:18px; color:#c9a84c; margin-bottom:10px;">
+        Total: <strong>$10,804.75</strong>
+    </div>
+
+    
+    <div class="savings-box">
+        <h3>Projected Savings</h3>
+        <div class="savings-grid">
+            <div class="savings-item">
+                <span class="savings-label">Optimized Cost (per show)</span>
+                <span class="savings-value">$10,804.75</span>
+            </div>
+            <div class="savings-item">
+                <span class="savings-label">Typical Spend (per show)</span>
+                <span class="savings-value" style="color:#f0ece4">$16,425.53</span>
+            </div>
+            <div class="savings-item highlight">
+                <span class="savings-label">Savings Per Show</span>
+                <span class="savings-value">$5,620.78</span>
+            </div>
+            <div class="savings-item highlight">
+                <span class="savings-label">Savings %</span>
+                <span class="savings-value">34.2%</span>
+            </div>
+        </div>
+    </div>
+
+    
+    <h2>Historical Analysis <span class="subtitle">(6 shows)</span></h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Total Ordered</th>
+                <th>Total Used</th>
+                <th>Over-Order %</th>
+                <th>Rush Qty</th>
+                <th>Under-Order %</th>
+                <th>Rush Cost</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Gaffer Tape</td>
+            <td style="text-align:center">273</td>
+            <td style="text-align:center">217</td>
+            <td style="text-align:center" class="warn">25.8%</td>
+            <td style="text-align:center">0</td>
+            <td style="text-align:center">0.0%</td>
+            <td style="text-align:right">$0.00</td>
+        </tr>
+        <tr>
+            <td>Spike Tape</td>
+            <td style="text-align:center">344</td>
+            <td style="text-align:center">273</td>
+            <td style="text-align:center" class="warn">26.0%</td>
+            <td style="text-align:center">0</td>
+            <td style="text-align:center">0.0%</td>
+            <td style="text-align:right">$0.00</td>
+        </tr>
+        <tr>
+            <td>Double-Sided Tape</td>
+            <td style="text-align:center">283</td>
+            <td style="text-align:center">202</td>
+            <td style="text-align:center" class="warn">40.1%</td>
+            <td style="text-align:center">0</td>
+            <td style="text-align:center">0.0%</td>
+            <td style="text-align:right">$0.00</td>
+        </tr>
+        <tr>
+            <td>Masking Tape</td>
+            <td style="text-align:center">115</td>
+            <td style="text-align:center">91</td>
+            <td style="text-align:center" class="warn">26.4%</td>
+            <td style="text-align:center">0</td>
+            <td style="text-align:center">0.0%</td>
+            <td style="text-align:right">$0.00</td>
+        </tr>
+        <tr>
+            <td>Drywall Screws</td>
+            <td style="text-align:center">283</td>
+            <td style="text-align:center">242</td>
+            <td style="text-align:center">16.9%</td>
+            <td style="text-align:center">9</td>
+            <td style="text-align:center">3.7%</td>
+            <td style="text-align:right">$176.40</td>
+        </tr>
+        <tr>
+            <td>Wood Screws (assorted)</td>
+            <td style="text-align:center">183</td>
+            <td style="text-align:center">164</td>
+            <td style="text-align:center">11.6%</td>
+            <td style="text-align:center">3</td>
+            <td style="text-align:center">1.8%</td>
+            <td style="text-align:right">$69.00</td>
+        </tr>
+        <tr>
+            <td>Machine Screws / Bolts</td>
+            <td style="text-align:center">82</td>
+            <td style="text-align:center">78</td>
+            <td style="text-align:center">5.1%</td>
+            <td style="text-align:center">4</td>
+            <td style="text-align:center">5.1%</td>
+            <td style="text-align:right">$132.48</td>
+        </tr>
+        <tr>
+            <td>Protective Foam Wrap</td>
+            <td style="text-align:center">973</td>
+            <td style="text-align:center">760</td>
+            <td style="text-align:center" class="warn">28.0%</td>
+            <td style="text-align:center">0</td>
+            <td style="text-align:center">0.0%</td>
+            <td style="text-align:right">$0.00</td>
+        </tr>
+        <tr>
+            <td>Display Padding / Cushion</td>
+            <td style="text-align:center">505</td>
+            <td style="text-align:center">387</td>
+            <td style="text-align:center" class="warn">30.5%</td>
+            <td style="text-align:center">0</td>
+            <td style="text-align:center">0.0%</td>
+            <td style="text-align:right">$0.00</td>
+        </tr>
+        <tr>
+            <td>Utility Carts</td>
+            <td style="text-align:center">28</td>
+            <td style="text-align:center">21</td>
+            <td style="text-align:center" class="warn">33.3%</td>
+            <td style="text-align:center">0</td>
+            <td style="text-align:center">0.0%</td>
+            <td style="text-align:right">$0.00</td>
+        </tr>
+        <tr>
+            <td>Shipping Crates</td>
+            <td style="text-align:center">346</td>
+            <td style="text-align:center">315</td>
+            <td style="text-align:center">9.8%</td>
+            <td style="text-align:center">7</td>
+            <td style="text-align:center">2.2%</td>
+            <td style="text-align:right">$910.00</td>
+        </tr>
+        <tr>
+            <td>Cat-6 Cable</td>
+            <td style="text-align:center">6304</td>
+            <td style="text-align:center">6304</td>
+            <td style="text-align:center">0.0%</td>
+            <td style="text-align:center">1432</td>
+            <td style="text-align:center" class="danger">22.7%</td>
+            <td style="text-align:right">$773.28</td>
+        </tr>
+        <tr>
+            <td>Paint / Touch-up</td>
+            <td style="text-align:center">48</td>
+            <td style="text-align:center">33</td>
+            <td style="text-align:center" class="warn">45.5%</td>
+            <td style="text-align:center">0</td>
+            <td style="text-align:center">0.0%</td>
+            <td style="text-align:right">$0.00</td>
+        </tr>
+        <tr>
+            <td>Zip Ties</td>
+            <td style="text-align:center">168</td>
+            <td style="text-align:center">133</td>
+            <td style="text-align:center" class="warn">26.3%</td>
+            <td style="text-align:center">0</td>
+            <td style="text-align:center">0.0%</td>
+            <td style="text-align:right">$0.00</td>
+        </tr>
+        <tr>
+            <td>Velcro Strips</td>
+            <td style="text-align:center">306</td>
+            <td style="text-align:center">256</td>
+            <td style="text-align:center">19.5%</td>
+            <td style="text-align:center">11</td>
+            <td style="text-align:center">4.3%</td>
+            <td style="text-align:right">$244.75</td>
+        </tr>
+        <tr>
+            <td>Cable Management (raceways, clips)</td>
+            <td style="text-align:center">181</td>
+            <td style="text-align:center">181</td>
+            <td style="text-align:center">0.0%</td>
+            <td style="text-align:center">26</td>
+            <td style="text-align:center">14.4%</td>
+            <td style="text-align:right">$1,430.00</td>
+        </tr>
+        <tr>
+            <td>Batteries — AA</td>
+            <td style="text-align:center">127</td>
+            <td style="text-align:center">103</td>
+            <td style="text-align:center" class="warn">23.3%</td>
+            <td style="text-align:center">1</td>
+            <td style="text-align:center">1.0%</td>
+            <td style="text-align:right">$28.00</td>
+        </tr>
+        <tr>
+            <td>Batteries — 9V</td>
+            <td style="text-align:center">50</td>
+            <td style="text-align:center">44</td>
+            <td style="text-align:center">13.6%</td>
+            <td style="text-align:center">0</td>
+            <td style="text-align:center">0.0%</td>
+            <td style="text-align:right">$0.00</td>
+        </tr>
+        <tr>
+            <td>Cleaning Supplies (general)</td>
+            <td style="text-align:center">49</td>
+            <td style="text-align:center">37</td>
+            <td style="text-align:center" class="warn">32.4%</td>
+            <td style="text-align:center">0</td>
+            <td style="text-align:center">0.0%</td>
+            <td style="text-align:right">$0.00</td>
+        </tr>
+        <tr>
+            <td>Glass / Screen Cleaner</td>
+            <td style="text-align:center">84</td>
+            <td style="text-align:center">65</td>
+            <td style="text-align:center" class="warn">29.2%</td>
+            <td style="text-align:center">0</td>
+            <td style="text-align:center">0.0%</td>
+            <td style="text-align:right">$0.00</td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="rush-total">Total Rush Order Costs: <strong>$3,763.91</strong></div>
+
+    <h3>Detected Patterns</h3>
+    <ul class="patterns"><li>You consistently over-order Gaffer Tape by ~25.8%.</li><li>You consistently over-order Spike Tape by ~26.0%.</li><li>You consistently over-order Double-Sided Tape by ~40.1%.</li><li>You consistently over-order Masking Tape by ~26.4%.</li><li>You consistently over-order Protective Foam Wrap by ~28.0%.</li><li>You consistently over-order Display Padding / Cushion by ~30.5%.</li><li>You consistently over-order Utility Carts by ~33.3%.</li><li>You consistently under-order Cat-6 Cable by ~22.7%, incurring $773.28 in rush fees over 6 shows.</li><li>You consistently over-order Paint / Touch-up by ~45.5%.</li><li>You consistently over-order Zip Ties by ~26.3%.</li><li>You consistently over-order Batteries — AA by ~23.3%.</li><li>You consistently over-order Cleaning Supplies (general) by ~32.4%.</li><li>You consistently over-order Glass / Screen Cleaner by ~29.2%.</li></ul>
+    
+
+    <div class="footer">
+        AUROS AI Consumables Calculator &bull; Formulas calibrated for live entertainment production &bull; Buffer recommendations based on industry benchmarks
+    </div>
+</body>
+</html>

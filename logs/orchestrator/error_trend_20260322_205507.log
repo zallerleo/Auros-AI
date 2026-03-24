@@ -1,6 +1,0 @@
-TypeError: run() got an unexpected keyword argument 'company'
-
-Traceback (most recent call last):
-  File "/Users/leozaller/Desktop/Work /Leo's Gameplan/AUROS AI/agents/orchestrator/orchestrator_agent.py", line 293, in run_stage
-    result = func(**call_kwargs)
-TypeError: run() got an unexpected keyword argument 'company'

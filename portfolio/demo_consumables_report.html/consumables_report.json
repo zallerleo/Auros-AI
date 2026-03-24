@@ -1,0 +1,659 @@
+{
+  "mode": "demo",
+  "venue_parameters": {
+    "sqft": 40000,
+    "zones": 15,
+    "exhibits": 200,
+    "venue_type": "convention_center",
+    "complexity": "moderate",
+    "condition": "good",
+    "dock_distance_ft": 350
+  },
+  "calculated_quantities": {
+    "tape_gaffer": {
+      "label": "Gaffer Tape",
+      "unit": "rolls",
+      "raw_qty": 32,
+      "buffer_pct": 0.1,
+      "buffered_qty": 36,
+      "unit_cost": 14.5,
+      "line_total": 522.0,
+      "rush_markup": 2.2
+    },
+    "tape_spike": {
+      "label": "Spike Tape",
+      "unit": "rolls",
+      "raw_qty": 45,
+      "buffer_pct": 0.1,
+      "buffered_qty": 50,
+      "unit_cost": 6.75,
+      "line_total": 337.5,
+      "rush_markup": 2.0
+    },
+    "tape_double_sided": {
+      "label": "Double-Sided Tape",
+      "unit": "rolls",
+      "raw_qty": 30,
+      "buffer_pct": 0.1,
+      "buffered_qty": 33,
+      "unit_cost": 8.25,
+      "line_total": 272.25,
+      "rush_markup": 2.5
+    },
+    "tape_masking": {
+      "label": "Masking Tape",
+      "unit": "rolls",
+      "raw_qty": 14,
+      "buffer_pct": 0.1,
+      "buffered_qty": 16,
+      "unit_cost": 5.5,
+      "line_total": 88.0,
+      "rush_markup": 2.0
+    },
+    "screws_drywall": {
+      "label": "Drywall Screws",
+      "unit": "boxes (100ct)",
+      "raw_qty": 45,
+      "buffer_pct": 0.1,
+      "buffered_qty": 50,
+      "unit_cost": 9.8,
+      "line_total": 490.0,
+      "rush_markup": 2.0
+    },
+    "screws_wood": {
+      "label": "Wood Screws (assorted)",
+      "unit": "boxes (100ct)",
+      "raw_qty": 22,
+      "buffer_pct": 0.1,
+      "buffered_qty": 25,
+      "unit_cost": 11.5,
+      "line_total": 287.5,
+      "rush_markup": 2.0
+    },
+    "screws_machine": {
+      "label": "Machine Screws / Bolts",
+      "unit": "boxes (50ct)",
+      "raw_qty": 12,
+      "buffer_pct": 0.15,
+      "buffered_qty": 14,
+      "unit_cost": 13.25,
+      "line_total": 185.5,
+      "rush_markup": 2.5
+    },
+    "foam_protective": {
+      "label": "Protective Foam Wrap",
+      "unit": "sheets (4x8 ft)",
+      "raw_qty": 120,
+      "buffer_pct": 0.1,
+      "buffered_qty": 132,
+      "unit_cost": 7.4,
+      "line_total": 976.8,
+      "rush_markup": 2.5
+    },
+    "foam_padding": {
+      "label": "Display Padding / Cushion",
+      "unit": "sheets (4x8 ft)",
+      "raw_qty": 60,
+      "buffer_pct": 0.1,
+      "buffered_qty": 66,
+      "unit_cost": 9.2,
+      "line_total": 607.2,
+      "rush_markup": 2.5
+    },
+    "carts": {
+      "label": "Utility Carts",
+      "unit": "units",
+      "raw_qty": 5,
+      "buffer_pct": 0.15,
+      "buffered_qty": 6,
+      "unit_cost": 185.0,
+      "line_total": 1110.0,
+      "rush_markup": 1.5
+    },
+    "crates": {
+      "label": "Shipping Crates",
+      "unit": "units",
+      "raw_qty": 50,
+      "buffer_pct": 0.05,
+      "buffered_qty": 53,
+      "unit_cost": 65.0,
+      "line_total": 3445.0,
+      "rush_markup": 2.0
+    },
+    "cat6_cable": {
+      "label": "Cat-6 Cable",
+      "unit": "feet",
+      "raw_qty": 1200,
+      "buffer_pct": 0.15,
+      "buffered_qty": 1380,
+      "unit_cost": 0.18,
+      "line_total": 248.4,
+      "rush_markup": 3.0
+    },
+    "paint_touchup": {
+      "label": "Paint / Touch-up",
+      "unit": "gallons",
+      "raw_qty": 3,
+      "buffer_pct": 0.1,
+      "buffered_qty": 4,
+      "unit_cost": 38.0,
+      "line_total": 152.0,
+      "rush_markup": 2.0
+    },
+    "zip_ties": {
+      "label": "Zip Ties",
+      "unit": "packs (100ct)",
+      "raw_qty": 22,
+      "buffer_pct": 0.1,
+      "buffered_qty": 25,
+      "unit_cost": 4.5,
+      "line_total": 112.5,
+      "rush_markup": 2.0
+    },
+    "velcro_strips": {
+      "label": "Velcro Strips",
+      "unit": "packs (25ct)",
+      "raw_qty": 40,
+      "buffer_pct": 0.1,
+      "buffered_qty": 44,
+      "unit_cost": 8.9,
+      "line_total": 391.6,
+      "rush_markup": 2.5
+    },
+    "cable_management": {
+      "label": "Cable Management (raceways, clips)",
+      "unit": "kits",
+      "raw_qty": 36,
+      "buffer_pct": 0.1,
+      "buffered_qty": 40,
+      "unit_cost": 22.0,
+      "line_total": 880.0,
+      "rush_markup": 2.5
+    },
+    "batteries_aa": {
+      "label": "Batteries \u2014 AA",
+      "unit": "packs (24ct)",
+      "raw_qty": 16,
+      "buffer_pct": 0.15,
+      "buffered_qty": 19,
+      "unit_cost": 14.0,
+      "line_total": 266.0,
+      "rush_markup": 2.0
+    },
+    "batteries_9v": {
+      "label": "Batteries \u2014 9V",
+      "unit": "packs (8ct)",
+      "raw_qty": 8,
+      "buffer_pct": 0.15,
+      "buffered_qty": 10,
+      "unit_cost": 16.5,
+      "line_total": 165.0,
+      "rush_markup": 2.0
+    },
+    "cleaning_general": {
+      "label": "Cleaning Supplies (general)",
+      "unit": "kits",
+      "raw_qty": 6,
+      "buffer_pct": 0.1,
+      "buffered_qty": 7,
+      "unit_cost": 28.0,
+      "line_total": 196.0,
+      "rush_markup": 1.8
+    },
+    "cleaning_glass": {
+      "label": "Glass / Screen Cleaner",
+      "unit": "bottles",
+      "raw_qty": 10,
+      "buffer_pct": 0.1,
+      "buffered_qty": 11,
+      "unit_cost": 6.5,
+      "line_total": 71.5,
+      "rush_markup": 1.5
+    }
+  },
+  "historical_analysis": {
+    "per_item": {
+      "tape_gaffer": {
+        "label": "Gaffer Tape",
+        "total_ordered": 273,
+        "total_used": 217,
+        "surplus": 56,
+        "over_order_pct": 25.8,
+        "rush_qty": 0,
+        "under_order_pct": 0.0,
+        "rush_cost": 0.0,
+        "shows_analyzed": 6
+      },
+      "tape_spike": {
+        "label": "Spike Tape",
+        "total_ordered": 344,
+        "total_used": 273,
+        "surplus": 71,
+        "over_order_pct": 26.0,
+        "rush_qty": 0,
+        "under_order_pct": 0.0,
+        "rush_cost": 0.0,
+        "shows_analyzed": 6
+      },
+      "tape_double_sided": {
+        "label": "Double-Sided Tape",
+        "total_ordered": 283,
+        "total_used": 202,
+        "surplus": 81,
+        "over_order_pct": 40.1,
+        "rush_qty": 0,
+        "under_order_pct": 0.0,
+        "rush_cost": 0.0,
+        "shows_analyzed": 6
+      },
+      "tape_masking": {
+        "label": "Masking Tape",
+        "total_ordered": 115,
+        "total_used": 91,
+        "surplus": 24,
+        "over_order_pct": 26.4,
+        "rush_qty": 0,
+        "under_order_pct": 0.0,
+        "rush_cost": 0.0,
+        "shows_analyzed": 6
+      },
+      "screws_drywall": {
+        "label": "Drywall Screws",
+        "total_ordered": 283,
+        "total_used": 242,
+        "surplus": 41,
+        "over_order_pct": 16.9,
+        "rush_qty": 9,
+        "under_order_pct": 3.7,
+        "rush_cost": 176.4,
+        "shows_analyzed": 6
+      },
+      "screws_wood": {
+        "label": "Wood Screws (assorted)",
+        "total_ordered": 183,
+        "total_used": 164,
+        "surplus": 19,
+        "over_order_pct": 11.6,
+        "rush_qty": 3,
+        "under_order_pct": 1.8,
+        "rush_cost": 69.0,
+        "shows_analyzed": 6
+      },
+      "screws_machine": {
+        "label": "Machine Screws / Bolts",
+        "total_ordered": 82,
+        "total_used": 78,
+        "surplus": 4,
+        "over_order_pct": 5.1,
+        "rush_qty": 4,
+        "under_order_pct": 5.1,
+        "rush_cost": 132.48,
+        "shows_analyzed": 6
+      },
+      "foam_protective": {
+        "label": "Protective Foam Wrap",
+        "total_ordered": 973,
+        "total_used": 760,
+        "surplus": 213,
+        "over_order_pct": 28.0,
+        "rush_qty": 0,
+        "under_order_pct": 0.0,
+        "rush_cost": 0.0,
+        "shows_analyzed": 6
+      },
+      "foam_padding": {
+        "label": "Display Padding / Cushion",
+        "total_ordered": 505,
+        "total_used": 387,
+        "surplus": 118,
+        "over_order_pct": 30.5,
+        "rush_qty": 0,
+        "under_order_pct": 0.0,
+        "rush_cost": 0.0,
+        "shows_analyzed": 6
+      },
+      "carts": {
+        "label": "Utility Carts",
+        "total_ordered": 28,
+        "total_used": 21,
+        "surplus": 7,
+        "over_order_pct": 33.3,
+        "rush_qty": 0,
+        "under_order_pct": 0.0,
+        "rush_cost": 0.0,
+        "shows_analyzed": 6
+      },
+      "crates": {
+        "label": "Shipping Crates",
+        "total_ordered": 346,
+        "total_used": 315,
+        "surplus": 31,
+        "over_order_pct": 9.8,
+        "rush_qty": 7,
+        "under_order_pct": 2.2,
+        "rush_cost": 910.0,
+        "shows_analyzed": 6
+      },
+      "cat6_cable": {
+        "label": "Cat-6 Cable",
+        "total_ordered": 6304,
+        "total_used": 6304,
+        "surplus": 0,
+        "over_order_pct": 0.0,
+        "rush_qty": 1432,
+        "under_order_pct": 22.7,
+        "rush_cost": 773.28,
+        "shows_analyzed": 6
+      },
+      "paint_touchup": {
+        "label": "Paint / Touch-up",
+        "total_ordered": 48,
+        "total_used": 33,
+        "surplus": 15,
+        "over_order_pct": 45.5,
+        "rush_qty": 0,
+        "under_order_pct": 0.0,
+        "rush_cost": 0.0,
+        "shows_analyzed": 6
+      },
+      "zip_ties": {
+        "label": "Zip Ties",
+        "total_ordered": 168,
+        "total_used": 133,
+        "surplus": 35,
+        "over_order_pct": 26.3,
+        "rush_qty": 0,
+        "under_order_pct": 0.0,
+        "rush_cost": 0.0,
+        "shows_analyzed": 6
+      },
+      "velcro_strips": {
+        "label": "Velcro Strips",
+        "total_ordered": 306,
+        "total_used": 256,
+        "surplus": 50,
+        "over_order_pct": 19.5,
+        "rush_qty": 11,
+        "under_order_pct": 4.3,
+        "rush_cost": 244.75,
+        "shows_analyzed": 6
+      },
+      "cable_management": {
+        "label": "Cable Management (raceways, clips)",
+        "total_ordered": 181,
+        "total_used": 181,
+        "surplus": 0,
+        "over_order_pct": 0.0,
+        "rush_qty": 26,
+        "under_order_pct": 14.4,
+        "rush_cost": 1430.0,
+        "shows_analyzed": 6
+      },
+      "batteries_aa": {
+        "label": "Batteries \u2014 AA",
+        "total_ordered": 127,
+        "total_used": 103,
+        "surplus": 24,
+        "over_order_pct": 23.3,
+        "rush_qty": 1,
+        "under_order_pct": 1.0,
+        "rush_cost": 28.0,
+        "shows_analyzed": 6
+      },
+      "batteries_9v": {
+        "label": "Batteries \u2014 9V",
+        "total_ordered": 50,
+        "total_used": 44,
+        "surplus": 6,
+        "over_order_pct": 13.6,
+        "rush_qty": 0,
+        "under_order_pct": 0.0,
+        "rush_cost": 0.0,
+        "shows_analyzed": 6
+      },
+      "cleaning_general": {
+        "label": "Cleaning Supplies (general)",
+        "total_ordered": 49,
+        "total_used": 37,
+        "surplus": 12,
+        "over_order_pct": 32.4,
+        "rush_qty": 0,
+        "under_order_pct": 0.0,
+        "rush_cost": 0.0,
+        "shows_analyzed": 6
+      },
+      "cleaning_glass": {
+        "label": "Glass / Screen Cleaner",
+        "total_ordered": 84,
+        "total_used": 65,
+        "surplus": 19,
+        "over_order_pct": 29.2,
+        "rush_qty": 0,
+        "under_order_pct": 0.0,
+        "rush_cost": 0.0,
+        "shows_analyzed": 6
+      }
+    },
+    "total_rush_cost": 3763.91,
+    "patterns": [
+      "You consistently over-order Gaffer Tape by ~25.8%.",
+      "You consistently over-order Spike Tape by ~26.0%.",
+      "You consistently over-order Double-Sided Tape by ~40.1%.",
+      "You consistently over-order Masking Tape by ~26.4%.",
+      "You consistently over-order Protective Foam Wrap by ~28.0%.",
+      "You consistently over-order Display Padding / Cushion by ~30.5%.",
+      "You consistently over-order Utility Carts by ~33.3%.",
+      "You consistently under-order Cat-6 Cable by ~22.7%, incurring $773.28 in rush fees over 6 shows.",
+      "You consistently over-order Paint / Touch-up by ~45.5%.",
+      "You consistently over-order Zip Ties by ~26.3%.",
+      "You consistently over-order Batteries \u2014 AA by ~23.3%.",
+      "You consistently over-order Cleaning Supplies (general) by ~32.4%.",
+      "You consistently over-order Glass / Screen Cleaner by ~29.2%."
+    ]
+  },
+  "recommendation": {
+    "order_lines": [
+      {
+        "item_id": "tape_gaffer",
+        "label": "Gaffer Tape",
+        "unit": "rolls",
+        "recommended_qty": 36,
+        "buffer_pct": "10%",
+        "unit_cost": 14.5,
+        "line_total": 522.0
+      },
+      {
+        "item_id": "tape_spike",
+        "label": "Spike Tape",
+        "unit": "rolls",
+        "recommended_qty": 50,
+        "buffer_pct": "10%",
+        "unit_cost": 6.75,
+        "line_total": 337.5
+      },
+      {
+        "item_id": "tape_double_sided",
+        "label": "Double-Sided Tape",
+        "unit": "rolls",
+        "recommended_qty": 33,
+        "buffer_pct": "10%",
+        "unit_cost": 8.25,
+        "line_total": 272.25
+      },
+      {
+        "item_id": "tape_masking",
+        "label": "Masking Tape",
+        "unit": "rolls",
+        "recommended_qty": 16,
+        "buffer_pct": "10%",
+        "unit_cost": 5.5,
+        "line_total": 88.0
+      },
+      {
+        "item_id": "screws_drywall",
+        "label": "Drywall Screws",
+        "unit": "boxes (100ct)",
+        "recommended_qty": 50,
+        "buffer_pct": "10%",
+        "unit_cost": 9.8,
+        "line_total": 490.0
+      },
+      {
+        "item_id": "screws_wood",
+        "label": "Wood Screws (assorted)",
+        "unit": "boxes (100ct)",
+        "recommended_qty": 25,
+        "buffer_pct": "10%",
+        "unit_cost": 11.5,
+        "line_total": 287.5
+      },
+      {
+        "item_id": "screws_machine",
+        "label": "Machine Screws / Bolts",
+        "unit": "boxes (50ct)",
+        "recommended_qty": 14,
+        "buffer_pct": "15%",
+        "unit_cost": 13.25,
+        "line_total": 185.5
+      },
+      {
+        "item_id": "foam_protective",
+        "label": "Protective Foam Wrap",
+        "unit": "sheets (4x8 ft)",
+        "recommended_qty": 132,
+        "buffer_pct": "10%",
+        "unit_cost": 7.4,
+        "line_total": 976.8
+      },
+      {
+        "item_id": "foam_padding",
+        "label": "Display Padding / Cushion",
+        "unit": "sheets (4x8 ft)",
+        "recommended_qty": 66,
+        "buffer_pct": "10%",
+        "unit_cost": 9.2,
+        "line_total": 607.2
+      },
+      {
+        "item_id": "carts",
+        "label": "Utility Carts",
+        "unit": "units",
+        "recommended_qty": 6,
+        "buffer_pct": "15%",
+        "unit_cost": 185.0,
+        "line_total": 1110.0
+      },
+      {
+        "item_id": "crates",
+        "label": "Shipping Crates",
+        "unit": "units",
+        "recommended_qty": 53,
+        "buffer_pct": "5%",
+        "unit_cost": 65.0,
+        "line_total": 3445.0
+      },
+      {
+        "item_id": "cat6_cable",
+        "label": "Cat-6 Cable",
+        "unit": "feet",
+        "recommended_qty": 1380,
+        "buffer_pct": "15%",
+        "unit_cost": 0.18,
+        "line_total": 248.4
+      },
+      {
+        "item_id": "paint_touchup",
+        "label": "Paint / Touch-up",
+        "unit": "gallons",
+        "recommended_qty": 4,
+        "buffer_pct": "10%",
+        "unit_cost": 38.0,
+        "line_total": 152.0
+      },
+      {
+        "item_id": "zip_ties",
+        "label": "Zip Ties",
+        "unit": "packs (100ct)",
+        "recommended_qty": 25,
+        "buffer_pct": "10%",
+        "unit_cost": 4.5,
+        "line_total": 112.5
+      },
+      {
+        "item_id": "velcro_strips",
+        "label": "Velcro Strips",
+        "unit": "packs (25ct)",
+        "recommended_qty": 44,
+        "buffer_pct": "10%",
+        "unit_cost": 8.9,
+        "line_total": 391.6
+      },
+      {
+        "item_id": "cable_management",
+        "label": "Cable Management (raceways, clips)",
+        "unit": "kits",
+        "recommended_qty": 40,
+        "buffer_pct": "10%",
+        "unit_cost": 22.0,
+        "line_total": 880.0
+      },
+      {
+        "item_id": "batteries_aa",
+        "label": "Batteries \u2014 AA",
+        "unit": "packs (24ct)",
+        "recommended_qty": 19,
+        "buffer_pct": "15%",
+        "unit_cost": 14.0,
+        "line_total": 266.0
+      },
+      {
+        "item_id": "batteries_9v",
+        "label": "Batteries \u2014 9V",
+        "unit": "packs (8ct)",
+        "recommended_qty": 10,
+        "buffer_pct": "15%",
+        "unit_cost": 16.5,
+        "line_total": 165.0
+      },
+      {
+        "item_id": "cleaning_general",
+        "label": "Cleaning Supplies (general)",
+        "unit": "kits",
+        "recommended_qty": 7,
+        "buffer_pct": "10%",
+        "unit_cost": 28.0,
+        "line_total": 196.0
+      },
+      {
+        "item_id": "cleaning_glass",
+        "label": "Glass / Screen Cleaner",
+        "unit": "bottles",
+        "recommended_qty": 11,
+        "buffer_pct": "10%",
+        "unit_cost": 6.5,
+        "line_total": 71.5
+      }
+    ],
+    "total_bulk_cost": 10804.75,
+    "estimated_typical_spend": 16425.53,
+    "projected_savings_per_show": 5620.78,
+    "savings_pct": 34.2,
+    "historical_rush_cost_total": 3763.91,
+    "patterns": [
+      "You consistently over-order Gaffer Tape by ~25.8%.",
+      "You consistently over-order Spike Tape by ~26.0%.",
+      "You consistently over-order Double-Sided Tape by ~40.1%.",
+      "You consistently over-order Masking Tape by ~26.4%.",
+      "You consistently over-order Protective Foam Wrap by ~28.0%.",
+      "You consistently over-order Display Padding / Cushion by ~30.5%.",
+      "You consistently over-order Utility Carts by ~33.3%.",
+      "You consistently under-order Cat-6 Cable by ~22.7%, incurring $773.28 in rush fees over 6 shows.",
+      "You consistently over-order Paint / Touch-up by ~45.5%.",
+      "You consistently over-order Zip Ties by ~26.3%.",
+      "You consistently over-order Batteries \u2014 AA by ~23.3%.",
+      "You consistently over-order Cleaning Supplies (general) by ~32.4%.",
+      "You consistently over-order Glass / Screen Cleaner by ~29.2%."
+    ]
+  },
+  "generated_at": "2026-03-24T17:51:13.481417"
+}

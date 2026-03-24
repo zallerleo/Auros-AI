@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AUROS AI — Truck Load Plan</title>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+        font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+        background: #0a0a14;
+        color: #e0e0e0;
+        line-height: 1.6;
+        padding: 40px 20px;
+    }
+    .container { max-width: 1200px; margin: 0 auto; }
+    h1 {
+        font-size: 2.2rem;
+        color: #fff;
+        margin-bottom: 8px;
+    }
+    h1 span { color: #e94560; }
+    .subtitle { color: #888; margin-bottom: 40px; font-size: 0.95rem; }
+    h2 {
+        font-size: 1.3rem;
+        color: #e94560;
+        margin: 32px 0 16px 0;
+        padding-bottom: 8px;
+        border-bottom: 1px solid #1e1e30;
+    }
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+        margin-bottom: 32px;
+    }
+    .card {
+        background: #12121e;
+        border: 1px solid #1e1e30;
+        border-radius: 10px;
+        padding: 20px;
+    }
+    .card .label { font-size: 0.8rem; color: #888; text-transform: uppercase; letter-spacing: 0.5px; }
+    .card .value { font-size: 1.8rem; font-weight: 700; color: #fff; margin-top: 4px; }
+    .card .value.green { color: #00e676; }
+    .card .value.red { color: #ff5252; }
+    .card .value.gold { color: #FFD700; }
+    .card .detail { font-size: 0.8rem; color: #666; margin-top: 4px; }
+
+    .savings-banner {
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        border: 2px solid #00e676;
+        border-radius: 12px;
+        padding: 28px;
+        text-align: center;
+        margin: 32px 0;
+    }
+    .savings-banner .big { font-size: 2.4rem; font-weight: 800; color: #00e676; }
+    .savings-banner .sub { color: #aaa; margin-top: 8px; }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 24px;
+    }
+    th {
+        text-align: left;
+        padding: 10px 12px;
+        background: #12121e;
+        color: #888;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        border-bottom: 1px solid #1e1e30;
+    }
+    td {
+        padding: 10px 12px;
+        border-bottom: 1px solid #111;
+        font-size: 0.9rem;
+    }
+    tr:hover { background: #14142a; }
+    .bar-bg {
+        display: inline-block;
+        width: 100px;
+        height: 10px;
+        background: #1e1e30;
+        border-radius: 5px;
+        overflow: hidden;
+        vertical-align: middle;
+        margin-right: 8px;
+    }
+    .bar-fill {
+        height: 100%;
+        border-radius: 5px;
+    }
+    .footer {
+        text-align: center;
+        color: #444;
+        font-size: 0.75rem;
+        margin-top: 60px;
+        padding-top: 20px;
+        border-top: 1px solid #111;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1><span>AUROS</span> AI — Truck Load Plan</h1>
+    <p class="subtitle">Generated March 24, 2026 at 05:52 PM &bull; 53' Semi Trailer</p>
+
+    <h2>Inventory Summary</h2>
+    <div class="cards">
+        <div class="card">
+            <div class="label">Total Items</div>
+            <div class="value">3,248</div>
+            <div class="detail">69 unique line items</div>
+        </div>
+        <div class="card">
+            <div class="label">Total Volume</div>
+            <div class="value">122,902 <small>cu ft</small></div>
+        </div>
+        <div class="card">
+            <div class="label">Total Weight</div>
+            <div class="value">1,119,880 <small>lbs</small></div>
+        </div>
+        <div class="card">
+            <div class="label">Truck Spec</div>
+            <div class="value" style="font-size:1.2rem">53' Semi Trailer</div>
+            <div class="detail">3,489 cu ft / 45,000 lbs max</div>
+        </div>
+    </div>
+
+    <h2>Optimization Analysis</h2>
+    <div class="cards">
+        <div class="card">
+            <div class="label">Current Trucks</div>
+            <div class="value red">40</div>
+            <div class="detail">Avg utilization: 88.1%</div>
+        </div>
+        <div class="card">
+            <div class="label">Optimal Trucks</div>
+            <div class="value green">36</div>
+            <div class="detail">Avg utilization: 97.8%</div>
+        </div>
+        <div class="card">
+            <div class="label">Theoretical Minimum</div>
+            <div class="value">36</div>
+            <div class="detail">Vol: 36 / Wt: 25</div>
+        </div>
+        <div class="card">
+            <div class="label">Trucks Eliminated</div>
+            <div class="value gold">4</div>
+            <div class="detail">40 &rarr; 36</div>
+        </div>
+    </div>
+
+    <div class="savings-banner">
+        <div class="big">$10,000 saved per move</div>
+        <div class="sub">
+            4 fewer trucks &times; $2,500/truck
+            &bull; $100,000/yr (10 moves)
+            &bull; $200,000/yr (20 moves)
+        </div>
+    </div>
+
+    <h2>Category Breakdown</h2>
+    <table>
+        <thead><tr><th>Category</th><th>Items</th><th>Volume (cu ft)</th><th>Weight (lbs)</th></tr></thead>
+        <tbody>
+        <tr>
+            <td>Av Equipment</td>
+            <td>306</td>
+            <td>10,500.0</td>
+            <td>134,700</td>
+        </tr>
+        <tr>
+            <td>Consumables</td>
+            <td>112</td>
+            <td>1,580.0</td>
+            <td>19,920</td>
+        </tr>
+        <tr>
+            <td>Crates</td>
+            <td>590</td>
+            <td>33,380.0</td>
+            <td>365,000</td>
+        </tr>
+        <tr>
+            <td>Display</td>
+            <td>248</td>
+            <td>11,648.0</td>
+            <td>88,400</td>
+        </tr>
+        <tr>
+            <td>Flooring</td>
+            <td>264</td>
+            <td>11,424.0</td>
+            <td>102,000</td>
+        </tr>
+        <tr>
+            <td>Furniture</td>
+            <td>116</td>
+            <td>4,070.0</td>
+            <td>27,080</td>
+        </tr>
+        <tr>
+            <td>Infrastructure</td>
+            <td>120</td>
+            <td>3,420.0</td>
+            <td>56,400</td>
+        </tr>
+        <tr>
+            <td>Lighting</td>
+            <td>466</td>
+            <td>7,848.0</td>
+            <td>68,960</td>
+        </tr>
+        <tr>
+            <td>Rigging</td>
+            <td>104</td>
+            <td>1,128.0</td>
+            <td>24,200</td>
+        </tr>
+        <tr>
+            <td>Set Pieces</td>
+            <td>610</td>
+            <td>31,968.0</td>
+            <td>200,100</td>
+        </tr>
+        <tr>
+            <td>Signage</td>
+            <td>100</td>
+            <td>2,240.0</td>
+            <td>7,520</td>
+        </tr>
+        <tr>
+            <td>Soft Goods</td>
+            <td>132</td>
+            <td>3,072.0</td>
+            <td>18,720</td>
+        </tr>
+        <tr>
+            <td>Tools</td>
+            <td>80</td>
+            <td>624.0</td>
+            <td>6,880</td>
+        </tr></tbody>
+    </table>
+
+    <h2>Truck Load Plan (36 Trucks)</h2>
+    <table>
+        <thead><tr><th>Truck</th><th>Items</th><th>Volume</th><th>Weight</th><th>Vol. Utilization</th><th>Wt. Util.</th></tr></thead>
+        <tbody>
+        <tr>
+            <td>#1</td>
+            <td>36</td>
+            <td>3,489.0</td>
+            <td>22,580</td>
+            <td>
+                <div class="bar-bg"><div class="bar-fill" style="width:100.0%;background:#00e676"></div></div>
+                100.0%
+            </td>
+            <td>50.2%</td>
+        </tr>
+        <tr>
+            <td>#2</td>
+            <td>36</td>
+            <td>3,489.0</td>
+            <td>22,580</td>
+            <td>
+                <div class="bar-bg"><div class="bar-fill" style="width:100.0%;background:#00e676"></div></div>
+                100.0%
+            </td>
+            <td>50.2%</td>
+        </tr>
+        <tr>
+            <td>#3</td>
+            <td>117</td>
+            <td>3,488.0</td>
+            <td>32,200</td>
+            <td>
+                <div class="bar-bg"><div class="bar-fill" style="width:100.0%;background:#00e676"></div></div>
+                100.0%
+            </td>
+            <td>71.6%</td>
+        </tr>
+        <tr>
+            <td>#4</td>
+            <td>44</td>
+            <td>3,488.0</td>
+            <td>21,900</td>
+            <td>
+                <div class="bar-bg"><div class="bar-fill" style="width:100.0%;background:#00e676"></div></div>
+                100.0%
+            </td>
+            <td>48.7%</td>
+        </tr>
+        <tr>
+            <td>#5</td>
+            <td>78</td>
+            <td>3,489.0</td>
+            <td>27,000</td>
+            <td>
+                <div class="bar-bg"><div class="bar-fill" style="width:100.0%;background:#00e676"></div></div>
+                100.0%
+            </td>
+            <td>60.0%</td>
+        </tr>
+        <tr>
+            <td>#6</td>
+            <td>22</td>
+            <td>3,488.0</td>
+            <td>18,900</td>
+            <td>
+                <div class="bar-bg"><div class="bar-fill" style="width:100.0%;background:#00e676"></div></div>
+                100.0%
+            </td>
+            <td>42.0%</td>
+        </tr>
+        <tr>
+            <td>#7</td>
+            <td>22</td>
+            <td>3,488.0</td>
+            <td>36,150</td>
+            <td>
+                <div class="bar-bg"><div class="bar-fill" style="width:100.0%;background:#00e676"></div></div>
+                100.0%
+            </td>
+            <td>80.3%</td>
+        </tr>
+        <tr>
+            <td>#8</td>
+            <td>49</td>
+            <td>3,488.0</td>
+            <td>26,600</td>
+            <td>
+                <div class="bar-bg"><div class="bar-fill" style="width:100.0%;background:#00e676"></div></div>
+                100.0%
+            </td>
+            <td>59.1%</td>
+        </tr>
+        <tr>
+            <td>#9</td>
+            <td>104</td>
+            <td>3,488.0</td>
+            <td>30,600</td>
+            <td>
+                <div class="bar-bg"><div class="bar-fill" style="width:100.0%;background:#00e676"></div></div>
+                100.0%
+            </td>
+            <td>68.0%</td>
+        </tr>
+        <tr>
+            <td>#10</td>
+            <td>55</td>
+            <td>3,488.0</td>
+            <td>43,400</td>
+            <td>
+                <div class="bar-bg"><div class="bar-fill" style="width:100.0%;background:#00e676"></div></div>
+                100.0%
+            </td>
+            <td>96.4%</td>
+        </tr>
+        <tr>
+            <td>#11</td>
+            <td>55</td>
+            <td>3,488.0</td>
+            <td>43,400</td>
+            <td>
+                <div class="bar-bg"><div class="bar-fill" style="width:100.0%;background:#00e676"></div></div>
+                100.0%
+            </td>
+            <td>96.4%</td>
+        </tr>
+        <tr>
+            <td>#12</td>
+            <td>55</td>
+            <td>3,488.0</td>
+            <td>43,400</td>
+            <td>
+                <div class="bar-bg"><div class="bar-fill" style="width:100.0%;background:#00e676"></div></div>
+                100.0%
+            </td>
+            <td>96.4%</td>
+        </tr>
+        <tr>
+            <td>#13</td>
+            <td>55</td>
+            <td>3,488.0</td>
+            <td>43,400</td>
+            <td>
+                <div class="bar-bg"><div class="bar-fill" style="width:100.0%;background:#00e676"></div></div>
+                100.0%
+            </td>
+            <td>96.4%</td>
+        </tr>
+        <tr>
+            <td>#14</td>
+            <td>63</td>
+            <td>3,488.0</td>
+            <td>43,700</td>
+            <td>
+                <div class="bar-bg"><div class="bar-fill" style="width:100.0%;background:#00e676"></div></div>
+                100.0%
+            </td>
+            <td>97.1%</td>
+        </tr>
+        <tr>
+            <td>#15</td>
+            <td>97</td>
+            <td>3,488.0</td>
+            <td>43,400</td>
+            <td>
+                <div class="bar-bg"><div class="bar-fill" style="width:100.0%;background:#00e676"></div></div>
+                100.0%
+            </td>
+            <td>96.4%</td>
+        </tr>
+        <tr>
+            <td>#16</td>
+            <td>60</td>
+            <td>3,489.0</td>
+            <td>32,880</td>
+            <td>
+                <div class="bar-bg"><div class="bar-fill" style="width:100.0%;background:#00e676"></div></div>
+                100.0%
+            </td>
+            <td>73.1%</td>
+        </tr>
+        <tr>
+            <td>#17</td>
+            <td>155</td>
+            <td>3,487.5</td>
+            <td>20,150</td>
+            <td>
+                <div class="bar-bg"><div class="bar-fill" style="width:100.0%;background:#00e676"></div></div>
+                100.0%
+            </td>
+            <td>44.8%</td>
+        </tr>
+        <tr>
+            <td>#18</td>
+            <td>106</td>
+            <td>3,487.5</td>
+            <td>23,120</td>
+            <td>
+                <div class="bar-bg"><div class="bar-fill" style="width:100.0%;background:#00e676"></div></div>
+                100.0%
+            </td>
+            <td>51.4%</td>
+        </tr>
+        <tr>
+            <td>#19</td>
+            <td>38</td>
+            <td>3,489.0</td>
+            <td>43,630</td>
+            <td>
+                <div class="bar-bg"><div class="bar-fill" style="width:100.0%;background:#00e676"></div></div>
+                100.0%
+            </td>
+            <td>97.0%</td>
+        </tr>
+        <tr>
+            <td>#20</td>
+            <td>44</td>
+            <td>3,489.0</td>
+            <td>33,030</td>
+            <td>
+                <div class="bar-bg"><div class="bar-fill" style="width:100.0%;background:#00e676"></div></div>
+                100.0%
+            </td>
+            <td>73.4%</td>
+        </tr>
+        <tr>
+            <td>#21</td>
+            <td>39</td>
+            <td>3,488.0</td>
+            <td>23,200</td>
+            <td>
+                <div class="bar-bg"><div class="bar-fill" style="width:100.0%;background:#00e676"></div></div>
+                100.0%
+            </td>
+            <td>51.6%</td>
+        </tr>
+        <tr>
+            <td>#22</td>
+            <td>48</td>
+            <td>3,489.0</td>
+            <td>22,310</td>
+            <td>
+                <div class="bar-bg"><div class="bar-fill" style="width:100.0%;background:#00e676"></div></div>
+                100.0%
+            </td>
+            <td>49.6%</td>
+        </tr>
+        <tr>
+            <td>#23</td>
+            <td>53</td>
+            <td>3,489.0</td>
+            <td>26,530</td>
+            <td>
+                <div class="bar-bg"><div class="bar-fill" style="width:100.0%;background:#00e676"></div></div>
+                100.0%
+            </td>
+            <td>59.0%</td>
+        </tr>
+        <tr>
+            <td>#24</td>
+            <td>55</td>
+            <td>3,488.0</td>
+            <td>32,600</td>
+            <td>
+                <div class="bar-bg"><div class="bar-fill" style="width:100.0%;background:#00e676"></div></div>
+                100.0%
+            </td>
+            <td>72.4%</td>
+        </tr>
+        <tr>
+            <td>#25</td>
+            <td>56</td>
+            <td>3,489.0</td>
+            <td>32,280</td>
+            <td>
+                <div class="bar-bg"><div class="bar-fill" style="width:100.0%;background:#00e676"></div></div>
+                100.0%
+            </td>
+            <td>71.7%</td>
+        </tr>
+        <tr>
+            <td>#26</td>
+            <td>61</td>
+            <td>3,489.0</td>
+            <td>17,350</td>
+            <td>
+                <div class="bar-bg"><div class="bar-fill" style="width:100.0%;background:#00e676"></div></div>
+                100.0%
+            </td>
+            <td>38.6%</td>
+        </tr>
+        <tr>
+            <td>#27</td>
+            <td>73</td>
+            <td>3,488.0</td>
+            <td>29,000</td>
+            <td>
+                <div class="bar-bg"><div class="bar-fill" style="width:100.0%;background:#00e676"></div></div>
+                100.0%
+            </td>
+            <td>64.4%</td>
+        </tr>
+        <tr>
+            <td>#28</td>
+            <td>80</td>
+            <td>3,488.8</td>
+            <td>27,170</td>
+            <td>
+                <div class="bar-bg"><div class="bar-fill" style="width:100.0%;background:#00e676"></div></div>
+                100.0%
+            </td>
+            <td>60.4%</td>
+        </tr>
+        <tr>
+            <td>#29</td>
+            <td>97</td>
+            <td>3,488.0</td>
+            <td>19,280</td>
+            <td>
+                <div class="bar-bg"><div class="bar-fill" style="width:100.0%;background:#00e676"></div></div>
+                100.0%
+            </td>
+            <td>42.8%</td>
+        </tr>
+        <tr>
+            <td>#30</td>
+            <td>108</td>
+            <td>3,489.0</td>
+            <td>21,200</td>
+            <td>
+                <div class="bar-bg"><div class="bar-fill" style="width:100.0%;background:#00e676"></div></div>
+                100.0%
+            </td>
+            <td>47.1%</td>
+        </tr>
+        <tr>
+            <td>#31</td>
+            <td>113</td>
+            <td>3,489.0</td>
+            <td>29,990</td>
+            <td>
+                <div class="bar-bg"><div class="bar-fill" style="width:100.0%;background:#00e676"></div></div>
+                100.0%
+            </td>
+            <td>66.6%</td>
+        </tr>
+        <tr>
+            <td>#32</td>
+            <td>171</td>
+            <td>3,488.2</td>
+            <td>36,010</td>
+            <td>
+                <div class="bar-bg"><div class="bar-fill" style="width:100.0%;background:#00e676"></div></div>
+                100.0%
+            </td>
+            <td>80.0%</td>
+        </tr>
+        <tr>
+            <td>#33</td>
+            <td>220</td>
+            <td>3,489.0</td>
+            <td>36,490</td>
+            <td>
+                <div class="bar-bg"><div class="bar-fill" style="width:100.0%;background:#00e676"></div></div>
+                100.0%
+            </td>
+            <td>81.1%</td>
+        </tr>
+        <tr>
+            <td>#34</td>
+            <td>229</td>
+            <td>2,991.0</td>
+            <td>44,980</td>
+            <td>
+                <div class="bar-bg"><div class="bar-fill" style="width:85.7%;background:#00e676"></div></div>
+                85.7%
+            </td>
+            <td>100.0%</td>
+        </tr>
+        <tr>
+            <td>#35</td>
+            <td>247</td>
+            <td>2,961.0</td>
+            <td>44,980</td>
+            <td>
+                <div class="bar-bg"><div class="bar-fill" style="width:84.9%;background:#ffab00"></div></div>
+                84.9%
+            </td>
+            <td>100.0%</td>
+        </tr>
+        <tr>
+            <td>#36</td>
+            <td>307</td>
+            <td>1,833.0</td>
+            <td>24,490</td>
+            <td>
+                <div class="bar-bg"><div class="bar-fill" style="width:52.5%;background:#ff5252"></div></div>
+                52.5%
+            </td>
+            <td>54.4%</td>
+        </tr></tbody>
+    </table>
+
+    <div class="footer">
+        AUROS AI &mdash; Truck Load Planner &bull; First-Fit Decreasing Bin Packing &bull; Results are estimates; actual packing depends on item geometry and stacking.
+    </div>
+</div>
+</body>
+</html>
