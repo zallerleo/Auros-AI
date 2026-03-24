@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AUROS — Install Cost Intelligence Report | Imagine Exhibits</title>
+<style>
+/* ═══════════════════════════════════════════════════════════════════
+   AUROS EXECUTIVE DASHBOARD — CORE STYLES
+   ═══════════════════════════════════════════════════════════════════ */
+:root {
+    --bg:        #0a0a12;
+    --bg-card:   #111120;
+    --bg-card2:  #161628;
+    --gold:      #c9a84c;
+    --gold-dim:  #a08838;
+    --gold-glow: rgba(201,168,76,0.12);
+    --cream:     #f0ece4;
+    --cream-dim: #b0a99e;
+    --red:       #e74c3c;
+    --red-dim:   rgba(231,76,60,0.15);
+    --green:     #27ae60;
+    --green-dim: rgba(39,174,96,0.15);
+    --blue:      #3498db;
+    --border:    #1e1e38;
+    --font:      'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+    --mono:      'SF Mono', 'Fira Code', 'Consolas', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background: var(--bg);
+    color: var(--cream);
+    font-family: var(--font);
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+.dashboard {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 32px 60px;
+}
+
+/* ── HEADER ─────────────────────────────────────────────────────── */
+.header {
+    text-align: center;
+    padding-bottom: 48px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 48px;
+}
+
+.logo-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 8px;
+}
+
+.logo-mark {
+    width: 44px;
+    height: 44px;
+    border: 2px solid var(--gold);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--gold);
+    letter-spacing: 1px;
+}
+
+.logo-text {
+    font-size: 28px;
+    font-weight: 300;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--cream);
+}
+
+.report-title {
+    font-size: 15px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-top: 4px;
+    font-weight: 500;
+}
+
+.meta-row {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 20px;
+    font-size: 13px;
+    color: var(--cream-dim);
+}
+
+.meta-row span { font-weight: 500; color: var(--cream); }
+
+/* ── HERO NUMBER ────────────────────────────────────────────────── */
+.hero {
+    text-align: center;
+    margin: 48px 0 56px;
+}
+
+.hero-label {
+    font-size: 13px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.hero-number {
+    font-size: 72px;
+    font-weight: 200;
+    color: var(--cream);
+    letter-spacing: 2px;
+    line-height: 1;
+    text-shadow: 0 0 80px var(--gold-glow);
+}
+
+.hero-sub {
+    font-size: 14px;
+    color: var(--cream-dim);
+    margin-top: 12px;
+}
+
+.hero-sub strong {
+    color: var(--gold);
+    font-weight: 600;
+}
+
+/* ── SECTIONS ───────────────────────────────────────────────────── */
+.section {
+    margin-bottom: 56px;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+}
+
+.section-num {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--gold);
+    color: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--cream);
+}
+
+/* ── EXEC SUMMARY ───────────────────────────────────────────────── */
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.kpi-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+}
+
+.kpi-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--cream-dim);
+    margin-bottom: 8px;
+}
+
+.kpi-value {
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--cream);
+}
+
+.kpi-value.waste { color: var(--red); }
+.kpi-value.savings { color: var(--gold); }
+
+.summary-text {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 12px 12px 0;
+    padding: 24px 28px;
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--cream-dim);
+}
+
+.summary-text strong {
+    color: var(--cream);
+    font-weight: 600;
+}
+
+/* ── COST BREAKDOWN CHART ───────────────────────────────────────── */
+.cat-row {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.cat-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--cream);
+    text-align: right;
+    padding-right: 20px;
+}
+
+.cat-bars {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.bar-track {
+    flex: 1;
+    position: relative;
+    height: 36px;
+    background: var(--bg-card);
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+.bar-actual {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50%;
+    background: linear-gradient(90deg, #e74c3c22, #e74c3c66);
+    border-bottom: 1px solid rgba(231,76,60,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 8px;
+}
+
+.bar-optimal {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 50%;
+    background: linear-gradient(90deg, rgba(201,168,76,0.1), rgba(201,168,76,0.4));
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 8px;
+}
+
+.bar-val {
+    font-size: 10px;
+    font-family: var(--mono);
+    color: var(--cream);
+    white-space: nowrap;
+    opacity: 0.9;
+}
+
+.cat-waste {
+    min-width: 140px;
+    font-size: 13px;
+    font-family: var(--mono);
+    color: var(--red);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.waste-pct {
+    color: var(--cream-dim);
+    font-weight: 400;
+    font-size: 11px;
+}
+
+.chart-legend {
+    display: flex;
+    gap: 24px;
+    margin-top: 16px;
+    padding-left: 200px;
+    font-size: 12px;
+    color: var(--cream-dim);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.legend-swatch {
+    width: 14px;
+    height: 8px;
+    border-radius: 2px;
+}
+
+.legend-swatch.actual { background: linear-gradient(90deg, #e74c3c44, #e74c3c88); }
+.legend-swatch.optimal { background: linear-gradient(90deg, rgba(201,168,76,0.2), rgba(201,168,76,0.6)); }
+
+/* ── TOP 5 CARDS ────────────────────────────────────────────────── */
+.opp-card {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+
+.opp-rank {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-card2);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--gold);
+    border-right: 1px solid var(--border);
+}
+
+.opp-body {
+    padding: 18px 24px;
+}
+
+.opp-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--cream);
+    margin-bottom: 4px;
+}
+
+.opp-category {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 8px;
+}
+
+.opp-problem {
+    font-size: 13px;
+    color: var(--cream-dim);
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.opp-savings {
+    display: inline-block;
+    background: var(--red-dim);
+    color: var(--red);
+    font-weight: 700;
+    font-size: 14px;
+    padding: 4px 12px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+}
+
+.opp-fix {
+    font-size: 13px;
+    color: var(--cream-dim);
+    margin-bottom: 6px;
+    line-height: 1.5;
+}
+
+.opp-projected {
+    font-size: 13px;
+    color: var(--green);
+}
+
+/* ── TRUCK SECTION ──────────────────────────────────────────────── */
+.truck-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 28px;
+}
+
+.truck-stat {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+}
+
+.truck-stat-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--cream-dim);
+    margin-bottom: 8px;
+}
+
+.truck-stat-value {
+    font-size: 36px;
+    font-weight: 300;
+    color: var(--cream);
+}
+
+.truck-stat-value.highlight { color: var(--gold); }
+.truck-stat-value.negative { color: var(--red); }
+
+.truck-stat-sub {
+    font-size: 12px;
+    color: var(--cream-dim);
+    margin-top: 4px;
+}
+
+.util-row {
+    display: grid;
+    grid-template-columns: 100px 1fr 60px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.util-label {
+    font-size: 13px;
+    color: var(--cream);
+    font-weight: 500;
+}
+
+.util-track {
+    height: 24px;
+    background: var(--bg-card);
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+.util-fill {
+    height: 100%;
+    border-radius: 6px 0 0 6px;
+    transition: width 0.5s ease;
+}
+
+.util-val {
+    text-align: right;
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--cream);
+    font-weight: 600;
+}
+
+/* ── CONSUMABLES SECTION ────────────────────────────────────────── */
+.cons-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.cons-column {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.cons-col-title {
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+.cons-row {
+    display: grid;
+    grid-template-columns: 140px 1fr 120px;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.cons-label {
+    font-size: 12px;
+    color: var(--cream);
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cons-bar-track {
+    height: 12px;
+    background: var(--bg-card2);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.cons-bar {
+    height: 100%;
+    border-radius: 4px;
+}
+
+.cons-bar.over { background: linear-gradient(90deg, #e74c3c66, #e74c3c); }
+.cons-bar.under { background: linear-gradient(90deg, #f39c1266, #f39c12); }
+
+.cons-val {
+    font-size: 11px;
+    font-family: var(--mono);
+    text-align: right;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.over-val { color: var(--red); }
+.under-val { color: #f39c12; }
+
+.cons-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.cons-summary-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+}
+
+.cons-summary-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--cream-dim);
+    margin-bottom: 6px;
+}
+
+.cons-summary-value {
+    font-size: 24px;
+    font-weight: 300;
+    color: var(--cream);
+}
+
+.cons-summary-value.gold { color: var(--gold); }
+
+/* ── RECOMMENDATIONS ────────────────────────────────────────────── */
+.rec-card {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+
+.rec-priority {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gold);
+    color: var(--bg);
+    font-weight: 800;
+    font-size: 14px;
+    border-right: 1px solid var(--border);
+}
+
+.rec-body {
+    padding: 18px 24px;
+}
+
+.rec-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--cream);
+    margin-bottom: 6px;
+}
+
+.rec-detail {
+    font-size: 13px;
+    color: var(--cream-dim);
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.rec-meta {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.rec-meta span {
+    font-size: 12px;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.rec-savings {
+    background: var(--green-dim);
+    color: var(--green);
+}
+
+.rec-timeline {
+    background: rgba(52,152,219,0.12);
+    color: var(--blue);
+}
+
+.rec-roi {
+    background: var(--gold-glow);
+    color: var(--gold);
+}
+
+/* ── FOOTER ─────────────────────────────────────────────────────── */
+.footer {
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+}
+
+.footer-brand {
+    font-size: 14px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.footer-note {
+    font-size: 12px;
+    color: var(--cream-dim);
+    line-height: 1.8;
+}
+
+.footer-note a {
+    color: var(--gold);
+    text-decoration: none;
+}
+
+.footer-note a:hover {
+    text-decoration: underline;
+}
+
+/* ── DIVIDER ────────────────────────────────────────────────────── */
+.divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+    margin: 40px 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   PRINT STYLES
+   ═══════════════════════════════════════════════════════════════════ */
+@media print {
+    :root {
+        --bg:       #ffffff;
+        --bg-card:  #f8f8f8;
+        --bg-card2: #f0f0f0;
+        --cream:    #1a1a1a;
+        --cream-dim:#555555;
+        --border:   #e0e0e0;
+        --gold:     #b8941f;
+        --gold-dim: #96780f;
+        --gold-glow: rgba(184,148,31,0.08);
+        --red:      #c0392b;
+        --red-dim:  rgba(192,57,43,0.08);
+        --green:    #1e8449;
+        --green-dim: rgba(30,132,73,0.08);
+        --blue:     #2471a3;
+    }
+
+    body {
+        font-size: 11px;
+        background: white;
+        color: #1a1a1a;
+    }
+
+    .dashboard {
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    .hero-number {
+        font-size: 48px;
+        text-shadow: none;
+    }
+
+    .section { margin-bottom: 28px; }
+    .kpi-grid { gap: 8px; }
+    .kpi-value { font-size: 20px; }
+    .truck-grid { gap: 10px; }
+    .truck-stat-value { font-size: 24px; }
+
+    .opp-card, .rec-card {
+        break-inside: avoid;
+    }
+
+    .section {
+        break-inside: avoid;
+    }
+
+    @page {
+        margin: 1cm;
+        size: A4;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+    .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+    .truck-grid { grid-template-columns: 1fr; }
+    .cons-split { grid-template-columns: 1fr; }
+    .cat-row { grid-template-columns: 1fr; }
+    .cat-label { text-align: left; padding-right: 0; margin-bottom: 4px; }
+    .meta-row { flex-direction: column; gap: 4px; }
+    .hero-number { font-size: 48px; }
+    .chart-legend { padding-left: 0; }
+    .cons-row { grid-template-columns: 110px 1fr 100px; }
+}
+</style>
+</head>
+<body>
+<div class="dashboard">
+
+    <!-- ═══ HEADER ═══ -->
+    <div class="header">
+        <div class="logo-line">
+            <div class="logo-mark">A</div>
+            <div class="logo-text">AUROS</div>
+        </div>
+        <div class="report-title">Install Cost Intelligence Report</div>
+        <div class="meta-row">
+            <div>Prepared for <span>Imagine Exhibits</span></div>
+            <div>Show: <span>Cabinet of Curiosities — McCormick Place</span></div>
+            <div><span>March 24, 2026</span></div>
+        </div>
+    </div>
+
+    <!-- ═══ HERO ═══ -->
+    <div class="hero">
+        <div class="hero-label">Total Identified Savings</div>
+        <div class="hero-number">$326,796</div>
+        <div class="hero-sub">per year &mdash; based on <strong>2 moves/year</strong> at 23.1% waste identified per install</div>
+    </div>
+
+    <!-- ═══ SECTION 1: EXECUTIVE SUMMARY ═══ -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-num">1</div>
+            <div class="section-title">Executive Summary</div>
+        </div>
+        <div class="kpi-grid">
+            <div class="kpi-card">
+                <div class="kpi-label">Total Install Cost</div>
+                <div class="kpi-value">$708,340</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">Waste Identified</div>
+                <div class="kpi-value waste">$163,398</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">Waste Percentage</div>
+                <div class="kpi-value waste">23.1%</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">Annual Savings</div>
+                <div class="kpi-value savings">$326,796</div>
+            </div>
+        </div>
+        <div class="summary-text">Analysis of the <strong>Cabinet of Curiosities — McCormick Place</strong> installation reveals <strong>$163,398</strong> in identifiable waste across a <strong>$708,340</strong> install — representing <strong>23.1%</strong> of total spend. The largest cost gaps are in <strong>Labor (Install Crew)</strong> ($42,603 excess) and <strong>Transportation</strong> ($37,886 excess). At <strong>2 moves per year</strong>, implementing the recommended optimizations would recover an estimated <strong>$326,796/year</strong> — with the majority of savings achievable within the first move cycle.</div>
+    </div>
+
+    <!-- ═══ SECTION 2: COST BREAKDOWN ═══ -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-num">2</div>
+            <div class="section-title">Cost Breakdown by Category</div>
+        </div>
+        
+        <div class="cat-row">
+            <div class="cat-label">Labor (Install Crew)</div>
+            <div class="cat-bars">
+                <div class="bar-track">
+                    <div class="bar-actual" style="width:100.0%">
+                        <span class="bar-val">$218,964</span>
+                    </div>
+                    <div class="bar-optimal" style="width:80.5%">
+                        <span class="bar-val">$176,361</span>
+                    </div>
+                </div>
+                <div class="cat-waste">-$42,603 <span class="waste-pct">(19.5%)</span></div>
+            </div>
+        </div>
+        <div class="cat-row">
+            <div class="cat-label">Transportation</div>
+            <div class="cat-bars">
+                <div class="bar-track">
+                    <div class="bar-actual" style="width:69.6%">
+                        <span class="bar-val">$152,300</span>
+                    </div>
+                    <div class="bar-optimal" style="width:52.3%">
+                        <span class="bar-val">$114,414</span>
+                    </div>
+                </div>
+                <div class="cat-waste">-$37,886 <span class="waste-pct">(24.9%)</span></div>
+            </div>
+        </div>
+        <div class="cat-row">
+            <div class="cat-label">Rush Orders</div>
+            <div class="cat-bars">
+                <div class="bar-track">
+                    <div class="bar-actual" style="width:14.7%">
+                        <span class="bar-val">$32,160</span>
+                    </div>
+                    <div class="bar-optimal" style="width:4.6%">
+                        <span class="bar-val">$10,084</span>
+                    </div>
+                </div>
+                <div class="cat-waste">-$22,076 <span class="waste-pct">(68.6%)</span></div>
+            </div>
+        </div>
+        <div class="cat-row">
+            <div class="cat-label">Consumables</div>
+            <div class="cat-bars">
+                <div class="bar-track">
+                    <div class="bar-actual" style="width:27.9%">
+                        <span class="bar-val">$61,046</span>
+                    </div>
+                    <div class="bar-optimal" style="width:18.4%">
+                        <span class="bar-val">$40,269</span>
+                    </div>
+                </div>
+                <div class="cat-waste">-$20,777 <span class="waste-pct">(34.0%)</span></div>
+            </div>
+        </div>
+        <div class="cat-row">
+            <div class="cat-label">Venue-Specific Costs</div>
+            <div class="cat-bars">
+                <div class="bar-track">
+                    <div class="bar-actual" style="width:34.3%">
+                        <span class="bar-val">$75,200</span>
+                    </div>
+                    <div class="bar-optimal" style="width:27.1%">
+                        <span class="bar-val">$59,444</span>
+                    </div>
+                </div>
+                <div class="cat-waste">-$15,756 <span class="waste-pct">(21.0%)</span></div>
+            </div>
+        </div>
+        <div class="cat-row">
+            <div class="cat-label">Equipment Rentals</div>
+            <div class="cat-bars">
+                <div class="bar-track">
+                    <div class="bar-actual" style="width:24.5%">
+                        <span class="bar-val">$53,670</span>
+                    </div>
+                    <div class="bar-optimal" style="width:18.7%">
+                        <span class="bar-val">$40,870</span>
+                    </div>
+                </div>
+                <div class="cat-waste">-$12,800 <span class="waste-pct">(23.8%)</span></div>
+            </div>
+        </div>
+        <div class="cat-row">
+            <div class="cat-label">Vendor / Contractor</div>
+            <div class="cat-bars">
+                <div class="bar-track">
+                    <div class="bar-actual" style="width:52.5%">
+                        <span class="bar-val">$115,000</span>
+                    </div>
+                    <div class="bar-optimal" style="width:47.3%">
+                        <span class="bar-val">$103,500</span>
+                    </div>
+                </div>
+                <div class="cat-waste">-$11,500 <span class="waste-pct">(10.0%)</span></div>
+            </div>
+        </div>
+        <div class="chart-legend">
+            <div class="legend-item"><div class="legend-swatch actual"></div> Actual Spend</div>
+            <div class="legend-item"><div class="legend-swatch optimal"></div> Optimal Spend</div>
+        </div>
+    </div>
+
+    <!-- ═══ SECTION 3: TOP 5 SAVINGS ═══ -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-num">3</div>
+            <div class="section-title">Top 5 Savings Opportunities</div>
+        </div>
+        
+        <div class="opp-card">
+            <div class="opp-rank">#1</div>
+            <div class="opp-body">
+                <div class="opp-title">53' trailers — full show move (32 trucks)</div>
+                <div class="opp-category">Transportation</div>
+                <div class="opp-problem">Avg 82% capacity — 6 trucks under 60%</div>
+                <div class="opp-savings">$18,656 waste per move</div>
+                <div class="opp-fix"><strong>Fix:</strong> Use load planning software to maximize cubic utilization. Consolidate partial loads.</div>
+                <div class="opp-projected">Projected savings: <strong>$37,312/year</strong></div>
+            </div>
+        </div>
+        <div class="opp-card">
+            <div class="opp-rank">#2</div>
+            <div class="opp-body">
+                <div class="opp-title">Install technicians — overtime (32 crew x avg 3hr OT x 5 days)</div>
+                <div class="opp-category">Labor (Install Crew)</div>
+                <div class="opp-problem">$9,120 in OT premium — schedule overrun from late truck arrivals</div>
+                <div class="opp-savings">$9,120 waste per move</div>
+                <div class="opp-fix"><strong>Fix:</strong> Stagger call times by department. Cross-train crew. Plan advance schedules to cut overtime.</div>
+                <div class="opp-projected">Projected savings: <strong>$18,240/year</strong></div>
+            </div>
+        </div>
+        <div class="opp-card">
+            <div class="opp-rank">#3</div>
+            <div class="opp-body">
+                <div class="opp-title">Deadhead return — empty trucks to depot</div>
+                <div class="opp-category">Transportation</div>
+                <div class="opp-problem">8 trucks returned empty — could backhaul or consolidate</div>
+                <div class="opp-savings">$8,800 waste per move</div>
+                <div class="opp-fix"><strong>Fix:</strong> Use load planning software to maximize cubic utilization. Consolidate partial loads.</div>
+                <div class="opp-projected">Projected savings: <strong>$17,600/year</strong></div>
+            </div>
+        </div>
+        <div class="opp-card">
+            <div class="opp-rank">#4</div>
+            <div class="opp-body">
+                <div class="opp-title">Crew idle time — waiting on deliveries/access</div>
+                <div class="opp-category">Labor (Install Crew)</div>
+                <div class="opp-problem">Estimated 220 crew-hours lost to waiting; 100% avoidable</div>
+                <div class="opp-savings">$8,500 waste per move</div>
+                <div class="opp-fix"><strong>Fix:</strong> Stagger call times by department. Cross-train crew. Plan advance schedules to cut overtime.</div>
+                <div class="opp-projected">Projected savings: <strong>$17,000/year</strong></div>
+            </div>
+        </div>
+        <div class="opp-card">
+            <div class="opp-rank">#5</div>
+            <div class="opp-body">
+                <div class="opp-title">Install technicians — straight time (32 crew x 10hr x 5 days)</div>
+                <div class="opp-category">Labor (Install Crew)</div>
+                <div class="opp-problem">Base install crew — standard rate</div>
+                <div class="opp-savings">$7,296 waste per move</div>
+                <div class="opp-fix"><strong>Fix:</strong> Stagger call times by department. Cross-train crew. Plan advance schedules to cut overtime.</div>
+                <div class="opp-projected">Projected savings: <strong>$14,592/year</strong></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ SECTION 4: TRUCK OPTIMIZATION ═══ -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-num">4</div>
+            <div class="section-title">Truck Optimization</div>
+        </div>
+        <div class="truck-grid">
+            <div class="truck-stat">
+                <div class="truck-stat-label">Current Trucks</div>
+                <div class="truck-stat-value negative">40</div>
+                <div class="truck-stat-sub">at 88.1% avg utilization</div>
+            </div>
+            <div class="truck-stat">
+                <div class="truck-stat-label">Optimal Trucks</div>
+                <div class="truck-stat-value highlight">36</div>
+                <div class="truck-stat-sub">at 97.8% avg utilization</div>
+            </div>
+            <div class="truck-stat">
+                <div class="truck-stat-label">Trucks Eliminated</div>
+                <div class="truck-stat-value highlight">4</div>
+                <div class="truck-stat-sub">at $2,500 each</div>
+            </div>
+            <div class="truck-stat">
+                <div class="truck-stat-label">Annual Savings</div>
+                <div class="truck-stat-value highlight">$20,000</div>
+                <div class="truck-stat-sub">2 moves/year</div>
+            </div>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:24px;margin-top:8px;">
+            <div style="font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;font-weight:600;">Volume Utilization</div>
+            
+        <div class="util-row">
+            <div class="util-label">Current</div>
+            <div class="util-track">
+                <div class="util-fill" style="width:88.1%;background:#e74c3c"></div>
+            </div>
+            <div class="util-val">88.1%</div>
+        </div>
+        <div class="util-row">
+            <div class="util-label">Optimized</div>
+            <div class="util-track">
+                <div class="util-fill" style="width:97.8%;background:#c9a84c"></div>
+            </div>
+            <div class="util-val">97.8%</div>
+        </div>
+        </div>
+    </div>
+
+    <!-- ═══ SECTION 5: CONSUMABLES ═══ -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-num">5</div>
+            <div class="section-title">Consumables Optimization</div>
+        </div>
+        <div class="cons-split">
+            <div class="cons-column">
+                <div class="cons-col-title">Over-Ordered Items</div>
+                <div style="color:var(--cream-dim);font-size:13px;">No significant over-ordering detected.</div>
+            </div>
+            <div class="cons-column">
+                <div class="cons-col-title">Under-Ordered (Rush Risk)</div>
+                <div style="color:var(--cream-dim);font-size:13px;">No significant under-ordering detected.</div>
+            </div>
+        </div>
+        <div class="cons-summary-grid">
+            <div class="cons-summary-card">
+                <div class="cons-summary-label">Optimized Order Cost</div>
+                <div class="cons-summary-value gold">$10,805</div>
+            </div>
+            <div class="cons-summary-card">
+                <div class="cons-summary-label">Typical (Unoptimized)</div>
+                <div class="cons-summary-value">$16,426</div>
+            </div>
+            <div class="cons-summary-card">
+                <div class="cons-summary-label">Rush Order Costs (6 shows)</div>
+                <div class="cons-summary-value" style="color:var(--red);">$3,764</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ SECTION 6: RECOMMENDATIONS ═══ -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-num">6</div>
+            <div class="section-title">Prioritized Recommendations</div>
+        </div>
+        
+        <div class="rec-card">
+            <div class="rec-priority">P1</div>
+            <div class="rec-body">
+                <div class="rec-title">Implement Load Planning Software</div>
+                <div class="rec-detail">Current truck utilization is 88%. Optimized packing achieves 98%, eliminating 4 trucks per move.</div>
+                <div class="rec-meta">
+                    <span class="rec-savings">$20,000/year</span>
+                    <span class="rec-timeline">Timeline: 2-4 weeks</span>
+                    <span class="rec-roi">ROI: Immediate — first move</span>
+                </div>
+            </div>
+        </div>
+        <div class="rec-card">
+            <div class="rec-priority">P2</div>
+            <div class="rec-body">
+                <div class="rec-title">Standardize Consumable Ordering</div>
+                <div class="rec-detail">Replace gut-feel ordering with data-driven kitting. Eliminates an estimated $5,621 in waste per show from over-ordering and rush markups.</div>
+                <div class="rec-meta">
+                    <span class="rec-savings">$11,242/year</span>
+                    <span class="rec-timeline">Timeline: 1-2 weeks</span>
+                    <span class="rec-roi">ROI: Immediate — next order cycle</span>
+                </div>
+            </div>
+        </div>
+        <div class="rec-card">
+            <div class="rec-priority">P3</div>
+            <div class="rec-body">
+                <div class="rec-title">Optimize Labor Spend</div>
+                <div class="rec-detail">Save $42,603 by optimizing crew scheduling. Stagger call times by department, reduce overtime through better advance planning, and cross-train crew to reduce idle time.</div>
+                <div class="rec-meta">
+                    <span class="rec-savings">$42,603/move</span>
+                    <span class="rec-timeline">Timeline: 4-8 weeks</span>
+                    <span class="rec-roi">ROI: 1-2 move cycles</span>
+                </div>
+            </div>
+        </div>
+        <div class="rec-card">
+            <div class="rec-priority">P4</div>
+            <div class="rec-body">
+                <div class="rec-title">Optimize Transportation Spend</div>
+                <div class="rec-detail">Optimize truck loading to save $37,886. Use load planning software to maximize cubic utilization. Consolidate partial loads and eliminate deadhead runs.</div>
+                <div class="rec-meta">
+                    <span class="rec-savings">$37,886/move</span>
+                    <span class="rec-timeline">Timeline: 4-8 weeks</span>
+                    <span class="rec-roi">ROI: 1-2 move cycles</span>
+                </div>
+            </div>
+        </div>
+        <div class="rec-card">
+            <div class="rec-priority">P5</div>
+            <div class="rec-body">
+                <div class="rec-title">Optimize Rush Orders Spend</div>
+                <div class="rec-detail">Eliminate $22,076 in markup by pre-ordering consumables 3-4 weeks before each move. Maintain a rolling inventory of high-turnover items (tape, cable, foam, hardware).</div>
+                <div class="rec-meta">
+                    <span class="rec-savings">$22,076/move</span>
+                    <span class="rec-timeline">Timeline: 4-8 weeks</span>
+                    <span class="rec-roi">ROI: 1-2 move cycles</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ FOOTER ═══ -->
+    <div class="footer">
+        <div class="footer-brand">Prepared by AUROS</div>
+        <div class="footer-note">
+            This analysis is based on demo data for illustrative purposes.<br>
+            Savings projections represent achievable targets based on industry benchmarks for optimized operations.<br>
+            <a href="mailto:hello@auros.ai">hello@auros.ai</a>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
