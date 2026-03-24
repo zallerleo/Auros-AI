@@ -1,0 +1,30 @@
+{
+  "client_name": "",
+  "company_name": "",
+  "industry": "",
+  "brand_voice": {
+    "tone": [],
+    "personality_traits": [],
+    "writing_style": "",
+    "vocabulary_preferences": {
+      "use_these_words": [],
+      "avoid_these_words": []
+    },
+    "sentence_structure": "",
+    "formality_level": "professional | conversational | casual",
+    "humor_style": "none | dry | witty | playful"
+  },
+  "content_rules": {
+    "always": [],
+    "never": [],
+    "signature_phrases": [],
+    "call_to_action_style": ""
+  },
+  "example_posts": {
+    "linkedin": [],
+    "email": [],
+    "blog_intro": []
+  },
+  "competitor_voices_to_differentiate_from": [],
+  "notes": ""
+}

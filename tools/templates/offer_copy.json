@@ -1,0 +1,66 @@
+{
+  "offer_name": "The Lead Engine",
+  "tagline": "More jobs. More reviews. Less chasing.",
+  "one_liner": "I help cleaning company owners get more jobs by making sure they show up on Google, respond to leads instantly, and stack 5-star reviews on autopilot.",
+  "problem_statement": "You're good at what you do. Your clients love you. But your phone isn't ringing enough — and when it does, you're too busy on a job to answer fast enough. Meanwhile, the company down the road with worse service is ranking above you on Google because they have 200 reviews and you have 30. Your growth is stuck on referrals and hope.",
+  "solution_statement": "I set up a system that gets you found, gets you leads, and makes sure no lead slips through the cracks. Your Google profile works harder. Your reviews grow every week. And every lead gets a response in under 2 minutes — even when you're on a job site.",
+  "how_it_works": [
+    {
+      "step": 1,
+      "title": "Audit & Setup",
+      "description": "I audit your Google presence, website, and how you currently handle leads. Then I fix what's broken — your Google Business Profile, your landing pages, and your response system."
+    },
+    {
+      "step": 2,
+      "title": "Turn On the Engine",
+      "description": "I launch your review generation system, build local landing pages targeting your service areas, and set up instant lead response so you never lose a job to a slow reply again."
+    },
+    {
+      "step": 3,
+      "title": "Monthly Optimization",
+      "description": "Every month I send you a report: how many leads came in, how many converted, and how much revenue that represents. I adjust the system to keep improving."
+    }
+  ],
+  "pricing": {
+    "setup": {
+      "price_range": "$1,500 - $2,500",
+      "name": "Setup",
+      "includes": [
+        "Full Google Business Profile optimization",
+        "Review generation system (automated post-job review requests)",
+        "5-10 local SEO landing pages (service + city combos)",
+        "Lead capture form with instant auto-response",
+        "Lead follow-up sequence (3-5 automated touchpoints)",
+        "Tracking setup so every lead is attributed"
+      ],
+      "timeline": "Delivered in 7-10 days"
+    },
+    "monthly": {
+      "price_range": "$750 - $1,500",
+      "name": "Monthly Retainer",
+      "includes": [
+        "Ongoing lead nurture management",
+        "New landing pages for expanded service areas",
+        "Review monitoring and response assistance",
+        "Monthly performance report (leads, conversions, revenue)",
+        "System optimization based on data"
+      ]
+    },
+    "performance_bonus": {
+      "description": "Optional: 5-10% of revenue from new commercial contracts sourced through the system",
+      "note": "Only propose this once trust is established and tracking is solid"
+    }
+  },
+  "guarantee": "If the system doesn't generate at least 10 qualified leads in the first 60 days, I'll work for free until it does.",
+  "roi_math": {
+    "example": "Average commercial cleaning contract = $2,500/month. If I help you land just 2 new contracts, that's $60K/year in new revenue. Your investment: ~$20K/year. That's a 3x return.",
+    "conservative": "Even 1 new recurring commercial contract covers the entire year of service."
+  },
+  "social_proof_plan": [
+    "SanityFree as founding case study — free 30-day pilot in exchange for testimonial and full metrics access",
+    "Document: Google ranking before/after, review count growth, leads generated, jobs booked",
+    "Screenshot real results: lead notifications, review increases, revenue dashboards",
+    "Build a simple before/after one-pager for each client"
+  ],
+  "cta": "I'll audit your Google presence for free and show you exactly where you're losing leads. Takes 15 minutes."
+}

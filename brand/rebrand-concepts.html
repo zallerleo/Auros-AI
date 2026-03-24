@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brand Exploration — Name + Logo Concepts</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@200;300;400;500;600;700&family=Space+Mono:wght@400;700&family=DM+Serif+Display:ital@0;1&family=Instrument+Serif:ital@0;1&family=Playfair+Display:wght@400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#06060a;color:#f0ece4;font-family:'Outfit',sans-serif;-webkit-font-smoothing:antialiased}
+.page{max-width:1100px;margin:0 auto;padding:4rem 2rem 6rem}
+
+h1{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;color:#c9a84c;letter-spacing:0.05em;margin-bottom:0.5rem}
+.intro{font-size:0.85rem;color:#5a5664;line-height:1.7;max-width:600px;margin-bottom:5rem}
+
+.concept-block{margin-bottom:6rem;padding-bottom:5rem;border-bottom:1px solid rgba(201,168,76,0.06)}
+.concept-block:last-child{border-bottom:none}
+
+.concept-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:3rem}
+.concept-num{font-family:'Space Mono',monospace;font-size:0.55rem;letter-spacing:0.4em;color:#8a6d2b;text-transform:uppercase}
+.concept-rationale{font-size:0.78rem;color:#8a8692;line-height:1.7;max-width:400px;text-align:right}
+
+.logo-row{display:flex;gap:2rem;margin-bottom:2rem;flex-wrap:wrap}
+
+.logo-card{
+  flex:1;min-width:280px;
+  display:flex;align-items:center;justify-content:center;
+  padding:3.5rem 2rem;position:relative;
+  border:1px solid rgba(201,168,76,0.04);
+  transition:border-color 0.4s;
+}
+.logo-card:hover{border-color:rgba(201,168,76,0.12)}
+.logo-card.dark{background:#08080c}
+.logo-card.light{background:#f5f2eb}
+.logo-card .bg-label{
+  position:absolute;top:0.8rem;right:1rem;
+  font-family:'Space Mono',monospace;font-size:0.45rem;letter-spacing:0.2em;
+  text-transform:uppercase;
+}
+.logo-card.dark .bg-label{color:#2a2630}
+.logo-card.light .bg-label{color:#c5c0b8}
+
+.tagline-row{display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:1.5rem}
+.tagline{
+  font-family:'Space Mono',monospace;font-size:0.6rem;letter-spacing:0.15em;
+  color:#5a5664;padding:0.5rem 1rem;
+  border:1px solid rgba(201,168,76,0.08);border-radius:2px;
+}
+
+.why{margin-top:2rem;font-size:0.82rem;color:#6a6670;line-height:1.7;max-width:600px}
+.why strong{color:#c9a84c;font-weight:400}
+
+.verdict{
+  margin-top:5rem;padding:3rem;
+  background:#0a0a12;border:1px solid rgba(201,168,76,0.08);
+}
+.verdict h2{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:#c9a84c;margin-bottom:1rem}
+.verdict p{font-size:0.85rem;color:#8a8692;line-height:1.7}
+</style>
+</head>
+<body>
+<div class="page">
+
+<h1>Brand Exploration</h1>
+<p class="intro">Five name directions. Each designed to communicate what the company actually does — find waste and cut costs for touring production companies. No tech startup energy. Think consulting firm meets production industry insider.</p>
+
+<!-- ═══════════════════════════════════════════
+     CONCEPT 1: MANIFEST
+     ═══════════════════════════════════════════ -->
+<div class="concept-block">
+  <div class="concept-header">
+    <p class="concept-num">Concept 01 — Manifest</p>
+    <p class="concept-rationale">A manifest is a shipping document — every truck has one. "To manifest" means to make visible. You make waste visible. Double meaning, industry-native.</p>
+  </div>
+
+  <div class="logo-row">
+    <div class="logo-card dark">
+      <span class="bg-label">Dark</span>
+      <svg width="340" height="90" viewBox="0 0 340 90">
+        <!-- Clipboard/manifest icon -->
+        <g transform="translate(32, 45)">
+          <rect x="-12" y="-18" width="24" height="32" rx="1.5" fill="none" stroke="#c9a84c" stroke-width="0.7"/>
+          <rect x="-8" y="-22" width="16" height="6" rx="1" fill="none" stroke="#c9a84c" stroke-width="0.6"/>
+          <line x1="-7" y1="-8" x2="7" y2="-8" stroke="#c9a84c" stroke-width="0.4" opacity="0.5"/>
+          <line x1="-7" y1="-3" x2="5" y2="-3" stroke="#c9a84c" stroke-width="0.4" opacity="0.5"/>
+          <line x1="-7" y1="2" x2="7" y2="2" stroke="#c9a84c" stroke-width="0.4" opacity="0.5"/>
+          <line x1="-7" y1="7" x2="3" y2="7" stroke="#c9a84c" stroke-width="0.4" opacity="0.5"/>
+          <!-- Checkmark on one line -->
+          <path d="M-8 2 L-5.5 5 L-2 -1" fill="none" stroke="#c9a84c" stroke-width="0.6" opacity="0.8"/>
+        </g>
+        <text x="195" y="56" text-anchor="middle" font-family="'DM Serif Display', Georgia, serif" font-size="40" font-weight="400" letter-spacing="6" fill="#c9a84c">MANIFEST</text>
+        <text x="195" y="72" text-anchor="middle" font-family="'Space Mono', monospace" font-size="7" letter-spacing="6" fill="#8a6d2b" opacity="0.6">PRODUCTION INTELLIGENCE</text>
+      </svg>
+    </div>
+    <div class="logo-card light">
+      <span class="bg-label">Light</span>
+      <svg width="340" height="90" viewBox="0 0 340 90">
+        <g transform="translate(32, 45)">
+          <rect x="-12" y="-18" width="24" height="32" rx="1.5" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+          <rect x="-8" y="-22" width="16" height="6" rx="1" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+          <line x1="-7" y1="-8" x2="7" y2="-8" stroke="#1a1a1a" stroke-width="0.4" opacity="0.3"/>
+          <line x1="-7" y1="-3" x2="5" y2="-3" stroke="#1a1a1a" stroke-width="0.4" opacity="0.3"/>
+          <line x1="-7" y1="2" x2="7" y2="2" stroke="#1a1a1a" stroke-width="0.4" opacity="0.3"/>
+          <line x1="-7" y1="7" x2="3" y2="7" stroke="#1a1a1a" stroke-width="0.4" opacity="0.3"/>
+          <path d="M-8 2 L-5.5 5 L-2 -1" fill="none" stroke="#8a6d2b" stroke-width="0.6"/>
+        </g>
+        <text x="195" y="56" text-anchor="middle" font-family="'DM Serif Display', Georgia, serif" font-size="40" font-weight="400" letter-spacing="6" fill="#1a1a1a">MANIFEST</text>
+        <text x="195" y="72" text-anchor="middle" font-family="'Space Mono', monospace" font-size="7" letter-spacing="6" fill="#8a6d2b" opacity="0.5">PRODUCTION INTELLIGENCE</text>
+      </svg>
+    </div>
+  </div>
+  <div class="tagline-row">
+    <span class="tagline">Make waste visible.</span>
+    <span class="tagline">Every dollar, accounted for.</span>
+    <span class="tagline">See where the money goes.</span>
+  </div>
+  <p class="why"><strong>Why it works:</strong> Every production manager knows what a manifest is. It's industry language. And the verb meaning — "to make apparent" — is literally your value prop. It sounds established, not startup-y. "Manifest Production Intelligence" as a descriptor tells them exactly what you do.</p>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     CONCEPT 2: DELTA
+     ═══════════════════════════════════════════ -->
+<div class="concept-block">
+  <div class="concept-header">
+    <p class="concept-num">Concept 02 — Delta</p>
+    <p class="concept-rationale">The mathematical symbol for difference. You sell the gap between what they spend and what they should spend. Simple. Powerful. Universal.</p>
+  </div>
+
+  <div class="logo-row">
+    <div class="logo-card dark">
+      <span class="bg-label">Dark</span>
+      <svg width="340" height="90" viewBox="0 0 340 90">
+        <!-- Delta triangle -->
+        <g transform="translate(36, 45)">
+          <path d="M0,-20 L18,16 L-18,16 Z" fill="none" stroke="#c9a84c" stroke-width="1"/>
+          <circle cx="0" cy="-20" r="2" fill="#c9a84c"/>
+        </g>
+        <text x="195" y="55" text-anchor="middle" font-family="'Playfair Display', Georgia, serif" font-size="42" font-weight="500" letter-spacing="8" fill="#c9a84c">DELTA</text>
+        <text x="195" y="72" text-anchor="middle" font-family="'Space Mono', monospace" font-size="7" letter-spacing="5" fill="#8a6d2b" opacity="0.6">PRODUCTION COST GROUP</text>
+      </svg>
+    </div>
+    <div class="logo-card light">
+      <span class="bg-label">Light</span>
+      <svg width="340" height="90" viewBox="0 0 340 90">
+        <g transform="translate(36, 45)">
+          <path d="M0,-20 L18,16 L-18,16 Z" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+          <circle cx="0" cy="-20" r="2" fill="#8a6d2b"/>
+        </g>
+        <text x="195" y="55" text-anchor="middle" font-family="'Playfair Display', Georgia, serif" font-size="42" font-weight="500" letter-spacing="8" fill="#1a1a1a">DELTA</text>
+        <text x="195" y="72" text-anchor="middle" font-family="'Space Mono', monospace" font-size="7" letter-spacing="5" fill="#8a6d2b" opacity="0.5">PRODUCTION COST GROUP</text>
+      </svg>
+    </div>
+  </div>
+  <div class="tagline-row">
+    <span class="tagline">Find the gap. Close the gap.</span>
+    <span class="tagline">The difference is in the details.</span>
+    <span class="tagline">From what you spend to what you should.</span>
+  </div>
+  <p class="why"><strong>Why it works:</strong> Delta (Δ) is universally understood as "the difference." Your entire business is about showing people the delta between their actual spend and optimal spend. It's short, sharp, mathematical, and sounds like a serious firm. "Delta Production Cost Group" sounds like it's been around for 20 years. <strong>Caution:</strong> Delta is common — Delta Airlines, Delta Force. You'd need the descriptor to differentiate.</p>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     CONCEPT 3: MERIDIAN
+     ═══════════════════════════════════════════ -->
+<div class="concept-block">
+  <div class="concept-header">
+    <p class="concept-num">Concept 03 — Meridian</p>
+    <p class="concept-rationale">A line of longitude — the invisible line that brings precision to navigation. You bring precision to production budgets. Global connotation, premium sound.</p>
+  </div>
+
+  <div class="logo-row">
+    <div class="logo-card dark">
+      <span class="bg-label">Dark</span>
+      <svg width="340" height="90" viewBox="0 0 340 90">
+        <!-- Globe meridian line -->
+        <g transform="translate(34, 45)">
+          <ellipse cx="0" cy="0" rx="16" ry="16" fill="none" stroke="#c9a84c" stroke-width="0.5" opacity="0.3"/>
+          <ellipse cx="0" cy="0" rx="8" ry="16" fill="none" stroke="#c9a84c" stroke-width="0.5" opacity="0.4"/>
+          <line x1="0" y1="-20" x2="0" y2="20" stroke="#c9a84c" stroke-width="0.7"/>
+          <line x1="-18" y1="0" x2="18" y2="0" stroke="#c9a84c" stroke-width="0.3" opacity="0.2"/>
+          <circle cx="0" cy="-16" r="1.5" fill="#c9a84c"/>
+          <circle cx="0" cy="16" r="1.5" fill="#c9a84c"/>
+        </g>
+        <text x="198" y="54" text-anchor="middle" font-family="'Instrument Serif', Georgia, serif" font-size="38" font-weight="400" letter-spacing="5" fill="#c9a84c">MERIDIAN</text>
+        <text x="198" y="70" text-anchor="middle" font-family="'Space Mono', monospace" font-size="7" letter-spacing="5" fill="#8a6d2b" opacity="0.6">PRODUCTION PARTNERS</text>
+      </svg>
+    </div>
+    <div class="logo-card light">
+      <span class="bg-label">Light</span>
+      <svg width="340" height="90" viewBox="0 0 340 90">
+        <g transform="translate(34, 45)">
+          <ellipse cx="0" cy="0" rx="16" ry="16" fill="none" stroke="#1a1a1a" stroke-width="0.5" opacity="0.2"/>
+          <ellipse cx="0" cy="0" rx="8" ry="16" fill="none" stroke="#1a1a1a" stroke-width="0.5" opacity="0.25"/>
+          <line x1="0" y1="-20" x2="0" y2="20" stroke="#1a1a1a" stroke-width="0.7"/>
+          <line x1="-18" y1="0" x2="18" y2="0" stroke="#1a1a1a" stroke-width="0.3" opacity="0.15"/>
+          <circle cx="0" cy="-16" r="1.5" fill="#8a6d2b"/>
+          <circle cx="0" cy="16" r="1.5" fill="#8a6d2b"/>
+        </g>
+        <text x="198" y="54" text-anchor="middle" font-family="'Instrument Serif', Georgia, serif" font-size="38" font-weight="400" letter-spacing="5" fill="#1a1a1a">MERIDIAN</text>
+        <text x="198" y="70" text-anchor="middle" font-family="'Space Mono', monospace" font-size="7" letter-spacing="5" fill="#8a6d2b" opacity="0.5">PRODUCTION PARTNERS</text>
+      </svg>
+    </div>
+  </div>
+  <div class="tagline-row">
+    <span class="tagline">Precision for productions.</span>
+    <span class="tagline">Navigate your costs.</span>
+    <span class="tagline">The line between waste and profit.</span>
+  </div>
+  <p class="why"><strong>Why it works:</strong> Meridian sounds like an established consulting firm. It suggests global reach (you're in Barcelona, working worldwide), precision, and navigation. "Meridian Production Partners" sounds like a $50M company. The globe icon reinforces the touring/global nature of the business.</p>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     CONCEPT 4: CALLOUT (bold, different)
+     ═══════════════════════════════════════════ -->
+<div class="concept-block">
+  <div class="concept-header">
+    <p class="concept-num">Concept 04 — Callout</p>
+    <p class="concept-rationale">In production, a "callout" is when you flag something that needs attention. That's literally what you do — call out the waste. Direct. Memorable. Action-oriented.</p>
+  </div>
+
+  <div class="logo-row">
+    <div class="logo-card dark">
+      <span class="bg-label">Dark</span>
+      <svg width="340" height="90" viewBox="0 0 340 90">
+        <!-- Exclamation / flag icon -->
+        <g transform="translate(32, 45)">
+          <rect x="-3" y="-18" width="6" height="24" rx="1" fill="#c9a84c"/>
+          <circle cx="0" cy="14" r="3.5" fill="#c9a84c"/>
+        </g>
+        <text x="198" y="55" text-anchor="middle" font-family="'Libre Baskerville', Georgia, serif" font-size="36" font-weight="700" letter-spacing="5" fill="#c9a84c">CALLOUT</text>
+        <text x="198" y="72" text-anchor="middle" font-family="'Space Mono', monospace" font-size="7" letter-spacing="5" fill="#8a6d2b" opacity="0.6">PRODUCTION COST ADVISORS</text>
+      </svg>
+    </div>
+    <div class="logo-card light">
+      <span class="bg-label">Light</span>
+      <svg width="340" height="90" viewBox="0 0 340 90">
+        <g transform="translate(32, 45)">
+          <rect x="-3" y="-18" width="6" height="24" rx="1" fill="#1a1a1a"/>
+          <circle cx="0" cy="14" r="3.5" fill="#8a6d2b"/>
+        </g>
+        <text x="198" y="55" text-anchor="middle" font-family="'Libre Baskerville', Georgia, serif" font-size="36" font-weight="700" letter-spacing="5" fill="#1a1a1a">CALLOUT</text>
+        <text x="198" y="72" text-anchor="middle" font-family="'Space Mono', monospace" font-size="7" letter-spacing="5" fill="#8a6d2b" opacity="0.5">PRODUCTION COST ADVISORS</text>
+      </svg>
+    </div>
+  </div>
+  <div class="tagline-row">
+    <span class="tagline">We call it out. You cut it out.</span>
+    <span class="tagline">Flag the waste. Fix the margin.</span>
+    <span class="tagline">Someone had to say it.</span>
+  </div>
+  <p class="why"><strong>Why it works:</strong> It's confrontational in a good way. It says "we're not here to be polite, we're here to tell you what's wrong and fix it." The exclamation mark icon is bold and unmistakable at any size. "Callout Production Cost Advisors" positions you as straight-talking experts, not consultants who bill by the hour and say nothing.</p>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     CONCEPT 5: AUROS (evolved)
+     ═══════════════════════════════════════════ -->
+<div class="concept-block">
+  <div class="concept-header">
+    <p class="concept-num">Concept 05 — AUROS (Evolved)</p>
+    <p class="concept-rationale">Keep the name but reposition it. Drop the "AI" completely. Add a descriptor that grounds it in the industry. New mark, same equity.</p>
+  </div>
+
+  <div class="logo-row">
+    <div class="logo-card dark">
+      <span class="bg-label">Dark</span>
+      <svg width="340" height="90" viewBox="0 0 340 90">
+        <!-- Refined A mark with crosshair precision -->
+        <g transform="translate(34, 44)">
+          <path d="M0,-18 L14,14 L-14,14 Z" fill="none" stroke="#c9a84c" stroke-width="0.8"/>
+          <line x1="-9" y1="6" x2="9" y2="6" stroke="#c9a84c" stroke-width="0.5"/>
+          <circle cx="0" cy="-18" r="2.2" fill="#c9a84c"/>
+          <!-- Precision ticks -->
+          <line x1="-18" y1="0" x2="-15" y2="0" stroke="#c9a84c" stroke-width="0.3" opacity="0.3"/>
+          <line x1="15" y1="0" x2="18" y2="0" stroke="#c9a84c" stroke-width="0.3" opacity="0.3"/>
+        </g>
+        <text x="198" y="52" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-size="44" font-weight="400" letter-spacing="14" fill="#c9a84c">AUROS</text>
+        <text x="198" y="70" text-anchor="middle" font-family="'Space Mono', monospace" font-size="7" letter-spacing="5" fill="#8a6d2b" opacity="0.6">PRODUCTION COST INTELLIGENCE</text>
+      </svg>
+    </div>
+    <div class="logo-card light">
+      <span class="bg-label">Light</span>
+      <svg width="340" height="90" viewBox="0 0 340 90">
+        <g transform="translate(34, 44)">
+          <path d="M0,-18 L14,14 L-14,14 Z" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+          <line x1="-9" y1="6" x2="9" y2="6" stroke="#1a1a1a" stroke-width="0.5"/>
+          <circle cx="0" cy="-18" r="2.2" fill="#8a6d2b"/>
+          <line x1="-18" y1="0" x2="-15" y2="0" stroke="#1a1a1a" stroke-width="0.3" opacity="0.2"/>
+          <line x1="15" y1="0" x2="18" y2="0" stroke="#1a1a1a" stroke-width="0.3" opacity="0.2"/>
+        </g>
+        <text x="198" y="52" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-size="44" font-weight="400" letter-spacing="14" fill="#1a1a1a">AUROS</text>
+        <text x="198" y="70" text-anchor="middle" font-family="'Space Mono', monospace" font-size="7" letter-spacing="5" fill="#8a6d2b" opacity="0.5">PRODUCTION COST INTELLIGENCE</text>
+      </svg>
+    </div>
+  </div>
+  <div class="tagline-row">
+    <span class="tagline">See what you're missing.</span>
+    <span class="tagline">Precision for productions.</span>
+    <span class="tagline">Gold standard. No waste.</span>
+  </div>
+  <p class="why"><strong>Why it works:</strong> You've already built brand equity with AUROS — domain, Cal.com, landing page. Rebranding has a cost. By adding "Production Cost Intelligence" as a descriptor and dropping any mention of "AI," you reposition without losing what you've built. The geometric A mark with precision ticks adds gravitas. "Auros" still means gold (from Latin "aurum") — and gold is what you save them.</p>
+</div>
+
+<!-- ═══════ VERDICT ═══════ -->
+<div class="verdict">
+  <h2>My recommendation</h2>
+  <p><strong>Strongest option: MANIFEST.</strong> It's industry-native language, it has a powerful double meaning (the document + making visible), it doesn't sound like a tech company, and "Manifest Production Intelligence" tells someone exactly what you do in three words. The clipboard/checklist icon scales well and feels operational, not decorative.</p>
+  <p style="margin-top:1rem"><strong>Safest option: AUROS evolved.</strong> You keep the domain, the Cal.com, and everything already built. Just add the descriptor and the new mark. Lower risk, faster to execute.</p>
+  <p style="margin-top:1rem"><strong>Boldest option: CALLOUT.</strong> If you want to be remembered. It's polarizing in the best way — "we call out waste." But it might feel too aggressive for some enterprise buyers.</p>
+</div>
+
+</div>
+</body>
+</html>

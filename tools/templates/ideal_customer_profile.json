@@ -1,0 +1,64 @@
+{
+  "icp_name": "Local Service Business Owner — Cleaning Companies (Primary)",
+  "expansion_verticals": ["Plumbing", "HVAC", "Landscaping", "Roofing", "Pest Control"],
+  "demographics": {
+    "title": ["Owner", "Founder", "General Manager", "Operations Manager"],
+    "company_size": "5-50 employees",
+    "revenue_range": "$300K - $3M/year",
+    "industry": ["Commercial Cleaning", "Residential Cleaning", "Janitorial Services", "Facility Maintenance"],
+    "geography": ["United States (primary)", "Spain", "Latin America (Argentina)"],
+    "years_in_business": "2-15 years"
+  },
+  "psychographics": {
+    "goals": [
+      "Get more jobs without relying on word-of-mouth",
+      "Show up on Google when people search for cleaning services",
+      "Stop losing leads to competitors who respond faster",
+      "Get more 5-star reviews to build trust",
+      "Land bigger commercial contracts"
+    ],
+    "frustrations": [
+      "Paying for ads that don't generate real calls",
+      "Website gets no traffic or looks outdated",
+      "Leads come in but nobody follows up fast enough",
+      "Competitors with worse service rank higher on Google",
+      "No idea which marketing efforts are actually working",
+      "Tried hiring a marketing person — got social media posts instead of leads"
+    ],
+    "objections": [
+      "I've been burned by marketing companies before",
+      "I don't have time to deal with another vendor",
+      "How long before I see results?",
+      "My business runs on referrals, I don't need marketing",
+      "I tried Google Ads and it was a waste of money"
+    ],
+    "buying_triggers": [
+      "Slow season coming — need to fill the pipeline",
+      "Just lost a big contract, need to replace revenue",
+      "Competitor is growing faster and they're not even better",
+      "Hired new crews but don't have enough jobs to keep them busy",
+      "Got a bad batch of reviews and it's hurting business"
+    ]
+  },
+  "where_they_hang_out": [
+    "Google search (they Google their own problems)",
+    "Facebook groups for cleaning business owners",
+    "YouTube (watch 'how to grow my cleaning business' videos)",
+    "ISSA trade shows and local business associations",
+    "WhatsApp groups (especially Latin American operators)",
+    "Nextdoor and local community boards"
+  ],
+  "what_they_value": [
+    "Straight talk — no jargon, no BS",
+    "Results they can see: phone calls, booked jobs, revenue",
+    "Someone who understands their business, not just 'digital marketing'",
+    "Low time commitment from them — they're busy running crews"
+  ],
+  "disqualifiers": [
+    "Solo cleaner with no employees (can't afford it)",
+    "Under $200K revenue (not enough margin)",
+    "Already working with a marketing agency they're happy with",
+    "Not willing to ask customers for reviews",
+    "No website or unwilling to get one"
+  ]
+}
