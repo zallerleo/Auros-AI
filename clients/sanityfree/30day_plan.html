@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AUROS AI — 30-Day Plan: SanityFree</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@200;300;400;500;600&family=Space+Mono:wght@400;700&display=swap');
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+:root {
+  --gold: #c9a84c;
+  --gold-light: #e8d48b;
+  --gold-dark: #8a6d2b;
+  --bg: #08080c;
+  --bg-card: #0e0e14;
+  --bg-elevated: #14141c;
+  --text: #f0ece4;
+  --text-secondary: #8a8692;
+  --text-muted: #5a5664;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Outfit', system-ui, sans-serif;
+  --mono: 'Space Mono', monospace;
+  --green: #34d399;
+  --green-muted: rgba(52,211,153,0.15);
+}
+
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.page { max-width: 900px; margin: 0 auto; padding: 4rem 3rem; }
+
+.cover {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-bottom: 1px solid rgba(201,168,76,0.08);
+  margin-bottom: 4rem;
+  padding-bottom: 4rem;
+}
+
+.cover-logo {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-weight: 300;
+  letter-spacing: 0.4em;
+  color: var(--gold);
+  margin-bottom: 4rem;
+}
+
+.cover-title {
+  font-family: var(--serif);
+  font-size: 3.5rem;
+  font-weight: 300;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.cover-title .gold { color: var(--gold); }
+
+.cover-sub {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 3rem;
+  max-width: 500px;
+}
+
+.cover-meta {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.cover-meta span { margin: 0 1rem; }
+
+.section {
+  margin-bottom: 4rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid rgba(201,168,76,0.06);
+}
+
+.section:last-child { border-bottom: none; }
+
+.section-label {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.section-label::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--gold-dark);
+}
+
+.section h2 {
+  font-family: var(--serif);
+  font-size: 2.2rem;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+}
+
+.section p {
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 1rem;
+  max-width: 700px;
+}
+
+/* ── Week Blocks ── */
+.week-block {
+  background: var(--bg-card);
+  border: 1px solid rgba(201,168,76,0.08);
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.week-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(201,168,76,0.06);
+}
+
+.week-number {
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  font-weight: 300;
+}
+
+.week-goal {
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-align: right;
+}
+
+.task-list {
+  list-style: none;
+}
+
+.task-list li {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(201,168,76,0.03);
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--text-secondary);
+  align-items: start;
+}
+
+.task-list li:last-child { border-bottom: none; }
+
+.task-check {
+  width: 18px;
+  height: 18px;
+  border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 3px;
+  margin-top: 2px;
+}
+
+.task-list li strong {
+  color: var(--text);
+  font-weight: 400;
+}
+
+/* ── What You Need ── */
+.need-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.need-item {
+  padding: 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid rgba(201,168,76,0.06);
+}
+
+.need-label {
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.5rem;
+}
+
+.need-value {
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ── Expected Results ── */
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.result-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(201,168,76,0.08);
+  padding: 2rem;
+  text-align: center;
+}
+
+.result-number {
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--gold);
+  margin-bottom: 0.25rem;
+}
+
+.result-label {
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.result-desc {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* ── Terms ── */
+.terms-block {
+  background: var(--bg-card);
+  border: 1px solid rgba(201,168,76,0.1);
+  padding: 3rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.terms-block h3 {
+  font-family: var(--serif);
+  font-size: 1.8rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.terms-block p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.75;
+}
+
+.terms-block .gold { color: var(--gold); }
+
+@media print {
+  body { background: white; color: #1a1a1a; }
+  .page { padding: 2rem; }
+  .cover { min-height: auto; page-break-after: always; }
+  .section { page-break-inside: avoid; }
+  .week-block, .need-item, .result-card, .terms-block { border-color: #ddd; background: #f9f9f9; }
+  .cover-logo, .section-label, .week-goal, .need-label, .result-label { color: #8a6d2b; }
+  .gold, .result-number { color: #8a6d2b; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- COVER -->
+  <div class="cover">
+    <p class="cover-logo">AUROS AI</p>
+    <h1 class="cover-title">30-Day Action Plan<br><span class="gold">SanityFree</span></h1>
+    <p class="cover-sub">A step-by-step plan to make SanityFree visible, trusted, and generating inbound leads online — in 30 days.</p>
+    <p class="cover-meta">
+      March 2026
+      <span>|</span>
+      Prepared by Leo Zaller
+      <span>|</span>
+      Pilot Program
+    </p>
+  </div>
+
+  <!-- WHAT I NEED FROM YOU -->
+  <div class="section">
+    <p class="section-label">Before We Start</p>
+    <h2>What I Need From You</h2>
+    <p>To get started, I need the following. Everything else I handle on my end.</p>
+
+    <div class="need-grid">
+      <div class="need-item">
+        <p class="need-label">Google Account</p>
+        <p class="need-value">A Google account tied to the business (or I create a Google Business Profile and add you as owner). Takes 5 minutes.</p>
+      </div>
+      <div class="need-item">
+        <p class="need-label">Website Access</p>
+        <p class="need-value">Admin login to sanityfree.cleaning so I can add landing pages, a lead capture form, and a testimonials section.</p>
+      </div>
+      <div class="need-item">
+        <p class="need-label">30-Minute Call</p>
+        <p class="need-value">One call to understand your services, service areas, ideal clients, and how your job tracking software works.</p>
+      </div>
+      <div class="need-item">
+        <p class="need-label">Client Contact Method</p>
+        <p class="need-value">How you reach clients after a completed job (email, WhatsApp, your software). Needed for the review automation.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- WEEK 1 -->
+  <div class="section">
+    <div class="week-block">
+      <div class="week-header">
+        <p class="week-number">Week 1</p>
+        <p class="week-goal">Goal: Get found on Google</p>
+      </div>
+      <ul class="task-list">
+        <li>
+          <div class="task-check"></div>
+          <div><strong>Create Google Business Profile — Barcelona.</strong> Full setup: business name, address, phone, service areas, business hours, categories (commercial cleaning, janitorial service, office cleaning), and description in Spanish and English.</div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div><strong>Create Google Business Profile — Buenos Aires.</strong> Same setup for the Argentina operation. Separate profile, separate location.</div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div><strong>Upload photos to both profiles.</strong> Minimum 10 photos per profile: team at work, equipment, before/after shots, the SanityFree van/branding if it exists. Google rewards profiles with photos.</div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div><strong>Add Warner / Harry Potter project as a Google post.</strong> This is immediate social proof. "SanityFree provided cleaning and sanitization services for the Warner Bros. Harry Potter experience at Port Vell, Barcelona."</div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div><strong>Submit for Google verification.</strong> Google will verify the business via postcard, phone, or email. This usually takes 3-7 days.</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- WEEK 2 -->
+  <div class="section">
+    <div class="week-block">
+      <div class="week-header">
+        <p class="week-number">Week 2</p>
+        <p class="week-goal">Goal: Build trust with reviews</p>
+      </div>
+      <ul class="task-list">
+        <li>
+          <div class="task-check"></div>
+          <div><strong>Set up automated review request system.</strong> After every completed job, the client receives a WhatsApp message or email: "Thanks for choosing SanityFree! If you're happy with our work, a quick Google review helps us a lot: [direct review link]."</div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div><strong>Seed initial reviews from existing clients.</strong> Identify 15-20 current happy clients. Send a personal message from Luciano asking for a Google review. Target: 10-15 reviews in the first two weeks.</div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div><strong>Create a Google review link shortcut.</strong> A simple URL (or QR code) that goes directly to the "Leave a Review" page. Makes it effortless for clients.</div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div><strong>Set up review monitoring alerts.</strong> Get notified whenever a new review comes in so you can respond within 24 hours. Responding to reviews boosts rankings.</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- WEEK 3 -->
+  <div class="section">
+    <div class="week-block">
+      <div class="week-header">
+        <p class="week-number">Week 3</p>
+        <p class="week-goal">Goal: Capture and convert leads</p>
+      </div>
+      <ul class="task-list">
+        <li>
+          <div class="task-check"></div>
+          <div><strong>Build 5-8 local landing pages on the website.</strong> Each page targets a specific service + city combination. Examples: "Limpieza de oficinas en Barcelona," "Commercial cleaning Barcelona," "Limpieza industrial Buenos Aires," "Sanitización y desinfección Barcelona." AI-generated content, SEO-optimized.</div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div><strong>Add a lead capture form to every page.</strong> Simple form: name, email, phone, type of space, message. Not "Schedule a Meeting" — just "Get a Free Quote." Lower commitment = more leads.</div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div><strong>Set up instant auto-response.</strong> When someone fills out the form, they get an immediate email or WhatsApp: "Thanks for reaching out! We'll get back to you within 2 hours with a custom quote. In the meantime, could you let us know the approximate size of your space?"</div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div><strong>Add testimonials section to the website.</strong> Pull in the Google reviews as they come in, plus the Warner case study. Social proof directly on the site.</div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div><strong>Fix website gaps.</strong> Add service area pages (Barcelona, Buenos Aires), add FAQ section, consolidate the two website domains.</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- WEEK 4 -->
+  <div class="section">
+    <div class="week-block">
+      <div class="week-header">
+        <p class="week-number">Week 4</p>
+        <p class="week-goal">Goal: Automate follow-up & measure results</p>
+      </div>
+      <ul class="task-list">
+        <li>
+          <div class="task-check"></div>
+          <div><strong>Build lead follow-up sequence.</strong> Automated messages for leads that don't respond to the initial quote. Day 2: "Did you get a chance to review our quote?" Day 5: "Happy to do a free walkthrough of your space." Day 10: "We have availability opening up — want us to hold a slot?"</div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div><strong>Set up tracking and attribution.</strong> Every lead gets tagged with where it came from (Google, website, referral). Every conversion gets logged. This is how we prove ROI.</div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div><strong>Deliver first monthly report.</strong> Google Business Profile views, search queries, website traffic, leads received, reviews collected. Baseline established.</div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div><strong>30-day review call with Luciano.</strong> Walk through results, discuss what's working, plan month 2 priorities.</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- EXPECTED RESULTS -->
+  <div class="section">
+    <p class="section-label">Expected Outcomes</p>
+    <h2>What 30 Days Should Produce</h2>
+    <p>These are conservative estimates based on typical results for commercial cleaning companies setting up local SEO for the first time.</p>
+
+    <div class="results-grid">
+      <div class="result-card">
+        <p class="result-number">2</p>
+        <p class="result-label">Google Business Profiles</p>
+        <p class="result-desc">Barcelona + Buenos Aires, fully optimized and verified</p>
+      </div>
+      <div class="result-card">
+        <p class="result-number">10-15</p>
+        <p class="result-label">Google Reviews</p>
+        <p class="result-desc">From existing clients, with an automated system to keep them growing</p>
+      </div>
+      <div class="result-card">
+        <p class="result-number">5-8</p>
+        <p class="result-label">Local Landing Pages</p>
+        <p class="result-desc">Targeting key service + city searches in Spanish and English</p>
+      </div>
+    </div>
+
+    <div class="results-grid" style="margin-top: 1.5rem;">
+      <div class="result-card">
+        <p class="result-number">1</p>
+        <p class="result-label">Lead Capture System</p>
+        <p class="result-desc">Forms, instant response, and follow-up automation — no lead gets lost</p>
+      </div>
+      <div class="result-card">
+        <p class="result-number">1</p>
+        <p class="result-label">Review Automation</p>
+        <p class="result-desc">Every completed job triggers a review request automatically</p>
+      </div>
+      <div class="result-card">
+        <p class="result-number">1</p>
+        <p class="result-label">Monthly Report</p>
+        <p class="result-desc">Leads, reviews, traffic, and revenue attribution — all in one place</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TERMS -->
+  <div class="section">
+    <div class="terms-block">
+      <h3>The Deal</h3>
+      <p>This is a <span class="gold">30-day free pilot</span>. No cost. I build and deliver everything listed above. At the end of 30 days, we review the results together. If it's working, we talk about a monthly retainer to keep the system running and expanding. If not, you keep everything I built — no strings.</p>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

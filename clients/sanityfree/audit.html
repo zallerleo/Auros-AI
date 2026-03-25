@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AUROS AI — Digital Presence Audit: SanityFree</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@200;300;400;500;600&family=Space+Mono:wght@400;700&display=swap');
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+:root {
+  --gold: #c9a84c;
+  --gold-light: #e8d48b;
+  --gold-dark: #8a6d2b;
+  --bg: #08080c;
+  --bg-card: #0e0e14;
+  --bg-elevated: #14141c;
+  --text: #f0ece4;
+  --text-secondary: #8a8692;
+  --text-muted: #5a5664;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Outfit', system-ui, sans-serif;
+  --mono: 'Space Mono', monospace;
+  --red: #ef4444;
+  --red-muted: rgba(239,68,68,0.15);
+  --yellow: #f59e0b;
+  --yellow-muted: rgba(245,158,11,0.15);
+  --green: #34d399;
+  --green-muted: rgba(52,211,153,0.15);
+}
+
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.page { max-width: 900px; margin: 0 auto; padding: 4rem 3rem; }
+
+/* ── Cover ── */
+.cover {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-bottom: 1px solid rgba(201,168,76,0.08);
+  margin-bottom: 4rem;
+  padding-bottom: 4rem;
+}
+
+.cover-logo {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-weight: 300;
+  letter-spacing: 0.4em;
+  color: var(--gold);
+  margin-bottom: 4rem;
+}
+
+.cover-title {
+  font-family: var(--serif);
+  font-size: 3.5rem;
+  font-weight: 300;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.cover-title .gold { color: var(--gold); }
+
+.cover-sub {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 3rem;
+  max-width: 500px;
+}
+
+.cover-meta {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.cover-meta span { margin: 0 1rem; }
+
+/* ── Section ── */
+.section {
+  margin-bottom: 4rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid rgba(201,168,76,0.06);
+}
+
+.section:last-child { border-bottom: none; }
+
+.section-label {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.section-label::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--gold-dark);
+}
+
+.section h2 {
+  font-family: var(--serif);
+  font-size: 2.2rem;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+}
+
+.section p {
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 1rem;
+  max-width: 700px;
+}
+
+/* ── Score Cards ── */
+.score-overview {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.score-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(201,168,76,0.06);
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.score-card .score-number {
+  font-family: var(--serif);
+  font-size: 2.5rem;
+  font-weight: 300;
+}
+
+.score-card .score-number.red { color: var(--red); }
+.score-card .score-number.yellow { color: var(--yellow); }
+.score-card .score-number.green { color: var(--green); }
+
+.score-card .score-label {
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+}
+
+/* ── Findings ── */
+.findings-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.finding {
+  background: var(--bg-card);
+  border: 1px solid rgba(201,168,76,0.06);
+  padding: 1.5rem;
+}
+
+.finding-label {
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.5rem;
+}
+
+.finding-title {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.finding-text {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.score-bar {
+  margin-top: 0.75rem;
+  height: 4px;
+  background: rgba(201,168,76,0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.score-fill {
+  height: 100%;
+  border-radius: 2px;
+}
+
+.score-fill.red { background: var(--red); }
+.score-fill.yellow { background: var(--yellow); }
+.score-fill.green { background: var(--green); }
+.score-fill.gold { background: var(--gold); }
+
+/* ── Competitor Table ── */
+.comp-table {
+  width: 100%;
+  margin-top: 2rem;
+  border-collapse: collapse;
+}
+
+.comp-table th {
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  text-align: left;
+  padding: 1rem 0.75rem;
+  border-bottom: 1px solid rgba(201,168,76,0.1);
+}
+
+.comp-table td {
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--text-secondary);
+  padding: 1rem 0.75rem;
+  border-bottom: 1px solid rgba(201,168,76,0.04);
+}
+
+.comp-table tr:hover td {
+  background: rgba(201,168,76,0.02);
+}
+
+.comp-table .highlight {
+  color: var(--text);
+  font-weight: 400;
+}
+
+.comp-table .danger {
+  color: var(--red);
+  font-weight: 500;
+}
+
+.tag {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.5rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.5rem;
+  border-radius: 2px;
+}
+
+.tag.red { background: var(--red-muted); color: var(--red); }
+.tag.yellow { background: var(--yellow-muted); color: var(--yellow); }
+.tag.green { background: var(--green-muted); color: var(--green); }
+
+/* ── Issue List ── */
+.issue-list {
+  list-style: none;
+  margin-top: 1.5rem;
+}
+
+.issue-list li {
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--text-secondary);
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(201,168,76,0.04);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.issue-list li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 0.5rem;
+}
+
+.issue-list li.critical::before { background: var(--red); }
+.issue-list li.warning::before { background: var(--yellow); }
+.issue-list li.info::before { background: var(--text-muted); }
+
+/* ── Strengths ── */
+.strengths-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.strength-item {
+  padding: 1rem 1.25rem;
+  background: var(--green-muted);
+  border-left: 3px solid var(--green);
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--text-secondary);
+}
+
+/* ── Bottom Line ── */
+.bottom-line {
+  background: var(--bg-card);
+  border: 1px solid rgba(201,168,76,0.1);
+  padding: 3rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.bottom-line h3 {
+  font-family: var(--serif);
+  font-size: 1.8rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.bottom-line p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.75;
+}
+
+.bottom-line .gold { color: var(--gold); }
+
+@media print {
+  body { background: white; color: #1a1a1a; }
+  .page { padding: 2rem; }
+  .cover { min-height: auto; page-break-after: always; }
+  .section { page-break-inside: avoid; }
+  .finding, .score-card, .strength-item, .bottom-line { border-color: #ddd; background: #f9f9f9; }
+  .cover-logo, .section-label, .finding-label, .score-label { color: #8a6d2b; }
+  .gold { color: #8a6d2b; }
+  .comp-table th { color: #8a6d2b; }
+  .comp-table td { color: #333; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- COVER -->
+  <div class="cover">
+    <p class="cover-logo">AUROS AI</p>
+    <h1 class="cover-title">Digital Presence Audit<br><span class="gold">SanityFree</span></h1>
+    <p class="cover-sub">An analysis of SanityFree's online visibility, reputation, and lead generation capacity in Barcelona and Buenos Aires.</p>
+    <p class="cover-meta">
+      Prepared March 2026
+      <span>|</span>
+      By Leo Zaller
+      <span>|</span>
+      Confidential
+    </p>
+  </div>
+
+  <!-- OVERALL SCORES -->
+  <div class="section">
+    <p class="section-label">Overview</p>
+    <h2>Digital Presence Scorecard</h2>
+    <p>We scored SanityFree across four critical areas that drive online lead generation for commercial cleaning companies. Each score reflects how well you're set up to be found, trusted, and contacted by potential clients.</p>
+    <div class="score-overview">
+      <div class="score-card">
+        <p class="score-number red">0/10</p>
+        <p class="score-label">Google Visibility</p>
+      </div>
+      <div class="score-card">
+        <p class="score-number red">0/10</p>
+        <p class="score-label">Reviews & Trust</p>
+      </div>
+      <div class="score-card">
+        <p class="score-number yellow">4/10</p>
+        <p class="score-label">Website</p>
+      </div>
+      <div class="score-card">
+        <p class="score-number red">1/10</p>
+        <p class="score-label">Lead Capture</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FINDING 1: GOOGLE -->
+  <div class="section">
+    <p class="section-label">Finding 01</p>
+    <h2>You Don't Exist on Google</h2>
+    <p>SanityFree has <strong style="color: var(--red);">no Google Business Profile</strong> for either Barcelona or Buenos Aires. When someone searches "commercial cleaning Barcelona" or "limpieza de oficinas Barcelona," SanityFree does not appear — not in the map pack, not in local results, nowhere.</p>
+    <p>This is the single most important issue. Google Business Profile is the #1 source of leads for local service businesses. Without it, you are invisible to every potential client who searches for cleaning services in your area.</p>
+
+    <div class="findings-grid">
+      <div class="finding">
+        <p class="finding-label">What happens now</p>
+        <p class="finding-title">Zero Local Visibility</p>
+        <p class="finding-text">A potential client in Barcelona searches "limpieza comercial cerca de mi." Google shows a map with 3 businesses. SanityFree is not one of them. That client will never know you exist.</p>
+        <div class="score-bar"><div class="score-fill red" style="width: 0%"></div></div>
+      </div>
+      <div class="finding">
+        <p class="finding-label">What should happen</p>
+        <p class="finding-title">Google Maps Presence</p>
+        <p class="finding-text">A complete, optimized Google Business Profile with correct categories, service areas, photos, and business hours. SanityFree shows up when people search. They call. They book.</p>
+        <div class="score-bar"><div class="score-fill gold" style="width: 100%"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FINDING 2: REVIEWS -->
+  <div class="section">
+    <p class="section-label">Finding 02</p>
+    <h2>Zero Reviews vs. Competitors With Dozens</h2>
+    <p>SanityFree has 0 Google reviews. Here's how that compares to cleaning companies that DO show up in Barcelona searches:</p>
+
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th>Company</th>
+          <th>Google Reviews</th>
+          <th>Rating</th>
+          <th>Google Profile</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="danger">SanityFree</td>
+          <td class="danger">0 reviews</td>
+          <td class="danger">No rating</td>
+          <td><span class="tag red">Does not exist</span></td>
+        </tr>
+        <tr>
+          <td class="highlight">La Baieta d'Or</td>
+          <td>52 reviews</td>
+          <td>4.1 ★</td>
+          <td><span class="tag green">Active</span></td>
+        </tr>
+        <tr>
+          <td class="highlight">Fifty Soluciones</td>
+          <td>36 reviews</td>
+          <td>4.8 ★</td>
+          <td><span class="tag green">Active</span></td>
+        </tr>
+        <tr>
+          <td class="highlight">Zafiro Limpieza</td>
+          <td>18 reviews</td>
+          <td>4.6 ★</td>
+          <td><span class="tag green">Active</span></td>
+        </tr>
+        <tr>
+          <td class="highlight">IKIWI</td>
+          <td>16 reviews</td>
+          <td>5.0 ★</td>
+          <td><span class="tag green">Active</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p style="margin-top: 1.5rem;">Reviews are the #1 trust signal for local businesses. When a client is choosing between two cleaning companies and one has 50 reviews at 4.8 stars while the other has zero — the choice is already made. SanityFree has worked with Warner, has 100+ clients, and 5 years of experience. That credibility exists in the real world but is completely invisible online.</p>
+  </div>
+
+  <!-- FINDING 3: WEBSITE -->
+  <div class="section">
+    <p class="section-label">Finding 03</p>
+    <h2>Website Looks Professional, But Doesn't Convert</h2>
+    <p>The sanityfree.cleaning website has strong visual design and clean branding. But it's missing the elements that actually turn visitors into leads.</p>
+
+    <ul class="issue-list">
+      <li class="critical"><strong>No service areas listed</strong> — a visitor can't tell if SanityFree operates in their city. You're in Barcelona AND Buenos Aires but the website doesn't say so.</li>
+      <li class="critical"><strong>No testimonials or case studies</strong> — the Warner / Harry Potter exhibition at Port Vell is a major credential. It's not mentioned anywhere on the site.</li>
+      <li class="critical"><strong>No quick quote form</strong> — the only way to contact is "Schedule Meeting" or email. Most leads want to describe their needs and get a response, not commit to a meeting.</li>
+      <li class="warning"><strong>No pricing or price ranges</strong> — despite the company's stated commitment to transparency.</li>
+      <li class="warning"><strong>No FAQ section</strong> — common questions ("Do you bring your own supplies?", "How do you handle keys/access?", "What's your cancellation policy?") go unanswered.</li>
+      <li class="warning"><strong>Blog inactive since 2024</strong> — signals to both Google and visitors that the site isn't actively maintained.</li>
+      <li class="info"><strong>Two websites exist</strong> — sanityfree.cleaning and sanityfree.com.ar (listed on LinkedIn). This splits authority and confuses search engines.</li>
+    </ul>
+  </div>
+
+  <!-- FINDING 4: LEAD CAPTURE -->
+  <div class="section">
+    <p class="section-label">Finding 04</p>
+    <h2>No System to Capture or Respond to Leads</h2>
+    <p>Even if someone finds SanityFree, there's no system in place to capture that interest and convert it into a booked job.</p>
+
+    <div class="findings-grid">
+      <div class="finding">
+        <p class="finding-label">Contact options</p>
+        <p class="finding-title">Email & WhatsApp Only</p>
+        <p class="finding-text">No lead capture form. No instant response. No automated follow-up. A potential client sends an email and waits. If SanityFree is on a job site, the response could take hours. By then, the client has called a competitor.</p>
+        <div class="score-bar"><div class="score-fill red" style="width: 10%"></div></div>
+      </div>
+      <div class="finding">
+        <p class="finding-label">Review generation</p>
+        <p class="finding-title">No System in Place</p>
+        <p class="finding-text">SanityFree has proprietary job management software — but it's not being used to trigger review requests. Every completed job is a missed opportunity to collect a 5-star review.</p>
+        <div class="score-bar"><div class="score-fill red" style="width: 5%"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT'S STRONG -->
+  <div class="section">
+    <p class="section-label">The Good News</p>
+    <h2>What SanityFree Has Going For It</h2>
+    <p>The business itself is strong. The digital presence just doesn't reflect that yet.</p>
+
+    <div class="strengths-grid">
+      <div class="strength-item">Landed a Warner contract (Harry Potter exhibition, Port Vell Barcelona)</div>
+      <div class="strength-item">Operating in two countries — Argentina and Spain</div>
+      <div class="strength-item">100+ clients served over 5+ years</div>
+      <div class="strength-item">Proprietary job management software with real-time reporting</div>
+      <div class="strength-item">Eco-friendly technology — chemical-free cleaning with water-only machinery</div>
+      <div class="strength-item">On track for $1M USD annual revenue</div>
+    </div>
+  </div>
+
+  <!-- BOTTOM LINE -->
+  <div class="section">
+    <div class="bottom-line">
+      <h3>The Bottom Line</h3>
+      <p>SanityFree is a <span class="gold">$1M company</span> with the online presence of a company that hasn't started yet. The business is real, the clients are real, and the results are real — but none of that is visible to the next potential customer searching Google. The gap between the quality of the business and the quality of its digital presence is the entire opportunity.</p>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

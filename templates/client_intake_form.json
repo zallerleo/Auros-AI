@@ -1,0 +1,84 @@
+{
+  "client_intake_form": {
+    "version": "1.0",
+    "date": "",
+    "filled_by": "Leo Zaller"
+  },
+
+  "company_info": {
+    "company_name": "",
+    "owner_name": "",
+    "location_hq": "",
+    "service_areas": [],
+    "years_in_business": "",
+    "number_of_employees": "",
+    "website_url": "",
+    "google_business_profile_url": "",
+    "social_media": {
+      "instagram": "",
+      "facebook": "",
+      "linkedin": "",
+      "other": ""
+    }
+  },
+
+  "services": {
+    "services_offered": [],
+    "most_profitable_service": "",
+    "services_they_want_to_grow": [],
+    "typical_contract_value_monthly": "",
+    "average_job_size_one_off": "",
+    "number_of_active_clients": "",
+    "ideal_client_type": ""
+  },
+
+  "current_lead_sources": {
+    "where_clients_come_from": [],
+    "estimated_leads_per_month": "",
+    "lead_conversion_rate_estimate": "",
+    "who_responds_to_leads": "",
+    "average_response_time": "",
+    "do_they_ask_for_reviews": "",
+    "current_google_review_count": "",
+    "current_google_rating": ""
+  },
+
+  "marketing_history": {
+    "tried_before": [],
+    "what_worked": "",
+    "what_didnt_work": "",
+    "current_monthly_marketing_spend": "",
+    "biggest_frustration": ""
+  },
+
+  "goals": {
+    "what_does_growth_look_like": "",
+    "target_new_clients_per_month": "",
+    "areas_they_want_to_expand_into": [],
+    "revenue_goal": ""
+  },
+
+  "technical_access": {
+    "google_business_profile": {
+      "has_access": false,
+      "login_shared": false,
+      "manager_invite_sent": false
+    },
+    "website": {
+      "platform": "",
+      "has_admin_access": false,
+      "login_shared": false
+    },
+    "job_tracking_method": "",
+    "customer_contact_list_available": false,
+    "preferred_communication_channel": ""
+  },
+
+  "pre_call_audit": {
+    "notes_from_googling_them": "",
+    "google_profile_issues_spotted": [],
+    "website_issues_spotted": [],
+    "competitor_review_counts": [],
+    "quick_wins_identified": []
+  }
+}

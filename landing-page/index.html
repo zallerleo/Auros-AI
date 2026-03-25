@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MANIFEST — Audit the Process. Cut the Cost.</title>
+<meta name="description" content="MANIFEST helps touring entertainment production companies — exhibitions, concerts, festivals, theater — cut production costs by 20-30%. We audit every dollar and eliminate the waste.">
+<meta property="og:title" content="MANIFEST — Audit the Process. Cut the Cost.">
+<meta property="og:description" content="We help touring entertainment companies cut production costs by 20-30%. From warehouse to venue, every dollar analyzed.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Outfit:wght@200;300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --gold:#c9a84c;--gold-light:#e8d48b;--gold-dark:#8a6d2b;--gold-glow:rgba(201,168,76,0.12);
+  --bg:#08080c;--bg-card:#0c0c12;--bg-elevated:#111118;
+  --text:#f0ece4;--text-dim:#9a9490;--text-ghost:#4a4650;
+  --red:#c97850;--red-dim:rgba(201,120,80,0.1);
+  --serif:'Cormorant Garamond',Georgia,serif;--sans:'Outfit',system-ui,sans-serif;--mono:'Space Mono',monospace;
+  --ease:cubic-bezier(0.22,1,0.36,1);
+}
+html{scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:var(--gold-dark) var(--bg)}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--gold);color:var(--bg)}
+
+/* ── Layers ── */
+#stars{position:fixed;inset:0;z-index:0;pointer-events:none}
+.grain{position:fixed;inset:-50%;width:200%;height:200%;z-index:9998;pointer-events:none;opacity:0.028;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:128px}
+@media(hover:hover){
+  .cur-dot{position:fixed;width:5px;height:5px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:10001;mix-blend-mode:difference;transition:transform 0.08s linear}
+  .cur-ring{position:fixed;width:40px;height:40px;border:1px solid rgba(201,168,76,0.3);border-radius:50%;pointer-events:none;z-index:10001;transition:all 0.3s var(--ease)}
+}
+
+/* ── Nav ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.8rem 3.5rem;display:flex;justify-content:space-between;align-items:center;transition:all 0.5s var(--ease)}
+nav.scrolled{background:rgba(8,8,12,0.92);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid rgba(201,168,76,0.05);padding:1rem 3.5rem}
+.logo{font-family:var(--serif);font-size:1.5rem;font-weight:300;letter-spacing:0.4em;color:var(--gold);text-decoration:none}
+.logo-sub{display:block;font-family:var(--mono);font-size:0.38rem;letter-spacing:0.35em;color:var(--gold-dark);margin-top:2px}
+.nav-links{display:flex;gap:2.8rem;list-style:none;align-items:center}
+.nav-links a{font-family:var(--sans);font-size:0.68rem;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-dim);text-decoration:none;transition:color 0.3s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--gold);transition:width 0.4s var(--ease)}
+.nav-links a:hover{color:var(--gold-light)}
+.nav-links a:hover::after{width:100%}
+.nav-cta{font-size:0.65rem!important;letter-spacing:0.22em!important;padding:0.7rem 1.8rem;border:1px solid var(--gold-dark);color:var(--gold)!important;transition:all 0.4s var(--ease)!important}
+.nav-cta:hover{background:var(--gold);color:var(--bg)!important;border-color:var(--gold)}
+.nav-cta::after{display:none!important}
+.nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:1001;background:none;border:none;padding:4px}
+.nav-toggle span{display:block;width:22px;height:1px;background:var(--gold);transition:all 0.3s}
+.nav-toggle.active span:nth-child(1){transform:rotate(45deg) translate(4px,4px)}
+.nav-toggle.active span:nth-child(2){opacity:0}
+.nav-toggle.active span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px)}
+
+/* ── Common ── */
+section{position:relative;z-index:1}
+.contain{max-width:1180px;margin:0 auto;padding:0 3rem}
+.pad{padding:9rem 0}
+.reveal{opacity:0;transform:translateY(40px);transition:all 0.9s var(--ease)}
+.reveal.vis{opacity:1;transform:translateY(0)}
+.reveal-d1{transition-delay:0.12s}.reveal-d2{transition-delay:0.24s}.reveal-d3{transition-delay:0.36s}
+.label{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.45em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:1.5rem;display:flex;align-items:center;gap:0.8rem}
+.label::before{content:'';width:28px;height:1px;background:var(--gold-dark)}
+.heading{font-family:var(--serif);font-size:clamp(2rem,5vw,3.6rem);font-weight:300;line-height:1.12;letter-spacing:-0.015em;margin-bottom:1.5rem}
+.heading em{font-style:italic;font-weight:300}
+.desc{font-size:0.95rem;font-weight:300;color:var(--text-dim);line-height:1.75;max-width:520px}
+.gold{color:var(--gold)}
+.btn{display:inline-block;font-family:var(--sans);font-size:0.68rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;padding:1.05rem 3rem;text-decoration:none;position:relative;overflow:hidden;cursor:pointer;border:none;transition:all 0.4s var(--ease)}
+.btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:var(--bg)}
+.btn-gold::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--gold-light),var(--gold));opacity:0;transition:opacity 0.4s}
+.btn-gold:hover::before{opacity:1}
+.btn-gold span{position:relative;z-index:1}
+.btn-ghost{background:none;color:var(--text-dim);padding:1rem 0.5rem;display:inline-flex;align-items:center;gap:0.6rem}
+.btn-ghost:hover{color:var(--gold-light)}
+.btn-ghost svg{transition:transform 0.3s}
+.btn-ghost:hover svg{transform:translateX(4px)}
+
+/* ═══ HERO ═══ */
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:9rem 2rem 5rem;z-index:1;overflow:hidden}
+.hero-video-wrap{position:absolute;inset:0;z-index:0;overflow:hidden}
+.hero-video{position:absolute;top:50%;left:50%;min-width:100%;min-height:100%;width:auto;height:auto;transform:translate(-50%,-50%);object-fit:cover;opacity:0.35}
+.hero::after{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(to bottom,rgba(8,8,12,0.4) 0%,rgba(8,8,12,0.2) 40%,rgba(8,8,12,0.6) 80%,rgba(8,8,12,1) 100%)}
+.hero>*:not(.hero-video-wrap):not(.hero-orb){position:relative;z-index:2}
+.hero-orb{position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,0.06) 0%,transparent 65%);filter:blur(100px);top:50%;left:50%;transform:translate(-50%,-50%);animation:pulse 8s ease-in-out infinite;z-index:1}
+@keyframes pulse{0%,100%{opacity:0.4;transform:translate(-50%,-50%) scale(1)}50%{opacity:0.9;transform:translate(-50%,-50%) scale(1.15)}}
+
+/* (hero flow viz removed — using video background) */
+
+.hero-eyebrow{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.5em;text-transform:uppercase;color:var(--gold);margin-bottom:3rem;opacity:0;animation:fadeUp 0.8s 0.2s var(--ease) forwards}
+
+/* Split-line stagger headline */
+.hero h1{font-family:var(--serif);font-size:clamp(3.2rem,9vw,7.5rem);font-weight:300;line-height:0.92;letter-spacing:-0.025em;margin-bottom:2.2rem;max-width:950px}
+.hero-line{display:block;overflow:hidden}
+.hero-line-inner{display:block;transform:translateY(110%);animation:lineReveal 1s var(--ease) forwards}
+.hero-line:nth-child(1) .hero-line-inner{animation-delay:0.4s}
+.hero-line:nth-child(2) .hero-line-inner{animation-delay:0.6s}
+@keyframes lineReveal{to{transform:translateY(0)}}
+
+/* Gold shimmer on headline */
+.hero h1 .gold{
+  background:linear-gradient(90deg,var(--gold-dark),var(--gold-light),var(--gold),var(--gold-light),var(--gold-dark));
+  background-size:200% 100%;
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  animation:shimmer 6s ease-in-out infinite;
+}
+@keyframes shimmer{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+
+.hero-sub{font-size:clamp(0.9rem,1.6vw,1.08rem);font-weight:300;color:var(--text-dim);max-width:560px;line-height:1.7;margin-bottom:3.2rem;opacity:0;animation:fadeUp 1s 0.9s var(--ease) forwards}
+.hero-ctas{display:flex;gap:1.5rem;align-items:center;opacity:0;animation:fadeUp 1s 1.1s var(--ease) forwards}
+.hero-scroll{position:absolute;bottom:3rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:0.6rem;opacity:0;animation:fadeUp 1s 1.5s var(--ease) forwards}
+.hero-scroll span{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--text-ghost)}
+.scroll-bar{width:1px;height:40px;position:relative;overflow:hidden}
+.scroll-bar::after{content:'';position:absolute;top:-100%;left:0;width:1px;height:100%;background:var(--gold);animation:scrollDrop 2s ease-in-out infinite}
+@keyframes scrollDrop{0%{top:-100%;opacity:0}50%{top:0;opacity:1}100%{top:100%;opacity:0}}
+@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+
+/* ═══ PROOF BAR ═══ */
+.proof{position:relative;z-index:1;border-top:1px solid rgba(201,168,76,0.06);border-bottom:1px solid rgba(201,168,76,0.06);padding:3rem 2rem;display:flex;justify-content:center;gap:5rem;flex-wrap:wrap}
+.proof-item{text-align:center;position:relative}
+.proof-num{font-family:var(--serif);font-size:2.6rem;font-weight:300;color:var(--gold);line-height:1;margin-bottom:0.4rem;transition:text-shadow 0.4s}
+.proof-item:hover .proof-num{text-shadow:0 0 40px rgba(201,168,76,0.3)}
+.proof-label{font-family:var(--mono);font-size:0.48rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--text-ghost)}
+
+/* ═══ PROBLEM ═══ */
+.problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;margin-top:3.5rem;align-items:start}
+.pain-list{list-style:none;display:flex;flex-direction:column;gap:1.6rem}
+.pain-list li{display:flex;gap:1rem;align-items:flex-start;font-size:0.9rem;font-weight:300;color:var(--text-dim);line-height:1.6}
+.pain-icon{flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--red-dim);color:var(--red);display:flex;align-items:center;justify-content:center;font-size:0.65rem;margin-top:2px;font-family:var(--mono)}
+.solution-headline{font-family:var(--serif);font-size:1.7rem;font-weight:300;line-height:1.4;margin-bottom:1.5rem}
+
+/* Canvas Sankey */
+.flow-canvas-wrap{margin-top:2.5rem;position:relative;width:100%;height:220px}
+#sankey-canvas{width:100%;height:100%}
+
+/* ═══ SERVICES ═══ */
+.svc-section{position:relative}
+.blueprint-bg{position:absolute;inset:0;z-index:0;opacity:0.025;background-image:linear-gradient(rgba(201,168,76,0.3) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,0.3) 1px,transparent 1px);background-size:60px 60px}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;margin-top:4rem;background:rgba(201,168,76,0.05);position:relative;z-index:1}
+
+/* Service card with animated border trace */
+.svc{background:var(--bg);padding:2.8rem 2.2rem;position:relative;transition:all 0.5s var(--ease);overflow:hidden}
+.svc::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:opacity 0.5s}
+.svc::after{content:'';position:absolute;inset:0;border:1px solid transparent;transition:border-color 0.5s;pointer-events:none}
+.svc:hover::before{opacity:1}
+.svc:hover::after{border-color:rgba(201,168,76,0.08)}
+.svc:hover{background:var(--bg-card)}
+
+/* Hover glow radial */
+.svc-glow{position:absolute;top:0;left:0;width:200px;height:200px;background:radial-gradient(circle,rgba(201,168,76,0.06) 0%,transparent 70%);opacity:0;transition:opacity 0.5s;pointer-events:none;transform:translate(-50%,-50%)}
+.svc:hover .svc-glow{opacity:1}
+
+.svc-num{font-family:var(--mono);font-size:0.55rem;color:var(--gold-dark);letter-spacing:0.2em;margin-bottom:1.6rem;position:relative;z-index:1}
+.svc-icon{width:40px;height:40px;margin-bottom:1.5rem;position:relative;z-index:1}
+.svc-icon svg{width:100%;height:100%;stroke:var(--gold);stroke-width:1;fill:none;transition:all 0.4s var(--ease)}
+.svc:hover .svc-icon svg{stroke:var(--gold-light);filter:drop-shadow(0 0 8px rgba(201,168,76,0.3));transform:scale(1.1)}
+.svc h3{font-family:var(--serif);font-size:1.3rem;font-weight:400;margin-bottom:0.8rem;position:relative;z-index:1}
+.svc p{font-size:0.8rem;font-weight:300;color:var(--text-dim);line-height:1.7;position:relative;z-index:1}
+.svc-tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:1.2rem;padding-top:1.2rem;border-top:1px solid rgba(201,168,76,0.05);position:relative;z-index:1}
+.svc-tags span{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.08em;color:var(--text-ghost);padding:0.25rem 0.5rem;border:1px solid rgba(201,168,76,0.08);border-radius:2px;transition:all 0.3s}
+.svc:hover .svc-tags span{border-color:rgba(201,168,76,0.15);color:var(--text-dim)}
+
+/* ═══ PROCESS ═══ */
+.process-section{background:var(--bg-card);border-top:1px solid rgba(201,168,76,0.04);border-bottom:1px solid rgba(201,168,76,0.04)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:4rem;position:relative}
+.steps-line{position:absolute;top:3.6rem;left:2.5rem;right:2.5rem;height:1px;background:rgba(201,168,76,0.08);z-index:0}
+.steps-line-fill{position:absolute;top:0;left:0;width:0;height:1px;background:var(--gold);transition:width 2s var(--ease)}
+.steps.vis .steps-line-fill{width:100%}
+.step{padding:2.5rem;position:relative;border-right:1px solid rgba(201,168,76,0.05);z-index:1}
+.step:last-child{border-right:none}
+.step-num{font-family:var(--serif);font-size:3.2rem;font-weight:300;color:rgba(201,168,76,0.1);line-height:1;margin-bottom:1.5rem;transition:color 0.6s}
+.steps.vis .step-num{color:rgba(201,168,76,0.18)}
+.step h3{font-family:var(--serif);font-size:1.2rem;font-weight:400;margin-bottom:0.6rem}
+.step p{font-size:0.78rem;font-weight:300;color:var(--text-dim);line-height:1.7}
+.step-tag{display:inline-block;font-family:var(--mono);font-size:0.5rem;letter-spacing:0.12em;text-transform:uppercase;padding:0.3rem 0.6rem;border:1px solid rgba(201,168,76,0.12);color:var(--gold-dark);margin-top:1rem;border-radius:2px}
+.step-dot{position:absolute;top:3.2rem;right:-6px;width:12px;height:12px;border-radius:50%;background:var(--bg-card);border:1.5px solid var(--gold-dark);z-index:2;transition:all 0.8s var(--ease)}
+.steps.vis .step-dot{background:var(--gold);border-color:var(--gold);box-shadow:0 0 12px rgba(201,168,76,0.4)}
+.step:last-child .step-dot{display:none}
+
+/* ═══ TRUCK VIZ ═══ */
+.truck-section{border-top:1px solid rgba(201,168,76,0.04);border-bottom:1px solid rgba(201,168,76,0.04);background:var(--bg-card)}
+.truck-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:3rem;align-items:center}
+.truck-visual{display:flex;flex-direction:column;gap:1.8rem}
+
+/* Truck cross-section comparison */
+.truck-compare{text-align:center}
+.truck-pair{display:flex;justify-content:center;align-items:center;gap:3rem;margin-bottom:2rem;flex-wrap:wrap}
+.truck-cross{display:flex;flex-direction:column;align-items:center;gap:1rem}
+.truck-cross-label{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--text-ghost)}
+.truck-frame{position:relative;width:160px;height:260px;border:1px solid rgba(201,168,76,0.15);background:rgba(201,168,76,0.02)}
+.truck-ceiling{position:absolute;top:0;left:0;right:0;height:1px;background:rgba(201,168,76,0.3)}
+.truck-floor{position:absolute;bottom:0;left:0;right:0;height:2px;background:rgba(201,168,76,0.3)}
+.truck-wall-l{position:absolute;top:0;bottom:0;left:0;width:1px;background:rgba(201,168,76,0.2)}
+.truck-wall-r{position:absolute;top:0;bottom:0;right:0;width:1px;background:rgba(201,168,76,0.2)}
+.truck-interior{position:absolute;bottom:2px;left:1px;right:1px;display:grid;grid-template-columns:1fr 1fr;gap:2px;align-content:end}
+.truck-crate{border:1px solid;transition:all 0.6s var(--ease);opacity:0;transform:translateY(10px)}
+.truck-crate.show{opacity:1;transform:translateY(0)}
+.truck-crate.loaded{height:40px;background:rgba(201,168,76,0.1);border-color:rgba(201,168,76,0.3)}
+.truck-crate.empty{height:40px;background:rgba(201,168,76,0.02);border-color:rgba(201,168,76,0.06);border-style:dashed}
+.truck-crate.optimized{height:40px;background:rgba(201,168,76,0.15);border-color:rgba(201,168,76,0.4)}
+/* Wasted space indicator */
+.truck-wasted{position:absolute;top:2px;left:2px;right:2px;display:flex;align-items:center;justify-content:center;border:1px dashed rgba(201,120,80,0.2);background:rgba(201,120,80,0.03);font-family:var(--mono);font-size:0.45rem;letter-spacing:0.1em;color:rgba(201,120,80,0.5);text-transform:uppercase}
+.truck-meta{display:flex;flex-direction:column;align-items:center;gap:0.2rem}
+.truck-meta-stat{font-family:var(--serif);font-size:1.3rem;font-weight:300}
+.truck-meta-note{font-family:var(--mono);font-size:0.45rem;letter-spacing:0.15em;color:var(--text-ghost);text-transform:uppercase}
+.truck-arrow{display:flex;align-items:center;padding-top:1.5rem}
+.truck-delta{display:flex;align-items:center;justify-content:center;gap:1rem;padding:1.5rem;border:1px solid rgba(201,168,76,0.1);background:rgba(201,168,76,0.02)}
+.truck-delta-num{font-family:var(--serif);font-size:2.4rem;font-weight:300;color:var(--gold)}
+.truck-delta-text{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.15em;color:var(--text-ghost);text-transform:uppercase}
+.truck-delta-sub{font-family:var(--mono);font-size:0.6rem;color:var(--gold-dark);margin-top:0.2rem}
+
+/* ═══ WHO ═══ */
+.audience-list{display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:2.5rem}
+.audience-list span{font-family:var(--sans);font-size:0.78rem;font-weight:300;color:var(--text-dim);padding:0.6rem 1.4rem;border:1px solid rgba(201,168,76,0.08);border-radius:2px;transition:all 0.3s var(--ease);cursor:default}
+.audience-list span:hover{border-color:var(--gold-dark);color:var(--gold-light);background:rgba(201,168,76,0.03)}
+
+/* ═══ RESULTS ═══ */
+.results-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:4rem}
+.result{background:var(--bg-card);border:1px solid rgba(201,168,76,0.05);padding:2.8rem 2rem;transition:all 0.4s;position:relative;overflow:hidden}
+.result:hover{border-color:rgba(201,168,76,0.15);transform:translateY(-4px)}
+
+/* Radial progress ring */
+.result-ring{width:100px;height:100px;margin-bottom:1.2rem;position:relative}
+.result-ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.result-ring-bg{fill:none;stroke:rgba(201,168,76,0.06);stroke-width:3}
+.result-ring-fill{fill:none;stroke:var(--gold);stroke-width:3;stroke-linecap:round;stroke-dasharray:283;stroke-dashoffset:283;transition:stroke-dashoffset 2s var(--ease)}
+.result.vis .result-ring-fill{stroke-dashoffset:var(--ring-offset)}
+.result-ring-val{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.6rem;font-weight:300;color:var(--gold)}
+
+.result h4{font-family:var(--serif);font-size:1.05rem;font-weight:400;margin-bottom:0.6rem}
+.result p{font-size:0.78rem;font-weight:300;color:var(--text-ghost);line-height:1.6}
+
+/* ═══ QUOTE ═══ */
+.quote-section{border-top:1px solid rgba(201,168,76,0.04);border-bottom:1px solid rgba(201,168,76,0.04);text-align:center;padding:7rem 2rem;position:relative}
+.quote-section::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,0.02) 0%,transparent 70%);pointer-events:none}
+.q-mark{font-family:var(--serif);font-size:6rem;color:var(--gold-dark);line-height:0.4;margin-bottom:2rem;opacity:0.3}
+.q-text{font-family:var(--serif);font-size:clamp(1.3rem,2.8vw,2.1rem);font-weight:300;font-style:italic;line-height:1.5;max-width:680px;margin:0 auto 1.5rem}
+.q-attr{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--text-ghost)}
+
+/* ═══ ABOUT ═══ */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.about-vis{position:relative;height:380px;display:flex;align-items:center;justify-content:center}
+.leo-wrap{position:relative;width:260px;height:260px}
+.leo-svg{width:100%;height:100%;opacity:0.7}
+.leo-glow{position:absolute;inset:-45%;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,0.05) 0%,transparent 65%);animation:pulse 6s ease-in-out infinite}
+.about-content .desc{margin-bottom:1.2rem}
+.about-stats{display:flex;gap:3rem;margin-top:2.5rem;padding-top:1.8rem;border-top:1px solid rgba(201,168,76,0.07)}
+.stat-val{font-family:var(--serif);font-size:1.8rem;font-weight:300;color:var(--gold);line-height:1;margin-bottom:0.3rem}
+.stat-lbl{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--text-ghost)}
+
+/* ═══ CTA ═══ */
+.cta-section{text-align:center;padding:9rem 2rem;position:relative}
+.cta-orb{position:absolute;width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,0.03) 0%,transparent 65%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none}
+.cta-h{font-family:var(--serif);font-size:clamp(2.2rem,5.5vw,4rem);font-weight:300;line-height:1.1;margin-bottom:1.5rem;position:relative}
+.cta-sub{font-size:0.95rem;font-weight:300;color:var(--text-dim);line-height:1.7;max-width:460px;margin:0 auto 3rem;position:relative}
+.cta-btns{display:flex;gap:1.5rem;justify-content:center;align-items:center;position:relative}
+.cta-email{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.1em;color:var(--text-ghost);text-decoration:none;transition:color 0.3s}
+.cta-email:hover{color:var(--gold)}
+
+/* ═══ FOOTER ═══ */
+footer{position:relative;z-index:1;border-top:1px solid rgba(201,168,76,0.05);padding:2.5rem 3.5rem;display:flex;justify-content:space-between;align-items:center}
+.foot-l{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.2em;color:var(--text-ghost)}
+.foot-c{font-family:var(--serif);font-size:0.7rem;letter-spacing:0.3em;color:var(--gold-dark)}
+.foot-r{display:flex;gap:2rem}
+.foot-r a{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-ghost);text-decoration:none;transition:color 0.3s}
+.foot-r a:hover{color:var(--gold)}
+
+/* ═══ RESPONSIVE ═══ */
+@media(max-width:1024px){
+  .services-grid{grid-template-columns:repeat(2,1fr)}.services-grid .svc:last-child{grid-column:span 2;max-width:50%;margin:0 auto}
+  .steps{grid-template-columns:repeat(2,1fr)}.step:nth-child(2){border-right:none}.step:nth-child(2) .step-dot{display:none}.step:nth-child(1),.step:nth-child(2){border-bottom:1px solid rgba(201,168,76,0.05)}
+  .about-grid{grid-template-columns:1fr;gap:3rem}.about-vis{height:260px}.problem-grid{grid-template-columns:1fr;gap:3rem}
+  .truck-grid{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  nav{padding:1.2rem 1.5rem}nav.scrolled{padding:0.8rem 1.5rem}
+  .nav-links{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(8,8,12,0.97);backdrop-filter:blur(20px);flex-direction:column;justify-content:center;gap:2rem;opacity:0;pointer-events:none;transition:opacity 0.4s}
+  .nav-links.open{opacity:1;pointer-events:all}.nav-links a{font-size:0.85rem}.nav-toggle{display:flex}
+  .contain{padding:0 1.5rem}.pad{padding:5.5rem 0}
+  .services-grid{grid-template-columns:1fr}.services-grid .svc:last-child{grid-column:span 1;max-width:100%}
+  .steps{grid-template-columns:1fr}.step{border-right:none;border-bottom:1px solid rgba(201,168,76,0.05)}.step:last-child{border-bottom:none}.step-dot{display:none!important}.steps-line{display:none}
+  .results-grid{grid-template-columns:1fr}.hero-ctas{flex-direction:column}.proof{gap:2.5rem}.about-stats{gap:2rem}.cta-btns{flex-direction:column}
+  footer{flex-direction:column;gap:1.2rem;text-align:center}.hero-viz{display:none}.flow-canvas-wrap{height:160px}
+  .truck-fleet{gap:3px}.truck-unit{width:16px;height:10px}
+}
+</style>
+</head>
+<body>
+
+<div class="grain"></div>
+<canvas id="stars"></canvas>
+<div class="cur-dot"></div>
+<div class="cur-ring"></div>
+
+<nav>
+  <a href="#" class="logo">MANIFEST<span class="logo-sub">PRODUCTION INTELLIGENCE</span></a>
+  <ul class="nav-links">
+    <li><a href="#services">What We Do</a></li>
+    <li><a href="#process">How It Works</a></li>
+    <li><a href="#audience">Who It's For</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="https://cal.com/auros-ai/intro" target="_blank" class="nav-cta">Book Free Audit</a></li>
+  </ul>
+  <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-video-wrap">
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="assets/hero-truck.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero-orb"></div>
+
+  <p class="hero-eyebrow">Production Cost Intelligence</p>
+  <h1>
+    <span class="hero-line"><span class="hero-line-inner"><em>Audit the process.</em></span></span>
+    <span class="hero-line"><span class="hero-line-inner"><span class="gold">Cut the cost.</span></span></span>
+  </h1>
+  <p class="hero-sub">We work with touring entertainment companies &mdash; exhibitions, concerts, festivals, live shows &mdash; to cut production costs by 20&ndash;30%. Every dollar from warehouse to venue, analyzed and optimized.</p>
+  <div class="hero-ctas">
+    <a href="https://cal.com/auros-ai/intro" target="_blank" class="btn btn-gold"><span>Get Your Free Cost Audit</span></a>
+    <a href="#services" class="btn btn-ghost">See What We Do <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+  </div>
+  <div class="hero-scroll"><span>Scroll</span><div class="scroll-bar"></div></div>
+</section>
+
+<!-- ═══ PROOF ═══ -->
+<div class="proof" id="proof-bar">
+  <div class="proof-item"><p class="proof-num" data-target="163" data-prefix="$" data-suffix="K">$0K</p><p class="proof-label">Avg. Waste Identified</p></div>
+  <div class="proof-item"><p class="proof-num" data-target="25" data-prefix="" data-suffix="%">0%</p><p class="proof-label">Typical Cost Reduction</p></div>
+  <div class="proof-item"><p class="proof-num" data-target="40" data-prefix="" data-suffix="+">0+</p><p class="proof-label">Productions Analyzed</p></div>
+  <div class="proof-item"><p class="proof-num" data-target="2" data-prefix="<" data-suffix=" wk">&lt;0 wk</p><p class="proof-label">To First Savings Report</p></div>
+</div>
+
+<!-- ═══ PROBLEM ═══ -->
+<section class="pad">
+  <div class="contain">
+    <div class="reveal">
+      <p class="label">The Problem</p>
+      <h2 class="heading">Every show costs more<br><em>than it should</em></h2>
+    </div>
+    <div class="problem-grid reveal">
+      <ul class="pain-list">
+        <li><span class="pain-icon">&times;</span>Materials get ordered on gut feel &mdash; you over-buy to play it safe, or under-buy and pay rush prices that kill your margins</li>
+        <li><span class="pain-icon">&times;</span>Every venue is different but the budget template is the same. What worked in Chicago doesn&rsquo;t work in Miami</li>
+        <li><span class="pain-icon">&times;</span>Trucks leave half-loaded because nobody has time to optimize packing when load-in is Monday</li>
+        <li><span class="pain-icon">&times;</span>Overtime explodes in the last 48 hours of every install because the schedule was too tight from day one</li>
+        <li><span class="pain-icon">&times;</span>You don&rsquo;t know the real cost of a show until the invoices come in three months later</li>
+      </ul>
+      <div>
+        <p class="solution-headline">We make the waste <span class="gold">visible</span> &mdash; then we eliminate it.</p>
+        <p class="desc">Not a consulting deck that sits in a drawer. Actual systems calibrated to your productions that save real money starting with your next install.</p>
+        <!-- Animated canvas Sankey diagram -->
+        <div class="flow-canvas-wrap">
+          <canvas id="sankey-canvas"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SERVICES ═══ -->
+<section id="services" class="svc-section pad">
+  <div class="blueprint-bg"></div>
+  <div class="contain">
+    <div class="reveal">
+      <p class="label">What We Do</p>
+      <h2 class="heading">Three ways we cut<br><em>your costs</em></h2>
+      <p class="desc">Each one targeted at a specific area where touring productions bleed money. Together, they compound.</p>
+    </div>
+    <div class="services-grid">
+      <div class="svc reveal reveal-d1">
+        <div class="svc-glow"></div>
+        <span class="svc-num">01</span>
+        <div class="svc-icon"><svg viewBox="0 0 48 48"><rect x="8" y="6" width="32" height="36" rx="2"/><path d="M16 16h16M16 24h10M16 32h14"/><path d="M30 28l4 4 8-10" stroke-width="1.5"/></svg></div>
+        <h3>Production Cost Analysis</h3>
+        <p>We break down your total production spend &mdash; materials, freight, labor, equipment, vendors &mdash; show by show, line by line. You see exactly where money is going and where it shouldn&rsquo;t be.</p>
+        <div class="svc-tags"><span>Cost breakdown</span><span>Waste mapping</span><span>Show-over-show trends</span></div>
+      </div>
+      <div class="svc reveal reveal-d2">
+        <div class="svc-glow"></div>
+        <span class="svc-num">02</span>
+        <div class="svc-icon"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="18"/><path d="M24 12v12l8 8"/><circle cx="24" cy="24" r="3"/></svg></div>
+        <h3>Procurement Optimization</h3>
+        <p>Ordering systems tuned to each venue&rsquo;s actual specs. Right quantities, right timing, right suppliers. No more safety stock that turns into waste, no more emergency purchases at triple the price.</p>
+        <div class="svc-tags"><span>Venue-calibrated orders</span><span>Rush order elimination</span><span>Supplier management</span></div>
+      </div>
+      <div class="svc reveal reveal-d3">
+        <div class="svc-glow"></div>
+        <span class="svc-num">03</span>
+        <div class="svc-icon"><svg viewBox="0 0 48 48"><rect x="4" y="20" width="40" height="16" rx="2"/><path d="M12 20V14a4 4 0 014-4h16a4 4 0 014 4v6"/><path d="M14 28h20M14 32h12"/></svg></div>
+        <h3>Logistics Planning</h3>
+        <p>Load plans that maximize truck utilization. Crew schedules that cut unnecessary overtime. Route optimization that keeps transportation costs predictable and controlled.</p>
+        <div class="svc-tags"><span>Truck optimization</span><span>Crew scheduling</span><span>Route planning</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROCESS ═══ -->
+<section id="process" class="process-section pad">
+  <div class="contain">
+    <div class="reveal">
+      <p class="label">How It Works</p>
+      <h2 class="heading">From first call to<br><em>first savings</em></h2>
+      <p class="desc">No long onboarding. No months of analysis paralysis. We move fast because your next show isn&rsquo;t waiting.</p>
+    </div>
+    <div class="steps reveal">
+      <div class="steps-line"><div class="steps-line-fill"></div></div>
+      <div class="step"><div class="step-dot"></div><p class="step-num">I</p><h3>Free Cost Audit</h3><p>We look at your last production and spot the biggest savings opportunities. 30 minutes. No obligation.</p><span class="step-tag">30 min call</span></div>
+      <div class="step"><div class="step-dot"></div><p class="step-num">II</p><h3>Deep Dive</h3><p>We analyze your purchase orders, freight costs, crew hours, and vendor invoices across multiple shows.</p><span class="step-tag">1&ndash;2 weeks</span></div>
+      <div class="step"><div class="step-dot"></div><p class="step-num">III</p><h3>Savings Report</h3><p>Here&rsquo;s what you spent, here&rsquo;s what you should have spent, here&rsquo;s the gap, and here&rsquo;s how to close it.</p><span class="step-tag">Delivered</span></div>
+      <div class="step"><p class="step-num">IV</p><h3>Implementation</h3><p>We build the ordering, loading, and scheduling systems. You see the savings on your next install.</p><span class="step-tag">Ongoing</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TRUCK VIZ ═══ -->
+<section class="truck-section pad">
+  <div class="contain">
+    <div class="reveal">
+      <p class="label">Load Optimization</p>
+      <h2 class="heading">Same cargo.<br><em>Fewer trucks.</em></h2>
+    </div>
+    <div class="truck-compare reveal" id="truck-viz">
+      <div class="truck-pair">
+        <!-- BEFORE: cross-section of one truck, partially loaded -->
+        <div class="truck-cross">
+          <p class="truck-cross-label">Before</p>
+          <div class="truck-frame">
+            <div class="truck-ceiling"></div>
+            <div class="truck-interior" id="truck-before"></div>
+            <div class="truck-floor"></div>
+            <div class="truck-wall-l"></div>
+            <div class="truck-wall-r"></div>
+          </div>
+          <div class="truck-meta">
+            <span class="truck-meta-stat" style="color:var(--red)">60% loaded</span>
+            <span class="truck-meta-note">Wasted vertical space</span>
+          </div>
+        </div>
+        <!-- Arrow -->
+        <div class="truck-arrow">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M8 20h24M24 12l8 8-8 8" stroke="var(--gold)" stroke-width="1.5"/></svg>
+        </div>
+        <!-- AFTER: same truck, packed floor to ceiling -->
+        <div class="truck-cross">
+          <p class="truck-cross-label">After</p>
+          <div class="truck-frame">
+            <div class="truck-ceiling"></div>
+            <div class="truck-interior" id="truck-after"></div>
+            <div class="truck-floor"></div>
+            <div class="truck-wall-l"></div>
+            <div class="truck-wall-r"></div>
+          </div>
+          <div class="truck-meta">
+            <span class="truck-meta-stat" style="color:var(--gold)">98% loaded</span>
+            <span class="truck-meta-note">Packed floor to ceiling</span>
+          </div>
+        </div>
+      </div>
+      <div class="truck-delta">
+        <div>
+          <p class="truck-delta-num">&minus;4</p>
+          <p class="truck-delta-text">Trucks eliminated</p>
+        </div>
+        <div style="width:1px;height:40px;background:rgba(201,168,76,0.1)"></div>
+        <div>
+          <p class="truck-delta-num">$10K</p>
+          <p class="truck-delta-text">Saved per move</p>
+          <p class="truck-delta-sub">$100K&ndash;$200K annually</p>
+        </div>
+      </div>
+      <p class="desc" style="max-width:none;margin-top:2rem;text-align:center">Most touring productions waste 30&ndash;40% of their truck space. We analyze your actual inventory and generate load plans that pack every cubic foot &mdash; eliminating trucks and cutting transportation costs by <strong style="color:var(--gold)">$100,000&ndash;$200,000 annually</strong>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHO ═══ -->
+<section id="audience" class="pad">
+  <div class="contain">
+    <div class="reveal">
+      <p class="label">Who It&rsquo;s For</p>
+      <h2 class="heading">If you build it, move it,<br><em>and build it again</em></h2>
+      <p class="desc">We work with any production company that installs, strikes, and transports to the next city.</p>
+    </div>
+    <div class="audience-list reveal">
+      <span>Touring Exhibitions</span><span>Immersive Experiences</span><span>Concert Tours</span><span>Music Festivals</span><span>Theater &amp; Broadway Tours</span><span>Corporate Events</span><span>Trade Show Production</span><span>Pop-up Installations</span><span>Live Show Production</span><span>Experiential Marketing</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ RESULTS ═══ -->
+<section class="pad">
+  <div class="contain">
+    <div class="reveal">
+      <p class="label">The Numbers</p>
+      <h2 class="heading">Results that show up<br><em>on the bottom line</em></h2>
+    </div>
+    <div class="results-grid">
+      <div class="result reveal reveal-d1" style="--ring-offset:42">
+        <div class="result-ring">
+          <svg viewBox="0 0 100 100"><circle class="result-ring-bg" cx="50" cy="50" r="45"/><circle class="result-ring-fill" cx="50" cy="50" r="45"/></svg>
+          <span class="result-ring-val" data-target="327" data-prefix="$" data-suffix="K">$0K</span>
+        </div>
+        <h4>Annual Savings</h4>
+        <p>Projected yearly savings for a major touring exhibition across logistics, materials, and labor.</p>
+      </div>
+      <div class="result reveal reveal-d2" style="--ring-offset:187">
+        <div class="result-ring">
+          <svg viewBox="0 0 100 100"><circle class="result-ring-bg" cx="50" cy="50" r="45"/><circle class="result-ring-fill" cx="50" cy="50" r="45"/></svg>
+          <span class="result-ring-val" data-target="34" data-prefix="" data-suffix="%">0%</span>
+        </div>
+        <h4>Material Cost Reduction</h4>
+        <p>Average savings on consumables through precise, venue-calibrated ordering.</p>
+      </div>
+      <div class="result reveal reveal-d3" style="--ring-offset:100">
+        <div class="result-ring">
+          <svg viewBox="0 0 100 100"><circle class="result-ring-bg" cx="50" cy="50" r="45"/><circle class="result-ring-fill" cx="50" cy="50" r="45"/></svg>
+          <span class="result-ring-val" data-target="10" data-prefix="$" data-suffix="K">$0K</span>
+        </div>
+        <h4>Saved Per Move</h4>
+        <p>Typical savings per city-to-city move by eliminating underutilized trucks.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ QUOTE ═══ -->
+<section class="quote-section reveal">
+  <div class="q-mark">&ldquo;</div>
+  <p class="q-text">Most production companies don&rsquo;t have a cost problem. They have a visibility problem. Once you can see where the money goes, cutting it becomes obvious.</p>
+  <p class="q-attr">MANIFEST</p>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+<section id="about" class="pad">
+  <div class="contain">
+    <div class="about-grid">
+      <div class="about-vis reveal">
+        <canvas id="route-network" style="width:100%;height:100%"></canvas>
+      </div>
+      <div class="about-content reveal">
+        <p class="label">The Company</p>
+        <h2 class="heading">Built from inside<br><em>the industry</em></h2>
+        <p class="desc">MANIFEST was built inside the touring entertainment industry. We&rsquo;ve seen the waste firsthand &mdash; the rush orders, the half-empty trucks, the overtime that shouldn&rsquo;t have happened, the invoices that arrive months after the show closes.</p>
+        <p class="desc">We built systems to find that waste and eliminate it. Based in the US, working with production companies worldwide.</p>
+        <div class="about-stats">
+          <div><p class="stat-val">USA</p><p class="stat-lbl">Headquarters</p></div>
+          <div><p class="stat-val">Global</p><p class="stat-lbl">Reach</p></div>
+          <div><p class="stat-val">Inside</p><p class="stat-lbl">Industry Native</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section id="contact" class="cta-section">
+  <div class="cta-orb"></div>
+  <div class="reveal">
+    <p class="label" style="justify-content:center">Let&rsquo;s Start</p>
+    <h2 class="cta-h">Stop guessing.<br><span class="gold">Start saving.</span></h2>
+    <p class="cta-sub">Book a free 30-minute cost audit. We&rsquo;ll review your last production and show you exactly where money was left on the table.</p>
+    <div class="cta-btns">
+      <a href="https://cal.com/auros-ai/intro" target="_blank" class="btn btn-gold"><span>Book Your Free Audit</span></a>
+      <a href="mailto:hello@auros.ai" class="cta-email">or email hello@auros.ai</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-l">&copy; 2026 MANIFEST. All rights reserved.</div>
+  <div class="foot-c">&#9670;</div>
+  <div class="foot-r"><a href="#">LinkedIn</a><a href="mailto:hello@auros.ai">Email</a><a href="#">United States</a></div>
+</footer>
+
+<script>
+/* ── Starfield ── */
+(()=>{const c=document.getElementById('stars'),x=c.getContext('2d');let s=[],w,h;const resize=()=>{w=c.width=innerWidth;h=c.height=innerHeight};const make=()=>{s=[];const n=Math.floor(w*h/9000);for(let i=0;i<n;i++)s.push({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.1+0.2,a:Math.random()*0.45+0.08,sp:Math.random()*0.0005+0.0002,ph:Math.random()*Math.PI*2})};const draw=t=>{x.clearRect(0,0,w,h);for(const p of s){const f=Math.sin(t*p.sp*1000+p.ph)*0.3+0.7;x.beginPath();x.arc(p.x,p.y,p.r,0,Math.PI*2);x.fillStyle=`rgba(201,168,76,${p.a*f})`;x.fill()}requestAnimationFrame(draw)};resize();make();requestAnimationFrame(draw);addEventListener('resize',()=>{resize();make()})})();
+
+/* ── Nav ── */
+const nav=document.querySelector('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>60));
+const tog=document.querySelector('.nav-toggle'),lnk=document.querySelector('.nav-links');
+tog.addEventListener('click',()=>{tog.classList.toggle('active');lnk.classList.toggle('open')});
+lnk.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{tog.classList.remove('active');lnk.classList.remove('open')}));
+
+/* ── Reveal ── */
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')}),{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+/* ── Animated counters (proof bar + result rings) ── */
+function animateCounters(container){
+  container.querySelectorAll('[data-target]').forEach(el=>{
+    const target=parseInt(el.dataset.target);
+    const prefix=el.dataset.prefix||'';
+    const suffix=el.dataset.suffix||'';
+    let current=0;
+    const step=Math.max(1,Math.ceil(target/50));
+    const timer=setInterval(()=>{current+=step;if(current>=target){current=target;clearInterval(timer)}el.textContent=prefix+current+suffix},25);
+  });
+}
+let proofCounted=false;
+const proofObs=new IntersectionObserver(es=>{if(es[0].isIntersecting&&!proofCounted){proofCounted=true;animateCounters(document.getElementById('proof-bar'))}},{threshold:0.5});
+const pb=document.getElementById('proof-bar');if(pb)proofObs.observe(pb);
+
+/* ── Result ring counters ── */
+const resultObs=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting&&!e.target.dataset.animated){
+    e.target.dataset.animated='1';
+    animateCounters(e.target);
+  }
+}),{threshold:0.3});
+document.querySelectorAll('.result').forEach(el=>resultObs.observe(el));
+
+/* ── Truck cross-section visualization ── */
+let truckAnimated=false;
+const truckObs=new IntersectionObserver(es=>{
+  if(es[0].isIntersecting&&!truckAnimated){
+    truckAnimated=true;
+    const before=document.getElementById('truck-before');
+    const after=document.getElementById('truck-after');
+
+    // BEFORE: 3 rows of 2 crates (6 crates), then empty space above
+    // Bottom-up: row 1, row 2, row 3, then wasted space
+    for(let i=0;i<6;i++){
+      const c=document.createElement('div');
+      c.className='truck-crate loaded';
+      c.style.transitionDelay=(i*0.1)+'s';
+      before.appendChild(c);
+      requestAnimationFrame(()=>requestAnimationFrame(()=>c.classList.add('show')));
+    }
+    // Add wasted space indicator above the crates
+    const wastedH=260-2-(6/2*42); // remaining height
+    const wasted=document.createElement('div');
+    wasted.className='truck-wasted';
+    wasted.style.height=wastedH+'px';
+    wasted.style.bottom=(6/2*42+2)+'px';
+    wasted.textContent='wasted space';
+    before.parentElement.appendChild(wasted);
+
+    // AFTER: 6 rows of 2 crates (12 crates), packed floor to ceiling
+    for(let i=0;i<12;i++){
+      const c=document.createElement('div');
+      c.className='truck-crate optimized';
+      c.style.transitionDelay=(i*0.08+0.5)+'s';
+      after.appendChild(c);
+      requestAnimationFrame(()=>requestAnimationFrame(()=>c.classList.add('show')));
+    }
+  }
+},{threshold:0.3});
+const tv=document.getElementById('truck-viz');if(tv)truckObs.observe(tv);
+
+/* ── Smooth scroll ── */
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'})}));
+
+/* ── Custom cursor ── */
+if(matchMedia('(hover:hover)').matches){
+  const d=document.querySelector('.cur-dot'),r=document.querySelector('.cur-ring');
+  let mx=0,my=0,rx=0,ry=0;
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;d.style.left=mx-2.5+'px';d.style.top=my-2.5+'px'});
+  (function anim(){rx+=(mx-rx)*0.1;ry+=(my-ry)*0.1;r.style.left=rx-20+'px';r.style.top=ry-20+'px';requestAnimationFrame(anim)})();
+  document.querySelectorAll('a,button,.svc,.result,.audience-list span').forEach(el=>{
+    el.addEventListener('mouseenter',()=>{r.style.width='60px';r.style.height='60px';r.style.borderColor='rgba(201,168,76,0.5)';r.style.left=rx-30+'px';r.style.top=ry-30+'px'});
+    el.addEventListener('mouseleave',()=>{r.style.width='40px';r.style.height='40px';r.style.borderColor='rgba(201,168,76,0.3)'});
+  });
+  // Glow follows cursor on service cards
+  document.querySelectorAll('.svc').forEach(card=>{
+    const glow=card.querySelector('.svc-glow');
+    if(glow){card.addEventListener('mousemove',e=>{const rect=card.getBoundingClientRect();glow.style.left=(e.clientX-rect.left)+'px';glow.style.top=(e.clientY-rect.top)+'px'})}
+  });
+}
+
+/* ── Rotating Globe (about section) ── */
+(()=>{
+  const cvs=document.getElementById('route-network');
+  if(!cvs)return;
+  const ctx=cvs.getContext('2d');
+  let W,H,cw,ch;
+  const gold='201,168,76';
+  let rotation=0;
+
+  function resize(){
+    const r=cvs.parentElement.getBoundingClientRect();
+    W=cvs.width=r.width*2;H=cvs.height=r.height*2;
+    cvs.style.width=r.width+'px';cvs.style.height=r.height+'px';
+    cw=W/2;ch=H/2;
+  }
+  resize();addEventListener('resize',resize);
+
+  // Cities: lat/lon (degrees)
+  const cities=[
+    {name:'New York',lat:40.7,lon:-74},
+    {name:'Los Angeles',lat:34,lon:-118.2},
+    {name:'London',lat:51.5,lon:-0.1},
+    {name:'Barcelona',lat:41.4,lon:2.2},
+    {name:'Dubai',lat:25.2,lon:55.3},
+    {name:'Tokyo',lat:35.7,lon:139.7},
+    {name:'Sydney',lat:-33.9,lon:151.2},
+    {name:'Miami',lat:25.8,lon:-80.2},
+    {name:'Chicago',lat:41.9,lon:-87.6},
+    {name:'Berlin',lat:52.5,lon:13.4},
+    {name:'Singapore',lat:1.35,lon:103.8},
+    {name:'Mexico City',lat:19.4,lon:-99.1},
+    {name:'São Paulo',lat:-23.5,lon:-46.6},
+    {name:'Seoul',lat:37.6,lon:127},
+  ];
+
+  // Tour routes
+  const routes=[
+    [0,2],[2,3],[0,8],[8,1],[1,11],[3,9],[2,9],[4,10],[10,5],[5,13],
+    [6,10],[0,7],[7,12],[3,4],[1,6],[9,4],[12,0],[5,6],[11,12],[13,5]
+  ];
+
+  // Project lat/lon to 3D sphere point
+  function project(lat,lon,rot,R,cx,cy){
+    const phi=(90-lat)*Math.PI/180;
+    const theta=(lon+rot)*Math.PI/180;
+    const x=R*Math.sin(phi)*Math.cos(theta);
+    const y=R*Math.cos(phi);
+    const z=R*Math.sin(phi)*Math.sin(theta);
+    // Simple perspective
+    const scale=1/(1-z/(R*4));
+    return{px:cx+x*scale,py:cy-y*scale,z,vis:z<R*0.15};
+  }
+
+  // Draw a great circle arc between two points on the sphere
+  function drawArc(a,b,R,cx,cy,rot,steps){
+    const pts=[];
+    for(let i=0;i<=steps;i++){
+      const t=i/steps;
+      const lat=a.lat+(b.lat-a.lat)*t;
+      const lon=a.lon+(b.lon-a.lon)*t;
+      // Lift the arc above the surface
+      const midLift=1+0.08*Math.sin(t*Math.PI);
+      const p=project(lat,lon,rot,R*midLift,cx,cy);
+      pts.push(p);
+    }
+    return pts;
+  }
+
+  // Traveling particles
+  let dots=[];
+  function spawnDot(){
+    const ri=Math.floor(Math.random()*routes.length);
+    const r=routes[ri];
+    dots.push({from:r[0],to:r[1],t:0,speed:0.005+Math.random()*0.008,size:1.2+Math.random()*1.2});
+  }
+
+  let active=false;
+  const netObs=new IntersectionObserver(es=>{active=es[0].isIntersecting},{threshold:0.1});
+  netObs.observe(cvs.parentElement);
+
+  function draw(){
+    const w=cw,h=ch;
+    ctx.setTransform(2,0,0,2,0,0);
+    ctx.clearRect(0,0,w,h);
+    if(!active){requestAnimationFrame(draw);return}
+
+    rotation+=0.15;
+    if(Math.random()<0.06)spawnDot();
+
+    const cx=w*0.5,cy=h*0.5;
+    const R=Math.min(w,h)*0.38;
+
+    // Draw globe outline
+    ctx.beginPath();ctx.arc(cx,cy,R,0,Math.PI*2);
+    ctx.strokeStyle=`rgba(${gold},0.08)`;ctx.lineWidth=0.5;ctx.stroke();
+
+    // Draw longitude/latitude grid lines (wireframe globe)
+    ctx.strokeStyle=`rgba(${gold},0.04)`;ctx.lineWidth=0.3;
+    // Longitude lines
+    for(let lon=-180;lon<180;lon+=30){
+      ctx.beginPath();
+      for(let lat=-80;lat<=80;lat+=4){
+        const p=project(lat,lon,rotation,R,cx,cy);
+        if(lat===-80)ctx.moveTo(p.px,p.py);
+        else if(p.vis)ctx.lineTo(p.px,p.py);
+        else ctx.moveTo(p.px,p.py);
+      }
+      ctx.stroke();
+    }
+    // Latitude lines
+    for(let lat=-60;lat<=60;lat+=30){
+      ctx.beginPath();
+      for(let lon=0;lon<=360;lon+=4){
+        const p=project(lat,lon,rotation,R,cx,cy);
+        if(lon===0)ctx.moveTo(p.px,p.py);
+        else if(p.vis)ctx.lineTo(p.px,p.py);
+        else ctx.moveTo(p.px,p.py);
+      }
+      ctx.stroke();
+    }
+
+    // Draw routes (arcs on front side only)
+    routes.forEach(r=>{
+      const a=cities[r[0]],b=cities[r[1]];
+      const pts=drawArc(a,b,R,cx,cy,rotation,30);
+      ctx.beginPath();
+      let started=false;
+      pts.forEach(p=>{
+        if(p.vis){
+          if(!started){ctx.moveTo(p.px,p.py);started=true}
+          else ctx.lineTo(p.px,p.py);
+        }else{started=false}
+      });
+      ctx.strokeStyle=`rgba(${gold},0.1)`;ctx.lineWidth=0.6;ctx.stroke();
+    });
+
+    // Draw cities (front side only)
+    cities.forEach(c=>{
+      const p=project(c.lat,c.lon,rotation,R,cx,cy);
+      if(!p.vis)return;
+      const alpha=Math.max(0,(R*0.15-p.z)/(R*0.3));
+      // Glow
+      ctx.beginPath();ctx.arc(p.px,p.py,5,0,Math.PI*2);
+      ctx.fillStyle=`rgba(${gold},${0.06*alpha})`;ctx.fill();
+      // Dot
+      ctx.beginPath();ctx.arc(p.px,p.py,2.5,0,Math.PI*2);
+      ctx.fillStyle=`rgba(${gold},${0.6*alpha})`;ctx.fill();
+      // Label
+      if(alpha>0.3){
+        ctx.font='6px Space Mono, monospace';
+        ctx.fillStyle=`rgba(${gold},${0.3*alpha})`;
+        ctx.fillText(c.name,p.px+6,p.py+2);
+      }
+    });
+
+    // Animate traveling dots along routes
+    dots=dots.filter(d=>{
+      d.t+=d.speed;
+      if(d.t>1)return false;
+      const a=cities[d.from],b=cities[d.to];
+      const lat=a.lat+(b.lat-a.lat)*d.t;
+      const lon=a.lon+(b.lon-a.lon)*d.t;
+      const lift=1+0.08*Math.sin(d.t*Math.PI);
+      const p=project(lat,lon,rotation,R*lift,cx,cy);
+      if(!p.vis)return true;
+      ctx.beginPath();ctx.arc(p.px,p.py,d.size+2,0,Math.PI*2);
+      ctx.fillStyle=`rgba(${gold},0.1)`;ctx.fill();
+      ctx.beginPath();ctx.arc(p.px,p.py,d.size,0,Math.PI*2);
+      ctx.fillStyle=`rgba(${gold},0.6)`;ctx.fill();
+      return true;
+    });
+
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+/* ── Parallax orb ── */
+const orb=document.querySelector('.hero-orb');
+addEventListener('mousemove',e=>{if(innerWidth<768)return;const cx=(e.clientX/innerWidth-0.5)*25;const cy=(e.clientY/innerHeight-0.5)*25;orb.style.transform=`translate(calc(-50% + ${cx}px),calc(-50% + ${cy}px))`});
+
+/* ── Sankey Canvas ── */
+(()=>{
+  const cvs=document.getElementById('sankey-canvas');
+  if(!cvs)return;
+  const ctx=cvs.getContext('2d');
+  let W,H,particles=[];
+  const gold='201,168,76';
+  const red='201,120,80';
+  const mono='Space Mono, monospace';
+
+  function resize(){
+    const r=cvs.parentElement.getBoundingClientRect();
+    W=cvs.width=r.width*2;H=cvs.height=r.height*2;
+    cvs.style.width=r.width+'px';cvs.style.height=r.height+'px';
+    ctx.scale(2,2);
+  }
+  resize();addEventListener('resize',resize);
+
+  // Flow structure: budget splits into 4 channels, each leaks waste downward
+  const channels=[
+    {name:'Materials',pct:0.30,waste:0.35,y:0.18,color:gold},
+    {name:'Freight',pct:0.28,waste:0.25,y:0.38,color:gold},
+    {name:'Labor',pct:0.25,waste:0.30,y:0.62,color:gold},
+    {name:'Vendors',pct:0.17,waste:0.20,y:0.82,color:gold},
+  ];
+
+  function bezier(t,p0,p1,p2,p3){
+    const u=1-t;
+    return u*u*u*p0+3*u*u*t*p1+3*u*t*t*p2+t*t*t*p3;
+  }
+
+  function spawnParticle(){
+    const ch=channels[Math.floor(Math.random()*channels.length)];
+    const isWaste=Math.random()<ch.waste*0.6;
+    particles.push({
+      ch,isWaste,t:0,speed:0.003+Math.random()*0.004,
+      size:1.5+Math.random()*2,
+      wasteT:0,wasteSpeed:0.01+Math.random()*0.01,
+      splitPoint:0.55+Math.random()*0.15
+    });
+  }
+
+  let sankeyActive=false;
+  const sankeyObs=new IntersectionObserver(es=>{sankeyActive=es[0].isIntersecting},{threshold:0.1});
+  sankeyObs.observe(cvs.parentElement);
+
+  function draw(){
+    const w=W/2,h=H/2;
+    ctx.clearRect(0,0,w,h);
+    if(!sankeyActive){requestAnimationFrame(draw);return}
+
+    // Spawn particles
+    if(Math.random()<0.15)spawnParticle();
+
+    // Draw static flow paths
+    const startX=w*0.08;
+    const splitX=w*0.28;
+    const midX=w*0.55;
+    const endX=w*0.85;
+    const outX=w*0.95;
+
+    // Main input pipe
+    ctx.beginPath();
+    ctx.moveTo(0,h*0.5);ctx.lineTo(splitX,h*0.5);
+    ctx.strokeStyle=`rgba(${gold},0.12)`;ctx.lineWidth=16;ctx.lineCap='round';ctx.stroke();
+
+    // Channel paths + waste branches
+    channels.forEach(ch=>{
+      const cy=h*ch.y;
+      const thickness=ch.pct*18;
+
+      // Main channel: splitX → midX
+      ctx.beginPath();
+      ctx.moveTo(splitX,h*0.5);
+      ctx.bezierCurveTo(splitX+w*0.08,h*0.5,midX-w*0.1,cy,midX,cy);
+      ctx.strokeStyle=`rgba(${gold},0.1)`;ctx.lineWidth=thickness;ctx.stroke();
+
+      // Continuing to output (thinner = after waste removed)
+      const kept=thickness*(1-ch.waste);
+      ctx.beginPath();
+      ctx.moveTo(midX,cy);
+      ctx.bezierCurveTo(midX+w*0.08,cy,endX-w*0.06,h*0.45,endX,h*0.45);
+      ctx.strokeStyle=`rgba(${gold},0.08)`;ctx.lineWidth=kept;ctx.stroke();
+
+      // Waste branch — curves downward
+      const wasteThick=thickness*ch.waste;
+      ctx.beginPath();
+      ctx.moveTo(midX,cy);
+      ctx.bezierCurveTo(midX+w*0.06,cy,midX+w*0.12,cy+h*0.15,midX+w*0.18,cy+h*0.22);
+      ctx.strokeStyle=`rgba(${red},0.12)`;ctx.lineWidth=wasteThick;ctx.lineCap='round';ctx.stroke();
+
+      // Waste drip dots
+      ctx.setLineDash([3,5]);
+      ctx.beginPath();
+      ctx.moveTo(midX+w*0.18,cy+h*0.22);
+      ctx.lineTo(midX+w*0.22,cy+h*0.32);
+      ctx.strokeStyle=`rgba(${red},0.15)`;ctx.lineWidth=wasteThick*0.6;ctx.stroke();
+      ctx.setLineDash([]);
+    });
+
+    // Output pipe
+    ctx.beginPath();
+    ctx.moveTo(endX,h*0.45);ctx.lineTo(outX,h*0.45);
+    ctx.strokeStyle=`rgba(${gold},0.1)`;ctx.lineWidth=8;ctx.lineCap='round';ctx.stroke();
+
+    // Labels
+    ctx.font=`${9}px ${mono}`;ctx.letterSpacing='1.5px';
+    ctx.fillStyle=`rgba(${gold},0.35)`;
+    ctx.fillText('BUDGET',w*0.01,h*0.5+3);
+    ctx.fillStyle=`rgba(${gold},0.25)`;
+    ctx.fillText('OPTIMIZED',endX+4,h*0.45+3);
+
+    channels.forEach(ch=>{
+      const cy=h*ch.y;
+      ctx.font=`${8}px ${mono}`;
+      ctx.fillStyle=`rgba(240,236,228,0.3)`;
+      ctx.fillText(ch.name,splitX+8,cy-8);
+
+      // Waste label
+      ctx.fillStyle=`rgba(${red},0.4)`;
+      ctx.font=`${7}px ${mono}`;
+      const wx=midX+w*0.19;
+      const wy=cy+h*0.2;
+      ctx.fillText((ch.waste*100|0)+'% waste',wx,wy);
+    });
+
+    // Animate particles
+    particles=particles.filter(p=>{
+      p.t+=p.speed;
+      const cy=h*p.ch.y;
+
+      if(!p.isWaste){
+        // Particle flows along main channel then to output
+        if(p.t>1.3)return false;
+        let px,py;
+        if(p.t<0.3){
+          // Input pipe
+          px=p.t/0.3*splitX;py=h*0.5;
+        }else if(p.t<0.7){
+          // Channel curve
+          const lt=(p.t-0.3)/0.4;
+          px=bezier(lt,splitX,splitX+w*0.08,midX-w*0.1,midX);
+          py=bezier(lt,h*0.5,h*0.5,cy,cy);
+        }else{
+          // To output
+          const lt=(p.t-0.7)/0.6;
+          px=bezier(lt,midX,midX+w*0.08,endX-w*0.06,endX);
+          py=bezier(lt,cy,cy,h*0.45,h*0.45);
+        }
+        ctx.beginPath();ctx.arc(px,py,p.size,0,Math.PI*2);
+        ctx.fillStyle=`rgba(${gold},${0.5-p.t*0.3})`;ctx.fill();
+      }else{
+        // Waste particle — flows to split then drops
+        if(p.t>1.2)return false;
+        let px,py;
+        if(p.t<0.3){
+          px=p.t/0.3*splitX;py=h*0.5;
+        }else if(p.t<0.65){
+          const lt=(p.t-0.3)/0.35;
+          px=bezier(lt,splitX,splitX+w*0.08,midX-w*0.1,midX);
+          py=bezier(lt,h*0.5,h*0.5,cy,cy);
+        }else{
+          // Waste drop
+          const lt=(p.t-0.65)/0.55;
+          px=bezier(lt,midX,midX+w*0.06,midX+w*0.12,midX+w*0.2);
+          py=bezier(lt,cy,cy,cy+h*0.15,cy+h*0.3);
+        }
+        ctx.beginPath();ctx.arc(px,py,p.size*0.8,0,Math.PI*2);
+        ctx.fillStyle=`rgba(${red},${0.6-p.t*0.4})`;ctx.fill();
+      }
+      return true;
+    });
+
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+</script>
+</body>
+</html>

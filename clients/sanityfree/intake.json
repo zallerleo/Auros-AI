@@ -1,0 +1,121 @@
+{
+  "client_intake_form": {
+    "version": "1.0",
+    "date": "2026-03-24",
+    "filled_by": "Leo Zaller",
+    "status": "pre-call — confirm details with Luciano on call"
+  },
+
+  "company_info": {
+    "company_name": "SanityFree",
+    "owner_name": "Luciano Baccello",
+    "location_hq": "Buenos Aires, Argentina (Tucumán 1429, Comuna 1)",
+    "service_areas": ["Buenos Aires, Argentina", "Barcelona / Catalonia, Spain"],
+    "years_in_business": "6 (founded March 2020)",
+    "number_of_employees": "11-50 (per LinkedIn) — was targeting 100 by end of 2025, CONFIRM current count on call",
+    "website_url": "https://www.sanityfree.cleaning/",
+    "website_secondary": "https://sanityfree.com.ar (listed on LinkedIn — may be old)",
+    "google_business_profile_url": "NOT FOUND — this is the #1 problem",
+    "social_media": {
+      "instagram": "https://www.instagram.com/sanityfree.inc/",
+      "facebook": "",
+      "linkedin": "https://www.linkedin.com/company/sanityfree (79 followers, no visible posts)",
+      "other": ""
+    }
+  },
+
+  "services": {
+    "services_offered": [
+      "General commercial cleaning",
+      "Deep cleaning / deep disinfection",
+      "Industrial facility maintenance",
+      "Carpet and window cleaning",
+      "Upholstery cleaning (armchairs, chairs, mattresses — focus in Spain)",
+      "Sanitization and disinfection (COVID-era specialty)"
+    ],
+    "most_profitable_service": "ASK ON CALL — likely commercial contracts",
+    "services_they_want_to_grow": ["Government contracts in Barcelona — Leo knows this", "Residential in Spain — mentioned in press"],
+    "typical_contract_value_monthly": "ASK ON CALL",
+    "average_job_size_one_off": "ASK ON CALL",
+    "number_of_active_clients": "100+ mentioned on website — ASK for current breakdown (Argentina vs Spain)",
+    "ideal_client_type": "ASK ON CALL — known targets include hotels/tourism, education, libraries, industrial, private enterprise"
+  },
+
+  "current_lead_sources": {
+    "where_clients_come_from": ["ASK ON CALL — likely word of mouth and direct outreach given zero Google presence"],
+    "estimated_leads_per_month": "ASK ON CALL",
+    "lead_conversion_rate_estimate": "ASK ON CALL",
+    "who_responds_to_leads": "ASK ON CALL — website only has email (hola@sanityfree.cleaning) and WhatsApp",
+    "average_response_time": "ASK ON CALL",
+    "do_they_ask_for_reviews": "Almost certainly not — zero reviews found anywhere",
+    "current_google_review_count": "0 (no Google Business Profile found)",
+    "current_google_rating": "N/A"
+  },
+
+  "marketing_history": {
+    "tried_before": ["ASK ON CALL"],
+    "what_worked": "Warner / Harry Potter exhibition contract (likely through direct outreach or network, not marketing)",
+    "what_didnt_work": "ASK ON CALL",
+    "current_monthly_marketing_spend": "ASK ON CALL — likely $0 or close to it",
+    "biggest_frustration": "ASK ON CALL"
+  },
+
+  "goals": {
+    "what_does_growth_look_like": "ASK ON CALL — known: government contracts in Barcelona, residential expansion in Spain",
+    "target_new_clients_per_month": "ASK ON CALL",
+    "areas_they_want_to_expand_into": ["Government/institutional contracts in Barcelona", "Residential cleaning in Spain", "ASK about Argentina growth plans"],
+    "revenue_goal": "ASK ON CALL"
+  },
+
+  "technical_access": {
+    "google_business_profile": {
+      "has_access": false,
+      "login_shared": false,
+      "manager_invite_sent": false,
+      "notes": "PROFILE DOES NOT EXIST — will need to create from scratch for both Barcelona and Buenos Aires locations"
+    },
+    "website": {
+      "platform": "ASK ON CALL — site looks custom or built on a modern CMS",
+      "has_admin_access": false,
+      "login_shared": false
+    },
+    "job_tracking_method": "They have proprietary software for job management with real-time client reporting — ASK about this on call, could be useful for automating review requests",
+    "customer_contact_list_available": false,
+    "preferred_communication_channel": "WhatsApp"
+  },
+
+  "pre_call_audit": {
+    "notes_from_googling_them": "SanityFree has zero organic discoverability. Searching 'commercial cleaning Barcelona' or 'limpieza oficinas Barcelona' does not surface them. The only way to find them is by searching their exact name. They exist because of direct relationships (Warner contract, word of mouth), not because anyone can find them online. Press coverage exists (InfoNegocios article about expanding to Spain) but no SEO benefit from it. The business itself is solid — real clients, real employees, two countries, proprietary tech — but digitally they're invisible.",
+    "google_profile_issues_spotted": [
+      "No Google Business Profile exists AT ALL — not incomplete, just nonexistent",
+      "No Google Maps listing for either Barcelona or Buenos Aires location",
+      "Zero Google reviews",
+      "Cannot be found via any local search query"
+    ],
+    "website_issues_spotted": [
+      "No service areas listed — visitor can't tell where they operate",
+      "No pricing or price ranges despite claiming transparency",
+      "Zero testimonials or case studies (Warner contract not featured!)",
+      "Blog dead since 2024",
+      "Only CTA is 'schedule meeting' — no quick quote form or lead capture",
+      "No FAQ section",
+      "Contact only via email and WhatsApp — no phone number",
+      "Two websites exist (sanityfree.cleaning and sanityfree.com.ar) — confusing"
+    ],
+    "competitor_review_counts": [
+      "NEED TO CHECK on call — search top 5 competitors in Barcelona for commercial cleaning and compare review counts",
+      "LiMPi (limpi.es) — appears in top results for Barcelona cleaning",
+      "Clean Chaps — appears in top results",
+      "SPIC AND SPAN — targets English speakers in Barcelona"
+    ],
+    "quick_wins_identified": [
+      "1. CREATE Google Business Profile for Barcelona location — this alone will start generating leads",
+      "2. CREATE Google Business Profile for Buenos Aires location",
+      "3. Add Warner / Harry Potter case study to website — they're sitting on their best credibility and not using it",
+      "4. Set up automated review requests after completed jobs — their existing software could trigger this",
+      "5. Build 5-10 landing pages targeting 'commercial cleaning Barcelona', 'office cleaning Barcelona', 'limpieza oficinas Barcelona', etc.",
+      "6. Add a simple quote request form to the website with instant auto-response",
+      "7. Fix the website: add service areas, testimonials section, and proper CTAs"
+    ]
+  }
+}

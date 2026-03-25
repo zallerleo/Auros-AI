@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AUROS AI — Monthly Report: SanityFree</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@200;300;400;500;600&family=Space+Mono:wght@400;700&display=swap');
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+:root {
+  --gold: #c9a84c;
+  --gold-light: #e8d48b;
+  --gold-dark: #8a6d2b;
+  --bg: #08080c;
+  --bg-card: #0e0e14;
+  --bg-elevated: #14141c;
+  --text: #f0ece4;
+  --text-secondary: #8a8692;
+  --text-muted: #5a5664;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Outfit', system-ui, sans-serif;
+  --mono: 'Space Mono', monospace;
+  --green: #34d399;
+  --green-muted: rgba(52,211,153,0.15);
+  --red: #ef4444;
+  --red-muted: rgba(239,68,68,0.15);
+  --yellow: #f59e0b;
+}
+
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.page { max-width: 900px; margin: 0 auto; padding: 4rem 3rem; }
+
+/* ── Header ── */
+.report-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 2rem;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid rgba(201,168,76,0.08);
+}
+
+.report-brand {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  color: var(--gold);
+}
+
+.report-title {
+  text-align: right;
+}
+
+.report-title h1 {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.report-title .period {
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* ── KPI Row ── */
+.kpi-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.kpi {
+  background: var(--bg-card);
+  border: 1px solid rgba(201,168,76,0.06);
+  padding: 1.5rem;
+}
+
+.kpi-label {
+  font-family: var(--mono);
+  font-size: 0.5rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.kpi-value {
+  font-family: var(--serif);
+  font-size: 2.2rem;
+  font-weight: 300;
+  color: var(--gold);
+  margin-bottom: 0.25rem;
+}
+
+.kpi-change {
+  font-family: var(--mono);
+  font-size: 0.5rem;
+  letter-spacing: 0.1em;
+}
+
+.kpi-change.up { color: var(--green); }
+.kpi-change.down { color: var(--red); }
+.kpi-change.neutral { color: var(--text-muted); }
+
+/* ── Section ── */
+.section {
+  margin-bottom: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(201,168,76,0.06);
+}
+
+.section:last-child { border-bottom: none; }
+
+.section-label {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.section-label::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--gold-dark);
+}
+
+.section h2 {
+  font-family: var(--serif);
+  font-size: 1.8rem;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+}
+
+/* ── Data Table ── */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.data-table th {
+  font-family: var(--mono);
+  font-size: 0.5rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  text-align: left;
+  padding: 0.75rem;
+  border-bottom: 1px solid rgba(201,168,76,0.1);
+}
+
+.data-table td {
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--text-secondary);
+  padding: 0.75rem;
+  border-bottom: 1px solid rgba(201,168,76,0.04);
+}
+
+.data-table .value {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--text);
+}
+
+/* ── Funnel ── */
+.funnel {
+  margin-top: 1.5rem;
+}
+
+.funnel-step {
+  display: grid;
+  grid-template-columns: 160px 1fr 80px;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(201,168,76,0.04);
+}
+
+.funnel-label {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: var(--text-secondary);
+}
+
+.funnel-bar-bg {
+  height: 8px;
+  background: rgba(201,168,76,0.08);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.funnel-bar {
+  height: 100%;
+  background: var(--gold);
+  border-radius: 4px;
+  transition: width 0.6s ease;
+}
+
+.funnel-value {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--text);
+  text-align: right;
+}
+
+/* ── Review Tracker ── */
+.review-tracker {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.review-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(201,168,76,0.06);
+  padding: 1.5rem;
+}
+
+.review-card h3 {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.review-stat {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(201,168,76,0.03);
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.review-stat:last-child { border-bottom: none; }
+
+.review-stat .val {
+  font-family: var(--mono);
+  color: var(--text);
+}
+
+/* ── Placeholder Note ── */
+.placeholder-note {
+  background: var(--bg-card);
+  border: 1px dashed rgba(201,168,76,0.15);
+  padding: 2rem;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.placeholder-note p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* ── Next Steps ── */
+.next-steps {
+  list-style: none;
+  margin-top: 1.5rem;
+}
+
+.next-steps li {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(201,168,76,0.04);
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--text-secondary);
+  align-items: start;
+}
+
+.next-steps li:last-child { border-bottom: none; }
+
+.step-num {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  color: var(--gold);
+  background: rgba(201,168,76,0.1);
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 3px;
+}
+
+/* ── Footer ── */
+.report-footer {
+  text-align: center;
+  padding-top: 3rem;
+  margin-top: 2rem;
+  border-top: 1px solid rgba(201,168,76,0.06);
+}
+
+.report-footer p {
+  font-family: var(--mono);
+  font-size: 0.5rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+@media print {
+  body { background: white; color: #1a1a1a; }
+  .page { padding: 2rem; }
+  .kpi, .review-card, .placeholder-note { border-color: #ddd; background: #f9f9f9; }
+  .report-brand, .section-label, .kpi-label, .step-num { color: #8a6d2b; }
+  .kpi-value, .funnel-bar { color: #8a6d2b; }
+  .data-table th { color: #8a6d2b; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="report-header">
+    <p class="report-brand">AUROS AI</p>
+    <div class="report-title">
+      <h1>Monthly Report — SanityFree</h1>
+      <p class="period">Reporting Period: Month 1 (April 2026)</p>
+    </div>
+  </div>
+
+  <!-- KPI ROW -->
+  <div class="kpi-row">
+    <div class="kpi">
+      <p class="kpi-label">Google Profile Views</p>
+      <p class="kpi-value">—</p>
+      <p class="kpi-change neutral">Baseline month</p>
+    </div>
+    <div class="kpi">
+      <p class="kpi-label">Total Leads</p>
+      <p class="kpi-value">—</p>
+      <p class="kpi-change neutral">Baseline month</p>
+    </div>
+    <div class="kpi">
+      <p class="kpi-label">Google Reviews</p>
+      <p class="kpi-value">0 → —</p>
+      <p class="kpi-change neutral">Target: 10-15</p>
+    </div>
+    <div class="kpi">
+      <p class="kpi-label">Revenue Attributed</p>
+      <p class="kpi-value">—</p>
+      <p class="kpi-change neutral">Tracking starts month 1</p>
+    </div>
+  </div>
+
+  <!-- GOOGLE BUSINESS PROFILE -->
+  <div class="section">
+    <p class="section-label">Google Business Profile</p>
+    <h2>Search Performance</h2>
+
+    <div class="placeholder-note">
+      <p>Data will populate once Google Business Profiles are verified and live (Week 1-2).<br>Metrics tracked: search queries, profile views, direction requests, phone calls, website clicks.</p>
+    </div>
+
+    <table class="data-table" style="margin-top: 2rem;">
+      <thead>
+        <tr>
+          <th>Metric</th>
+          <th>Barcelona</th>
+          <th>Buenos Aires</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Profile views</td>
+          <td class="value">—</td>
+          <td class="value">—</td>
+          <td class="value">—</td>
+        </tr>
+        <tr>
+          <td>Search appearances</td>
+          <td class="value">—</td>
+          <td class="value">—</td>
+          <td class="value">—</td>
+        </tr>
+        <tr>
+          <td>Website clicks</td>
+          <td class="value">—</td>
+          <td class="value">—</td>
+          <td class="value">—</td>
+        </tr>
+        <tr>
+          <td>Phone calls</td>
+          <td class="value">—</td>
+          <td class="value">—</td>
+          <td class="value">—</td>
+        </tr>
+        <tr>
+          <td>Direction requests</td>
+          <td class="value">—</td>
+          <td class="value">—</td>
+          <td class="value">—</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- LEAD FUNNEL -->
+  <div class="section">
+    <p class="section-label">Lead Generation</p>
+    <h2>Lead Funnel</h2>
+
+    <div class="funnel">
+      <div class="funnel-step">
+        <p class="funnel-label">Website Visitors</p>
+        <div class="funnel-bar-bg"><div class="funnel-bar" style="width: 100%"></div></div>
+        <p class="funnel-value">—</p>
+      </div>
+      <div class="funnel-step">
+        <p class="funnel-label">Form Submissions</p>
+        <div class="funnel-bar-bg"><div class="funnel-bar" style="width: 30%"></div></div>
+        <p class="funnel-value">—</p>
+      </div>
+      <div class="funnel-step">
+        <p class="funnel-label">Quotes Sent</p>
+        <div class="funnel-bar-bg"><div class="funnel-bar" style="width: 20%"></div></div>
+        <p class="funnel-value">—</p>
+      </div>
+      <div class="funnel-step">
+        <p class="funnel-label">Jobs Booked</p>
+        <div class="funnel-bar-bg"><div class="funnel-bar" style="width: 10%"></div></div>
+        <p class="funnel-value">—</p>
+      </div>
+      <div class="funnel-step">
+        <p class="funnel-label">Revenue</p>
+        <div class="funnel-bar-bg"><div class="funnel-bar" style="width: 8%"></div></div>
+        <p class="funnel-value">$—</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- REVIEWS -->
+  <div class="section">
+    <p class="section-label">Reputation</p>
+    <h2>Review Growth</h2>
+
+    <div class="review-tracker">
+      <div class="review-card">
+        <h3>Barcelona</h3>
+        <div class="review-stat"><span>Total reviews</span><span class="val">0 → —</span></div>
+        <div class="review-stat"><span>Average rating</span><span class="val">— ★</span></div>
+        <div class="review-stat"><span>Review requests sent</span><span class="val">—</span></div>
+        <div class="review-stat"><span>Conversion rate</span><span class="val">—%</span></div>
+      </div>
+      <div class="review-card">
+        <h3>Buenos Aires</h3>
+        <div class="review-stat"><span>Total reviews</span><span class="val">0 → —</span></div>
+        <div class="review-stat"><span>Average rating</span><span class="val">— ★</span></div>
+        <div class="review-stat"><span>Review requests sent</span><span class="val">—</span></div>
+        <div class="review-stat"><span>Conversion rate</span><span class="val">—%</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LANDING PAGES -->
+  <div class="section">
+    <p class="section-label">Local SEO</p>
+    <h2>Landing Page Performance</h2>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Page</th>
+          <th>Visits</th>
+          <th>Form Fills</th>
+          <th>Conv. Rate</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Limpieza de oficinas Barcelona</td>
+          <td class="value">—</td>
+          <td class="value">—</td>
+          <td class="value">—%</td>
+        </tr>
+        <tr>
+          <td>Commercial cleaning Barcelona</td>
+          <td class="value">—</td>
+          <td class="value">—</td>
+          <td class="value">—%</td>
+        </tr>
+        <tr>
+          <td>Limpieza industrial Buenos Aires</td>
+          <td class="value">—</td>
+          <td class="value">—</td>
+          <td class="value">—%</td>
+        </tr>
+        <tr>
+          <td>Sanitización Barcelona</td>
+          <td class="value">—</td>
+          <td class="value">—</td>
+          <td class="value">—%</td>
+        </tr>
+        <tr>
+          <td>Limpieza comercial Buenos Aires</td>
+          <td class="value">—</td>
+          <td class="value">—</td>
+          <td class="value">—%</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- NEXT MONTH -->
+  <div class="section">
+    <p class="section-label">Looking Ahead</p>
+    <h2>Month 2 Priorities</h2>
+
+    <ul class="next-steps">
+      <li>
+        <span class="step-num">1</span>
+        <div><strong style="color: var(--text); font-weight: 400;">Analyze search query data</strong> — identify which searches are driving the most profile views and double down on those with new landing pages.</div>
+      </li>
+      <li>
+        <span class="step-num">2</span>
+        <div><strong style="color: var(--text); font-weight: 400;">Expand landing pages</strong> — add pages for additional service areas and service types based on search data.</div>
+      </li>
+      <li>
+        <span class="step-num">3</span>
+        <div><strong style="color: var(--text); font-weight: 400;">Optimize conversion rates</strong> — test form placement, CTA wording, and response speed to increase lead-to-quote ratio.</div>
+      </li>
+      <li>
+        <span class="step-num">4</span>
+        <div><strong style="color: var(--text); font-weight: 400;">Continue review growth</strong> — target 25+ total reviews across both locations by end of month 2.</div>
+      </li>
+      <li>
+        <span class="step-num">5</span>
+        <div><strong style="color: var(--text); font-weight: 400;">Evaluate paid ads</strong> — if organic is gaining traction, consider Google Ads for high-intent commercial cleaning searches as an accelerator.</div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="report-footer">
+    <p>Prepared by AUROS AI &nbsp;·&nbsp; Questions? Reach out to Leo Zaller &nbsp;·&nbsp; Next report: 30 days</p>
+  </div>
+
+</div>
+</body>
+</html>
